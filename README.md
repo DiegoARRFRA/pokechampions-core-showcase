@@ -1,74 +1,78 @@
+<p align="right">
+  <strong>🇪🇸 Español</strong> · <a href="README.en.md">🇬🇧 English</a>
+</p>
+
 # PokeChampions Core
 
-**A competitive companion for Pokémon Champions, built with Flutter and engineered around reproducible mechanics, explicit uncertainty and offline-first reliability.**
+**Una herramienta competitiva para Pokémon Champions, desarrollada con Flutter y diseñada alrededor de mecánicas reproducibles, incertidumbre explícita y fiabilidad offline-first.**
 
-![Status](https://img.shields.io/badge/status-active%20development-2ea44f)
-![Flutter](https://img.shields.io/badge/Flutter-mobile%20app-02569B?logo=flutter&logoColor=white)
+![Estado](https://img.shields.io/badge/estado-desarrollo%20activo-2ea44f)
+![Flutter](https://img.shields.io/badge/Flutter-app%20móvil-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.12-0175C2?logo=dart&logoColor=white)
-![Android](https://img.shields.io/badge/Android-physical%20QA-3DDC84?logo=android&logoColor=white)
-![Source](https://img.shields.io/badge/source-private-555555)
-![Repository](https://img.shields.io/badge/repository-public%20showcase-orange)
+![Android](https://img.shields.io/badge/Android-QA%20física-3DDC84?logo=android&logoColor=white)
+![Código](https://img.shields.io/badge/código-privado-555555)
+![Repositorio](https://img.shields.io/badge/repositorio-showcase%20público-orange)
 
-> **This is a public engineering showcase, not the application source repository.**  
-> The production source code, private datasets, signing material, build internals and full audit evidence are intentionally not distributed here.
+> **Este es un escaparate público de ingeniería, no el repositorio del código fuente de la aplicación.**  
+> El código de producción, los datasets privados, el material de firma, los detalles internos de compilación y la evidencia completa de auditoría no se distribuyen aquí de forma intencionada.
 
-PokeChampions Core is an unofficial, offline-first mobile toolkit for competitive Pokémon Champions. It is designed to help players prepare teams, inspect battle situations, calculate damage, discover one-hit KOs, practise lead choices and review their own match history without depending on a live backend.
+PokeChampions Core es una herramienta móvil no oficial y offline-first orientada al entorno competitivo de Pokémon Champions. Está diseñada para ayudar a preparar equipos, representar situaciones de batalla, calcular daño, descubrir KOs de un impacto, practicar elecciones de salida y revisar el historial propio de partidas sin depender de un backend en línea.
 
-The project is also an engineering exercise in a harder problem: **how to make game-analysis tooling trustworthy when mechanics, regulations and upstream data evolve.** Instead of silently guessing, the application distinguishes verified behavior from insufficient context and keeps validation evidence scoped to the exact version that produced it.
+El proyecto también aborda un problema de ingeniería más difícil: **cómo hacer que una herramienta de análisis sea fiable cuando las mecánicas, las regulaciones y las fuentes externas evolucionan.** En lugar de completar huecos con aproximaciones silenciosas, la aplicación diferencia entre comportamiento verificado y contexto insuficiente, y mantiene la evidencia de validación vinculada al alcance exacto que la produjo.
 
-## At a glance
+## De un vistazo
 
-| Area | Current engineering snapshot |
+| Área | Estado técnico actual |
 |---|---|
-| Stack | Flutter / Dart, Drift + SQLite, local versioned datasets |
-| Product model | Offline-first; no account or backend required |
-| Localisation | 8 complete locale packages |
-| Latest full host suite | **4,849 passed · 0 failed · 0 omitted** |
-| Historical Versus validation | **104,091** scoped comparison scenarios |
-| Historical 1HITKO campaign | **361 forms · 12,987 attacker/defender pairs** |
-| Android validation | Physical QA on **POCO F5 / Android 15** plus emulator profiling |
-| External QA build | **1.0.0+2**, validated through an update path on-device |
-| Development status | Active; current public snapshot reflects validation through **2026-09-14** |
+| Stack | Flutter / Dart, Drift + SQLite, datasets locales versionados |
+| Modelo de producto | Offline-first; no requiere cuenta ni backend |
+| Localización | 8 paquetes de idioma completos |
+| Última suite completa en host | **4.849 correctos · 0 fallos · 0 omisiones** |
+| Validación histórica de Versus | **104.091** escenarios de comparación acotados |
+| Campaña histórica 1HITKO | **361 formas · 12.987 pares atacante/defensor** |
+| Validación Android | QA física en **POCO F5 / Android 15** y perfilado en emulador |
+| Build externa de QA | **1.0.0+2**, validada mediante actualización en dispositivo |
+| Estado de desarrollo | Activo; este escaparate refleja validaciones hasta **2026-09-14** |
 
-Validation figures belong to different, explicitly scoped checkpoints and are **not additive certifications**. New game data or mechanics are not automatically covered by older campaigns.
+Las cifras de validación pertenecen a checkpoints distintos y con alcance explícito. **No deben sumarse ni interpretarse como una única certificación global.** Los nuevos datos o mecánicas no heredan automáticamente la cobertura de campañas anteriores.
 
-## What PokeChampions Core does
+## Qué hace PokeChampions Core
 
-| Module | Purpose |
+| Módulo | Función |
 |---|---|
-| **Team Builder** | Build and persist six-slot teams with forms, abilities, nature, training values, held items and moves. |
-| **Battle** | Represent a doubles battle situation: speed order, weather, Tailwind, Trick Room, temporary HP and other verified context. It does not simulate entire turns. |
-| **Versus** | 1v1 damage analysis backed by a typed calculation boundary shared by normal analysis and advanced tools. |
-| **1HITKO** | Search the legal local catalogue for attackers capable of a guaranteed one-hit KO under an explicit scenario. |
-| **EV Lab** | Explore defensive investment and survival thresholds against configured attacks. |
-| **Lead Trainer** | Practise opening choices against curated competitive teams and review the resulting matchup. |
-| **Battle History** | Keep local match records and immutable team snapshots for later analysis. |
-| **Pokémon Notes** | Maintain a separate offline library of notes and reusable configurations. |
-| **Appearance & localisation** | Light, dark and system themes plus eight atomic language packages. |
+| **Team Builder** | Crear y conservar equipos de seis posiciones con formas, habilidades, naturaleza, valores de entrenamiento, objetos y movimientos. |
+| **Batalla** | Representar una situación de dobles: orden de Velocidad, clima, Viento Afín, Espacio Raro, PS temporales y otro contexto verificado. No simula turnos completos. |
+| **Versus** | Análisis de daño 1 vs 1 mediante una frontera de cálculo tipada compartida por el análisis normal y las herramientas avanzadas. |
+| **1HITKO** | Buscar en el catálogo local legal atacantes capaces de garantizar un KO de un impacto bajo un escenario explícito. |
+| **EV Lab** | Explorar inversión defensiva y umbrales de supervivencia frente a ataques configurados. |
+| **Entradas** | Practicar elecciones iniciales contra equipos competitivos curados y revisar el emparejamiento resultante. |
+| **HISTÓRICO** | Conservar partidas y snapshots inmutables de equipos para su revisión posterior. |
+| **Notas Pokémon** | Mantener una biblioteca offline independiente de notas y configuraciones reutilizables. |
+| **Apariencia y localización** | Temas Claro, Oscuro y Sistema, además de ocho paquetes de idioma atómicos. |
 
-See [Features](docs/FEATURES.md) for the product boundary and current limitations.
+Consulta [Features](docs/FEATURES.md) para ver el límite funcional y las limitaciones actuales.
 
-## Engineering principles
+## Principios de ingeniería
 
-PokeChampions Core is built around a small set of rules that shape both the architecture and the validation strategy:
+PokeChampions Core se construye alrededor de un conjunto pequeño de reglas que condicionan tanto la arquitectura como la estrategia de validación:
 
-- **Accuracy before convenience.** Unknown or unverified context should be exposed, blocked or documented instead of silently approximated.
-- **Pure domain logic where possible.** UI widgets consume typed requests and responses rather than reconstructing mechanics from labels or presentation state.
-- **Offline-first by design.** Runtime behavior consumes packaged, versioned data; external research and imports happen during development, not silently on the user's device.
-- **Deterministic updates.** Data-generation and import steps are versioned and checked so a regulation update can be reproduced and reviewed.
-- **Scoped evidence.** A historical green campaign stays historical. It is not reused as proof for later mechanics or newly added participants without new validation.
-- **Safe persistence.** User-owned data is treated separately from generated catalogues and preferences, with migrations designed to preserve prior state.
+- **Exactitud antes que comodidad.** Un contexto desconocido o no verificado debe mostrarse, bloquearse o documentarse, no aproximarse en silencio.
+- **Lógica de dominio pura siempre que sea posible.** Los widgets consumen peticiones y respuestas tipadas en lugar de reconstruir mecánicas a partir de etiquetas o estado visual.
+- **Offline-first por diseño.** El runtime consume datos empaquetados y versionados; la investigación externa y las importaciones se realizan durante el desarrollo, no de forma silenciosa en el dispositivo del usuario.
+- **Actualizaciones deterministas.** La generación e importación de datos se versionan y verifican para que una actualización de regulación pueda reproducirse y revisarse.
+- **Evidencia con alcance.** Una campaña histórica que terminó correctamente sigue siendo histórica; no se reutiliza como prueba automática para mecánicas o participantes añadidos después.
+- **Persistencia segura.** Los datos del usuario se mantienen separados de catálogos generados y preferencias, con migraciones diseñadas para preservar estados anteriores.
 
-## High-level architecture
+## Arquitectura de alto nivel
 
 ```mermaid
 flowchart LR
-    UI[Flutter UI] --> PORTS[Typed feature ports]
-    PORTS --> DOMAIN[Pure domain rules & resolvers]
-    DOMAIN --> CATALOGS[Versioned local catalogues]
+    UI[Interfaz Flutter] --> PORTS[Puertos tipados por función]
+    PORTS --> DOMAIN[Reglas y resolvedores puros]
+    DOMAIN --> CATALOGS[Catálogos locales versionados]
     PORTS --> DB[(Drift / SQLite)]
-    UI --> PREFS[Local preferences]
-    DOMAIN --> RESULTS[Validated result models]
+    UI --> PREFS[Preferencias locales]
+    DOMAIN --> RESULTS[Modelos de resultado validados]
     RESULTS --> UI
 
     subgraph Runtime
@@ -81,44 +85,45 @@ flowchart LR
       RESULTS
     end
 
-    DEV[Offline import / generation / audit tooling] -. development only .-> CATALOGS
+    DEV[Importación / generación / auditoría offline] -. solo desarrollo .-> CATALOGS
 ```
 
-The public documentation intentionally stops at architecture and behavior. Internal implementations, full datasets and the private calculation engine are not published in this repository.
+La documentación pública se detiene deliberadamente en la arquitectura y el comportamiento. Las implementaciones internas, los datasets completos y el motor privado de cálculo no se publican en este repositorio.
 
-Read more in [Architecture](docs/ARCHITECTURE.md) and [Engineering](docs/ENGINEERING.md).
+Más información en [Architecture](docs/ARCHITECTURE.md) y [Engineering](docs/ENGINEERING.md).
 
-## Validation philosophy
+## Filosofía de validación
 
-Testing is treated as evidence, not decoration. The private project maintains focused regression suites, large comparison campaigns, deterministic data checks and physical Android acceptance runs.
+Las pruebas se tratan como **evidencia**, no como decoración. El proyecto privado mantiene suites de regresión focales, campañas de comparación de gran tamaño, verificaciones deterministas de datos y recorridos de aceptación física en Android.
 
-A recent full host run completed with **4,849 passes, zero failures and zero omissions** after a targeted import fix. Earlier campaigns include a **104,091-scenario** Versus comparison set and an exhaustive historical 1HITKO campaign across **361 forms and 12,987 pairs**. Physical acceptance has also covered installation, app identity, persistence, update behavior, navigation, appearance and selected competitive flows on a POCO F5 running Android 15.
+Una ejecución completa reciente en host terminó con **4.849 aciertos, cero fallos y cero omisiones** después de una corrección focal de importación. Entre las campañas anteriores se encuentra un conjunto de comparación de Versus de **104.091 escenarios** y una campaña histórica exhaustiva de 1HITKO sobre **361 formas y 12.987 pares**. La aceptación física también ha cubierto instalación, identidad de la app, persistencia, actualización, navegación, apariencia y flujos competitivos seleccionados en un POCO F5 con Android 15.
 
-Just as importantly, the project records what those tests **do not** prove. Device matrices, accessibility, long audio sessions and newly introduced regulation content may require separate evidence.
+Igual de importante es registrar lo que esas pruebas **no demuestran**. La matriz de dispositivos, accesibilidad, sesiones prolongadas de audio o contenido incorporado por regulaciones posteriores pueden necesitar evidencia separada.
 
-See [Validation & QA](docs/VALIDATION.md).
+Consulta [Validation & QA](docs/VALIDATION.md).
 
-## Performance work
+## Trabajo de rendimiento
 
-Startup profiling identified native audio initialisation on the critical path even when playback was not required. Moving that work behind explicit user activation reduced the measured **engine-to-first-frame median from ~3.69 s to ~0.395 s** in the first comparable emulator series, while warm wait time fell from **206 ms to 50 ms**.
+El perfilado del arranque detectó que la inicialización nativa de audio estaba en la ruta crítica incluso cuando no era necesaria la reproducción. Mover ese trabajo detrás de una activación explícita del usuario redujo la mediana medida desde **motor hasta primer frame de ~3,69 s a ~0,395 s** en la primera serie comparable del emulador. El tiempo de espera en arranque caliente pasó de **206 ms a 50 ms**.
 
-The same audit deliberately did **not** claim total Android launch time as solved because emulator presentation remained unstable and later repeated measurements showed the platform could dominate end-to-end timing.
+La misma auditoría evitó declarar resuelto el tiempo total de arranque Android porque la presentación del emulador siguió siendo inestable y mediciones posteriores mostraron que la plataforma podía dominar el tiempo extremo a extremo.
 
-See [Performance](docs/PERFORMANCE.md) for the measurements and caveats.
+Consulta [Performance](docs/PERFORMANCE.md) para ver las mediciones y sus límites.
 
-## Data and mechanical authority
+## Autoridad de datos y mecánicas
 
-The application does not treat a single upstream as universally authoritative. The private data pipeline separates responsibility between official Pokémon Champions information, pinned technical references, explicit declarative overrides and generated artefacts. Human-readable descriptions never become mechanical authority by themselves.
+La aplicación no considera una única fuente como autoridad universal. El pipeline privado de datos separa responsabilidades entre información oficial de Pokémon Champions, referencias técnicas fijadas por revisión, overrides declarativos explícitos y artefactos generados. Las descripciones destinadas a lectura humana nunca se convierten por sí solas en autoridad mecánica.
 
-When sources are insufficient to establish a Champions-specific interaction, the preferred outcome is **insufficient context or a documented block**, not an invented rule.
+Cuando las fuentes no bastan para demostrar una interacción específica de Champions, el resultado preferido es **contexto insuficiente o un bloqueo documentado**, no una regla inventada.
 
-See [Data & Accuracy](docs/DATA_AND_ACCURACY.md).
+Consulta [Data & Accuracy](docs/DATA_AND_ACCURACY.md).
 
-## Repository map
+## Mapa del repositorio
 
 ```text
 pokechampions-core-showcase/
-├── README.md
+├── README.md              # Español (predeterminado)
+├── README.en.md           # English
 ├── NOTICE.md
 ├── CONTRIBUTING.md
 └── docs/
@@ -131,20 +136,20 @@ pokechampions-core-showcase/
     └── ROADMAP.md
 ```
 
-This repository may later gain curated screenshots, short demos and sanitized technical artefacts. It will not mirror the private application source by default.
+En el futuro este repositorio puede incorporar capturas seleccionadas, demos breves y artefactos técnicos saneados. Por defecto, **no será un espejo del código fuente privado**.
 
-## Public vs. private
+## Público frente a privado
 
-**Published here:** product scope, engineering decisions, selected measurements, validation methodology, sanitized architecture and roadmap information.
+**Publicado aquí:** alcance del producto, decisiones de ingeniería, mediciones seleccionadas, metodología de validación, arquitectura saneada y hoja de ruta.
 
-**Kept private:** application source code, full internal datasets, signing keys, private audit packages, proprietary or third-party assets that should not be redistributed, and implementation details that would turn this showcase into a source mirror.
+**Se mantiene privado:** código fuente de la aplicación, datasets internos completos, claves de firma, paquetes privados de auditoría, assets propietarios o de terceros que no deban redistribuirse y detalles de implementación que convertirían este escaparate en un espejo del código.
 
-Feedback and product discussion are welcome; see [Contributing](CONTRIBUTING.md).
+El feedback y la discusión sobre el producto son bienvenidos; consulta [Contributing](CONTRIBUTING.md).
 
-## Ownership and licensing
+## Propiedad y licencia
 
-No open-source license is granted for this showcase repository unless a specific file or future subproject explicitly says otherwise. See [NOTICE.md](NOTICE.md).
+Este repositorio de showcase **no concede una licencia open source**, salvo que un archivo o subproyecto futuro indique expresamente lo contrario. Consulta [NOTICE.md](NOTICE.md).
 
-## Disclaimer
+## Aviso legal
 
-PokeChampions Core is an **unofficial fan-made project**. Pokémon, Pokémon Champions and related names, characters, assets and trademarks belong to their respective rights holders. This project is not affiliated with, endorsed by or sponsored by Nintendo, Creatures, GAME FREAK or The Pokémon Company.
+PokeChampions Core es un **proyecto fan no oficial**. Pokémon, Pokémon Champions y sus nombres, personajes, recursos y marcas relacionadas pertenecen a sus respectivos titulares. Este proyecto no está afiliado, respaldado ni patrocinado por Nintendo, Creatures, GAME FREAK ni The Pokémon Company.
