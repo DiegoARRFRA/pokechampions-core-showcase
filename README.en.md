@@ -20,6 +20,39 @@ PokeChampions Core is an unofficial, offline-first mobile toolkit for competitiv
 
 The project is also an engineering exercise in a harder problem: **how to make game-analysis tooling trustworthy when mechanics, regulations and upstream data evolve.** Instead of silently guessing, the application distinguishes verified behavior from insufficient context and keeps validation evidence scoped to the exact version that produced it.
 
+## The application, in pictures
+
+Real Android screenshots, using Spanish and the dark theme. Select an image to inspect it at a larger size.
+
+<table>
+  <tr><th>Home</th><th>Versus · damage result</th><th>1HITKO · search results</th></tr>
+  <tr>
+    <td align="center"><a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="240" alt="PokeChampions Core home screen with its main modules"></a></td>
+    <td align="center"><a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="240" alt="Real Versus result showing damage, applied factors, KO information and explicit limitations"></a></td>
+    <td align="center"><a href="media/screenshots/1hitko-results.png"><img src="media/screenshots/1hitko-results.png" width="240" alt="Real 1HITKO results with moves and damage ranges"></a></td>
+  </tr>
+</table>
+
+**[View the complete gallery: 8 screenshots](docs/GALLERY.en.md)** · Includes Battle, EV Lab, opening selection and practice records.
+
+### Short demos
+
+<table>
+  <tr><th>Versus · ~13 s</th><th>1HITKO · ~13 s</th><th>Lead Trainer · ~15 s</th></tr>
+  <tr>
+    <td align="center"><a href="media/demos/versus.mp4"><img src="media/demos/versus.gif" width="240" alt="Select a move, calculate and inspect the Versus result"></a></td>
+    <td align="center"><a href="media/demos/1hitko.mp4"><img src="media/demos/1hitko.gif" width="240" alt="Inspect the defender scenario, follow 1HITKO search progress and view results"></a></td>
+    <td align="center"><a href="media/demos/entradas.mp4"><img src="media/demos/entradas.gif" width="240" alt="Choose an opening pair, open Battle and enter the practice outcome manually"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="media/demos/versus.mp4">MP4 · higher resolution</a></td>
+    <td align="center"><a href="media/demos/1hitko.mp4">MP4 · higher resolution</a></td>
+    <td align="center"><a href="media/demos/entradas.mp4">MP4 · higher resolution</a></td>
+  </tr>
+</table>
+
+Audio-free recordings at their original speed, followed by a short final-frame hold. No results were changed and no screens were generated. In Lead Trainer, outcomes are entered manually: this is not an automatically simulated battle. This material demonstrates the product; it does not replace a QA campaign or benchmark. [Editing and provenance notes](media/README.md#english).
+
 ## At a glance
 
 | Area | Current engineering snapshot |
@@ -122,11 +155,18 @@ See [Data & Accuracy](docs/DATA_AND_ACCURACY.md).
 
 ```text
 pokechampions-core-showcase/
-├── README.md              # Español (predeterminado)
+├── README.md              # Español (default)
 ├── README.en.md           # English
 ├── NOTICE.md
 ├── CONTRIBUTING.md
+├── media/
+│   ├── README.md          # Provenance and editing
+│   ├── manifest.json      # Inventory and SHA-256
+│   ├── screenshots/       # 8 PNG screenshots
+│   └── demos/             # 3 demos, each in GIF and MP4
 └── docs/
+    ├── GALLERY.md         # Spanish gallery
+    ├── GALLERY.en.md      # English gallery
     ├── ARCHITECTURE.md
     ├── FEATURES.md
     ├── ENGINEERING.md
@@ -136,11 +176,11 @@ pokechampions-core-showcase/
     └── ROADMAP.md
 ```
 
-This repository may later gain curated screenshots, short demos and sanitized technical artefacts. It will not mirror the private application source by default.
+The gallery contains selected visual material, separate from the full recordings and the development project. This repository **is not a mirror of the private application source**.
 
 ## Public vs. private
 
-**Published here:** product scope, engineering decisions, selected measurements, validation methodology, sanitized architecture and roadmap information.
+**Published here:** product scope, engineering decisions, selected measurements, validation methodology, sanitized architecture, roadmap information and selected visual material.
 
 **Kept private:** application source code, full internal datasets, signing keys, private audit packages, proprietary or third-party assets that should not be redistributed, and implementation details that would turn this showcase into a source mirror.
 
