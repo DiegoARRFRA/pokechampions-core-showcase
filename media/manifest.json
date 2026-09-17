@@ -1,0 +1,54 @@
+{
+  "project": "PokeChampions Core",
+  "prepared_on": "2026-09-17",
+  "origin": "Screenshots and Android screen recordings supplied by the project owner.",
+  "ui_language": "es",
+  "theme": "dark",
+  "editing": {
+    "generated_ui": false,
+    "result_values_changed": false,
+    "recorded_motion_speed": 1.0,
+    "internal_cuts": false,
+    "audio_in_exports": false,
+    "video_crop_xywh": [0, 110, 1080, 2160],
+    "phone_chrome_removed": true,
+    "mp4_size": [540, 1080],
+    "mp4_fps": 24,
+    "gif_size": [300, 600],
+    "gif_fps": 8,
+    "gif_palette_colors": 128
+  },
+  "scope_note": "Presentation material only. Not a benchmark, new QA run, correctness certification or evidence of a complete battle simulator. Lead outcomes are entered manually. Screenshots can show different scenarios from the demos.",
+  "source_note": "The exact application build was not independently established from these media.",
+  "demo_edits": [
+    {"name": "versus", "source_label": "recording-1", "source_start_seconds": 39.8, "source_end_seconds": 51.0, "final_hold_seconds": 1.8},
+    {"name": "1hitko", "source_label": "recording-2", "source_start_seconds": 11.2, "source_end_seconds": 21.6, "final_hold_seconds": 2.6},
+    {"name": "entradas", "source_label": "recording-3", "source_start_seconds": 17.5, "source_end_seconds": 31.5, "final_hold_seconds": 1.0}
+  ],
+  "files": [
+    {"path": "media/demos/1hitko.gif", "bytes": 2476557, "sha256": "921936f0ff247d31d7b7892c9befcae16a3a258bf142a699b0f4f49d16b72542", "width": 300, "height": 600, "duration_seconds": 13.13, "frames": 105},
+    {"path": "media/demos/1hitko.mp4", "bytes": 740432, "sha256": "223dc880c2e94b3dab1b5c9305e8618f0fb65d74c0a45b1ce2e3146e98aee0b0", "width": 540, "height": 1080, "duration_seconds": 13.0, "audio": false},
+    {"path": "media/demos/entradas.gif", "bytes": 2024574, "sha256": "78c660a6a699467fa242ef53d82383f4602b263161f8bc49a04010f8ffad8aea", "width": 300, "height": 600, "duration_seconds": 15.01, "frames": 120},
+    {"path": "media/demos/entradas.mp4", "bytes": 860387, "sha256": "a968b0d7b5a29b1b91547676cca2e36705653bbd3c05469daa0f43c39cde9576", "width": 540, "height": 1080, "duration_seconds": 15.041667, "audio": false},
+    {"path": "media/demos/versus.gif", "bytes": 2126364, "sha256": "c57ffaa19c992e9a86fa259edbd24b03b9f284a2a3d4d5f2b6465c3051cf6a46", "width": 300, "height": 600, "duration_seconds": 13.01, "frames": 104},
+    {"path": "media/demos/versus.mp4", "bytes": 924289, "sha256": "1f3ceb25890b6843e9b482b115173a7f47573000612a74952aa53993b38c53a5", "width": 540, "height": 1080, "duration_seconds": 13.041667, "audio": false},
+    {"path": "media/screenshots/1hitko-results.png", "bytes": 306936, "sha256": "c49048e6dbd1c4bf42c20b1bf845f5c9db2a266db7e203d999666dbb1888b23a", "width": 720, "height": 1440},
+    {"path": "media/screenshots/battle-speed.png", "bytes": 323243, "sha256": "e9d7e9797554fc2e5a4719e30f7fac531fc9e9d922c48787f05d140aebab0575", "width": 691, "height": 1382},
+    {"path": "media/screenshots/ev-lab.png", "bytes": 273722, "sha256": "e3ce074c613d147d57ce6bee44d2a33308c7911b0f8f9b8724f9455bac84a2a2", "width": 720, "height": 1440},
+    {"path": "media/screenshots/home.png", "bytes": 498264, "sha256": "f4def77046528af95325e2a2960410e88d4a8422ed69339d916ce0caec64def2", "width": 691, "height": 1382},
+    {"path": "media/screenshots/lead-record.png", "bytes": 342625, "sha256": "0653a660a75654259fd5c3a938372f9c7efea0a3dead7918e49e3e8e2d7202f3", "width": 720, "height": 1440},
+    {"path": "media/screenshots/lead-result.png", "bytes": 390419, "sha256": "71c622def9d0e0524bcf1cfb48b99e9a54a470d94bfd13b2ecf6c1a35bbcb7a7", "width": 720, "height": 1440},
+    {"path": "media/screenshots/lead-selection.png", "bytes": 370389, "sha256": "a595af61c44dd954fbb1e14f6d0973a1a8fa3448e78465849b86a41296259429", "width": 720, "height": 1440},
+    {"path": "media/screenshots/versus-result.png", "bytes": 315520, "sha256": "969ad2eb23ae3fc82af55ce99f357214b3a61ba64799548931e8176b50073baf", "width": 720, "height": 1440}
+  ],
+  "screenshot_sources": [
+    {"path": "media/screenshots/home.png", "source": "owner-screenshot-home", "crop_xywh": [0, 71, 691, 1382]},
+    {"path": "media/screenshots/battle-speed.png", "source": "owner-screenshot-battle-speed", "crop_xywh": [0, 71, 691, 1382]},
+    {"path": "media/screenshots/versus-result.png", "source": "recording-1", "source_time_seconds": 32.6, "crop_xywh": [0, 110, 1080, 2160]},
+    {"path": "media/screenshots/ev-lab.png", "source": "recording-1", "source_time_seconds": 11.1, "crop_xywh": [0, 110, 1080, 2160]},
+    {"path": "media/screenshots/1hitko-results.png", "source": "recording-2", "source_time_seconds": 21.3, "crop_xywh": [0, 110, 1080, 2160]},
+    {"path": "media/screenshots/lead-selection.png", "source": "recording-3", "source_time_seconds": 22.5, "crop_xywh": [0, 110, 1080, 2160]},
+    {"path": "media/screenshots/lead-result.png", "source": "recording-3", "source_time_seconds": 30.6, "crop_xywh": [0, 110, 1080, 2160]},
+    {"path": "media/screenshots/lead-record.png", "source": "recording-3", "source_time_seconds": 38.6, "crop_xywh": [0, 110, 1080, 2160]}
+  ]
+}
