@@ -20,6 +20,39 @@ PokeChampions Core es una herramienta móvil no oficial y offline-first orientad
 
 El proyecto también aborda un problema de ingeniería más difícil: **cómo hacer que una herramienta de análisis sea fiable cuando las mecánicas, las regulaciones y las fuentes externas evolucionan.** En lugar de completar huecos con aproximaciones silenciosas, la aplicación diferencia entre comportamiento verificado y contexto insuficiente, y mantiene la evidencia de validación vinculada al alcance exacto que la produjo.
 
+## La aplicación, en imágenes
+
+Capturas reales de Android, en español y tema oscuro. Pulsa una imagen para verla a mayor tamaño.
+
+<table>
+  <tr><th>Inicio</th><th>Versus · resultado</th><th>1HITKO · resultados</th></tr>
+  <tr>
+    <td align="center"><a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="240" alt="Inicio de PokeChampions Core con sus módulos principales"></a></td>
+    <td align="center"><a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="240" alt="Resultado real de Versus con daño, factores aplicados, KO y limitaciones explícitas"></a></td>
+    <td align="center"><a href="media/screenshots/1hitko-results.png"><img src="media/screenshots/1hitko-results.png" width="240" alt="Resultados reales de 1HITKO con movimientos y rangos de daño"></a></td>
+  </tr>
+</table>
+
+**[Ver la galería completa: 8 capturas](docs/GALLERY.md)** · Incluye Batalla, EV Lab, selección de Entradas y registro de prácticas.
+
+### Demos breves
+
+<table>
+  <tr><th>Versus · ~13 s</th><th>1HITKO · ~13 s</th><th>Entradas · ~15 s</th></tr>
+  <tr>
+    <td align="center"><a href="media/demos/versus.mp4"><img src="media/demos/versus.gif" width="240" alt="Elegir movimiento, calcular y consultar el resultado de Versus"></a></td>
+    <td align="center"><a href="media/demos/1hitko.mp4"><img src="media/demos/1hitko.gif" width="240" alt="Configurar el escenario, observar el progreso de 1HITKO y consultar sus resultados"></a></td>
+    <td align="center"><a href="media/demos/entradas.mp4"><img src="media/demos/entradas.gif" width="240" alt="Elegir la salida, abrir Batalla y marcar el resultado manual de la práctica"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="media/demos/versus.mp4">MP4 · mayor resolución</a></td>
+    <td align="center"><a href="media/demos/1hitko.mp4">MP4 · mayor resolución</a></td>
+    <td align="center"><a href="media/demos/entradas.mp4">MP4 · mayor resolución</a></td>
+  </tr>
+</table>
+
+Grabaciones sin audio, a velocidad original y con una breve pausa final. No se han cambiado resultados ni generado pantallas. En Entradas, el resultado se introduce manualmente: no es una simulación automática del combate. Este material muestra el producto; no sustituye a una campaña de QA ni a un benchmark. [Detalles de edición y procedencia](media/README.md).
+
 ## De un vistazo
 
 | Área | Estado técnico actual |
@@ -126,7 +159,14 @@ pokechampions-core-showcase/
 ├── README.en.md           # English
 ├── NOTICE.md
 ├── CONTRIBUTING.md
+├── media/
+│   ├── README.md          # Procedencia y edición
+│   ├── manifest.json      # Inventario y SHA-256
+│   ├── screenshots/       # 8 capturas PNG
+│   └── demos/             # 3 demos, cada una en GIF y MP4
 └── docs/
+    ├── GALLERY.md         # Galería en español
+    ├── GALLERY.en.md      # English gallery
     ├── ARCHITECTURE.md
     ├── FEATURES.md
     ├── ENGINEERING.md
@@ -136,11 +176,11 @@ pokechampions-core-showcase/
     └── ROADMAP.md
 ```
 
-En el futuro este repositorio puede incorporar capturas seleccionadas, demos breves y artefactos técnicos saneados. Por defecto, **no será un espejo del código fuente privado**.
+La galería incorpora material visual seleccionado, separado de los originales completos y del proyecto de desarrollo. Este repositorio **no es un espejo del código fuente privado**.
 
 ## Público frente a privado
 
-**Publicado aquí:** alcance del producto, decisiones de ingeniería, mediciones seleccionadas, metodología de validación, arquitectura saneada y hoja de ruta.
+**Publicado aquí:** alcance del producto, decisiones de ingeniería, mediciones seleccionadas, metodología de validación, arquitectura saneada, hoja de ruta y material visual seleccionado.
 
 **Se mantiene privado:** código fuente de la aplicación, datasets internos completos, claves de firma, paquetes privados de auditoría, assets propietarios o de terceros que no deban redistribuirse y detalles de implementación que convertirían este escaparate en un espejo del código.
 
