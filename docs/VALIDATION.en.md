@@ -2,38 +2,49 @@
   <a href="VALIDATION.md">Español</a> · <strong>English</strong>
 </p>
 
-# Validation & QA
+# Validation and evidence
 
-[← Overview](../README.en.md) · [Documentation index](README.en.md)
+[← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Index](README.en.md)
 
-Testing is treated as scoped evidence. A passing count is useful only when tied to a known revision, catalogue and product boundary.
+**A test count describes a particular run, not complete product quality.** Documentation was reviewed on 22 September 2026 and distinguishes source inspection, host tests, physical checks and presentation material.
 
-## Public checkpoint through 14 September 2026
+## Validation references
 
-The host run recorded in that checkpoint completed with **4,849 passed, 0 failed, 0 omitted and exit code 0**, following a focused import correction.
+| Evidence | Result and scope |
+| --- | --- |
+| **Host suite accepted on 20 September 2026** | **5,058 passes, 0 failures, 0 omissions, exit 0**. Ordinary serial run without filters; investigation started on the 19th and was accepted at 00:44 Europe/Madrid on the 20th. |
+| Focused repair in that campaign | 373 focused passes; traceability of 79 historical failures. Tests and references were aligned with current behaviour; that block introduced no production changes. |
+| Earlier reference from 14 September 2026 | 4,849 passes, 0 failures and 0 omissions after an import fix. Retained as an earlier checkpoint, not the current count. |
+| Historical Versus campaign | 104,091 scoped scenarios. Later participants or rules are not automatically covered. |
+| Historical 1HITKO campaign | 361 forms and 12,987 attacker/defender pairs within that campaign's catalogue and conditions. |
+| Selected physical QA | POCO F5/Android 15: installation, identity, navigation, persistence, appearance and updates between early external deliveries, including 1.0.0+2. |
 
-It belongs to the application state validated in mid-September 2026. It does not establish that a later build passed the same suite. Zero failures does not mean complete coverage. Repository link and file checks are separate: see [Showcase validation](../CONTRIBUTING.en.md#showcase-validation).
+These sets **are not additive**. The 5,058 passes do not show that every later change or APK ran the same suite. Host acceptance does not certify audible playback, mobile smoothness, store publication or complete coverage.
 
-## Larger historical campaigns
+## What was inspected for this documentation
 
-Earlier evidence includes a Versus campaign of **104,091 scoped scenarios** and historical exhaustive 1HITKO acceptance covering **361 forms and 12,987 attacker/defender pairs**. Focused regressions cover persistence, localisation, regulation, lifecycle and Android packaging, alongside deterministic checks of catalogues and selected imports.
+SQLite schema, migration, native opening, repository composition, team/round/history operations, dependencies and contracts support the architecture and persistence descriptions. Inspection confirms the visible implementation; it does not execute every case or inspect a real user database.
 
-These figures should not be added as a universal certification. A new regulation, participant or mechanic may lie outside an earlier campaign.
+The overview distinguishes **11 application tables and one explicit FK**, logical references without FKs, per-entity JSON and one-shot Future-based reads. Generic library capabilities are not automatically presented as implemented features.
 
-## Physical Android QA
+## Evidence levels
 
-Checks on a **POCO F5 running Android 15** have covered selected installation and identity flows, navigation, persistence across process closure, light/dark/system appearance, Versus paths, and external build installation and updates. Preservation of existing data between early external releases was also checked.
+**Inspected implementation:** shows structure, rules and decisions visible in the reviewed source. **Tests executed at a checkpoint:** demonstrate acceptance within that state and case set. **Physical walkthrough:** provides evidence for the tested device and scenario. **Demo:** shows a selected interaction, not a benchmark or mechanical guarantee.
 
-This physical evidence is deliberately narrower than the entire automated host matrix.
+Complete internal evidence remains private. This repository publishes scoped summaries, not a public independent reproduction of every campaign. Technical dependencies were checked, but no global coverage percentage was recalculated.
 
-## Concerns with separate evidence
+## Separate outstanding work
 
-Broader device coverage, accessibility/TalkBack acceptance, prolonged audible sessions, platform-specific performance and new regulation content require their own checks. They are not silently folded into the main pass count.
+Broader device and accessibility/TalkBack coverage; prolonged audio, external focus, calls and Bluetooth; frame pacing and spike attribution; write/large-collection measurements; and validation for data added by each new regulation.
 
-## Why failed runs are preserved
+The historical performance case uses an emulator. **Engine → first frame** is not **complete Android launch**. [Method and limitations](PERFORMANCE.en.md).
 
-The internal audit retains failed runs. A later remediation can close a finding, but the original failure still explains what was discovered and how the regression contract evolved.
+## Public repository validation
 
-History is not rewritten as if everything had always passed. Public demos are not new correctness tests or benchmarks either.
+Links, ES/EN selectors, manifest and media have a dedicated verifier. It checks the showcase, not the private calculation engine. [Instructions and validation modes](../CONTRIBUTING.en.md#showcase-validation).
 
-[Performance](PERFORMANCE.en.md) · [Data & Accuracy](DATA_AND_ACCURACY.en.md)
+Current demos and the 1HITKO exception are identified in [the gallery](GALLERY.en.md) and [media provenance](../media/README.en.md). This documentation update changes neither media binaries nor their hashes.
+
+## Preserving failures
+
+Failed attempts remain in internal evidence packages. Fixing a test or implementation does not rewrite its original outcome: a later acceptance is recorded with defined scope. The 5,058-pass evidence comes from the repair summary and project status, not a run performed while editing this portfolio.

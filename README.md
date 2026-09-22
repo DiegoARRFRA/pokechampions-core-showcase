@@ -59,7 +59,9 @@ La galería conserva las demos ya publicadas y distingue el material anterior de
 
 ## Evidencia, con contexto
 
-El checkpoint público de validación de la aplicación del **14 de septiembre de 2026** registra **4.849 pruebas correctas, 0 fallos y 0 omisiones**. Otras campañas históricas documentan **104.091 escenarios de Versus** y **361 formas / 12.987 pares de 1HITKO**. No son conjuntos sumables ni cobertura total de versiones posteriores.
+La campaña host aceptada el **20 de septiembre de 2026** registró **5.058 pruebas correctas, 0 fallos y 0 omisiones**, en una ejecución ordinaria, serial y sin filtros. El checkpoint anterior del **14 de septiembre** conserva sus **4.849 pases**. Son estados de validación distintos; esta revisión documental no vuelve a ejecutar la suite ni certifica cambios posteriores.
+
+Otras campañas históricas documentan **104.091 escenarios de Versus** y **361 formas / 12.987 pares de 1HITKO**. No se suman entre sí ni demuestran cobertura completa de versiones posteriores. [Matriz de evidencia y alcance](docs/VALIDATION.md).
 
 La QA física documentada incluye recorridos seleccionados en **POCO F5 / Android 15**. El caso de rendimiento publicado corresponde a un **emulador**, no a una medición equivalente en ese teléfono. [Validación y límites](docs/VALIDATION.md) · [Caso de rendimiento](docs/PERFORMANCE.md).
 
