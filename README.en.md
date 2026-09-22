@@ -4,96 +4,77 @@
 
 # PokeChampions Core
 
-**Prepare teams and analyse Pokémon Champions with a Flutter application that works offline, without an account or backend.**
+### Competitive preparation. Damage analysis. Local data.
 
-> A public product and engineering showcase. The application source is private; this repository is not an open-source project.
+A mobile application for preparing teams and analysing Pokémon Champions without an account or server. A personal project by **[Diego de Arriba](https://github.com/DiegoARRFRA)** connecting product development, domain logic, persistence and Android validation.
 
-## Technical summary
+**Flutter · Dart · Drift/SQLite · Modular architecture · Offline-first**
 
-| Area | Technology and purpose |
+[Technical overview](docs/TECHNICAL_OVERVIEW.en.md) · [Database and diagrams](docs/DATABASE.en.md) · [Architecture](docs/ARCHITECTURE.en.md) · [Demos](docs/GALLERY.en.md) · [ES/EN documentation](docs/README.en.md)
+
+> **Product and engineering showcase.** Production source is private. This repository presents the product, technical decisions and documented data model, not the implementation.
+
+## Engineering in one minute
+
+| Area | Implementation and responsibility |
 | --- | --- |
-| **Application** | **Flutter · Dart**: mobile interface, reusable components and typed models. |
-| **Architecture** | **Feature-first · layers · ports/adapters** in key components; dependencies connected through composition and constructor injection. |
-| **Analysis engine** | **Dart logic and typed contracts**: scenario → validation → rules and local catalogues → damage, KO or an explicit limitation. |
-| **User data** | **Drift · SQLite (sqlite3) · path_provider**: teams, notes and history through local repositories. |
-| **State and searches** | **Controllers · ChangeNotifier · Futures/Streams**; an **isolate** worker in 1HITKO, progress and job cancellation. |
-| **Preferences** | **shared_preferences** for language, appearance and audio, separate from data persisted in SQLite. |
-| **Languages** | **flutter_localizations · intl · ARB** and ID-based terminology: eight application languages. |
-| **Audio** | **just_audio · audio_session**: local playback and session coordination behind contracts. |
-| **Generation and integrity** | **drift_dev · build_runner · versioned JSON · crypto/SHA-256**: development-time generation and artefact traceability. |
-| **Quality and delivery** | **flutter_test · test · analyzer · flutter_lints · Git**; building, profiling and QA flows with Flutter/Android tools. |
+| **Interface and product** | Flutter/Dart; team, calculation, lead-training and history tools; eight languages and light/dark/system themes. |
+| **Architecture** | Feature-first organisation and layers; typed contracts, composition and constructor injection. Ports/adapters in key components. |
+| **Calculation** | Explicit scenario → validation → rules and local catalogues → damage, KO or a documented limitation. |
+| **Persistence** | Drift/SQLite, **11 tables in schema v2**; indexed columns and validated JSON content. Teams, notes, history, opponents and recovery. |
+| **Concurrency** | Native storage on a Drift isolate; operations coordinated through a FIFO queue; a 1HITKO search worker with progress and cancellation. |
+| **Reliability** | Transactions, draft identity and revision checks, preservation of previous data and storage exposure only after verification. |
+| **Delivery and quality** | Dart/Flutter tests, static analysis, reproducible generation and scoped Android QA. Demos are not treated as tests. |
 
-**How it works:** configure a scenario → a controller coordinates the request → calculation uses rules and local data → the interface displays the result. Saving teams, notes or matches follows a separate path: repository → Drift/SQLite. Each analysis does not require a server request.
+**Two separate paths:** analysis uses rules and packaged catalogues; saving uses repositories and SQLite. Each calculation does not depend on a server request.
 
-**[Full technical overview and execution flows](docs/TECHNICAL_OVERVIEW.en.md)** · [Architecture](docs/ARCHITECTURE.en.md) · [All ES/EN documentation](docs/README.en.md)
+## The working product
 
-## The application, in pictures
-
-**Visual refresh · 22 September 2026.** Home, a Versus result and the team editor. Real Android screenshots show the Spanish interface in the light theme; select an image to enlarge it.
+Home, a Versus result and the team editor. Real Android screenshots; select to enlarge.
 
 <p>
-  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="PokeChampions Core home with the refreshed light-theme interface"></a>
-  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: Flare Blitz damage, uses until KO and scenario limitations"></a>
-  <a href="media/screenshots/team-builder.png"><img src="media/screenshots/team-builder.png" width="220" alt="Team editor with members, abilities, items, natures and types"></a>
+  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="PokeChampions Core home in the light theme"></a>
+  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: damage range, uses until KO and scenario limitations"></a>
+  <a href="media/screenshots/team-builder.png"><img src="media/screenshots/team-builder.png" width="220" alt="Team editor with members, abilities, items and natures"></a>
 </p>
 
-### Versus in action · 13 seconds
+### Versus in action
 
-Select an attacker and a move, calculate and inspect damage and KO results in a 1v1 scenario.
+Select an attacker and move, calculate and inspect the result.
 
-<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="New Versus demo: move selection and result inspection"></a>
+<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Real Versus demo: move selection and damage calculation"></a>
 
-**[Watch Versus in MP4](media/demos/versus.mp4)** · [Teams and builds](docs/GALLERY.en.md#teams-and-builds) · [Lead Trainer](docs/GALLERY.en.md#lead-trainer) · [Battle History](docs/GALLERY.en.md#battle-history) · **[Complete gallery](docs/GALLERY.en.md)**
+**[Watch MP4](media/demos/versus.mp4)** · [Teams and builds](docs/GALLERY.en.md#teams-and-builds) · [Lead Trainer](docs/GALLERY.en.md#lead-trainer) · [Full gallery](docs/GALLERY.en.md)
 
-Six new demos and 16 new screenshots, with **720 × 1440** MP4 exports and GIF previews. Scenes keep their recorded speed and a final-frame hold; they are not benchmarks. The [earlier 1HITKO demo](docs/GALLERY.en.md#1hitko) is retained and labelled because no new walkthrough of that tool was supplied. [Provenance and editing](media/README.en.md).
+The gallery preserves the published demos and identifies older 1HITKO material. Recordings are edited for presentation, not benchmarks or certifications of the recorded build. Screenshots above retain the original Spanish interface. [Provenance](media/README.en.md).
 
-## What you can do
+## Decisions worth examining
 
-| Tool | Purpose |
-| --- | --- |
-| **Teams / Team Builder** | Create and save six-slot teams with forms, abilities, natures, training, items and moves. |
-| **Battle** | Compare speed and context in a doubles situation. It does not execute turns or resolve complete matches. |
-| **Versus** | Inspect damage dealt and received in a 1v1 scenario, with normal and advanced configuration. |
-| **1HITKO** | Find one-hit KO candidates under explicit conditions. Guaranteed damage does not guarantee move accuracy. |
-| **EV Lab** | Explore defensive investment and survival thresholds against configured attacks. |
-| **Lead Trainer** | Practise opening choices; practice outcomes are entered manually. |
-| **Battle History and Pokémon Notes** | Save declared outcomes, team snapshots, observations and configurations. |
-| **Settings** | Choose among eight languages and light, dark or system appearance. |
+| Engineering problem | Observable solution | Read more |
+| --- | --- | --- |
+| Avoid data loss when changing storage | Separate preparation, verification and activation; preserved originals and explicit failures. | [Migration and integrity](docs/DATABASE.en.md#migration-and-integrity) |
+| Avoid duplicate matches or confirmation of a failed save | Transactional draft completion with identity and expected-revision checks. | [Save flow](docs/TECHNICAL_OVERVIEW.en.md#saving-a-match) |
+| Share calculation without duplicating rules across screens | Typed contracts and service composition; separate scenario, evaluation and presentation. | [Architecture](docs/ARCHITECTURE.en.md) |
+| Keep intensive work away from the interface | Isolated native storage and search execution with lifecycle control. | [Concurrency](docs/TECHNICAL_OVERVIEW.en.md#concurrency-and-state) |
 
-[Feature scope and limits](docs/FEATURES.en.md). The new gallery includes the team editor, recommended builds, defensive coverage and the Battle History module. Lead Trainer practice records and Battle History match records are presented separately.
+## Evidence in context
 
-## Engineering and documentation
+The public application-validation checkpoint of **14 September 2026** records **4,849 passed tests, 0 failures and 0 omissions**. Separate historical campaigns document **104,091 Versus scenarios** and **361 forms / 12,987 1HITKO pairs**. These sets are not additive and do not establish complete coverage of later builds.
 
-**A modular, feature-first architecture with layered separation and ports and adapters applied to key components.** Isolatable rules remain pure and deterministic; this does not imply that the entire application is independent of Flutter or purely hexagonal.
+Documented physical QA includes selected flows on **POCO F5 / Android 15**. The published performance case used an **emulator**, not an equivalent measurement on that phone. [Validation and limits](docs/VALIDATION.en.md) · [Performance case](docs/PERFORMANCE.en.md).
 
-Every document has its own Spanish and English version, with a reciprocal selector and same-language navigation. The [bilingual index](docs/README.en.md) also includes participation, ownership and media documentation.
+The **22 September 2026** documentary review of the schema and storage components expands the technical explanation, not application certification. Implementation and complete audit records remain private.
 
-| Document | Contents |
-| --- | --- |
-| [Technical overview](docs/TECHNICAL_OVERVIEW.en.md) | Full technology inventory, module connections and data flows. |
-| [Architecture](docs/ARCHITECTURE.en.md) | Component organisation, boundaries and responsibilities. |
-| [Engineering decisions](docs/ENGINEERING.en.md) | State, cancellation, persistence, localisation and reproducible imports. |
-| [Validation & QA](docs/VALIDATION.en.md) | Historical campaigns, scope and outstanding checks. |
-| [Performance](docs/PERFORMANCE.en.md) | An emulator startup case study and its limitations. |
-| [Data & Accuracy](docs/DATA_AND_ACCURACY.en.md) | Sources, uncertainty and regulation updates. |
-| [Roadmap](docs/ROADMAP.en.md) | Product and showcase direction. |
+## Reading routes
 
-### Dated, scoped evidence
+**Product:** [features](docs/FEATURES.en.md) → [gallery](docs/GALLERY.en.md).  
+**Technical review:** [full overview](docs/TECHNICAL_OVERVIEW.en.md) → [architecture](docs/ARCHITECTURE.en.md) → [database](docs/DATABASE.en.md) → [decisions and trade-offs](docs/ENGINEERING.en.md).  
+**Quality:** [validation](docs/VALIDATION.en.md) → [performance](docs/PERFORMANCE.en.md) → [data and accuracy](docs/DATA_AND_ACCURACY.en.md).
 
-The public application checkpoint covers work through **14 September 2026**. It records a host suite with **4,849 passed, 0 failed and 0 omitted**. Separate historical campaigns document **104,091 Versus scenarios** and **361 forms / 12,987 1HITKO pairs**. These are separate sets: they are not additive and do not certify complete coverage or a later version.
+## Author, status and scope
 
-Selected physical QA used a **POCO F5 / Android 15**, including an update to external QA build **1.0.0+2**. The performance study used an **emulator**: its engine-to-first-frame improvement is not a measurement of complete Android startup. The visual refresh prepared on **22 September 2026** does not extend that evidence or independently identify the exact recorded build. Retained earlier material is labelled in the gallery.
+**Diego de Arriba** · [GitHub profile](https://github.com/DiegoARRFRA). A personal project in active development, presented through bilingual documentation and real demonstrations. [Participation](CONTRIBUTING.en.md) · [Roadmap](docs/ROADMAP.en.md).
 
-## Status and limits
+Battle represents doubles situations; it does not execute complete matches. Lead Trainer practises initial choices and records manually entered outcomes. Battle History and Lead Trainer records are separate features. This repository provides neither production source nor a public app download, and publishes no user data, internal datasets, APKs, keys or music.
 
-The product remains in development. Feedback can address suggestions, issues and public documentation: [participation guide](CONTRIBUTING.en.md).
-
-This repository contains documentation and selected presentation material; it does not distribute application source, internal datasets, private tests, credentials, APKs or music. It does not offer a public application download.
-
-Checks for this repository are described in [Showcase validation](CONTRIBUTING.en.md#showcase-validation). They are separate from historical application evidence.
-
-## Ownership and unofficial project
-
-This showcase does not grant an open-source licence. [Ownership notice](NOTICE.en.md).
-
-PokeChampions Core is an **unofficial fan project**. Pokémon, Pokémon Champions and their names, characters, assets and trademarks belong to their respective rights holders. The project is not affiliated with, endorsed or sponsored by Nintendo, Creatures, GAME FREAK or The Pokémon Company.
+**Unofficial fan project.** Pokémon and related brands and assets belong to their respective rights holders. There is no affiliation, endorsement or sponsorship by Nintendo, Creatures, GAME FREAK or The Pokémon Company. This showcase grants no open-source licence. [Ownership](NOTICE.en.md).

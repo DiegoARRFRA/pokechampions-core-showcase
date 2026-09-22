@@ -2,57 +2,96 @@
   <a href="ARCHITECTURE.md">Español</a> · <strong>English</strong>
 </p>
 
-# Architecture
+# System architecture
 
-[← Overview](../README.en.md) · [Documentation index](README.en.md)
+[← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Database](DATABASE.en.md) · [Documentation](README.en.md)
 
-PokeChampions Core uses a modular, feature-first architecture with layered separation and ports and adapters in key components. Presentation, application coordination, domain rules, persistence and versioned local catalogues have distinct responsibilities. This is not a claim that the whole application is purely hexagonal or independent of Flutter.
+## Architectural style
 
-## Organisation and flow
+**A modular, feature-first application with layered separation and ports/adapters in key components.** It is one local application, not a microservice system. A “port” is an internal code contract, not a REST endpoint.
 
-```text
-Application features
-  ├─ Presentation and controllers
-  ├─ Coordination and typed contracts
-  └─ Adapters and repositories where appropriate
+These boundaries allow services to be replaced at specific points. The entire project is not described as purely hexagonal: some controllers and composition depend on Flutter, and feature folders are not organised identically everywhere.
 
-Shared core
-  ├─ Models and domain rules
-  ├─ Versioned local catalogues
-  └─ Persistence and preferences access
+## Layers and dependencies
 
-Calculation: interface → typed request → rules / catalogues → result → interface
-Saving: interface → repository → Drift / SQLite
+```mermaid
+flowchart TB
+    ROOT["Application composition"] --> UI["Presentation: screens and widgets"]
+    ROOT --> FLOW["Coordination: controllers and operations"]
+    ROOT --> ADAPTER["Concrete adapters"]
+    UI --> FLOW
+    FLOW --> PORT["Typed contracts"]
+    ADAPTER -. "implement" .-> PORT
+    ADAPTER --> DOMAIN["Domain rules and models"]
+    DOMAIN --> DATA["Local catalogues"]
+    ADAPTER --> SQL[("Drift / SQLite")]
+    ADAPTER --> AUDIO["Audio and preferences"]
 ```
 
-This summarises responsibilities, not every project dependency. Features reuse shared layers where appropriate; not every feature has an identical folder structure. Ports and adapters isolate selected boundaries, particularly calculation and audio. Calculation screens pass typed requests and render responses rather than reconstructing mechanics from labels or descriptions.
+A responsibility view. It does not represent every import or require all data access to pass through one adapter. Implementations are connected at composition points; consumers receive the dependencies they need.
 
-## Core responsibilities
+| Responsibility | Purpose | Not to be confused with |
+| --- | --- | --- |
+| Presentation | Input, navigation, results and visual state. | Deriving rules from translations. |
+| Coordination | Prepare requests, start tasks and manage their lifecycle. | All domain logic or complete independence from Flutter. |
+| Domain | Rules, models and results within product scope. | A complete turn simulator. |
+| Contracts | Typed boundaries between consumer and implementation. | A public network API. |
+| Adapters | SQL repositories, playback and resource access. | A collection of microservices. |
+| Composition | Construct/connect implementations and share ownership. | Opening new connections from each widget. |
 
-### Domain logic
+## Two concrete examples
 
-Damage, legality and context rules are isolated from widgets as far as practical. Normal Versus, EV Lab, 1HITKO and advanced scenarios reuse rules or calculation boundaries where their scopes overlap, without reinterpreting every mechanic in each screen.
+**Versus.** The feature entry resolves catalogues and supplies a calculation contract to the controller. The concrete facade fulfils that contract; composition accepts an alternative implementation. Scenario and response are typed. This boundary keeps the normal screen from needing to know every evaluator implementation detail.
 
-### Composition and adapters
+**Audio.** The controller receives its player, preference repository and session through contracts. The playback adapter encapsulates `just_audio`. Controller state still uses Flutter mechanisms: provider separation is real, but the controller is not portrayed as framework-independent.
 
-Composition supplies controllers with the implementations they need. A calculation contract separates its consumer from the concrete engine; a player contract separates audio coordination from the playback library. These are concrete uses of ports and adapters, not certification of every application dependency.
+## Project organisation
 
-### Persistence
+A responsibility map, not a public distribution of internal files:
 
-User-owned data is stored locally through Drift/SQLite. Teams, history and other persisted state are separate from generated catalogues and lightweight preferences. Migration prioritises preservation: originals are not silently discarded when storage authority changes.
+```text
+Application
+  Composition, startup and dependency ownership
+Shared core
+  Models, rules, catalogues, storage, themes and languages
+Features
+  Teams, Versus, 1HITKO, Lead Trainer, History, Notes, Audio
+  Presentation / coordination / data or infrastructure as appropriate
+Shared components
+  Reusable interface elements
+Development tooling
+  Generation, import, tests and validation
+```
 
-### Packaged data
+This avoids claiming a folder symmetry the project does not have. Importers and audit artefacts are not a running backend.
 
-Catalogues are read from assets shipped with the app. External research, generation and validation happen during development. A website or upstream reference therefore does not silently change rules in an already-installed version.
+## Startup and storage exposure
+
+```mermaid
+flowchart TB
+    START["Startup"] --> CHECK["Inspect storage"]
+    CHECK -->|"Compatible active generation"| OPEN["Open and check integrity"]
+    CHECK -->|"New installation or previous data"| PREP["Prepare generation and preserve originals"]
+    PREP --> VERIFY["Verify content and provenance"]
+    VERIFY -->|"Valid"| ACTIVE["Activate storage"]
+    OPEN -->|"Valid"| ACTIVE
+    CHECK -->|"Inconsistent"| BLOCK["Explicit blocked state"]
+    VERIFY -->|"Unverifiable"| BLOCK
+    OPEN -->|"Failure"| BLOCK
+    ACTIVE --> SCOPE["Expose shared repositories"]
+    SCOPE --> UI["Enable consumers"]
+```
+
+A summarised startup view, not the complete state machine. While storage is preparing or blocked, the normal scope does not silently fall back to previous repositories. Retry depends on error classification; reopening does not fix every failure.
 
 ## Product boundaries
 
-**Battle** represents an explicit 2v2 state. **Versus** resolves damage in a 1v1 scenario. **1HITKO** finds KO candidates under declared conditions. **Lead Trainer** practises opening choices. **Battle History** stores and analyses local records. None turns the product into an autonomous full-match simulator.
+Battle analyses a 2v2 situation; Versus evaluates damage; 1HITKO searches candidates; EV Lab explores survival; Lead Trainer practises initial choices; Battle History retains declared outcomes. Scenario transfers between tools do not make the composition an automatic match engine.
 
-## Development tooling and publication
+Teams and practice rounds share storage mechanisms but retain distinct contracts. Battle History stores its own records, draft and opponent versions. [Physical model and logical associations](DATABASE.en.md).
 
-Importers, generators, audit harnesses and internal tests belong to the production project. They prepare artefacts from pinned references but are not distributed in this showcase.
+## What an external reader can review
 
-The public goal is to demonstrate architecture, methodology and selected results without exposing implementation, the full pipeline or test corpus. Public documentation and GitHub rules do not guarantee protection against copying.
+This documentation exposes responsibilities, data design, boundaries and trade-offs, alongside demos and selected evidence. It does not make the entire application reproducible from the showcase: source, datasets and the private test corpus remain unpublished. Diagrams summarise implementation reviewed on 22 September 2026; they are not a new whole-codebase audit.
 
-[Technical overview and execution flow](TECHNICAL_OVERVIEW.en.md) · [Engineering decisions](ENGINEERING.en.md)
+[Engineering decisions](ENGINEERING.en.md) · [Operational flows](TECHNICAL_OVERVIEW.en.md) · [Quality and limits](VALIDATION.en.md)

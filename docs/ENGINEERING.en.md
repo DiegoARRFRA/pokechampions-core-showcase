@@ -2,42 +2,66 @@
   <a href="ENGINEERING.md">Español</a> · <strong>English</strong>
 </p>
 
-# Engineering decisions
+# Engineering decisions and trade-offs
 
-[← Overview](../README.en.md) · [Documentation index](README.en.md)
+[← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Documentation](README.en.md)
 
-PokeChampions Core combines feature-first organisation, layers and ports/adapters in key components. Its priorities are reproducibility, explicit state ownership and evidence tied to a defined scope. These boundaries do not make the whole app purely hexagonal or independent of Flutter. See [Architecture](ARCHITECTURE.en.md) and [Technical overview](TECHNICAL_OVERVIEW.en.md).
+This page connects engineering problems with mechanisms observed in the implementation. It explains benefits and limitations without turning them into absolute quality claims or inventing test outcomes.
 
-## Typed contracts
+## 1. One mechanical question, several interfaces
 
-Feature interfaces pass typed requests to shared services and receive typed results. This reduces the risk that multiple screens interpret the same mechanic differently. Normal Versus, EV Lab, 1HITKO and advanced flows reuse the underlying mechanics where their scopes overlap.
+**Problem.** Versus, EV Lab and 1HITKO could diverge if each screen reinterpreted abilities, items and conditions.
 
-## Pure and deterministic rules
+**Mechanism.** Typed requests/results and shared domain components where scopes overlap. Composition supplies an implementation of the calculation port to its consumer.
 
-Rules that can be expressed without interface or storage dependencies remain pure and deterministic. This supports large comparison campaigns and regression tests separated from rendering.
+**Trade-off.** Shared rules do not remove the need to test each flow. Candidate search and defensive optimisation still ask different questions. Strict hexagonal architecture is not imposed across the entire app. [Architecture](ARCHITECTURE.en.md).
 
-## Storage migration
+## 2. Migrate without turning a failure into an empty library
 
-User state moved towards a shared SQLite authority while preserving earlier data. Migration is treated as a correctness problem: originals are retained and incoherent states blocked rather than silently rewritten.
+**Problem.** Moving previous storage to SQLite can lose data if “could not read” is treated as “nothing existed”.
 
-## State, tasks and lifecycle
+**Mechanism.** Preserve originals, prepare and verify before activating repositories, classify errors and block inconsistent writes. Revision and SQL controls invalidate a verified generation if it changes.
 
-Controllers coordinate visible state and asynchronous operations. Cancellation, controller disposal, workers, listeners and resource ownership are reviewed so a background completion cannot update a destroyed consumer. The 1HITKO search service has an isolated worker and checks that a job is still current before publishing progress or results; that does not imply an isolate for every calculation.
+**Trade-off.** Safer migration introduces more states and recovery cases. Hashes and preparation seals are not encryption or complete protection against an attacker. [Migration and integrity](DATABASE.en.md#migration-and-integrity).
 
-## Localisation as a feature
+## 3. Complete a match consistently
 
-The eight locale packages are treated as complete units. Silent fallback to another language is not used to conceal missing curated content. Translation, typography and terminology have their own validation contracts.
+**Problem.** Double confirmation, a changed draft or failure between writes can duplicate a result or show success without persistence.
 
-## Reproducible imports
+**Mechanism.** Transactional draft completion, record identity, expected revision and lookup of previous confirmations. The result and successor draft are coordinated within the operation.
 
-The application does not fetch external data live for each calculation. Development tools pin revisions, check hashes where applicable, generate deterministic artefacts and keep provenance separate from runtime data.
+**Trade-off.** Idempotency and recovery must distinguish an earlier confirmation from a newly rolled-back write. Disabling a button alone is insufficient. [Save sequence](TECHNICAL_OVERVIEW.en.md#saving-a-match).
 
-## Failure handling
+## 4. SQL structure without normalising every game attribute
 
-> A visible limitation is preferable to a plausible but unverified answer.
+**Problem.** Teams, configurations and snapshots evolve, while frequent queries need stable IDs and ordering.
 
-If evidence cannot safely resolve a Champions interaction, the application must expose insufficient context, preserve a documented block or require an explicit exception supported by evidence.
+**Mechanism.** A hybrid schema: indexed columns for selection and uniqueness, validated JSON content and versioned codecs. Eleven tables, with one actual FK and separately documented logical associations.
 
-## Scope discipline
+**Trade-off.** Some integrity remains the application's responsibility and not all filters run in SQL. An index alone is not proof of fast queries, and imaginary domain tables are not presented as implemented. [Dictionary and relationships](DATABASE.en.md).
 
-An external reference containing enough rules to simulate turns does not automatically expand the product. Mechanics are incorporated to answer preparation, analysis and review questions, not to build a complete autonomous simulator.
+## 5. Cancellation and work ownership
+
+**Problem.** A late operation can notify a disposed consumer or overwrite a more recent request's results.
+
+**Mechanism.** Explicit resource ownership, coordinated closing, progress/cancellation and current-job checks. Native storage and 1HITKO search use isolation for different responsibilities.
+
+**Trade-off.** An isolate does not imply freedom from blocking or guaranteed performance; measurements and specific lifecycle tests remain necessary. Examined repositories are not described as universally reactive. [Concurrency](TECHNICAL_OVERVIEW.en.md#concurrency-and-state).
+
+## 6. Data accuracy and reproducibility
+
+**Problem.** External references and regulations can change independently of an installed application's data.
+
+**Mechanism.** Development-time imports, pinned revisions, provenance and stable identifiers. The application consumes packaged catalogues; a translation does not govern a mechanical rule.
+
+**Trade-off.** Updating game data requires preparing and validating new artefacts. Insufficient evidence becomes a limitation rather than a guess based on another format. [Sources and accuracy](DATA_AND_ACCURACY.en.md).
+
+## 7. Measure the improved part, not promise complete startup
+
+The historical first-frame study separates Flutter work from total Android presentation time. Publishing a later degraded run under emulator pressure avoids attributing an environment-dependent result solely to the application. This is a documented historical case, not a new measurement of current code. [Performance](PERFORMANCE.en.md).
+
+## Reading the evidence together
+
+These mechanisms support discussion of product design, data modelling, transactions, asynchronous work, testing and maintenance. Demos show visible flows; documentation describes reviewed implementation; historical counts belong to their own checkpoints. None alone replaces a full review of private source.
+
+[Validation & QA](VALIDATION.en.md) · [Database](DATABASE.en.md) · [Gallery](GALLERY.en.md)
