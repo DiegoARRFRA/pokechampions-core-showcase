@@ -38,8 +38,14 @@ Desde la raíz, con PowerShell 5.1 o posterior, ejecuta [la utilidad de verifica
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/verify-showcase.ps1
 ```
 
-La comprobación predeterminada requiere los 14 archivos multimedia. Revisa enlaces locales Markdown/HTML y anclas de encabezados, selectores recíprocos de las portadas y galerías, textos alternativos de imágenes, inventario esperado, tamaños y SHA-256 contra el manifiesto existente. Usa `ffprobe` y `ffmpeg` instalados localmente para dimensiones, duración, número de frames, ausencia de audio y decodificación completa. No instala programas, consulta la red ni modifica archivos.
+La comprobación predeterminada requiere los **31 archivos multimedia** del manifiesto: 17 PNG y siete demos en GIF/MP4. Revisa enlaces locales Markdown/HTML y anclas de encabezados, selectores recíprocos de las portadas y galerías, textos alternativos de imágenes, inventario esperado, tamaños y SHA-256. Usa `ffprobe` y `ffmpeg` instalados localmente para dimensiones, duración, número de frames, ausencia de audio y decodificación completa. No instala programas, consulta la red ni modifica archivos.
 
-Para trabajo de texto sin multimedia, usa `-DocumentsOnly`: excluye explícitamente los enlaces a los 14 binarios esperados. Ese modo no valida multimedia ni autoriza una integración; otros destinos ausentes siguen siendo errores. Ningún modo verifica URLs externas, renderiza GitHub, demuestra procedencia o sustituye la revisión de información privada.
+Para trabajo de texto sin multimedia, usa `-DocumentsOnly`: excluye explícitamente los enlaces a los 31 binarios esperados. Ese modo no valida multimedia ni autoriza una integración; otros destinos ausentes siguen siendo errores. Ningún modo verifica URLs externas, renderiza GitHub, demuestra procedencia o sustituye la revisión de información privada.
 
-Antes de integrar, ejecuta la comprobación completa, revisa portadas y galerías en GitHub, compara el manifiesto de cualquier paquete recibido y examina el diff. Revisa también el selector y la equivalencia de cada pareja documental: el chequeo automatizado de selectores actual se centra en portadas y galerías. No cambies hashes para ocultar discrepancias y conserva en borrador el trabajo multimedia incompleto.
+Antes de integrar, ejecuta la comprobación completa, revisa portadas y galerías en GitHub, compara el manifiesto de cualquier paquete recibido y examina el diff. Revisa también el selector y la equivalencia de cada pareja documental: el chequeo automatizado de selectores se centra en portadas y galerías. No cambies hashes para ocultar discrepancias y conserva en borrador el trabajo multimedia incompleto.
+
+Una actualización visual puede cambiar legítimamente los hashes al sustituir vídeos o capturas: documenta el origen y el recorte nuevos, valida los archivos y actualiza el manifiesto con sus valores reales. Mantén identificados los archivos anteriores; no los presentes como evidencia de la nueva versión.
+
+## Validación de integridad sin decodificación
+
+`-IntegrityOnly` comprueba enlaces locales, parejas de idiomas y todos los archivos multimedia contra el manifiesto fijado (tamaño y SHA-256), sin requerir FFmpeg. No decodifica multimedia ni certifica el renderizado. Utiliza este modo solo con un paquete cuyos bytes exactos ya hayan superado las comprobaciones de decodificación. El modo predeterminado sigue decodificando con `ffmpeg` y `ffprobe` locales. No debe confundirse con `-DocumentsOnly`, que excluye los destinos binarios esperados.

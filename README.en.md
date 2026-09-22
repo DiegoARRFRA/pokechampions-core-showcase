@@ -29,23 +29,23 @@
 
 ## The application, in pictures
 
-Home, a Versus result and a 1HITKO search. Real Android screenshots show the **Spanish interface in the dark theme**; select an image to enlarge it.
+**Visual refresh · 22 September 2026.** Home, a Versus result and the team editor. Real Android screenshots show the Spanish interface in the light theme; select an image to enlarge it.
 
 <p>
-  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Home with links to the PokeChampions Core tools"></a>
-  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: damage range, factors, KO and calculation limits"></a>
-  <a href="media/screenshots/1hitko-results.png"><img src="media/screenshots/1hitko-results.png" width="220" alt="1HITKO: candidates, moves and damage ranges"></a>
+  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="PokeChampions Core home with the refreshed light-theme interface"></a>
+  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: Flare Blitz damage, uses until KO and scenario limitations"></a>
+  <a href="media/screenshots/team-builder.png"><img src="media/screenshots/team-builder.png" width="220" alt="Team editor with members, abilities, items, natures and types"></a>
 </p>
 
 ### Versus in action · 13 seconds
 
-Choose a move, calculate and inspect damage and KO results in a 1v1 scenario.
+Select an attacker and a move, calculate and inspect damage and KO results in a 1v1 scenario.
 
-<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Versus demo: move selection and result inspection"></a>
+<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="New Versus demo: move selection and result inspection"></a>
 
-**[Watch Versus in MP4](media/demos/versus.mp4)** · [1HITKO demo](docs/GALLERY.en.md#1hitko) · [Lead Trainer demo](docs/GALLERY.en.md#lead-trainer) · **[Complete gallery](docs/GALLERY.en.md)**
+**[Watch Versus in MP4](media/demos/versus.mp4)** · [Teams and builds](docs/GALLERY.en.md#teams-and-builds) · [Lead Trainer](docs/GALLERY.en.md#lead-trainer) · [Battle History](docs/GALLERY.en.md#battle-history) · **[Complete gallery](docs/GALLERY.en.md)**
 
-Demos are edited for presentation and are not benchmarks. The still Versus screenshot and its demo show different moves. [Provenance and editing](media/README.en.md).
+Six new demos and 16 new screenshots, with **720 × 1440** MP4 exports and GIF previews. Scenes keep their recorded speed and a final-frame hold; they are not benchmarks. The [earlier 1HITKO demo](docs/GALLERY.en.md#1hitko) is retained and labelled because no new walkthrough of that tool was supplied. [Provenance and editing](media/README.en.md).
 
 ## What you can do
 
@@ -60,7 +60,7 @@ Demos are edited for presentation and are not benchmarks. The still Versus scree
 | **Battle History and Pokémon Notes** | Save declared outcomes, team snapshots, observations and configurations. |
 | **Settings** | Choose among eight languages and light, dark or system appearance. |
 
-[Feature scope and limits](docs/FEATURES.en.md). The gallery includes eight screenshots; it contains no views of the team editor or Battle History module. Lead Trainer material shows preparation, selection and a manual outcome.
+[Feature scope and limits](docs/FEATURES.en.md). The new gallery includes the team editor, recommended builds, defensive coverage and the Battle History module. Lead Trainer practice records and Battle History match records are presented separately.
 
 ## Engineering and documentation
 
@@ -82,7 +82,7 @@ Every document has its own Spanish and English version, with a reciprocal select
 
 The public application checkpoint covers work through **14 September 2026**. It records a host suite with **4,849 passed, 0 failed and 0 omitted**. Separate historical campaigns document **104,091 Versus scenarios** and **361 forms / 12,987 1HITKO pairs**. These are separate sets: they are not additive and do not certify complete coverage or a later version.
 
-Selected physical QA used a **POCO F5 / Android 15**, including an update to external QA build **1.0.0+2**. The performance study used an **emulator**: its engine-to-first-frame improvement is not a measurement of complete Android startup. Demos prepared on **17 September 2026** do not independently identify an exact build and are not new application tests.
+Selected physical QA used a **POCO F5 / Android 15**, including an update to external QA build **1.0.0+2**. The performance study used an **emulator**: its engine-to-first-frame improvement is not a measurement of complete Android startup. The visual refresh prepared on **22 September 2026** does not extend that evidence or independently identify the exact recorded build. Retained earlier material is labelled in the gallery.
 
 ## Status and limits
 

@@ -1,54 +1,652 @@
 {
+  "schema_version": 2,
   "project": "PokeChampions Core",
-  "prepared_on": "2026-09-17",
-  "origin": "Screenshots and Android screen recordings supplied by the project owner.",
-  "ui_language": "es",
-  "theme": "dark",
+  "prepared_on": "2026-09-22",
+  "base_showcase_commit": "84f07e0999706cf5145a64d295240685f645d831",
+  "origin": "Six Android recordings supplied by the owner for this refresh. Three earlier 1HITKO media assets retained byte-for-byte and labelled separately.",
+  "source_note": "Owner-described newer application version. The exact build number has not been independently established from the recordings.",
+  "ui_languages_in_refresh": [
+    "es",
+    "en",
+    "de"
+  ],
+  "themes_in_refresh": [
+    "light",
+    "dark"
+  ],
   "editing": {
     "generated_ui": false,
     "result_values_changed": false,
     "recorded_motion_speed": 1.0,
     "internal_cuts": false,
     "audio_in_exports": false,
-    "video_crop_xywh": [0, 110, 1080, 2160],
+    "video_crop_xywh": [
+      0,
+      110,
+      1080,
+      2160
+    ],
     "phone_chrome_removed": true,
-    "mp4_size": [540, 1080],
-    "mp4_fps": 24,
-    "gif_size": [300, 600],
-    "gif_fps": 8,
-    "gif_palette_colors": 128
+    "new_mp4_size": [
+      720,
+      1440
+    ],
+    "new_mp4_fps": 24,
+    "new_gif_size": [
+      360,
+      720
+    ],
+    "new_gif_fps": 10,
+    "new_gif_palette_colors": 192,
+    "screenshot_size": [
+      720,
+      1440
+    ]
   },
-  "scope_note": "Presentation material only. Not a benchmark, new QA run, correctness certification or evidence of a complete battle simulator. Lead outcomes are entered manually. Screenshots can show different scenarios from the demos.",
-  "source_note": "The exact application build was not independently established from these media.",
-  "demo_edits": [
-    {"name": "versus", "source_label": "recording-1", "source_start_seconds": 39.8, "source_end_seconds": 51.0, "final_hold_seconds": 1.8},
-    {"name": "1hitko", "source_label": "recording-2", "source_start_seconds": 11.2, "source_end_seconds": 21.6, "final_hold_seconds": 2.6},
-    {"name": "entradas", "source_label": "recording-3", "source_start_seconds": 17.5, "source_end_seconds": 31.5, "final_hold_seconds": 1.0}
+  "scope_note": "Edited presentation only, not a benchmark or a new application test campaign. Lead Trainer outcomes and Battle History matches are manually entered examples, not independently verified tournament statistics. Master Mode and EV Lab may show different scenarios. Retained 1HITKO media are from the previous batch.",
+  "retained_previous_paths": [
+    "media/demos/1hitko.gif",
+    "media/demos/1hitko.mp4",
+    "media/screenshots/1hitko-results.png"
   ],
-  "files": [
-    {"path": "media/demos/1hitko.gif", "bytes": 2476557, "sha256": "921936f0ff247d31d7b7892c9befcae16a3a258bf142a699b0f4f49d16b72542", "width": 300, "height": 600, "duration_seconds": 13.13, "frames": 105},
-    {"path": "media/demos/1hitko.mp4", "bytes": 740432, "sha256": "223dc880c2e94b3dab1b5c9305e8618f0fb65d74c0a45b1ce2e3146e98aee0b0", "width": 540, "height": 1080, "duration_seconds": 13.0, "audio": false},
-    {"path": "media/demos/entradas.gif", "bytes": 2024574, "sha256": "78c660a6a699467fa242ef53d82383f4602b263161f8bc49a04010f8ffad8aea", "width": 300, "height": 600, "duration_seconds": 15.01, "frames": 120},
-    {"path": "media/demos/entradas.mp4", "bytes": 860387, "sha256": "a968b0d7b5a29b1b91547676cca2e36705653bbd3c05469daa0f43c39cde9576", "width": 540, "height": 1080, "duration_seconds": 15.041667, "audio": false},
-    {"path": "media/demos/versus.gif", "bytes": 2126364, "sha256": "c57ffaa19c992e9a86fa259edbd24b03b9f284a2a3d4d5f2b6465c3051cf6a46", "width": 300, "height": 600, "duration_seconds": 13.01, "frames": 104},
-    {"path": "media/demos/versus.mp4", "bytes": 924289, "sha256": "1f3ceb25890b6843e9b482b115173a7f47573000612a74952aa53993b38c53a5", "width": 540, "height": 1080, "duration_seconds": 13.041667, "audio": false},
-    {"path": "media/screenshots/1hitko-results.png", "bytes": 306936, "sha256": "c49048e6dbd1c4bf42c20b1bf845f5c9db2a266db7e203d999666dbb1888b23a", "width": 720, "height": 1440},
-    {"path": "media/screenshots/battle-speed.png", "bytes": 323243, "sha256": "e9d7e9797554fc2e5a4719e30f7fac531fc9e9d922c48787f05d140aebab0575", "width": 691, "height": 1382},
-    {"path": "media/screenshots/ev-lab.png", "bytes": 273722, "sha256": "e3ce074c613d147d57ce6bee44d2a33308c7911b0f8f9b8724f9455bac84a2a2", "width": 720, "height": 1440},
-    {"path": "media/screenshots/home.png", "bytes": 498264, "sha256": "f4def77046528af95325e2a2960410e88d4a8422ed69339d916ce0caec64def2", "width": 691, "height": 1382},
-    {"path": "media/screenshots/lead-record.png", "bytes": 342625, "sha256": "0653a660a75654259fd5c3a938372f9c7efea0a3dead7918e49e3e8e2d7202f3", "width": 720, "height": 1440},
-    {"path": "media/screenshots/lead-result.png", "bytes": 390419, "sha256": "71c622def9d0e0524bcf1cfb48b99e9a54a470d94bfd13b2ecf6c1a35bbcb7a7", "width": 720, "height": 1440},
-    {"path": "media/screenshots/lead-selection.png", "bytes": 370389, "sha256": "a595af61c44dd954fbb1e14f6d0973a1a8fa3448e78465849b86a41296259429", "width": 720, "height": 1440},
-    {"path": "media/screenshots/versus-result.png", "bytes": 315520, "sha256": "969ad2eb23ae3fc82af55ce99f357214b3a61ba64799548931e8176b50073baf", "width": 720, "height": 1440}
+  "demo_edits": [
+    {
+      "name": "versus",
+      "source_label": "update-recording-02",
+      "source_start_seconds": 14.2,
+      "source_end_seconds": 24.8,
+      "final_hold_seconds": 2.0,
+      "recorded_motion_speed": 1.0,
+      "internal_cuts": false,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "name": "ev-lab",
+      "source_label": "update-recording-02",
+      "source_start_seconds": 28.0,
+      "source_end_seconds": 42.8,
+      "final_hold_seconds": 2.0,
+      "recorded_motion_speed": 1.0,
+      "internal_cuts": false,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "name": "entradas",
+      "source_label": "update-recording-03",
+      "source_start_seconds": 8.0,
+      "source_end_seconds": 16.5,
+      "final_hold_seconds": 1.5,
+      "recorded_motion_speed": 1.0,
+      "internal_cuts": false,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "name": "team-builder",
+      "source_label": "update-recording-06",
+      "source_start_seconds": 32.0,
+      "source_end_seconds": 51.3,
+      "final_hold_seconds": 1.7,
+      "recorded_motion_speed": 1.0,
+      "internal_cuts": false,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "name": "history",
+      "source_label": "update-recording-05",
+      "source_start_seconds": 31.8,
+      "source_end_seconds": 39.8,
+      "final_hold_seconds": 1.2,
+      "recorded_motion_speed": 1.0,
+      "internal_cuts": false,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "name": "languages",
+      "source_label": "update-recording-01",
+      "source_start_seconds": 7.1,
+      "source_end_seconds": 19.1,
+      "final_hold_seconds": 1.9,
+      "recorded_motion_speed": 1.0,
+      "internal_cuts": false,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "name": "1hitko",
+      "source_label": "recording-2",
+      "source_start_seconds": 11.2,
+      "source_end_seconds": 21.6,
+      "final_hold_seconds": 2.6,
+      "batch": "previous-2026-09-17"
+    }
   ],
   "screenshot_sources": [
-    {"path": "media/screenshots/home.png", "source": "owner-screenshot-home", "crop_xywh": [0, 71, 691, 1382]},
-    {"path": "media/screenshots/battle-speed.png", "source": "owner-screenshot-battle-speed", "crop_xywh": [0, 71, 691, 1382]},
-    {"path": "media/screenshots/versus-result.png", "source": "recording-1", "source_time_seconds": 32.6, "crop_xywh": [0, 110, 1080, 2160]},
-    {"path": "media/screenshots/ev-lab.png", "source": "recording-1", "source_time_seconds": 11.1, "crop_xywh": [0, 110, 1080, 2160]},
-    {"path": "media/screenshots/1hitko-results.png", "source": "recording-2", "source_time_seconds": 21.3, "crop_xywh": [0, 110, 1080, 2160]},
-    {"path": "media/screenshots/lead-selection.png", "source": "recording-3", "source_time_seconds": 22.5, "crop_xywh": [0, 110, 1080, 2160]},
-    {"path": "media/screenshots/lead-result.png", "source": "recording-3", "source_time_seconds": 30.6, "crop_xywh": [0, 110, 1080, 2160]},
-    {"path": "media/screenshots/lead-record.png", "source": "recording-3", "source_time_seconds": 38.6, "crop_xywh": [0, 110, 1080, 2160]}
+    {
+      "path": "media/screenshots/home.png",
+      "source": "update-recording-02",
+      "source_time_seconds": 4.35,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Inicio · tema claro",
+      "title_en": "Home · light theme"
+    },
+    {
+      "path": "media/screenshots/home-dark.png",
+      "source": "update-recording-01",
+      "source_time_seconds": 0.55,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Inicio · tema oscuro",
+      "title_en": "Home · dark theme"
+    },
+    {
+      "path": "media/screenshots/versus-result.png",
+      "source": "update-recording-02",
+      "source_time_seconds": 23.65,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Versus · daño y KO",
+      "title_en": "Versus · damage and KO"
+    },
+    {
+      "path": "media/screenshots/versus-matchup.png",
+      "source": "update-recording-02",
+      "source_time_seconds": 21.65,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Versus · escenario y participantes",
+      "title_en": "Versus · scenario and participants"
+    },
+    {
+      "path": "media/screenshots/ev-lab.png",
+      "source": "update-recording-02",
+      "source_time_seconds": 42.25,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "EV Lab · reparto para sobrevivir",
+      "title_en": "EV Lab · survival investment"
+    },
+    {
+      "path": "media/screenshots/master-mode.png",
+      "source": "update-recording-02",
+      "source_time_seconds": 45.9,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Modo Maestro · comparación de escenarios",
+      "title_en": "Master Mode · scenario comparison"
+    },
+    {
+      "path": "media/screenshots/lead-selection.png",
+      "source": "update-recording-03",
+      "source_time_seconds": 10.2,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Entradas · pareja elegida y rival oculto",
+      "title_en": "Lead Trainer · selected pair and hidden opponent"
+    },
+    {
+      "path": "media/screenshots/lead-result.png",
+      "source": "update-recording-03",
+      "source_time_seconds": 16.15,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Entradas · resultado manual",
+      "title_en": "Lead Trainer · manual outcome"
+    },
+    {
+      "path": "media/screenshots/lead-record.png",
+      "source": "update-recording-03",
+      "source_time_seconds": 30.65,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Entradas · registro de prácticas",
+      "title_en": "Lead Trainer · practice records"
+    },
+    {
+      "path": "media/screenshots/team-builder.png",
+      "source": "update-recording-06",
+      "source_time_seconds": 17.95,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Equipos · composición y edición",
+      "title_en": "Team Builder · composition and editing"
+    },
+    {
+      "path": "media/screenshots/team-coverage.png",
+      "source": "update-recording-06",
+      "source_time_seconds": 21.0,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Equipos · cobertura defensiva",
+      "title_en": "Team Builder · defensive coverage"
+    },
+    {
+      "path": "media/screenshots/recommended-builds.png",
+      "source": "update-recording-06",
+      "source_time_seconds": 32.6,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Builds recomendadas · movimientos y repartos",
+      "title_en": "Recommended builds · moves and spreads"
+    },
+    {
+      "path": "media/screenshots/history-summary.png",
+      "source": "update-recording-05",
+      "source_time_seconds": 34.25,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "HISTÓRICO · resumen del equipo",
+      "title_en": "Battle History · team summary"
+    },
+    {
+      "path": "media/screenshots/history-matches.png",
+      "source": "update-recording-04",
+      "source_time_seconds": 13.65,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "HISTÓRICO · listado de combates",
+      "title_en": "Battle History · match list"
+    },
+    {
+      "path": "media/screenshots/history-analysis.png",
+      "source": "update-recording-04",
+      "source_time_seconds": 25.5,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "HISTÓRICO · análisis por rival",
+      "title_en": "Battle History · opponent analysis"
+    },
+    {
+      "path": "media/screenshots/languages.png",
+      "source": "update-recording-01",
+      "source_time_seconds": 12.1,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "refresh-2026-09-22",
+      "title_es": "Ajustes · interfaz en inglés",
+      "title_en": "Settings · English interface"
+    },
+    {
+      "path": "media/screenshots/1hitko-results.png",
+      "source": "recording-2",
+      "source_time_seconds": 21.3,
+      "crop_xywh": [
+        0,
+        110,
+        1080,
+        2160
+      ],
+      "batch": "previous-2026-09-17"
+    }
+  ],
+  "files": [
+    {
+      "path": "media/demos/1hitko.gif",
+      "bytes": 2476557,
+      "sha256": "921936f0ff247d31d7b7892c9befcae16a3a258bf142a699b0f4f49d16b72542",
+      "width": 300,
+      "height": 600,
+      "batch": "previous-2026-09-17",
+      "duration_seconds": 13.13,
+      "frames": 105,
+      "audio": false
+    },
+    {
+      "path": "media/demos/1hitko.mp4",
+      "bytes": 740432,
+      "sha256": "223dc880c2e94b3dab1b5c9305e8618f0fb65d74c0a45b1ce2e3146e98aee0b0",
+      "width": 540,
+      "height": 1080,
+      "batch": "previous-2026-09-17",
+      "duration_seconds": 13.0,
+      "frames": 312,
+      "audio": false
+    },
+    {
+      "path": "media/demos/entradas.gif",
+      "bytes": 2434797,
+      "sha256": "f9e36180b2e8f075b3a4938de0fa8cbb4f4dd83099797bccfa36f6ea0ceea8b4",
+      "width": 360,
+      "height": 720,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 10.0,
+      "frames": 100,
+      "audio": false
+    },
+    {
+      "path": "media/demos/entradas.mp4",
+      "bytes": 905809,
+      "sha256": "89b115a16c104c1dd0b73c280087104346f005a67cbc212f78274eb8aaa6a712",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 10.0,
+      "frames": 240,
+      "audio": false
+    },
+    {
+      "path": "media/demos/ev-lab.gif",
+      "bytes": 5042437,
+      "sha256": "06bb1d250bf4c9a81c7c4d908da52c9a96df499de0cb1e392c776868732f7742",
+      "width": 360,
+      "height": 720,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 16.8,
+      "frames": 168,
+      "audio": false
+    },
+    {
+      "path": "media/demos/ev-lab.mp4",
+      "bytes": 1620369,
+      "sha256": "6a759021b91c0c930972a966abafd3fa03242427bcc724d01ff982f874135f42",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 16.791667,
+      "frames": 403,
+      "audio": false
+    },
+    {
+      "path": "media/demos/history.gif",
+      "bytes": 1564538,
+      "sha256": "853f2876c4bbfbcb08f34912bcf11b5f4ad565494394a840405302e576fd2c30",
+      "width": 360,
+      "height": 720,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 9.2,
+      "frames": 92,
+      "audio": false
+    },
+    {
+      "path": "media/demos/history.mp4",
+      "bytes": 842255,
+      "sha256": "590886d73e970fc9f2b54ce11aa8117cd2eeee9d434a9c3eb0ef58a14672c7e5",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 9.208333,
+      "frames": 221,
+      "audio": false
+    },
+    {
+      "path": "media/demos/languages.gif",
+      "bytes": 2150397,
+      "sha256": "4bb98cbf8e4af97a1ec1cca274c07705d61aee0f1f84db573ab399991d831678",
+      "width": 360,
+      "height": 720,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 13.9,
+      "frames": 139,
+      "audio": false
+    },
+    {
+      "path": "media/demos/languages.mp4",
+      "bytes": 1152182,
+      "sha256": "7292751ced5820ca28297e722caf1317147dbef4b711ff797af240b8b0d15a2c",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 13.916667,
+      "frames": 334,
+      "audio": false
+    },
+    {
+      "path": "media/demos/team-builder.gif",
+      "bytes": 6395987,
+      "sha256": "39b7e181af517bcf15255497ecdeb2d8b5aee51467612ddcd21c24bdf5aecb5f",
+      "width": 360,
+      "height": 720,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 21.0,
+      "frames": 210,
+      "audio": false
+    },
+    {
+      "path": "media/demos/team-builder.mp4",
+      "bytes": 2864065,
+      "sha256": "5feacb5d641ab2e6513a2de9c497ee3c5daab59002527e07c18c7084e6c8e6d5",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 21.0,
+      "frames": 504,
+      "audio": false
+    },
+    {
+      "path": "media/demos/versus.gif",
+      "bytes": 2380894,
+      "sha256": "1b5a92e33d943b382ce2fc019447f610972f65558b76f17698a51d39cf1d7ca3",
+      "width": 360,
+      "height": 720,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 12.6,
+      "frames": 126,
+      "audio": false
+    },
+    {
+      "path": "media/demos/versus.mp4",
+      "bytes": 1152918,
+      "sha256": "d261064de52e681a85274685ce5d1275fec7478f46df4cd975e6eb7e23679148",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22",
+      "duration_seconds": 12.583333,
+      "frames": 302,
+      "audio": false
+    },
+    {
+      "path": "media/screenshots/1hitko-results.png",
+      "bytes": 306936,
+      "sha256": "c49048e6dbd1c4bf42c20b1bf845f5c9db2a266db7e203d999666dbb1888b23a",
+      "width": 720,
+      "height": 1440,
+      "batch": "previous-2026-09-17"
+    },
+    {
+      "path": "media/screenshots/ev-lab.png",
+      "bytes": 401476,
+      "sha256": "ed1e8578a95338617937d778f1c7ed5615702e899bcd38695b8c1049c41fbeb1",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/history-analysis.png",
+      "bytes": 295041,
+      "sha256": "85650f46958b85520021dc278d519d3b457d28896747e2ba8ccbbb11e0e6c735",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/history-matches.png",
+      "bytes": 276431,
+      "sha256": "4f9234fa0ad153f8be6ebfd9eafc59fdf4371d0b41157b3049bc58a665c58312",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/history-summary.png",
+      "bytes": 297285,
+      "sha256": "3746be8a314a42017169408a8674506e22aa4e08e16398e8f6b92cc95ff9270e",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/home-dark.png",
+      "bytes": 576831,
+      "sha256": "08f30010420526de4b9fedb58f60c98c7c16b9411eccf732acacbaac9a30ac02",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/home.png",
+      "bytes": 527116,
+      "sha256": "fa378b507e5acdcfd16bb0a981ad1fee7c44b575689f74510f5ec463771ee2c4",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/languages.png",
+      "bytes": 225463,
+      "sha256": "af04670c8a4594b38a5e4e2167984658aef76919cc51c02435a275a5ed657ea2",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/lead-record.png",
+      "bytes": 284039,
+      "sha256": "7a71d5c5a47d869d3b9fb03205bccafd823b11659814f8cd7c267467017ddd84",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/lead-result.png",
+      "bytes": 378974,
+      "sha256": "1e60b9da2800f3213cef1b190f9253ecc8cffc3eb9e5b8b99c1d66df4358fe60",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/lead-selection.png",
+      "bytes": 345143,
+      "sha256": "cadabdbb85b36ea7e041d570dedbcea178bfd4a7202a567919f02fbae4e0d30e",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/master-mode.png",
+      "bytes": 315407,
+      "sha256": "a6cf29de0198302e527a55c791e070ada06e1c9ff763f1f4eba9f349cd8c5f66",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/recommended-builds.png",
+      "bytes": 384442,
+      "sha256": "9a0420aa209e401cc199042e9452b32dc603d6ebf9e77cb5679fe0dcaf67f1e8",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/team-builder.png",
+      "bytes": 614867,
+      "sha256": "5d6135edd399b6abd701d480c705be74bcdd7edee5bf3d315cfceda92d8fd3da",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/team-coverage.png",
+      "bytes": 286430,
+      "sha256": "3e62d7fd6207d3816bcb2d76559b4b175b185b9afa53f7266a0311eceffd03fc",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/versus-matchup.png",
+      "bytes": 401590,
+      "sha256": "66267dedf4ba3385ace48fa85e379d9ea35830b3e8280f416e4e68c6485cb03a",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    },
+    {
+      "path": "media/screenshots/versus-result.png",
+      "bytes": 275392,
+      "sha256": "39e2db0abec1a3c7470aa76a535e53501b9f31b8c4aeab0447f2281ce163167c",
+      "width": 720,
+      "height": 1440,
+      "batch": "refresh-2026-09-22"
+    }
   ]
 }

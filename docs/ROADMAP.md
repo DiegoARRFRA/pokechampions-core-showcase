@@ -10,7 +10,7 @@ Dirección del producto y del escaparate sin revelar detalles de implementación
 
 ## Material público disponible
 
-La [galería](GALLERY.md) incluye ocho capturas y tres demos en GIF/MP4. Los 14 archivos se verificaron contra el manifiesto existente el 22 de septiembre de 2026. Esa comprobación corresponde al material de presentación, no a una nueva build o campaña de QA de la aplicación.
+La [galería](GALLERY.md) incorpora la tanda visual preparada el 22 de septiembre de 2026: **16 capturas y seis demos nuevas**, además de la captura y la demo anteriores de 1HITKO, identificadas. El manifiesto contiene 31 archivos (17 PNG y siete demos en GIF/MP4). La verificación multimedia no constituye una nueva build o campaña de QA de la aplicación.
 
 La [ficha técnica](TECHNICAL_OVERVIEW.md) resume tecnologías y funcionamiento. Toda la documentación Markdown del showcase dispone de versión española e inglesa con navegación recíproca; el [índice](README.md) permite encontrarlas.
 
@@ -24,7 +24,7 @@ Reducir estados mecánicos ambiguos o no soportados, conservar generación deter
 
 ## Escaparate de ingeniería
 
-Publicar estudios de caso adicionales cuando aporten lecciones útiles sin exponer el código privado. Mantener alineadas las versiones ES/EN y el feedback centrado en sugerencias, correcciones de datos verificables y documentación pública.
+Actualizar el material anterior de 1HITKO cuando se disponga de nuevas grabaciones. Publicar estudios de caso adicionales cuando aporten lecciones útiles sin exponer el código privado. Mantener alineadas las versiones ES/EN y el feedback centrado en sugerencias, correcciones de datos verificables y documentación pública.
 
 ## Fuera de la hoja de ruta predeterminada
 

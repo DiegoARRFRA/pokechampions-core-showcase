@@ -4,30 +4,35 @@
 
 # PokeChampions Core · Material visual
 
-[← Portada](../README.md) · [Documentación](../docs/README.md) · [Galería](../docs/GALLERY.md)
+[Galería](../docs/GALLERY.md) · [Portada](../README.md)
 
-Paquete preparado el **17 de septiembre de 2026** a partir de capturas y tres grabaciones de pantalla facilitadas por el autor. La interfaz está en español y tema oscuro. La versión exacta de la aplicación no se ha establecido de forma independiente a partir de las grabaciones.
+## Actualización del 22 de septiembre de 2026
 
-## Edición de las demos
+Seis grabaciones suministradas por el autor como una versión más reciente de la aplicación. Se preparan **seis demos nuevas y 16 capturas nuevas**; no se ha identificado de forma independiente el número exacto de build. La interfaz nueva es principalmente española y clara. El recorrido de idiomas muestra español, inglés y alemán en tema oscuro.
 
-| Demo | Tramo original | Pausa final | Duración aproximada |
-| --- | --- | --- | --- |
-| Versus | Grabación 1: 39,8–51,0 s | 1,8 s | 13 s |
-| 1HITKO | Grabación 2: 11,2–21,6 s | 2,6 s | 13 s |
-| Entradas | Grabación 3: 17,5–31,5 s | 1,0 s | 15 s |
+| Demo | Grabación | Tramo original (s) | Pausa final (s) |
+| --- | --- | ---: | ---: |
+| Versus · movimiento y resultado | `update-recording-02` | 14.2–24.8 | 2.0 |
+| EV Lab · supervivencia | `update-recording-02` | 28.0–42.8 | 2.0 |
+| Entradas · elección y resultado manual | `update-recording-03` | 8.0–16.5 | 1.5 |
+| Equipos · build recomendada y estadísticas | `update-recording-06` | 32.0–51.3 | 1.7 |
+| HISTÓRICO · guardar partida y consultar rival | `update-recording-05` | 31.8–39.8 | 1.2 |
+| Idiomas · español, inglés y alemán | `update-recording-01` | 7.1–19.1 | 1.9 |
 
-Son tramos continuos: **no se aceleran las búsquedas ni se eliminan esperas dentro del tramo elegido**. Solo se añade una pausa sobre el último frame. Reducir la frecuencia de imagen de la vista previa no acelera la grabación.
+## Transformaciones
 
-Se recortan barras de estado y navegación Android, se retira el audio y se redimensiona proporcionalmente. No se generan interfaces, no se combinan vistas en pantallas ficticias y no se alteran datos o avisos.
+Recorte común `[0, 110, 1080, 2160]` sobre las grabaciones de 1080 × 2400: se retiran las barras de estado y navegación, no se cambia el contenido. Exportación MP4 H.264, 720 × 1440, 24 fps, sin audio; GIF, 360 × 720, 10 fps y paleta de hasta 192 colores; PNG, 720 × 1440. Las conversiones de frecuencia de imagen no aceleran la grabación. La cuantización GIF y la compresión de vídeo afectan a la codificación, no a la información mostrada.
 
-## Formatos e inventario
+Cada demo es un tramo continuo con una pausa sobre el último fotograma. No hay cortes internos, interpolación generativa, interfaces inventadas ni retoques de valores o avisos. Los tiempos y hashes exactos de cada exportación figuran en [manifest.json](manifest.json).
 
-GIF de **300 × 600** como vistas previas; MP4 H.264 de **540 × 1080** con mayor detalle. Las ocho capturas PNG proceden de frames seleccionados y de dos capturas originales. Dimensiones, procedencia, tiempos y hashes constan en [manifest.json](manifest.json). Se mantienen 14 archivos multimedia: ocho PNG, tres GIF y tres MP4.
+## Material anterior y sustituciones
 
-## Alcance y límites
+Se sustituyen las demos `versus` y `entradas`, y seis capturas con rutas existentes. `lead-record.png` ahora sí muestra el registro de Entradas; antes mostraba su preparación. El registro de Entradas se mantiene separado del HISTÓRICO de partidas.
 
-Material demostrativo, **no un benchmark, una nueva ejecución de QA ni una certificación de exactitud**. La captura de Versus y su demo muestran ataques distintos. `lead-record.png` conserva el nombre del paquete recibido, pero muestra preparación de Entradas con «Entrenar» seleccionado, no un listado de registros ni HISTÓRICO.
+Se conservan sin modificar `1hitko.gif`, `1hitko.mp4` y `1hitko-results.png`, del paquete anterior del 17 de septiembre. Están marcados como `previous-2026-09-17` y no se presentan como capturas de la última versión. Total del manifiesto: **31 archivos**, de los cuales **28 son nuevos o sustituidos y tres son anteriores**.
 
-Los resultados de práctica se introducen manualmente y no prueban resultados de torneo ni simulación automática. No se inventan capturas de módulos ausentes en las grabaciones. La documentación inglesa utiliza estas mismas imágenes españolas, no una interfaz retraducida.
+## Límites
 
-Solo se distribuye el material visual seleccionado. Se excluyen grabaciones completas, audio, código de la app, datasets, fuentes tipográficas, claves y archivos privados. Los avisos de titularidad siguen vigentes: [NOTICE.md](../NOTICE.md).
+Material de presentación, no una nueva ejecución de pruebas ni un benchmark. Los números de HISTÓRICO y Entradas son ejemplos guardados manualmente; diferentes capturas pueden mostrar momentos distintos de la sesión. La nueva captura de Versus procede del mismo tramo que su demo; EV Lab y Modo Maestro conservan su propio contexto. No se publican grabaciones completas, música, fuentes tipográficas, código privado, datos internos ni credenciales.
+
+[Titularidad y proyecto fan no oficial](../NOTICE.md).

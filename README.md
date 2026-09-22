@@ -29,23 +29,23 @@
 
 ## La aplicación, en imágenes
 
-Inicio, resultado de Versus y búsqueda de 1HITKO. Capturas reales de Android en español y tema oscuro; pulsa una imagen para ampliarla.
+**Nueva tanda visual · 22 de septiembre de 2026.** Inicio, resultado de Versus y editor de equipos. Capturas reales de Android en español y tema claro; pulsa una imagen para ampliarla.
 
 <p>
-  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Inicio con los accesos a las herramientas de PokeChampions Core"></a>
-  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: rango de daño, factores, KO y límites del cálculo"></a>
-  <a href="media/screenshots/1hitko-results.png"><img src="media/screenshots/1hitko-results.png" width="220" alt="1HITKO: candidatos, movimientos y rangos de daño"></a>
+  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Inicio de PokeChampions Core con la interfaz renovada en tema claro"></a>
+  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: daño de Envite Ígneo, usos hasta KO y límites del escenario"></a>
+  <a href="media/screenshots/team-builder.png"><img src="media/screenshots/team-builder.png" width="220" alt="Editor de equipos con integrantes, habilidades, objetos, naturalezas y tipos"></a>
 </p>
 
 ### Versus en acción · 13 segundos
 
-Elegir un movimiento, calcular y consultar daño y KO en un escenario 1 contra 1.
+Elegir atacante y movimiento, calcular y consultar daño y KO en un escenario 1 contra 1.
 
-<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Demo de Versus: selección de movimiento y consulta del resultado"></a>
+<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Nueva demo de Versus: selección de movimiento y consulta del resultado"></a>
 
-**[Ver Versus en MP4](media/demos/versus.mp4)** · [Demo 1HITKO](docs/GALLERY.md#1hitko) · [Demo Entradas](docs/GALLERY.md#entradas) · **[Galería completa](docs/GALLERY.md)**
+**[Ver Versus en MP4](media/demos/versus.mp4)** · [Equipos y builds](docs/GALLERY.md#equipos-y-builds) · [Entradas](docs/GALLERY.md#entradas) · [HISTÓRICO](docs/GALLERY.md#histórico) · **[Galería completa](docs/GALLERY.md)**
 
-Las demos están editadas para presentación y no son benchmarks. La captura fija de Versus y su demo muestran ataques distintos. [Procedencia y edición](media/README.md).
+Seis demos nuevas y 16 capturas nuevas, con MP4 de **720 × 1440** y vistas previas GIF. Las escenas mantienen la velocidad grabada y una pausa final; no son benchmarks. La [demo anterior de 1HITKO](docs/GALLERY.md#1hitko) se conserva identificada, porque no se incluyó un nuevo recorrido de esa herramienta. [Procedencia y edición](media/README.md).
 
 ## Qué puedes hacer
 
@@ -60,7 +60,7 @@ Las demos están editadas para presentación y no son benchmarks. La captura fij
 | **HISTÓRICO y Notas Pokémon** | Conservar resultados declarados, snapshots de equipos, anotaciones y configuraciones. |
 | **Ajustes** | Elegir entre ocho idiomas y los temas claro, oscuro y del sistema. |
 
-[Alcance funcional y límites](docs/FEATURES.md). La galería incluye ocho capturas; no contiene vistas del editor de equipos ni del módulo HISTÓRICO. El material de Entradas muestra preparación, selección y resultado manual.
+[Alcance funcional y límites](docs/FEATURES.md). La nueva galería incorpora el editor de equipos, builds recomendadas, cobertura defensiva y el módulo HISTÓRICO. El registro de prácticas de Entradas y el HISTÓRICO de partidas se presentan por separado.
 
 ## Ingeniería y documentación
 
@@ -82,7 +82,7 @@ Cada documento tiene su versión española e inglesa, con selector recíproco y 
 
 El checkpoint público de la aplicación llega hasta el **14 de septiembre de 2026**. Recoge una suite en host de **4.849 pruebas correctas, 0 fallos y 0 omisiones**. Campañas históricas distintas documentan **104.091 escenarios de Versus** y **361 formas / 12.987 pares de 1HITKO**. Son conjuntos separados: no se suman ni acreditan cobertura completa o una versión posterior.
 
-La QA física seleccionada corresponde a **POCO F5 / Android 15**, incluida la actualización de la build externa de QA **1.0.0+2**. El estudio de rendimiento corresponde a un **emulador**: su mejora de motor a primer frame no equivale al arranque completo de Android. Las demos, preparadas el **17 de septiembre de 2026**, no identifican por sí solas una build exacta ni constituyen nuevas pruebas de la aplicación.
+La QA física seleccionada corresponde a **POCO F5 / Android 15**, incluida la actualización de la build externa de QA **1.0.0+2**. El estudio de rendimiento corresponde a un **emulador**: su mejora de motor a primer frame no equivale al arranque completo de Android. La actualización visual preparada el **22 de septiembre de 2026** no amplía esa evidencia ni identifica por sí sola la build exacta grabada. El material anterior conservado está identificado en la galería.
 
 ## Estado y límites
 
