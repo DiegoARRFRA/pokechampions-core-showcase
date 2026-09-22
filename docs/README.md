@@ -2,34 +2,43 @@
   <strong>Español</strong> · <a href="README.en.md">English</a>
 </p>
 
-# Documentación
+# Documentación de producto e ingeniería
 
 [← Portada](../README.md)
 
-Todos los documentos Markdown están disponibles en español e inglés. El selector superior cambia el documento que estás leyendo; la navegación continúa en el idioma elegido. Español es el predeterminado del repositorio.
+**Español por defecto · English en cada documento.** El selector cambia la página que estás leyendo; los enlaces de contenido continúan en el mismo idioma.
 
-| Documento | Español | English | Contenido |
+## Empieza por tu objetivo
+
+**Primera evaluación del proyecto:** [portada](../README.md) → [demo y capturas](GALLERY.md).  
+**Entender cómo está construido:** [ficha técnica](TECHNICAL_OVERVIEW.md) → [arquitectura](ARCHITECTURE.md) → [base de datos y diagramas](DATABASE.md).  
+**Profundizar en decisiones y calidad:** [ingeniería](ENGINEERING.md) → [validación](VALIDATION.md) → [rendimiento](PERFORMANCE.md).
+
+## Índice bilingüe
+
+| Documento | Español | English | Qué encontrarás |
 | --- | --- | --- | --- |
-| Ficha técnica y funcionamiento | [ES](TECHNICAL_OVERVIEW.md) | [EN](TECHNICAL_OVERVIEW.en.md) | Tecnologías, tareas y recorrido de los datos. |
-| Arquitectura | [ES](ARCHITECTURE.md) | [EN](ARCHITECTURE.en.md) | Capas, funcionalidades, contratos y límites. |
-| Decisiones de ingeniería | [ES](ENGINEERING.md) | [EN](ENGINEERING.en.md) | Estado, cancelación, migraciones y reproducibilidad. |
-| Funcionalidades | [ES](FEATURES.md) | [EN](FEATURES.en.md) | Herramientas y límites de producto. |
-| Validación y QA | [ES](VALIDATION.md) | [EN](VALIDATION.en.md) | Campañas históricas y comprobaciones pendientes. |
-| Rendimiento | [ES](PERFORMANCE.md) | [EN](PERFORMANCE.en.md) | Caso histórico de arranque en emulador. |
-| Datos y exactitud | [ES](DATA_AND_ACCURACY.md) | [EN](DATA_AND_ACCURACY.en.md) | Fuentes, incertidumbre y regulación. |
-| Hoja de ruta | [ES](ROADMAP.md) | [EN](ROADMAP.en.md) | Dirección del producto y del escaparate. |
-| Galería y demos | [ES](GALLERY.md) | [EN](GALLERY.en.md) | 16 capturas y seis demos nuevas; material anterior identificado. |
-| Portada del producto | [ES](../README.md) | [EN](../README.en.md) | Presentación y resumen técnico. |
-| Participación y validación del showcase | [ES](../CONTRIBUTING.md) | [EN](../CONTRIBUTING.en.md) | Feedback, traducciones y comprobaciones. |
-| Titularidad | [ES](../NOTICE.md) | [EN](../NOTICE.en.md) | Derechos y proyecto no oficial. |
-| Procedencia del material visual | [ES](../media/README.md) | [EN](../media/README.en.md) | Edición, formatos y límites de las demos. |
+| Portada | [ES](../README.md) | [EN](../README.en.md) | Producto, autor, resumen técnico y demos. |
+| Ficha técnica | [ES](TECHNICAL_OVERVIEW.md) | [EN](TECHNICAL_OVERVIEW.en.md) | Dependencias, responsabilidades, secuencia de guardado y concurrencia. |
+| Arquitectura | [ES](ARCHITECTURE.md) | [EN](ARCHITECTURE.en.md) | Capas, contratos, composición y diagrama de arranque. |
+| Base de datos | [ES](DATABASE.md) | [EN](DATABASE.en.md) | 11 tablas, mapa físico, ER, asociaciones lógicas, diccionario, índices y migraciones. |
+| Decisiones de ingeniería | [ES](ENGINEERING.md) | [EN](ENGINEERING.en.md) | Problemas, mecanismos y compromisos concretos. |
+| Funcionalidades | [ES](FEATURES.md) | [EN](FEATURES.en.md) | Qué permite cada herramienta y qué queda fuera. |
+| Galería | [ES](GALLERY.md) | [EN](GALLERY.en.md) | Capturas y demos reales ya publicadas. |
+| Validación y QA | [ES](VALIDATION.md) | [EN](VALIDATION.en.md) | Evidencia histórica y cobertura pendiente. |
+| Rendimiento | [ES](PERFORMANCE.md) | [EN](PERFORMANCE.en.md) | Estudio histórico de arranque en emulador. |
+| Datos y exactitud | [ES](DATA_AND_ACCURACY.md) | [EN](DATA_AND_ACCURACY.en.md) | Fuentes, procedencia, incertidumbre y regulación. |
+| Hoja de ruta | [ES](ROADMAP.md) | [EN](ROADMAP.en.md) | Dirección del producto y del showcase. |
+| Participación | [ES](../CONTRIBUTING.md) | [EN](../CONTRIBUTING.en.md) | Feedback, traducciones y verificación del repositorio. |
+| Titularidad | [ES](../NOTICE.md) | [EN](../NOTICE.en.md) | Derechos y condición de proyecto fan no oficial. |
+| Material visual | [ES](../media/README.md) | [EN](../media/README.en.md) | Procedencia, edición y límites de las grabaciones. |
 
-## Recorridos de lectura
+## Cómo leer las cifras
 
-**Entender la ingeniería:** Ficha técnica → Arquitectura → Decisiones de ingeniería. **Revisar evidencia:** Validación → Rendimiento → Datos y exactitud. **Ver el producto:** Funcionalidades → Galería.
+La revisión documental del 22 de septiembre de 2026 describe dependencias, esquema y componentes examinados. No actualiza por sí sola los resultados históricos de pruebas de la aplicación. Cada recuento o medición conserva su fecha, entorno y alcance en la página correspondiente.
 
-## Alcance de los idiomas
+## Qué cambia al elegir idioma
 
-La aplicación tiene ocho idiomas; el showcase, dos. Las capturas conservan el idioma y tema de cada grabación. La tanda nueva usa principalmente español y tema claro; la demo de idiomas muestra español, inglés y alemán con tema oscuro. Los manifiestos JSON, identificadores de paquetes, comandos y rutas son artefactos técnicos compartidos y no se duplican ni traducen. Sí se traducen sus explicaciones y los textos alternativos del material visual.
+Se traducen explicación, navegación, títulos de diagramas y textos alternativos. Se conservan nombres de tablas y campos, paquetes, comandos, hashes y rutas. Las capturas siguen mostrando la interfaz grabada; traducir una página no modifica la aplicación que aparece en ella.
 
-Actualizar la documentación no cambia la fecha ni el alcance de la validación histórica de la app. El código privado permanece fuera de este repositorio.
+Los diagramas Mermaid son documentación editable. El código de producción, las bases de datos con registros reales, los catálogos privados y las claves permanecen fuera del showcase.

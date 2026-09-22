@@ -4,96 +4,77 @@
 
 # PokeChampions Core
 
-**Prepara equipos y analiza Pokémon Champions desde una aplicación Flutter que funciona offline, sin cuenta ni backend.**
+### Preparación competitiva. Análisis de daño. Datos locales.
 
-> Escaparate público de producto e ingeniería. El código de la aplicación es privado; este repositorio no es un proyecto open source.
+Aplicación móvil para preparar equipos y analizar Pokémon Champions sin cuenta ni servidor. Un proyecto personal de **[Diego de Arriba](https://github.com/DiegoARRFRA)** que conecta desarrollo de producto, lógica de dominio, persistencia y validación en Android.
 
-## Resumen técnico
+**Flutter · Dart · Drift/SQLite · Arquitectura modular · Offline-first**
 
-| Área | Tecnología y función |
+[Ficha técnica](docs/TECHNICAL_OVERVIEW.md) · [Base de datos y diagramas](docs/DATABASE.md) · [Arquitectura](docs/ARCHITECTURE.md) · [Demos](docs/GALLERY.md) · [Documentación ES/EN](docs/README.md)
+
+> **Showcase de producto e ingeniería.** El código de producción es privado; aquí se publican la presentación, las decisiones técnicas y el modelo de datos documentado, no la implementación.
+
+## La ingeniería en un minuto
+
+| Área | Implementación y responsabilidad |
 | --- | --- |
-| **Aplicación** | **Flutter · Dart**: interfaz móvil, componentes reutilizables y modelos tipados. |
-| **Arquitectura** | **Feature-first · capas · puertos/adaptadores** en componentes clave; dependencias conectadas por composición e inyección por constructor. |
-| **Motor de análisis** | **Lógica Dart y contratos tipados**: escenario → validación → reglas y catálogos locales → daño, KO o limitación explícita. |
-| **Datos del usuario** | **Drift · SQLite (sqlite3) · path_provider**: equipos, notas e historial mediante repositorios locales. |
-| **Estado y búsquedas** | **Controladores · ChangeNotifier · Futures/Streams**; worker con **isolate** en 1HITKO, progreso y cancelación de trabajos. |
-| **Preferencias** | **shared_preferences** para idioma, apariencia y audio, separado de los datos persistidos en SQLite. |
-| **Idiomas** | **flutter_localizations · intl · ARB** y terminología por ID: ocho idiomas en la aplicación. |
-| **Audio** | **just_audio · audio_session**: reproducción local y coordinación de sesión detrás de contratos. |
-| **Generación e integridad** | **drift_dev · build_runner · JSON versionado · crypto/SHA-256**: generación durante el desarrollo y trazabilidad de artefactos. |
-| **Calidad y entrega** | **flutter_test · test · analyzer · flutter_lints · Git**; compilación, perfilado y recorridos de QA con herramientas Flutter/Android. |
+| **Interfaz y producto** | Flutter/Dart; herramientas de equipos, cálculo, entrenamiento de salidas e historial; ocho idiomas y temas claro/oscuro/sistema. |
+| **Arquitectura** | Organización por funcionalidades y capas; contratos tipados, composición e inyección por constructor. Puertos/adaptadores en componentes clave. |
+| **Cálculo** | Escenario explícito → validación → reglas y catálogos locales → resultado de daño, KO o limitación documentada. |
+| **Persistencia** | Drift/SQLite, **11 tablas en el esquema v2**; columnas indexadas y contenido JSON validado. Equipos, notas, historial, rivales y recuperación. |
+| **Concurrencia** | Almacenamiento nativo en un isolate de Drift; operaciones coordinadas en cola FIFO; worker de búsqueda en 1HITKO con progreso y cancelación. |
+| **Fiabilidad** | Transacciones, identidad y revisión de borradores, conservación de datos previos y publicación del almacenamiento solo después de verificarlo. |
+| **Entrega y calidad** | Pruebas Dart/Flutter, análisis estático, generación reproducible y QA Android con alcance documentado. No se confunden demos con pruebas. |
 
-**Cómo funciona:** configuras un escenario → un controlador coordina la petición → el cálculo usa reglas y datos locales → la interfaz muestra el resultado. Guardar equipos, notas o partidas recorre otra vía: repositorio → Drift/SQLite. No necesita consultar un servidor para cada análisis.
+**Dos recorridos separados:** analizar usa reglas y catálogos empaquetados; guardar usa repositorios y SQLite. El proyecto no depende de una petición a un servidor para resolver cada cálculo.
 
-**[Ficha técnica completa y flujos de funcionamiento](docs/TECHNICAL_OVERVIEW.md)** · [Arquitectura](docs/ARCHITECTURE.md) · [Toda la documentación ES/EN](docs/README.md)
+## El producto, funcionando
 
-## La aplicación, en imágenes
-
-**Nueva tanda visual · 22 de septiembre de 2026.** Inicio, resultado de Versus y editor de equipos. Capturas reales de Android en español y tema claro; pulsa una imagen para ampliarla.
+Inicio, resultado de Versus y editor de equipos. Capturas reales de Android; pulsa para ampliar.
 
 <p>
-  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Inicio de PokeChampions Core con la interfaz renovada en tema claro"></a>
-  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: daño de Envite Ígneo, usos hasta KO y límites del escenario"></a>
-  <a href="media/screenshots/team-builder.png"><img src="media/screenshots/team-builder.png" width="220" alt="Editor de equipos con integrantes, habilidades, objetos, naturalezas y tipos"></a>
+  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Inicio de PokeChampions Core en tema claro"></a>
+  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: rango de daño, usos hasta KO y límites del escenario"></a>
+  <a href="media/screenshots/team-builder.png"><img src="media/screenshots/team-builder.png" width="220" alt="Editor de equipos con integrantes, habilidades, objetos y naturalezas"></a>
 </p>
 
-### Versus en acción · 13 segundos
+### Versus en acción
 
-Elegir atacante y movimiento, calcular y consultar daño y KO en un escenario 1 contra 1.
+Seleccionar atacante y movimiento, calcular y leer el resultado.
 
-<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Nueva demo de Versus: selección de movimiento y consulta del resultado"></a>
+<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Demo real de Versus: selección de movimiento y cálculo de daño"></a>
 
-**[Ver Versus en MP4](media/demos/versus.mp4)** · [Equipos y builds](docs/GALLERY.md#equipos-y-builds) · [Entradas](docs/GALLERY.md#entradas) · [HISTÓRICO](docs/GALLERY.md#histórico) · **[Galería completa](docs/GALLERY.md)**
+**[Ver MP4](media/demos/versus.mp4)** · [Equipos y builds](docs/GALLERY.md#equipos-y-builds) · [Entradas](docs/GALLERY.md#entradas) · [Galería completa](docs/GALLERY.md)
 
-Seis demos nuevas y 16 capturas nuevas, con MP4 de **720 × 1440** y vistas previas GIF. Las escenas mantienen la velocidad grabada y una pausa final; no son benchmarks. La [demo anterior de 1HITKO](docs/GALLERY.md#1hitko) se conserva identificada, porque no se incluyó un nuevo recorrido de esa herramienta. [Procedencia y edición](media/README.md).
+La galería conserva las demos ya publicadas y distingue el material anterior de 1HITKO. Son grabaciones editadas para presentación, no benchmarks ni certificaciones de la versión grabada. [Procedencia](media/README.md).
 
-## Qué puedes hacer
+## Decisiones que merece la pena revisar
 
-| Herramienta | Para qué sirve |
-| --- | --- |
-| **Equipos / Team Builder** | Crear y guardar equipos de seis posiciones con formas, habilidades, naturaleza, entrenamiento, objetos y movimientos. |
-| **Batalla** | Comparar Velocidad y contexto de una situación de dobles. No ejecuta turnos ni resuelve partidas completas. |
-| **Versus** | Consultar daño causado y recibido en un escenario 1 contra 1, con configuración normal y avanzada. |
-| **1HITKO** | Buscar candidatos a KO de un impacto bajo condiciones explícitas. La garantía de daño no garantiza el acierto del movimiento. |
-| **EV Lab** | Explorar inversión defensiva y umbrales de supervivencia frente a ataques configurados. |
-| **Entradas** | Practicar elecciones iniciales; los resultados de práctica se introducen manualmente. |
-| **HISTÓRICO y Notas Pokémon** | Conservar resultados declarados, snapshots de equipos, anotaciones y configuraciones. |
-| **Ajustes** | Elegir entre ocho idiomas y los temas claro, oscuro y del sistema. |
+| Problema de ingeniería | Solución observable | Lectura |
+| --- | --- | --- |
+| No perder datos al cambiar de almacenamiento | Preparación, verificación y activación separadas; originales preservados y fallos explícitos. | [Migraciones e integridad](docs/DATABASE.md#migración-e-integridad) |
+| Evitar duplicar una partida o confirmar un guardado fallido | Finalización del borrador en transacción, con identidad y revisión esperada. | [Flujo de guardado](docs/TECHNICAL_OVERVIEW.md#guardar-una-partida) |
+| Compartir cálculo sin duplicar reglas entre pantallas | Contratos tipados y composición de servicios; separación de escenario, evaluación y presentación. | [Arquitectura](docs/ARCHITECTURE.md) |
+| No bloquear la interfaz con trabajo intensivo | Ejecución nativa de almacenamiento y búsquedas aisladas, con control del ciclo de vida. | [Concurrencia](docs/TECHNICAL_OVERVIEW.md#concurrencia-y-estado) |
 
-[Alcance funcional y límites](docs/FEATURES.md). La nueva galería incorpora el editor de equipos, builds recomendadas, cobertura defensiva y el módulo HISTÓRICO. El registro de prácticas de Entradas y el HISTÓRICO de partidas se presentan por separado.
+## Evidencia, con contexto
 
-## Ingeniería y documentación
+El checkpoint público de validación de la aplicación del **14 de septiembre de 2026** registra **4.849 pruebas correctas, 0 fallos y 0 omisiones**. Otras campañas históricas documentan **104.091 escenarios de Versus** y **361 formas / 12.987 pares de 1HITKO**. No son conjuntos sumables ni cobertura total de versiones posteriores.
 
-**Arquitectura modular organizada por funcionalidades —feature-first—, con separación por capas y aplicación de puertos y adaptadores en componentes clave.** Las reglas aislables son puras y deterministas; no se presenta toda la aplicación como independiente de Flutter ni como hexagonal pura.
+La QA física documentada incluye recorridos seleccionados en **POCO F5 / Android 15**. El caso de rendimiento publicado corresponde a un **emulador**, no a una medición equivalente en ese teléfono. [Validación y límites](docs/VALIDATION.md) · [Caso de rendimiento](docs/PERFORMANCE.md).
 
-Cada documento tiene su versión española e inglesa, con selector recíproco y navegación en el mismo idioma. El [índice bilingüe](docs/README.md) también reúne participación, titularidad y documentación multimedia.
+La revisión documental del esquema y de componentes de almacenamiento del **22 de septiembre de 2026** amplía la explicación técnica, no la certificación de la aplicación. La implementación y las actas completas permanecen privadas.
 
-| Documento | Contenido |
-| --- | --- |
-| [Ficha técnica](docs/TECHNICAL_OVERVIEW.md) | Inventario de tecnologías, conexión de módulos y flujos de datos. |
-| [Arquitectura](docs/ARCHITECTURE.md) | Organización, límites y responsabilidades de los componentes. |
-| [Decisiones de ingeniería](docs/ENGINEERING.md) | Estado, cancelación, persistencia, localización e importaciones reproducibles. |
-| [Validación y QA](docs/VALIDATION.md) | Campañas históricas, alcance y comprobaciones pendientes. |
-| [Rendimiento](docs/PERFORMANCE.md) | Caso de arranque en emulador y sus limitaciones. |
-| [Datos y exactitud](docs/DATA_AND_ACCURACY.md) | Fuentes, incertidumbre y actualizaciones de regulación. |
-| [Hoja de ruta](docs/ROADMAP.md) | Dirección del producto y del showcase. |
+## Recorrido de lectura
 
-### Evidencia con fecha y alcance
+**Producto:** [funcionalidades](docs/FEATURES.md) → [galería](docs/GALLERY.md).  
+**Revisión técnica:** [ficha completa](docs/TECHNICAL_OVERVIEW.md) → [arquitectura](docs/ARCHITECTURE.md) → [base de datos](docs/DATABASE.md) → [decisiones y compromisos](docs/ENGINEERING.md).  
+**Calidad:** [validación](docs/VALIDATION.md) → [rendimiento](docs/PERFORMANCE.md) → [datos y exactitud](docs/DATA_AND_ACCURACY.md).
 
-El checkpoint público de la aplicación llega hasta el **14 de septiembre de 2026**. Recoge una suite en host de **4.849 pruebas correctas, 0 fallos y 0 omisiones**. Campañas históricas distintas documentan **104.091 escenarios de Versus** y **361 formas / 12.987 pares de 1HITKO**. Son conjuntos separados: no se suman ni acreditan cobertura completa o una versión posterior.
+## Autor, estado y alcance
 
-La QA física seleccionada corresponde a **POCO F5 / Android 15**, incluida la actualización de la build externa de QA **1.0.0+2**. El estudio de rendimiento corresponde a un **emulador**: su mejora de motor a primer frame no equivale al arranque completo de Android. La actualización visual preparada el **22 de septiembre de 2026** no amplía esa evidencia ni identifica por sí sola la build exacta grabada. El material anterior conservado está identificado en la galería.
+**Diego de Arriba** · [Perfil de GitHub](https://github.com/DiegoARRFRA). Proyecto personal en desarrollo, presentado mediante documentación bilingüe y demostraciones reales. [Participación](CONTRIBUTING.md) · [Hoja de ruta](docs/ROADMAP.md).
 
-## Estado y límites
+Batalla representa situaciones de dobles; no ejecuta partidas completas. Entradas practica elecciones iniciales y registra resultados manuales. HISTÓRICO y el registro de Entradas son funciones distintas. El repositorio no ofrece código de producción ni descarga pública de la app, y no publica datos de usuario, datasets internos, APK, claves ni música.
 
-El producto sigue en desarrollo. El feedback puede centrarse en sugerencias, incidencias y documentación pública: [guía de participación](CONTRIBUTING.md).
-
-Este repositorio reúne documentación y material de presentación seleccionado; no distribuye código fuente de la aplicación, datasets internos, pruebas privadas, credenciales, APK ni música. No ofrece una descarga pública de la aplicación.
-
-Las comprobaciones del escaparate se describen en [Validación del showcase](CONTRIBUTING.md#validación-del-showcase). Son independientes de la evidencia histórica de la aplicación.
-
-## Titularidad y proyecto no oficial
-
-Este showcase no concede una licencia open source. [Aviso de titularidad](NOTICE.md).
-
-PokeChampions Core es un **proyecto fan no oficial**. Pokémon, Pokémon Champions y sus nombres, personajes, recursos y marcas pertenecen a sus respectivos titulares. El proyecto no está afiliado, respaldado ni patrocinado por Nintendo, Creatures, GAME FREAK ni The Pokémon Company.
+**Proyecto fan no oficial.** Pokémon y las marcas y recursos relacionados pertenecen a sus respectivos titulares. No existe afiliación, respaldo ni patrocinio de Nintendo, Creatures, GAME FREAK o The Pokémon Company. Este showcase no concede una licencia open source. [Titularidad](NOTICE.md).

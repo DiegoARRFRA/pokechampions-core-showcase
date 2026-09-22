@@ -2,57 +2,96 @@
   <strong>Español</strong> · <a href="ARCHITECTURE.en.md">English</a>
 </p>
 
-# Arquitectura
+# Arquitectura del sistema
 
-[← Portada](../README.md) · [Índice de documentación](README.md)
+[← Portada](../README.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Base de datos](DATABASE.md) · [Documentación](README.md)
 
-PokeChampions Core utiliza una arquitectura modular organizada por funcionalidades, con separación por capas y puertos y adaptadores en componentes clave. Presentación, coordinación de la aplicación, reglas de dominio, persistencia y catálogos locales versionados tienen responsabilidades distintas. No se afirma que toda la aplicación sea hexagonal pura ni independiente de Flutter.
+## Estilo arquitectónico
 
-## Organización y flujo
+**Aplicación modular organizada por funcionalidades —feature-first—, con separación por capas y puertos/adaptadores en componentes clave.** Es una única aplicación local, no un sistema de microservicios. “Puerto” significa un contrato interno de código; no un endpoint REST.
 
-```text
-Funcionalidades de la aplicación
-  ├─ Presentación y controladores
-  ├─ Coordinación y contratos tipados
-  └─ Adaptadores y repositorios donde corresponde
+La separación permite sustituir servicios en puntos concretos. No se describe todo el proyecto como hexagonal puro: ciertos controladores y la composición dependen de Flutter, y la distribución de carpetas no es idéntica en todas las funcionalidades.
 
-Núcleo compartido
-  ├─ Modelos y reglas de dominio
-  ├─ Catálogos locales versionados
-  └─ Acceso a persistencia y preferencias
+## Capas y dependencias
 
-Cálculo: interfaz → petición tipada → reglas / catálogos → resultado → interfaz
-Guardado: interfaz → repositorio → Drift / SQLite
+```mermaid
+flowchart TB
+    ROOT["Composicion de la aplicacion"] --> UI["Presentacion: pantallas y widgets"]
+    ROOT --> FLOW["Coordinacion: controladores y operaciones"]
+    ROOT --> ADAPTER["Adaptadores concretos"]
+    UI --> FLOW
+    FLOW --> PORT["Contratos tipados"]
+    ADAPTER -. "implementan" .-> PORT
+    ADAPTER --> DOMAIN["Reglas y modelos de dominio"]
+    DOMAIN --> DATA["Catalogos locales"]
+    ADAPTER --> SQL[("Drift / SQLite")]
+    ADAPTER --> AUDIO["Audio y preferencias"]
 ```
 
-El esquema resume responsabilidades, no todas las dependencias del proyecto. Las funcionalidades reutilizan capas compartidas cuando procede; no todas tienen una estructura de carpetas idéntica. Los puertos y adaptadores aíslan fronteras seleccionadas, especialmente el cálculo y el audio. Las pantallas de cálculo entregan peticiones tipadas y representan respuestas, en lugar de reconstruir mecánicas a partir de etiquetas o descripciones.
+Vista por responsabilidades. No representa cada import ni exige que todo acceso a datos atraviese el mismo adaptador. Las implementaciones se conectan en composición; los consumidores reciben las dependencias que necesitan.
 
-## Responsabilidades principales
+| Responsabilidad | Qué resuelve | Qué no debe confundirse con ella |
+| --- | --- | --- |
+| Presentación | Entrada, navegación, resultado y estados visuales. | Interpretar reglas desde traducciones. |
+| Coordinación | Preparar peticiones, iniciar tareas y gestionar su ciclo de vida. | Toda la lógica de dominio ni independencia total de Flutter. |
+| Dominio | Reglas, modelos y resultados dentro del alcance del producto. | Un simulador completo de turnos. |
+| Contratos | Límite tipado entre consumidor e implementación. | Una API pública de red. |
+| Adaptadores | Repositorios SQL, reproducción y acceso a recursos. | Una colección de microservicios. |
+| Composición | Crear/conectar implementaciones y compartir su propiedad. | Abrir conexiones nuevas desde cada widget. |
 
-### Lógica de dominio
+## Dos ejemplos concretos
 
-Las reglas de daño, legalidad y contexto se aíslan de los widgets en la medida práctica. Versus normal, EV Lab, 1HITKO y los escenarios avanzados reutilizan reglas o fronteras de cálculo en los ámbitos que coinciden, sin interpretar cada mecánica de nuevo en cada pantalla.
+**Versus.** La entrada de la funcionalidad resuelve catálogos y entrega al controlador un contrato de cálculo. La fachada concreta satisface ese contrato; la composición admite una implementación alternativa. El escenario y la respuesta son tipados. La separación evita que la pantalla normal tenga que conocer todos los detalles de la implementación del evaluador.
 
-### Composición y adaptadores
+**Audio.** El controlador recibe reproductor, repositorio de preferencias y sesión mediante contratos. El adaptador de reproducción encapsula `just_audio`. El estado del controlador sí usa mecanismos de Flutter: se separa el proveedor, no se finge un controlador totalmente ajeno al framework.
 
-La composición entrega a los controladores las implementaciones que necesitan. Un contrato de cálculo separa al consumidor del motor concreto; un contrato de reproducción separa el control de audio de la biblioteca de reproducción. Son aplicaciones concretas de puertos y adaptadores, no una certificación de todas las dependencias de la aplicación.
+## Organización del proyecto
 
-### Persistencia
+Mapa orientativo de responsabilidades; no es una distribución pública de archivos internos:
 
-Los datos del usuario se conservan localmente mediante Drift/SQLite. Equipos, historial y otros estados persistidos se separan de los catálogos generados y de las preferencias ligeras. La migración prioriza la conservación: los originales no se descartan silenciosamente al cambiar la autoridad de almacenamiento.
+```text
+Aplicacion
+  Composicion, arranque y propiedad de dependencias
+Nucleo compartido
+  Modelos, reglas, catalogos, almacenamiento, temas e idiomas
+Funcionalidades
+  Equipos, Versus, 1HITKO, Entradas, Historico, Notas, Audio
+  Presentacion / coordinacion / datos o infraestructura segun el modulo
+Componentes compartidos
+  Elementos reutilizables de interfaz
+Herramientas de desarrollo
+  Generacion, importacion, pruebas y validacion
+```
 
-### Datos empaquetados
+El árbol evita prometer una simetría de carpetas que el proyecto no tiene. Importadores y artefactos de auditoría no forman parte de un backend en ejecución.
 
-Los catálogos se leen de recursos distribuidos con la app. Investigación, generación y validación externas se realizan durante el desarrollo. Así, una web o referencia externa no altera silenciosamente las reglas de una versión ya instalada.
+## Arranque y publicación del almacenamiento
 
-## Fronteras del producto
+```mermaid
+flowchart TB
+    START["Arranque"] --> CHECK["Inspeccionar almacenamiento"]
+    CHECK -->|"Generacion activa compatible"| OPEN["Abrir y comprobar integridad"]
+    CHECK -->|"Instalacion nueva o datos anteriores"| PREP["Preparar generacion y conservar originales"]
+    PREP --> VERIFY["Verificar contenido y procedencia"]
+    VERIFY -->|"Correcto"| ACTIVE["Activar almacenamiento"]
+    OPEN -->|"Correcto"| ACTIVE
+    CHECK -->|"Inconsistente"| BLOCK["Estado bloqueado explicito"]
+    VERIFY -->|"No verificable"| BLOCK
+    OPEN -->|"Error"| BLOCK
+    ACTIVE --> SCOPE["Publicar repositorios compartidos"]
+    SCOPE --> UI["Habilitar consumidores"]
+```
 
-**Batalla** representa un estado explícito 2 contra 2. **Versus** resuelve daño para un escenario 1 contra 1. **1HITKO** busca candidatos a KO bajo condiciones declaradas. **Entradas** practica elecciones iniciales. **HISTÓRICO** almacena y analiza registros locales. Ninguno convierte el producto en un simulador autónomo de partidas completas.
+Es una vista resumida del arranque, no la máquina de estados completa. Mientras el almacenamiento se prepara o está bloqueado, el ámbito normal no recurre silenciosamente a los repositorios anteriores. El reintento está condicionado a la clasificación del error; no todos los fallos se resuelven repitiendo la apertura.
 
-## Herramientas de desarrollo y publicación
+## Límites del producto
 
-Importadores, generadores, arneses de auditoría y pruebas internas pertenecen al proyecto de producción. Preparan artefactos a partir de referencias fijadas, pero no se distribuyen en este escaparate.
+Batalla analiza una situación 2v2; Versus evalúa daño; 1HITKO busca candidatos; EV Lab explora supervivencia; Entradas practica elecciones iniciales; HISTÓRICO conserva resultados declarados. Las transferencias de escenarios entre herramientas no convierten esa composición en una partida automática.
 
-El objetivo público es mostrar arquitectura, metodología y resultados seleccionados sin revelar implementación, pipeline completo ni corpus de pruebas. La documentación pública y las reglas de GitHub no garantizan protección contra la copia.
+Equipos y rondas de Entradas comparten mecanismos de almacenamiento, pero mantienen contratos distintos. HISTÓRICO almacena sus propios registros, borrador y versiones de rival. [Modelo físico y asociaciones lógicas](DATABASE.md).
 
-[Ficha técnica y funcionamiento](TECHNICAL_OVERVIEW.md) · [Decisiones de ingeniería](ENGINEERING.md)
+## Qué puede revisar un lector externo
+
+Esta documentación permite examinar responsabilidades, diseño de datos, límites y compromisos, junto con demos y evidencia seleccionada. No permite reproducir toda la aplicación desde el showcase: el código, los datasets y el corpus privado de pruebas no se publican. Los diagramas son resúmenes de la implementación revisada el 22 de septiembre de 2026, no una nueva auditoría del código completo.
+
+[Decisiones de ingeniería](ENGINEERING.md) · [Flujos operativos](TECHNICAL_OVERVIEW.md) · [Calidad y límites](VALIDATION.md)
