@@ -70,16 +70,16 @@ Las imágenes conservan su proporción y usan un ancho de presentación uniforme
   <a href="../media/screenshots/lead-selection.png"><img src="../media/screenshots/lead-selection.png" width="260" alt="Selección de dos aliados con la salida rival oculta"></a>
 </p>
 
-### Entradas · resultado manual · Entradas · registro
+### Entradas · resultado manual y preparación
 
 <p>
   <a href="../media/screenshots/lead-result.png"><img src="../media/screenshots/lead-result.png" width="260" alt="Situación de Batalla y controles Ganada o Perdida"></a>
-  <a href="../media/screenshots/lead-record.png"><img src="../media/screenshots/lead-record.png" width="260" alt="Registro de prácticas de Entradas con resultados guardados por rival"></a>
+  <a href="../media/screenshots/lead-record.png"><img src="../media/screenshots/lead-record.png" width="260" alt="Preparación de Entradas: modo de práctica, equipo propio y biblioteca rival"></a>
 </p>
 
 ## Alcance del material
 
-Estas imágenes muestran navegación, configuración, resultados y registro de prácticas. No hay capturas del editor de equipos ni del módulo independiente HISTÓRICO. El registro visible pertenece a Entradas; los resultados se introducen manualmente. Batalla representa una situación, no una partida resuelta automáticamente.
+Estas imágenes muestran navegación, configuración y resultados manuales de prácticas. No hay capturas del editor de equipos ni del módulo independiente HISTÓRICO. El archivo llamado `lead-record.png` muestra la preparación de Entradas con «Entrenar» seleccionado; no muestra un listado de registros. Batalla representa una situación, no una partida resuelta automáticamente.
 
 La captura fija de Versus y su demo muestran ataques distintos. Los resultados de KO se limitan al escenario mostrado; una garantía de daño de 1HITKO no garantiza el acierto del movimiento. Este material **no es una nueva campaña de QA, un benchmark ni una certificación de exactitud del motor**.
 

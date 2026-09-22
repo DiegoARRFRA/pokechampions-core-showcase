@@ -18,7 +18,7 @@ Se recortan las barras de estado y navegación de Android, se elimina el audio y
 
 Los GIF de 300 × 600 son vistas previas compactas. Los MP4 H.264 de 540 × 1080 conservan más detalle. Las ocho capturas PNG proceden de fotogramas seleccionados y de dos capturas originales del autor; sus dimensiones, procedencia, tiempos y hashes figuran en [manifest.json](manifest.json).
 
-Este material es demostrativo, **no un benchmark ni una nueva certificación de exactitud o de QA**. La captura de resultado de Versus y su demo muestran ataques distintos. El registro visible pertenece a Entradas, no al módulo independiente HISTÓRICO. Los resultados de práctica se introducen manualmente y no acreditan partidas de torneo ni simulación automática de combates. No se incluyen capturas inventadas de módulos no presentes en el material recibido.
+Este material es demostrativo, **no un benchmark ni una nueva certificación de exactitud o de QA**. La captura de resultado de Versus y su demo muestran ataques distintos. El archivo `lead-record.png` conserva el nombre del paquete recibido, pero muestra la preparación de Entradas con «Entrenar» seleccionado, no un listado de registros ni el módulo HISTÓRICO. Los resultados de práctica se introducen manualmente y no acreditan partidas de torneo ni simulación automática de combates. No se incluyen capturas inventadas de módulos no presentes en el material recibido.
 
 Solo se distribuyen estos archivos visuales seleccionados. No se incorporan grabaciones completas, audio, código fuente de la app, datasets, fuentes tipográficas, claves ni archivos del repositorio privado. Los derechos y avisos existentes siguen siendo aplicables: [NOTICE.md](../NOTICE.md).
 
@@ -30,6 +30,6 @@ Each demo is a continuous excerpt played at the original speed, with a short fin
 
 Android status and navigation bars were cropped, audio was removed, and files were proportionally resized. No UI was generated, no multiple views were composited into a fictional screen, and no results or warnings were altered. GIF previews are 300 × 600; H.264 MP4 exports are 540 × 1080. The eight PNG screenshots, editing coordinates, source times and file hashes are described in [manifest.json](manifest.json).
 
-This is presentation material, **not a benchmark, new QA run or certification of calculation correctness**. The Versus result screenshot and its demo show different moves. The visible practice record belongs to Lead Trainer, not the separate Battle History module. Outcomes are entered manually; they do not establish tournament results or automatically simulated battles.
+This is presentation material, **not a benchmark, new QA run or certification of calculation correctness**. The Versus result screenshot and its demo show different moves. The file `lead-record.png` retains its name from the supplied package, but shows Lead Trainer preparation with the training tab selected, not a list of records or the Battle History module. Outcomes are entered manually; they do not establish tournament results or automatically simulated battles.
 
 Full recordings, audio, application source, datasets, font files, signing material and private repository files are excluded. Existing notices remain applicable: [NOTICE.md](../NOTICE.md).

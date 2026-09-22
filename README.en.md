@@ -41,7 +41,7 @@ Demos are edited for presentation and are not benchmarks. The still Versus scree
 | **Battle History and Pokémon Notes** | Save declared outcomes, team snapshots, observations and configurations. |
 | **Settings** | Choose among eight languages and light, dark or system appearance. |
 
-[Feature scope and limits](docs/FEATURES.md). The gallery includes eight screenshots; it contains no views of the team editor or Battle History module. The displayed record belongs to Lead Trainer.
+[Feature scope and limits](docs/FEATURES.md). The gallery includes eight screenshots; it contains no views of the team editor or Battle History module. Lead Trainer material shows preparation, selection and a manual outcome.
 
 ## Engineering and documentation
 

@@ -41,7 +41,7 @@ Las demos están editadas para presentación y no son benchmarks. La captura fij
 | **HISTÓRICO y Notas Pokémon** | Conservar resultados declarados, snapshots de equipos, anotaciones y configuraciones. |
 | **Ajustes** | Elegir entre ocho idiomas y los temas claro, oscuro y del sistema. |
 
-[Alcance funcional y límites — en inglés](docs/FEATURES.md). La galería incluye ocho capturas; no contiene vistas del editor de equipos ni del módulo HISTÓRICO. El registro mostrado pertenece a Entradas.
+[Alcance funcional y límites — en inglés](docs/FEATURES.md). La galería incluye ocho capturas; no contiene vistas del editor de equipos ni del módulo HISTÓRICO. El material de Entradas muestra preparación, selección y resultado manual.
 
 ## Ingeniería y documentación
 

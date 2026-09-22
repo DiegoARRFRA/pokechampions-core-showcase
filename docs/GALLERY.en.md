@@ -70,16 +70,16 @@ Images keep their original proportions and use a consistent display width. They 
   <a href="../media/screenshots/lead-selection.png"><img src="../media/screenshots/lead-selection.png" width="260" alt="Selection of two allies with the opposing opening hidden"></a>
 </p>
 
-### Lead Trainer · manual outcome · Lead Trainer · records
+### Lead Trainer · manual outcome and preparation
 
 <p>
   <a href="../media/screenshots/lead-result.png"><img src="../media/screenshots/lead-result.png" width="260" alt="Battle situation and manual Won or Lost controls"></a>
-  <a href="../media/screenshots/lead-record.png"><img src="../media/screenshots/lead-record.png" width="260" alt="Lead Trainer practice records with saved outcomes by opponent"></a>
+  <a href="../media/screenshots/lead-record.png"><img src="../media/screenshots/lead-record.png" width="260" alt="Lead Trainer preparation: practice mode, allied team and opposing team library"></a>
 </p>
 
 ## Scope of this material
 
-These images show navigation, configuration, results and practice records. There are no screenshots of Team Builder or the separate Battle History module. The visible practice record belongs to Lead Trainer; outcomes are entered manually. Battle represents a situation, not an autonomously resolved match.
+These images show navigation, configuration and manually entered practice outcomes. There are no screenshots of Team Builder or the separate Battle History module. The file named `lead-record.png` shows Lead Trainer preparation with the training tab selected; it does not show a list of records. Battle represents a situation, not an autonomously resolved match.
 
 The Versus still and demo show different moves. KO results apply to the displayed scenario; a 1HITKO damage guarantee does not guarantee move accuracy. This material is **not a new QA campaign, a benchmark or certification of engine correctness**.
 
