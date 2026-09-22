@@ -1,55 +1,39 @@
-# Validation & QA
+<p align="right">
+  <strong>Español</strong> · <a href="VALIDATION.en.md">English</a>
+</p>
 
-PokeChampions Core treats testing as scoped evidence. A green test count is useful only when it is tied to a known commit, dataset and product boundary.
+# Validación y QA
 
-## Public application snapshot through 14 September 2026
+[← Portada](../README.md) · [Índice de documentación](README.md)
 
-The host checkpoint recorded in that public snapshot completed with:
+Las pruebas se tratan como evidencia con alcance. Un recuento correcto solo es útil cuando se vincula a una revisión, un catálogo y un límite funcional conocidos.
 
-- **4,849 passed**
-- **0 failed**
-- **0 omitted**
-- exit code **0**
+## Checkpoint público hasta el 14 de septiembre de 2026
 
-That checkpoint followed a focused import correction and belongs to the application state validated in mid-September 2026. This showcase does not establish that a later build passed the same suite. A zero-failure result is not a measurement of complete coverage. Repository link and media checks are separate; see [showcase validation](../CONTRIBUTING.md#validación-del-showcase--showcase-validation).
+La ejecución en host recogida en ese checkpoint terminó con **4.849 pruebas correctas, 0 fallos, 0 omisiones y código de salida 0**, después de una corrección focal de importación.
 
-## Larger historical campaigns
+Corresponde al estado de la aplicación validado a mediados de septiembre de 2026. No establece que una build posterior haya superado la misma suite. Cero fallos no equivale a cobertura completa. Las comprobaciones de enlaces y archivos de este repositorio son independientes: consulta [Validación del showcase](../CONTRIBUTING.md#validación-del-showcase).
 
-Earlier validation work includes:
+## Campañas históricas más amplias
 
-- a Versus comparison campaign containing **104,091 scoped scenarios**;
-- an exhaustive historical 1HITKO acceptance campaign across **361 forms and 12,987 attacker/defender pairs**;
-- focused regression suites around persistence, localisation, regulation changes, runtime lifecycle and Android packaging;
-- deterministic checks for generated catalogues and selected external-import artefacts.
+La evidencia anterior incluye una campaña de Versus de **104.091 escenarios acotados** y una aceptación exhaustiva histórica de 1HITKO con **361 formas y 12.987 pares atacante/defensor**. También se mantienen regresiones focales de persistencia, localización, regulación, ciclo de vida y empaquetado Android, además de comprobaciones deterministas de catálogos e importaciones seleccionadas.
 
-These figures should not be added together as if they represented one universal certification. A new regulation, new participant or newly implemented mechanic can fall outside an older campaign.
+No deben sumarse esas cifras como una certificación universal. Una nueva regulación, participante o mecánica puede quedar fuera de una campaña anterior.
 
-## Physical Android QA
+## QA física Android
 
-The project also maintains device-level acceptance rather than relying exclusively on widget and host tests. Recent physical QA on a **POCO F5 running Android 15** has covered selected flows including:
+Las comprobaciones en **POCO F5 con Android 15** han cubierto flujos seleccionados de instalación e identidad, navegación, persistencia al cerrar el proceso, apariencia claro/oscuro/sistema, recorridos de Versus e instalación y actualización de builds externas. También se comprobó la conservación de datos existentes entre las primeras entregas externas.
 
-- installation and application identity;
-- navigation through core modules;
-- persistence across process restarts;
-- light/dark/system appearance behavior;
-- selected Versus paths;
-- external build installation and update behavior;
-- preservation of existing user data during an update between early external builds.
+Esta evidencia física es deliberadamente más limitada que toda la matriz automatizada en host.
 
-Physical-device evidence remains deliberately narrower than the entire automated host matrix.
+## Frentes con evidencia separada
 
-## What remains separate
+La cobertura de más dispositivos, aceptación de accesibilidad/TalkBack, sesiones audibles prolongadas, rendimiento específico de plataforma y contenido de nuevas regulaciones requieren sus propias comprobaciones. No se incluyen silenciosamente en el recuento principal de aciertos.
 
-Some concerns require their own evidence and are not silently folded into the main pass count:
+## Por qué se conservan ejecuciones fallidas
 
-- broader device coverage;
-- accessibility/TalkBack acceptance;
-- prolonged audible-session testing;
-- platform-specific performance behavior;
-- newly added regulation content that did not exist during earlier exhaustive campaigns.
+La auditoría interna retiene ejecuciones fallidas. Una corrección posterior puede cerrar el hallazgo, pero el fallo original sigue explicando qué se descubrió y cómo evolucionó la regresión.
 
-## Why failed historical runs are kept
+No se reescribe el pasado como si todo hubiera estado siempre aprobado. Las demos públicas tampoco constituyen nuevas pruebas de exactitud ni benchmarks.
 
-The private audit trail preserves failed runs instead of rewriting history after a fix. A later passing remediation can close a finding, but the original failure remains useful evidence of what was discovered and how the regression contract evolved.
-
-That approach makes the project easier to audit and avoids turning documentation into a sequence of retrospective “everything was always green” claims.
+[Rendimiento](PERFORMANCE.md) · [Datos y exactitud](DATA_AND_ACCURACY.md)

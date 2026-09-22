@@ -1,66 +1,57 @@
-# Features
+<p align="right">
+  <strong>Español</strong> · <a href="FEATURES.en.md">English</a>
+</p>
 
-PokeChampions Core groups several competitive workflows in one offline-first mobile application.
+# Funcionalidades y límites
 
-## Team Builder
+[← Portada](../README.md) · [Índice de documentación](README.md)
 
-Create and persist six-slot teams with legal Pokémon forms, abilities, natures, training values, held items and up to four moves. The team workflow also feeds downstream analysis tools rather than existing as an isolated editor.
+PokeChampions Core reúne flujos de preparación y análisis competitivo en una aplicación móvil diseñada para funcionar offline. La [ficha técnica](TECHNICAL_OVERVIEW.md) explica cómo se conectan.
 
-## Battle
+## Equipos / Team Builder
 
-Battle represents a user-defined doubles situation rather than an autonomous simulator. The current product can model relevant battle context such as speed order, weather, Tailwind, Trick Room, temporary HP and selected verified interactions.
+Permite crear y conservar equipos de seis posiciones con formas legales, habilidades, naturaleza, entrenamiento, objetos y hasta cuatro movimientos. Las configuraciones alimentan otras herramientas de análisis; no se quedan en un editor aislado.
 
-The user remains in control of the scenario. The application does not choose turns or play the battle to completion.
+## Batalla
+
+Representa una situación de dobles definida por el usuario: orden de Velocidad, clima, Viento Afín, Espacio Raro, PS temporales e interacciones verificadas. El usuario controla el escenario; la app no elige turnos ni juega la partida hasta su final.
 
 ## Versus
 
-Versus is the 1v1 analysis surface. It shares a typed calculation boundary with related tools so mechanical behavior is not independently reimplemented in each UI.
-
-It supports ordinary analysis plus advanced scenario configuration and serves as the destination for snapshots transferred from other modules.
+Es el espacio de análisis 1 contra 1. Comparte una frontera de cálculo tipada con herramientas relacionadas, evitando reinterpretar mecánicas en cada interfaz. Ofrece configuración normal y avanzada y recibe snapshots trasladados desde otros módulos.
 
 ## EV Lab
 
-EV Lab focuses on defensive survivability. It allows controlled exploration of HP, Defense and Special Defense investment and can search for the minimum investment required to survive configured attacks under the current scenario.
+Se centra en la supervivencia defensiva. Permite explorar inversión en PS, Defensa y Defensa Especial, y buscar la inversión mínima para sobrevivir a ataques configurados dentro del escenario actual.
 
 ## 1HITKO
 
-1HITKO searches the legal local catalogue for candidates that can guarantee a one-hit KO against a configured defender. The historical exhaustive campaign covered 361 forms and 12,987 attacker/defender pairs within its then-current scope.
+Busca en el catálogo local legal candidatos capaces de garantizar un KO de un impacto frente al defensor configurado. La campaña exhaustiva histórica abarcó 361 formas y 12.987 pares en su alcance de entonces, no en cualquier catálogo futuro.
 
-The tool is deliberately narrower than a battle simulator: it answers a one-hit question under explicit assumptions.
+Responde una pregunta limitada a un impacto y a condiciones explícitas. Una garantía de daño presupone que el golpe acierta: no es una garantía de precisión ni de ganar la partida.
 
-## Lead Trainer
+## Entradas
 
-Lead Trainer is an offline practice mode for opening choices. It can use the player's own teams or curated competitive team data and keeps the rival opening hidden until the choice is committed.
+Modo offline para practicar elecciones iniciales con equipos propios o datos competitivos seleccionados. La salida rival permanece oculta hasta confirmar la elección. Abre la situación correspondiente en Batalla; el resultado de práctica se introduce manualmente, no se obtiene simulando turnos.
 
-The goal is decision practice, not autonomous turn simulation.
+## HISTÓRICO
 
-## Battle History
+Conserva localmente victorias, derrotas, información del rival y snapshots inmutables de equipos. Ofrece filtros y resúmenes sin convertir la partida registrada en una repetición automática. Es independiente del registro de prácticas de Entradas.
 
-Battle History stores wins, losses, opponent information and immutable team snapshots locally. It provides filtering and summary views without turning the recorded match into a replay engine.
+## Notas Pokémon
 
-## Pokémon Notes
+Biblioteca separada de observaciones por Pokémon y configuraciones reutilizables, independiente de los equipos guardados.
 
-A separate notes library lets the user maintain Pokémon-specific observations and reusable configurations independently from saved teams.
+## Idiomas y apariencia
 
-## Localisation and appearance
-
-The application currently ships eight complete locale packages:
-
-- Spanish
-- English
-- German
-- French
-- Italian
-- Portuguese
-- Japanese
-- Korean
-
-Appearance supports light, dark and system modes.
+Ocho paquetes de idioma completos: español, inglés, alemán, francés, italiano, portugués, japonés y coreano. La apariencia admite claro, oscuro y sistema. La documentación del showcase tiene dos idiomas; eso no limita los ocho de la aplicación.
 
 ## Audio
 
-The app includes a persistent local playlist and remembers playback preferences. Audio has undergone both host-side and physical-device investigation, but prolonged audible-session QA remains a distinct validation concern rather than something hidden behind a generic “done” label.
+Incluye una lista de reproducción local persistente y recuerda preferencias. Se ha investigado en host y dispositivo físico; la validación de sesiones audibles prolongadas sigue siendo un frente separado, no algo cubierto por una etiqueta genérica de finalizado.
 
-## Deliberate non-goals
+## Fuera del alcance predeterminado
 
-PokeChampions Core is not intended to provide accounts, cloud sync, social features, online battles, payments or a complete autonomous Pokémon battle simulator. Those exclusions keep the product focused on preparation, analysis and review.
+No se plantean cuentas, sincronización en la nube, funciones sociales, combates online, pagos ni simulación autónoma completa de batallas. El enfoque sigue siendo preparar, analizar y revisar.
+
+[Galería y demos](GALLERY.md) · [Validación y QA](VALIDATION.md)

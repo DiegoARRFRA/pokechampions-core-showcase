@@ -4,9 +4,9 @@
 
 # PokeChampions Core · Galería
 
-[← Volver a la portada](../README.md)
+[← Volver a la portada](../README.md) · [Índice de documentación](README.md)
 
-Ocho capturas reales de Android y tres demos breves. La interfaz está **en español y tema oscuro**. Pulsa una captura para ampliarla; los enlaces MP4 ofrecen las demos con mayor resolución.
+Ocho capturas reales de Android y tres demos breves. La interfaz está **en español y tema oscuro**. Pulsa una imagen para ampliarla; los enlaces MP4 ofrecen mayor resolución.
 
 [Versus](#versus) · [1HITKO](#1hitko) · [Entradas](#entradas) · [Capturas](#capturas)
 
@@ -47,7 +47,7 @@ Elegir salida, abrir Batalla y registrar manualmente el resultado. **[MP4 · ~15
 
 ## Capturas
 
-Las imágenes conservan su proporción y usan un ancho de presentación uniforme. Se distribuyen en nuevas líneas cuando hay menos espacio.
+Las imágenes conservan su proporción y usan un ancho uniforme. Se distribuyen en nuevas líneas cuando hay menos espacio.
 
 ### Inicio · Versus · resultado
 
@@ -79,12 +79,12 @@ Las imágenes conservan su proporción y usan un ancho de presentación uniforme
 
 ## Alcance del material
 
-Estas imágenes muestran navegación, configuración y resultados manuales de prácticas. No hay capturas del editor de equipos ni del módulo independiente HISTÓRICO. El archivo llamado `lead-record.png` muestra la preparación de Entradas con «Entrenar» seleccionado; no muestra un listado de registros. Batalla representa una situación, no una partida resuelta automáticamente.
+Las imágenes muestran navegación, configuración y resultados manuales de prácticas. No hay capturas del editor de equipos ni del módulo independiente HISTÓRICO. `lead-record.png` muestra preparación de Entradas con «Entrenar» seleccionado, no un listado de registros. Batalla representa una situación, no una partida resuelta automáticamente.
 
-La captura fija de Versus y su demo muestran ataques distintos. Los resultados de KO se limitan al escenario mostrado; una garantía de daño de 1HITKO no garantiza el acierto del movimiento. Este material **no es una nueva campaña de QA, un benchmark ni una certificación de exactitud del motor**.
+La captura de Versus y su demo muestran ataques distintos. Los resultados de KO se limitan al escenario mostrado; una garantía de daño de 1HITKO no garantiza acertar el movimiento. Este material **no es una nueva campaña de QA, un benchmark ni una certificación de exactitud del motor**.
 
-Las demos usan tramos continuos a velocidad original, con una breve pausa final. Se recortaron las barras de Android, se retiró el audio y se redimensionó conservando las proporciones. No se generaron interfaces ni se alteraron resultados o avisos. Los originales completos no se publican.
+Las demos usan tramos continuos a velocidad original con una breve pausa final. Se recortaron las barras Android, se retiró el audio y se redimensionó proporcionalmente. No se generaron interfaces ni alteraron resultados o avisos. No se publican las grabaciones completas.
 
-[Procedencia y edición](../media/README.md) · [Inventario y SHA-256](../media/manifest.json) · [Titularidad y aviso de proyecto fan — en inglés](../NOTICE.md)
+[Procedencia y edición](../media/README.md) · [Inventario y SHA-256](../media/manifest.json) · [Titularidad y aviso de proyecto fan](../NOTICE.md)
 
 [← Volver a la portada](../README.md)

@@ -1,17 +1,23 @@
-# Notice
+<p align="right">
+  <strong>Español</strong> · <a href="NOTICE.en.md">English</a>
+</p>
 
-Copyright © 2026 Diego De Arriba. All rights reserved.
+# Aviso de titularidad
 
-This repository is a **public technical showcase** for PokeChampions Core. It does not distribute the private production source code of the application and it does not grant an open-source license for the unpublished codebase.
+[← Portada](README.md) · [Documentación](docs/README.md)
 
-Unless a file explicitly states otherwise, the original text, diagrams and presentation material in this repository may be viewed and referenced, but no permission is granted to copy, modify, redistribute, repackage or commercially exploit the private application implementation, internal datasets, build material or unpublished technical assets.
+Copyright © 2026 Diego De Arriba. Todos los derechos reservados.
 
-## Third-party rights
+Este repositorio es un **escaparate técnico público** de PokeChampions Core. No distribuye el código fuente privado de producción de la aplicación ni concede una licencia open source para el código no publicado.
 
-PokeChampions Core is an unofficial fan-made project. Pokémon, Pokémon Champions and related names, characters, artwork, game data, logos and trademarks are property of their respective rights holders, including Nintendo, Creatures, GAME FREAK and The Pokémon Company where applicable.
+Salvo que un archivo indique expresamente lo contrario, los textos, diagramas y material de presentación originales de este repositorio pueden consultarse y citarse, pero no se concede permiso para copiar, modificar, redistribuir, reempaquetar ni explotar comercialmente la implementación privada de la aplicación, los datasets internos, el material de compilación ni los recursos técnicos no publicados.
 
-Nothing in this repository claims ownership over third-party intellectual property. No third-party asset should be considered relicensed merely because it is discussed in the documentation.
+## Derechos de terceros
 
-## Source availability
+PokeChampions Core es un proyecto fan no oficial. Pokémon, Pokémon Champions y los nombres, personajes, ilustraciones, datos del juego, logotipos y marcas relacionados pertenecen a sus respectivos titulares, incluidos Nintendo, Creatures, GAME FREAK y The Pokémon Company cuando corresponda.
 
-The production repository is intentionally private. Public documentation is curated to demonstrate product and engineering quality without publishing the implementation itself.
+Nada en este repositorio reclama la titularidad de propiedad intelectual de terceros. Ningún recurso de terceros debe considerarse sujeto a una nueva licencia por el mero hecho de mencionarse en la documentación.
+
+## Disponibilidad del código
+
+El repositorio de producción es privado de forma deliberada. La documentación pública se selecciona para mostrar la calidad del producto y de la ingeniería sin publicar su implementación.

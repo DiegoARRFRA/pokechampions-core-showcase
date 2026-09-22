@@ -1,41 +1,37 @@
-# Data & Accuracy
+<p align="right">
+  <strong>Español</strong> · <a href="DATA_AND_ACCURACY.en.md">English</a>
+</p>
 
-PokeChampions Core separates **data provenance** from **runtime authority**. The app does not assume that one source is correct for every kind of question.
+# Datos y exactitud
 
-## Authority model
+[← Portada](../README.md) · [Índice de documentación](README.md)
 
-The private data pipeline distinguishes between:
+PokeChampions Core separa la **procedencia de los datos** de la **autoridad sobre el comportamiento en ejecución**. Ninguna fuente se considera correcta para cualquier tipo de pregunta.
 
-1. **Official Pokémon Champions information** for regulations, legal availability and published Champions-specific rules.
-2. **Pinned technical references** for extracted master data, identifiers, learnsets and reproducible mechanical behavior.
-3. **Champions-specific overrides** where an upstream general engine is explicitly superseded.
-4. **Declarative project overrides** only when a rule has been independently justified and cannot be safely derived elsewhere.
-5. **Human-readable descriptions** as documentation, never as mechanical authority by themselves.
+## Modelo de autoridad
 
-## Offline-first catalogue strategy
+El proceso de datos distingue entre información oficial de Pokémon Champions para regulación, disponibilidad legal y reglas publicadas; referencias técnicas fijadas para datos base, identificadores, movimientos aprendibles y comportamiento reproducible; excepciones específicas de Champions frente a reglas genéricas; y excepciones declarativas del proyecto solo cuando están justificadas de forma independiente y no pueden derivarse con seguridad de otra fuente.
 
-Runtime catalogue data is packaged with the application. External research, import and generation happen during development rather than at runtime.
+Las descripciones para lectura humana son documentación: nunca gobiernan por sí solas una mecánica.
 
-This gives each release a stable snapshot and prevents a mutable website or upstream repository from silently changing the behavior of an already-installed build.
+## Catálogos offline
 
-## Pinned revisions and reproducibility
+Los datos se empaquetan con la aplicación. Investigación, importación y generación se realizan durante el desarrollo, no en cada ejecución. Cada entrega conserva un snapshot estable: una web o repositorio externo mutable no cambia silenciosamente una build ya instalada.
 
-Where external technical references are used, the private tooling records immutable revisions and hashes where practical. Generated artefacts can therefore be compared against the exact inputs used to produce them.
+## Revisiones e integridad
 
-## Conflict handling
+Las herramientas internas registran revisiones inmutables y hashes cuando resulta práctico. Así pueden compararse los artefactos generados con las entradas exactas de las que proceden. Las huellas comprueban integridad y trazabilidad; no prueban por sí mismas que una regla sea correcta.
 
-A Champions-specific official rule takes precedence over a generic interpretation. A Champions-specific technical override takes precedence over a general engine rule where the override is applicable.
+## Conflictos e incertidumbre
 
-When evidence is insufficient, the preferred outcomes are:
+Una regla oficial específica de Champions prevalece sobre una interpretación genérica. Una excepción técnica propia de Champions prevalece sobre una regla general cuando esa excepción es aplicable.
 
-- explicit insufficient context;
-- a documented unsupported interaction;
-- or a carefully scoped override backed by evidence.
+Si la evidencia no basta, se muestra contexto insuficiente, se documenta una interacción no soportada o se adopta una excepción acotada y respaldada por evidencia. No se completan huecos solo porque otro formato de Pokémon se comporte de forma parecida.
 
-The project intentionally avoids filling gaps merely because another Pokémon format behaves similarly.
+## Cambios de regulación
 
-## Regulation changes
+Una nueva regulación es un cambio de datos que requiere aceptación propia. Los participantes, mecánicas o entradas incorporados después no heredan automáticamente campañas históricas de validación.
 
-New regulations are treated as data changes with their own acceptance work. Historical large-scale validation is not automatically inherited by newly introduced participants, mechanics or catalogue entries.
+Una campaña anterior correcta no es una prueba de un estado que todavía no existía cuando se ejecutó.
 
-That distinction prevents an old green test campaign from being presented as proof for a state that did not exist when those tests were run.
+[Funcionamiento de los datos](TECHNICAL_OVERVIEW.md) · [Validación](VALIDATION.md)
