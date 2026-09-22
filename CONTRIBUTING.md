@@ -32,14 +32,20 @@ El código de producción es privado y no está disponible para PR públicas. Se
 
 ## Validación del showcase
 
-Desde la raíz, con PowerShell 5.1 o posterior, ejecuta [la utilidad de verificación](tools/verify-showcase.ps1). El permiso de ejecución se limita a ese proceso y no cambia la configuración permanente del equipo.
+Desde la raíz del repositorio completo, con PowerShell 5.1 o posterior, ejecuta [la utilidad de verificación](tools/verify-showcase.ps1). El permiso de ejecución se limita a ese proceso y no cambia la configuración permanente del equipo.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/verify-showcase.ps1
 ```
 
-La comprobación predeterminada requiere los 14 archivos multimedia. Revisa enlaces locales Markdown/HTML y anclas de encabezados, selectores recíprocos de las portadas y galerías, textos alternativos de imágenes, inventario esperado, tamaños y SHA-256 contra el manifiesto existente. Usa `ffprobe` y `ffmpeg` instalados localmente para dimensiones, duración, número de frames, ausencia de audio y decodificación completa. No instala programas, consulta la red ni modifica archivos.
+La comprobación requiere los **34 archivos multimedia** del manifiesto actualizado: 18 PNG y ocho parejas GIF/MP4. Revisa enlaces locales Markdown/HTML y anclas de encabezados, selectores recíprocos de documentos, textos alternativos, inventario, tamaños y SHA-256. Usa `ffprobe` y `ffmpeg` instalados localmente para dimensiones, duración, número de frames, ausencia de audio y decodificación completa. También exige conservar los hashes originales de los tres archivos de 1HITKO. No instala programas, consulta la red ni modifica archivos.
 
-Para trabajo de texto sin multimedia, usa `-DocumentsOnly`: excluye explícitamente los enlaces a los 14 binarios esperados. Ese modo no valida multimedia ni autoriza una integración; otros destinos ausentes siguen siendo errores. Ningún modo verifica URLs externas, renderiza GitHub, demuestra procedencia o sustituye la revisión de información privada.
+Para trabajo de texto sin multimedia, usa `-DocumentsOnly`: excluye los enlaces a los binarios esperados. Ese modo no valida multimedia ni autoriza una integración; otros destinos ausentes siguen siendo errores. Ningún modo verifica URLs externas, renderiza GitHub, demuestra procedencia o sustituye la revisión de información privada.
 
-Antes de integrar, ejecuta la comprobación completa, revisa portadas y galerías en GitHub, compara el manifiesto de cualquier paquete recibido y examina el diff. Revisa también el selector y la equivalencia de cada pareja documental: el chequeo automatizado de selectores actual se centra en portadas y galerías. No cambies hashes para ocultar discrepancias y conserva en borrador el trabajo multimedia incompleto.
+La [comprobación portátil de multimedia](tools/verify-media.py), con Python 3.9 o posterior, FFmpeg y FFprobe, permite verificar de forma independiente archivos, hashes, conservación de 1HITKO y decodificación. No comprueba documentos ni enlaces:
+
+```text
+python tools/verify-media.py
+```
+
+Antes de integrar, ejecuta la comprobación completa desde el repositorio, revisa portadas y galerías, compara el manifiesto y examina el diff. Una carpeta de actualización no incluye necesariamente los documentos que no cambian: cópiala sobre el checkout correcto antes de ejecutar el chequeo documental. No cambies hashes para ocultar discrepancias y conserva en borrador el trabajo multimedia incompleto.

@@ -18,7 +18,7 @@ Todos los documentos Markdown están disponibles en español e inglés. El selec
 | Rendimiento | [ES](PERFORMANCE.md) | [EN](PERFORMANCE.en.md) | Caso histórico de arranque en emulador. |
 | Datos y exactitud | [ES](DATA_AND_ACCURACY.md) | [EN](DATA_AND_ACCURACY.en.md) | Fuentes, incertidumbre y regulación. |
 | Hoja de ruta | [ES](ROADMAP.md) | [EN](ROADMAP.en.md) | Dirección del producto y del escaparate. |
-| Galería y demos | [ES](GALLERY.md) | [EN](GALLERY.en.md) | Ocho capturas y tres demos reales. |
+| Galería y demos | [ES](GALLERY.md) | [EN](GALLERY.en.md) | 18 capturas y ocho demos; 1HITKO conservado. |
 | Portada del producto | [ES](../README.md) | [EN](../README.en.md) | Presentación y resumen técnico. |
 | Participación y validación del showcase | [ES](../CONTRIBUTING.md) | [EN](../CONTRIBUTING.en.md) | Feedback, traducciones y comprobaciones. |
 | Titularidad | [ES](../NOTICE.md) | [EN](../NOTICE.en.md) | Derechos y proyecto no oficial. |
@@ -30,6 +30,6 @@ Todos los documentos Markdown están disponibles en español e inglés. El selec
 
 ## Alcance de los idiomas
 
-La aplicación tiene ocho idiomas; el showcase, dos. Las capturas conservan la interfaz española original. Los manifiestos JSON, identificadores de paquetes, comandos y rutas son artefactos técnicos compartidos y no se duplican ni traducen. Sí se traducen sus explicaciones y los textos alternativos del material visual.
+La aplicación tiene ocho idiomas; el showcase, dos. Las capturas conservan la interfaz grabada: principalmente español, con inglés en la demo y captura de idiomas. Los manifiestos JSON, identificadores de paquetes, comandos y rutas son artefactos técnicos compartidos y no se duplican ni traducen. Sí se traducen sus explicaciones y los textos alternativos del material visual.
 
 Actualizar la documentación no cambia la fecha ni el alcance de la validación histórica de la app. El código privado permanece fuera de este repositorio.

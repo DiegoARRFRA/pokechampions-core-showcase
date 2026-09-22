@@ -29,23 +29,25 @@
 
 ## The application, in pictures
 
-Home, a Versus result and a 1HITKO search. Real Android screenshots show the **Spanish interface in the dark theme**; select an image to enlarge it.
+New Android captures of Home and Versus in the **Spanish interface and light theme**. The **1HITKO capture and demo are retained unchanged** from the previous dark-theme set. Select an image to enlarge it.
 
 <p>
-  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Home with links to the PokeChampions Core tools"></a>
-  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: damage range, factors, KO and calculation limits"></a>
-  <a href="media/screenshots/1hitko-results.png"><img src="media/screenshots/1hitko-results.png" width="220" alt="1HITKO: candidates, moves and damage ranges"></a>
+  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Home with links to the PokeChampions Core tools in the light theme"></a>
+  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: 93 to 109 HP damage, two-use KO and calculation notices"></a>
+  <a href="media/screenshots/1hitko-results.png"><img src="media/screenshots/1hitko-results.png" width="220" alt="1HITKO candidates, moves and damage ranges; previous screenshot retained"></a>
 </p>
 
-### Versus in action · 13 seconds
+### Versus in action · 10 seconds
 
 Choose a move, calculate and inspect damage and KO results in a 1v1 scenario.
 
-<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Versus demo: move selection and result inspection"></a>
+<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="280" alt="Versus demo in the light theme: move selection and result inspection"></a>
 
-**[Watch Versus in MP4](media/demos/versus.mp4)** · [1HITKO demo](docs/GALLERY.en.md#1hitko) · [Lead Trainer demo](docs/GALLERY.en.md#lead-trainer) · **[Complete gallery](docs/GALLERY.en.md)**
+**[Watch Versus in MP4](media/demos/versus.mp4)** · **[All eight demos and 18 screenshots](docs/GALLERY.en.md)**
 
-Demos are edited for presentation and are not benchmarks. The still Versus screenshot and its demo show different moves. [Provenance and editing](media/README.en.md).
+[EV Lab](docs/GALLERY.en.md#ev-lab) · [Master Mode](docs/GALLERY.en.md#master-mode) · [Team Builder](docs/GALLERY.en.md#team-builder) · [Lead Trainer](docs/GALLERY.en.md#lead-trainer) · [Battle History](docs/GALLERY.en.md#battle-history) · [Languages](docs/GALLERY.en.md#languages) · [1HITKO — retained](docs/GALLERY.en.md#1hitko)
+
+Demos are continuous excerpts at original speed with a short final hold, not benchmarks. The language demo shows Spanish and English. [Provenance and editing](media/README.en.md).
 
 ## What you can do
 
@@ -60,7 +62,7 @@ Demos are edited for presentation and are not benchmarks. The still Versus scree
 | **Battle History and Pokémon Notes** | Save declared outcomes, team snapshots, observations and configurations. |
 | **Settings** | Choose among eight languages and light, dark or system appearance. |
 
-[Feature scope and limits](docs/FEATURES.en.md). The gallery includes eight screenshots; it contains no views of the team editor or Battle History module. Lead Trainer material shows preparation, selection and a manual outcome.
+[Feature scope and limits](docs/FEATURES.en.md). The refreshed gallery now includes Team Builder, defensive coverage, recommended builds, Master Mode and the separate Battle History module. The Lead Trainer register and Battle History are identified separately.
 
 ## Engineering and documentation
 
@@ -82,7 +84,7 @@ Every document has its own Spanish and English version, with a reciprocal select
 
 The public application checkpoint covers work through **14 September 2026**. It records a host suite with **4,849 passed, 0 failed and 0 omitted**. Separate historical campaigns document **104,091 Versus scenarios** and **361 forms / 12,987 1HITKO pairs**. These are separate sets: they are not additive and do not certify complete coverage or a later version.
 
-Selected physical QA used a **POCO F5 / Android 15**, including an update to external QA build **1.0.0+2**. The performance study used an **emulator**: its engine-to-first-frame improvement is not a measurement of complete Android startup. Demos prepared on **17 September 2026** do not independently identify an exact build and are not new application tests.
+Selected physical QA used a **POCO F5 / Android 15**, including an update to external QA build **1.0.0+2**. The performance study used an **emulator**: its engine-to-first-frame improvement is not a measurement of complete Android startup. The visual refresh was prepared on **22 September 2026**; 1HITKO remains from **17 September 2026**. The media does not independently identify an exact build and is not new application QA.
 
 ## Status and limits
 

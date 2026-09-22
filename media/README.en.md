@@ -4,30 +4,41 @@
 
 # PokeChampions Core · Visual material
 
-[← Overview](../README.en.md) · [Documentation](../docs/README.en.md) · [Gallery](../docs/GALLERY.en.md)
+[Gallery](../docs/GALLERY.en.md) · [Overview](../README.en.md)
 
-Prepared on **17 September 2026** from screenshots and three screen recordings supplied by the author. The interface is in Spanish with the dark theme. The exact application build has not been independently established from the recordings.
+## Visual refresh · 22 September 2026
 
-## Demo editing
+The project owner supplied six updated screen recordings. They replace every previous screenshot and demo **except the 1HITKO GIF, MP4 and PNG**, which retain their exact bytes and 17 September 2026 provenance. The package contains **18 screenshots and eight demos in two formats (34 media files)**: 31 new files and three preserved files.
 
-| Demo | Original excerpt | Final hold | Approximate duration |
-| --- | --- | --- | --- |
-| Versus | Recording 1: 39.8–51.0 s | 1.8 s | 13 s |
-| 1HITKO | Recording 2: 11.2–21.6 s | 2.6 s | 13 s |
-| Lead Trainer | Recording 3: 17.5–31.5 s | 1.0 s | 15 s |
+The exact application build is not independently identified by these recordings. This is a visual update, not a new QA campaign or certification of the current implementation. Historical technical metrics retain their original dates and scope.
 
-These are continuous excerpts: **searches are not sped up and waiting time within each excerpt is not removed**. Only a final-frame hold is added. Lower preview frame rates do not accelerate the recording.
+## Editing
 
-Android status/navigation bars are cropped, audio removed and files resized proportionally. No interfaces are generated, views combined into fictional screens, or data and warnings altered.
+Each new demo is a continuous excerpt at the original recording speed followed by a short hold of the final frame. No internal cuts, speed-ups or fake waiting periods are introduced. Android status/navigation bars are cropped; all audio is removed. Cropping and resizing preserve proportions. No UI, result, warning or text is generated or retouched.
 
-## Formats and inventory
+New MP4 files are H.264 at **720 × 1440 / 24 fps**, with fast-start metadata. GIF previews are **360 × 720 / 10 fps**. New screenshots are **900 × 1800 PNG**, extracted from selected frames. The three retained 1HITKO files keep their earlier dimensions, duration and encoding.
 
-**300 × 600** GIF previews; **540 × 1080** H.264 MP4 files with more detail. The eight PNG screenshots come from selected frames and two original screenshots. Dimensions, provenance, times and hashes are recorded in [manifest.json](manifest.json). There are 14 media files: eight PNGs, three GIFs and three MP4s.
+## Demos
 
-## Scope and limits
+| Demo | Approximate duration | State |
+| --- | ---: | --- |
+| [Versus](demos/versus.mp4) | 10 s | New |
+| [EV Lab](demos/ev-lab.mp4) | 15 s | New |
+| [Master Mode](demos/modo-maestro.mp4) | 15 s | New |
+| [Team Builder](demos/equipos.mp4) | 11 s | New |
+| [Lead Trainer](demos/entradas.mp4) | 11 s | New |
+| [Battle History](demos/historico.mp4) | 13 s | New |
+| [Languages](demos/idiomas.mp4) | 8 s | New |
+| [1HITKO](demos/1hitko.mp4) | 13 s | Retained unchanged |
 
-Presentation material, **not a benchmark, a new QA run or correctness certification**. The Versus still and demo show different moves. `lead-record.png` retains the supplied package name but shows Lead Trainer preparation with the training tab selected, not a records list or Battle History.
+## Themes, language and scope
 
-Practice outcomes are entered manually and do not establish tournament results or automatic simulation. Screenshots of modules absent from the recordings are not invented. English documentation uses the same Spanish images, not a retranslated interface.
+Most new media shows Spanish in the light theme. The language demo switches from Spanish to English in the dark theme; its screenshot shows English. 1HITKO remains Spanish/dark. The site documentation is bilingual; media is not duplicated or translated artificially.
 
-Only selected visual material is distributed. Full recordings, audio, application source, datasets, font files, keys and private files are excluded. Existing ownership notices remain applicable: [NOTICE.en.md](../NOTICE.en.md).
+Practice results and Battle History counts are manually entered examples. They do not establish real tournament results. `lead-record.png` now shows the actual Lead Trainer Register tab; `history-*` files show the separate Battle History module. `battle-speed.png` keeps a compatibility path but now shows speed analysis in Versus. Scenario details can vary between screenshots and demos.
+
+## Integrity and distribution
+
+[manifest.json](manifest.json) records exact lengths, SHA-256, dimensions, source labels, timestamps and edit boundaries. Its `retained_unchanged` entries lock the three original 1HITKO files. It documents a mixed-generation set rather than presenting every file as newly captured.
+
+Only selected presentation exports are included: no full recordings, music, font files, credentials, APKs, application source or private datasets. Existing [ownership notices](../NOTICE.en.md) continue to apply.

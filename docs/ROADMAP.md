@@ -10,7 +10,7 @@ Dirección del producto y del escaparate sin revelar detalles de implementación
 
 ## Material público disponible
 
-La [galería](GALLERY.md) incluye ocho capturas y tres demos en GIF/MP4. Los 14 archivos se verificaron contra el manifiesto existente el 22 de septiembre de 2026. Esa comprobación corresponde al material de presentación, no a una nueva build o campaña de QA de la aplicación.
+La [galería](GALLERY.md) reúne 18 capturas y ocho demos en GIF/MP4. La renovación visual del 22 de septiembre de 2026 sustituye todo el material anterior salvo los tres archivos de 1HITKO, que se conservan exactamente. El inventario y los hashes están en el [manifiesto](../media/manifest.json). Esta comprobación corresponde al material de presentación, no a una nueva build o campaña de QA de la aplicación.
 
 La [ficha técnica](TECHNICAL_OVERVIEW.md) resume tecnologías y funcionamiento. Toda la documentación Markdown del showcase dispone de versión española e inglesa con navegación recíproca; el [índice](README.md) permite encontrarlas.
 

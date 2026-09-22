@@ -10,7 +10,7 @@ Product and showcase direction without revealing implementation details or promi
 
 ## Available public material
 
-The [gallery](GALLERY.en.md) includes eight screenshots and three GIF/MP4 demos. The 14 files were verified against the existing manifest on 22 September 2026. That check concerns presentation assets, not a new application build or QA campaign.
+The [gallery](GALLERY.en.md) includes 18 screenshots and eight GIF/MP4 demos. The visual refresh of 22 September 2026 replaces every previous media file except the three 1HITKO files, which are retained exactly. The inventory and hashes are recorded in the [manifest](../media/manifest.json). This check concerns presentation assets, not a new application build or QA campaign.
 
 The [technical overview](TECHNICAL_OVERVIEW.en.md) summarises technologies and execution flow. All showcase Markdown documentation has Spanish and English versions with reciprocal navigation; the [index](README.en.md) lists them.
 

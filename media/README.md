@@ -4,30 +4,41 @@
 
 # PokeChampions Core · Material visual
 
-[← Portada](../README.md) · [Documentación](../docs/README.md) · [Galería](../docs/GALLERY.md)
+[Galería](../docs/GALLERY.md) · [Portada](../README.md)
 
-Paquete preparado el **17 de septiembre de 2026** a partir de capturas y tres grabaciones de pantalla facilitadas por el autor. La interfaz está en español y tema oscuro. La versión exacta de la aplicación no se ha establecido de forma independiente a partir de las grabaciones.
+## Renovación visual · 22 de septiembre de 2026
 
-## Edición de las demos
+El autor facilitó seis grabaciones nuevas. Sustituyen todas las capturas y demos anteriores **salvo el GIF, MP4 y PNG de 1HITKO**, que conservan sus bytes exactos y la procedencia del 17 de septiembre de 2026. El conjunto contiene **18 capturas y ocho demos en dos formatos (34 archivos multimedia)**: 31 archivos nuevos y tres conservados.
 
-| Demo | Tramo original | Pausa final | Duración aproximada |
-| --- | --- | --- | --- |
-| Versus | Grabación 1: 39,8–51,0 s | 1,8 s | 13 s |
-| 1HITKO | Grabación 2: 11,2–21,6 s | 2,6 s | 13 s |
-| Entradas | Grabación 3: 17,5–31,5 s | 1,0 s | 15 s |
+Las grabaciones no identifican de forma independiente la build exacta de la aplicación. Es una actualización visual, no una nueva campaña de QA ni certificación de la implementación actual. Las métricas técnicas históricas mantienen su fecha y alcance.
 
-Son tramos continuos: **no se aceleran las búsquedas ni se eliminan esperas dentro del tramo elegido**. Solo se añade una pausa sobre el último frame. Reducir la frecuencia de imagen de la vista previa no acelera la grabación.
+## Edición
 
-Se recortan barras de estado y navegación Android, se retira el audio y se redimensiona proporcionalmente. No se generan interfaces, no se combinan vistas en pantallas ficticias y no se alteran datos o avisos.
+Cada demo nueva es un tramo continuo a la velocidad original de la grabación, seguido de una breve pausa en el último fotograma. No se introducen cortes internos, aceleraciones ni esperas ficticias. Se recortan las barras de estado y navegación Android y se elimina el audio. El recorte y escalado conservan la proporción. No se generan ni retocan interfaces, resultados, avisos o textos.
 
-## Formatos e inventario
+Los MP4 nuevos usan H.264 a **720 × 1440 / 24 fps**, con metadatos de inicio rápido. Los GIF son vistas previas de **360 × 720 / 10 fps**. Las capturas nuevas son **PNG de 900 × 1800**, extraídos de fotogramas seleccionados. Los tres archivos conservados de 1HITKO mantienen sus dimensiones, duración y codificación anteriores.
 
-GIF de **300 × 600** como vistas previas; MP4 H.264 de **540 × 1080** con mayor detalle. Las ocho capturas PNG proceden de frames seleccionados y de dos capturas originales. Dimensiones, procedencia, tiempos y hashes constan en [manifest.json](manifest.json). Se mantienen 14 archivos multimedia: ocho PNG, tres GIF y tres MP4.
+## Demos
 
-## Alcance y límites
+| Demo | Duración aproximada | Estado |
+| --- | ---: | --- |
+| [Versus](demos/versus.mp4) | 10 s | Nueva |
+| [EV Lab](demos/ev-lab.mp4) | 15 s | Nueva |
+| [Modo Maestro](demos/modo-maestro.mp4) | 15 s | Nueva |
+| [Equipos](demos/equipos.mp4) | 11 s | Nueva |
+| [Entradas](demos/entradas.mp4) | 11 s | Nueva |
+| [Histórico](demos/historico.mp4) | 13 s | Nueva |
+| [Idiomas](demos/idiomas.mp4) | 8 s | Nueva |
+| [1HITKO](demos/1hitko.mp4) | 13 s | Conservada sin cambios |
 
-Material demostrativo, **no un benchmark, una nueva ejecución de QA ni una certificación de exactitud**. La captura de Versus y su demo muestran ataques distintos. `lead-record.png` conserva el nombre del paquete recibido, pero muestra preparación de Entradas con «Entrenar» seleccionado, no un listado de registros ni HISTÓRICO.
+## Temas, idioma y alcance
 
-Los resultados de práctica se introducen manualmente y no prueban resultados de torneo ni simulación automática. No se inventan capturas de módulos ausentes en las grabaciones. La documentación inglesa utiliza estas mismas imágenes españolas, no una interfaz retraducida.
+La mayoría del material nuevo muestra español en tema claro. La demo de idiomas cambia de español a inglés en tema oscuro; su captura muestra inglés. 1HITKO sigue en español/oscuro. La documentación es bilingüe; no se duplican ni traducen artificialmente las grabaciones.
 
-Solo se distribuye el material visual seleccionado. Se excluyen grabaciones completas, audio, código de la app, datasets, fuentes tipográficas, claves y archivos privados. Los avisos de titularidad siguen vigentes: [NOTICE.md](../NOTICE.md).
+Los resultados de práctica y recuentos del Histórico son ejemplos introducidos manualmente. No acreditan resultados reales de torneos. `lead-record.png` ahora muestra la pestaña Registro de Entradas; los archivos `history-*` pertenecen al módulo independiente HISTÓRICO. `battle-speed.png` conserva una ruta por compatibilidad, pero ahora muestra el análisis de Velocidad de Versus. Los detalles del escenario pueden variar entre capturas y demos.
+
+## Integridad y distribución
+
+[manifest.json](manifest.json) registra tamaños exactos, SHA-256, dimensiones, etiquetas de origen, tiempos y límites de edición. Sus entradas `retained_unchanged` fijan los tres archivos originales de 1HITKO. Documenta un conjunto de dos tandas, sin presentar todo como recién capturado.
+
+Solo se incluyen exportaciones visuales seleccionadas: no se publican grabaciones completas, música, fuentes tipográficas, credenciales, APK, código de aplicación ni datasets privados. Siguen vigentes los [avisos de titularidad](../NOTICE.md).

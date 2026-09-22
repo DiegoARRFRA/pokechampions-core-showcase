@@ -18,7 +18,7 @@ Every Markdown document is available in Spanish and English. Use the selector at
 | Performance | [ES](PERFORMANCE.md) | [EN](PERFORMANCE.en.md) | Historical emulator startup case. |
 | Data & Accuracy | [ES](DATA_AND_ACCURACY.md) | [EN](DATA_AND_ACCURACY.en.md) | Sources, uncertainty and regulation. |
 | Roadmap | [ES](ROADMAP.md) | [EN](ROADMAP.en.md) | Product and showcase direction. |
-| Gallery and demos | [ES](GALLERY.md) | [EN](GALLERY.en.md) | Eight screenshots and three real demos. |
+| Gallery and demos | [ES](GALLERY.md) | [EN](GALLERY.en.md) | 18 screenshots and eight demos; 1HITKO retained. |
 | Product overview | [ES](../README.md) | [EN](../README.en.md) | Presentation and technical summary. |
 | Participation and showcase validation | [ES](../CONTRIBUTING.md) | [EN](../CONTRIBUTING.en.md) | Feedback, translations and checks. |
 | Ownership | [ES](../NOTICE.md) | [EN](../NOTICE.en.md) | Rights and unofficial project. |
@@ -30,6 +30,6 @@ Every Markdown document is available in Spanish and English. Use the selector at
 
 ## Language scope
 
-The application has eight languages; the showcase has two. Screenshots retain their original Spanish interface. JSON manifests, package identifiers, commands and file paths are shared technical artefacts and are not duplicated or translated. Explanations and media alt text are translated.
+The application has eight languages; the showcase has two. Captures retain their recorded UI: mainly Spanish, with English shown in the language demo and screenshot. JSON manifests, package identifiers, commands and file paths are shared technical artefacts and are not duplicated or translated. Explanations and media alt text are translated.
 
 Document updates do not change the date or scope of historical application validation. The private source remains outside this repository.
