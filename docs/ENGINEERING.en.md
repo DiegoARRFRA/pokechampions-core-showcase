@@ -2,66 +2,50 @@
   <a href="ENGINEERING.md">Español</a> · <strong>English</strong>
 </p>
 
-# Engineering decisions and trade-offs
+# Engineering decisions
 
 [← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Documentation](README.en.md)
 
-This page connects engineering problems with mechanisms observed in the implementation. It explains benefits and limitations without turning them into absolute quality claims or inventing test outcomes.
+## Shared rules across tools
 
-## 1. One mechanical question, several interfaces
+Versus, EV Lab and 1HITKO resolve common mechanics: abilities, items and battle conditions. Typed requests and shared domain components prevent each screen from interpreting those rules independently.
 
-**Problem.** Versus, EV Lab and 1HITKO could diverge if each screen reinterpreted abilities, items and conditions.
+Each tool retains its own search or analysis flow and tests. Composition connects the calculation implementation to its consumer through a contract. [Architecture](ARCHITECTURE.en.md).
 
-**Mechanism.** Typed requests/results and shared domain components where scopes overlap. Composition supplies an implementation of the calculation port to its consumer.
+## Migration with data preservation
 
-**Trade-off.** Shared rules do not remove the need to test each flow. Candidate search and defensive optimisation still ask different questions. Strict hexagonal architecture is not imposed across the entire app. [Architecture](ARCHITECTURE.en.md).
+A read error must not be interpreted as an empty library. Migration preserves originals and separates SQLite preparation, content verification and repository activation.
 
-## 2. Migrate without turning a failure into an empty library
+A verified preparation loses that status if its content changes. Revisions and SQL controls detect the change before activation. Format, compatibility and access errors are handled differently. [Migration and integrity](DATABASE.en.md#migration-and-integrity).
 
-**Problem.** Moving previous storage to SQLite can lose data if “could not read” is treated as “nothing existed”.
+## Saving and idempotency
 
-**Mechanism.** Preserve originals, prepare and verify before activating repositories, classify errors and block inconsistent writes. Revision and SQL controls invalidate a verified generation if it changes.
+Completing a match means saving its outcome and preparing the next draft. Both actions are coordinated in a transaction using a record identity and expected revision.
 
-**Trade-off.** Safer migration introduces more states and recovery cases. Hashes and preparation seals are not encryption or complete protection against an attacker. [Migration and integrity](DATABASE.en.md#migration-and-integrity).
+A repeated operation retrieves its existing confirmation. A changed draft produces a conflict. Recovery distinguishes a previously confirmed match from an insertion that has just been rolled back. [Save sequence](TECHNICAL_OVERVIEW.en.md#saving-a-match).
 
-## 3. Complete a match consistently
+## Hybrid persistence model
 
-**Problem.** Double confirmation, a changed draft or failure between writes can duplicate a result or show success without persistence.
+Teams and snapshots contain structures that evolve with the product. They are stored as versioned JSON alongside columns used to identify, order and index records.
 
-**Mechanism.** Transactional draft completion, record identity, expected revision and lookup of previous confirmations. The result and successor draft are coordinated within the operation.
+This avoids creating a table for every game attribute. In exchange, codecs and repositories handle part of the semantic validation and entity associations. SQLite provides transactions, uniqueness and selected indexes. [Tables and relationships](DATABASE.en.md).
 
-**Trade-off.** Idempotency and recovery must distinguish an earlier confirmation from a newly rolled-back write. Disabling a button alone is insufficient. [Save sequence](TECHNICAL_OVERVIEW.en.md#saving-a-match).
+## Cancellation and lifecycle
 
-## 4. SQL structure without normalising every game attribute
+A search that finishes after leaving a screen must not replace another request's result. The 1HITKO service checks whether its job remains current and supports progress and cancellation.
 
-**Problem.** Teams, configurations and snapshots evolve, while frequent queries need stable IDs and ordering.
+Storage has a shared owner and an operation queue. Closing waits for admitted actions. The SQL isolate and calculation worker have different responsibilities and are managed separately. [Concurrency](TECHNICAL_OVERVIEW.en.md#concurrency-and-state).
 
-**Mechanism.** A hybrid schema: indexed columns for selection and uniqueness, validated JSON content and versioned codecs. Eleven tables, with one actual FK and separately documented logical associations.
+## Reproducible data
 
-**Trade-off.** Some integrity remains the application's responsibility and not all filters run in SQL. An index alone is not proof of fast queries, and imaginary domain tables are not presented as implemented. [Dictionary and relationships](DATABASE.en.md).
+Imports run during development from pinned references. Each release uses packaged catalogues and ID-based terminology; an external change does not alter an existing installation's data.
 
-## 5. Cancellation and work ownership
+Updating a regulation requires generating and validating new artefacts. An interaction without sufficient support is documented as a limitation rather than borrowing a rule from another format. [Data and accuracy](DATA_AND_ACCURACY.en.md).
 
-**Problem.** A late operation can notify a disposed consumer or overwrite a more recent request's results.
+## Startup profiling
 
-**Mechanism.** Explicit resource ownership, coordinated closing, progress/cancellation and current-job checks. Native storage and 1HITKO search use isolation for different responsibilities.
+Analysis separates Flutter work from Android presentation time. This helps locate expensive initialisation and compare changes without confusing first-frame timing with complete startup.
 
-**Trade-off.** An isolate does not imply freedom from blocking or guaranteed performance; measurements and specific lifecycle tests remain necessary. Examined repositories are not described as universally reactive. [Concurrency](TECHNICAL_OVERVIEW.en.md#concurrency-and-state).
-
-## 6. Data accuracy and reproducibility
-
-**Problem.** External references and regulations can change independently of an installed application's data.
-
-**Mechanism.** Development-time imports, pinned revisions, provenance and stable identifiers. The application consumes packaged catalogues; a translation does not govern a mechanical rule.
-
-**Trade-off.** Updating game data requires preparing and validating new artefacts. Insufficient evidence becomes a limitation rather than a guess based on another format. [Sources and accuracy](DATA_AND_ACCURACY.en.md).
-
-## 7. Measure the improved part, not promise complete startup
-
-The historical first-frame study separates Flutter work from total Android presentation time. Publishing a later degraded run under emulator pressure avoids attributing an environment-dependent result solely to the application. This is a documented historical case, not a new measurement of current code. [Performance](PERFORMANCE.en.md).
-
-## Reading the evidence together
-
-These mechanisms support discussion of product design, data modelling, transactions, asynchronous work, testing and maintenance. Demos show visible flows; documentation describes reviewed implementation; historical counts belong to their own checkpoints. None alone replaces a full review of private source.
+The study records measurements, the emulator environment and variation across repeated runs. [Performance](PERFORMANCE.en.md).
 
 [Validation & QA](VALIDATION.en.md) · [Database](DATABASE.en.md) · [Gallery](GALLERY.en.md)

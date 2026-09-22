@@ -2,30 +2,28 @@
   <strong>Español</strong> · <a href="ROADMAP.en.md">English</a>
 </p>
 
-# Hoja de ruta pública
+# Hoja de ruta
 
-[← Portada](../README.md) · [Índice de documentación](README.md)
+[← Portada](../README.md) · [Documentación](README.md)
 
-Dirección del producto y del escaparate sin revelar detalles de implementación ni prometer fechas de entrega.
+## Android y accesibilidad
 
-## Material público disponible
+Ampliar las pruebas físicas a más dispositivos y completar los recorridos con TalkBack, tamaños de texto ampliados y distintas configuraciones de pantalla.
 
-La [galería](GALLERY.md) incorpora la tanda visual preparada el 22 de septiembre de 2026: **16 capturas y seis demos nuevas**, además de la captura y la demo anteriores de 1HITKO, identificadas. El manifiesto contiene 31 archivos (17 PNG y siete demos en GIF/MP4). La verificación multimedia no constituye una nueva build o campaña de QA de la aplicación.
+## Audio y rendimiento
 
-La [ficha técnica](TECHNICAL_OVERVIEW.md) resume tecnologías y funcionamiento. Toda la documentación Markdown del showcase dispone de versión española e inglesa con navegación recíproca; el [índice](README.md) permite encontrarlas.
+Completar las pruebas de reproducción prolongada y de interacción con llamadas, Bluetooth y cambios de foco. Profundizar en el análisis de tiempos de presentación de frames, escrituras y comportamiento con colecciones grandes.
 
-## Próximos frentes
+## Persistencia
 
-Ampliar cobertura física Android más allá del dispositivo principal; continuar accesibilidad y aceptación de TalkBack; completar sesiones prolongadas de audio e investigar el ritmo de presentación de frames en dispositivo; mantener datos y cobertura por regulación sin reutilizar afirmaciones de validación obsoletas; y mejorar notas de entrega que relacionen cambios visibles con checkpoints de validación.
+Ampliar las regresiones de migración con datos de uso prolongado y reforzar las pruebas de transferencia de escenarios entre herramientas. Mantener la conservación de datos como requisito de las actualizaciones.
 
-## Calidad del producto
+## Mecánicas y regulación
 
-Reducir estados mecánicos ambiguos o no soportados, conservar generación determinista y trazabilidad, reforzar migraciones de datos de larga duración y ampliar regresiones de transferencia de escenarios entre funcionalidades.
+Actualizar catálogos y pruebas para cada regulación. Reducir los casos ambiguos o no soportados y mantener la generación reproducible y la trazabilidad de las fuentes.
 
-## Escaparate de ingeniería
+## Entregas y documentación
 
-Actualizar el material anterior de 1HITKO cuando se disponga de nuevas grabaciones. Publicar estudios de caso adicionales cuando aporten lecciones útiles sin exponer el código privado. Mantener alineadas las versiones ES/EN y el feedback centrado en sugerencias, correcciones de datos verificables y documentación pública.
+Relacionar las notas de cada entrega con sus cambios y pruebas. Mantener alineada la documentación en español e inglés y documentar las decisiones técnicas que afecten al uso de la aplicación.
 
-## Fuera de la hoja de ruta predeterminada
-
-No se plantea convertir PokeChampions Core en servicio cloud, red social, cliente de combates online ni simulador autónomo de turnos. El enfoque sigue siendo preparación, análisis y revisión local.
+[Funcionalidades](FEATURES.md) · [Validación](VALIDATION.md) · [Sugerencias e incidencias](../CONTRIBUTING.md)

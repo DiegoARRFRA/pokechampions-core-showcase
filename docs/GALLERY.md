@@ -6,22 +6,20 @@
 
 [← Portada](../README.md) · [Documentación](README.md)
 
-**Actualización visual · 22 de septiembre de 2026.** Seis demos y 16 capturas nuevas extraídas de las grabaciones del autor. Solo el material anterior de 1HITKO se conserva al final, identificado como tal. En total: **17 capturas y siete demos en GIF/MP4, 31 archivos multimedia**.
+Recorre las herramientas de la aplicación: preparación de equipos, cálculo de daño, práctica de salidas y seguimiento de partidas. Abre los vídeos en MP4 o despliega las vistas previas y capturas de cada sección.
 
-[Versus](#versus) · [EV Lab](#ev-lab) · [Equipos](#equipos-y-builds) · [Entradas](#entradas) · [HISTÓRICO](#histórico) · [Idiomas](#idiomas-y-apariencia) · [Material anterior](#material-anterior-conservado)
-
-Los MP4 nuevos ofrecen **720 × 1440**; las vistas previas GIF, **360 × 720**. Abre una captura para ampliarla. Las demos muestran interfaz española excepto el recorrido de idiomas; cambiar el idioma de este documento no traduce los píxeles del material grabado.
+[Versus](#versus) · [EV Lab](#ev-lab) · [1HITKO](#1hitko) · [Equipos](#equipos-y-builds) · [Entradas](#entradas) · [HISTÓRICO](#histórico) · [Idiomas](#idiomas-y-apariencia)
 
 ## Versus
 
-Selección del atacante y de Envite Ígneo, cálculo y lectura de daño, KO y factores. El resultado de la captura fija pertenece al mismo tramo de la nueva demo.
+Selecciona los combatientes y un movimiento para consultar el rango de daño, las condiciones de KO y los factores que intervienen. Modo Maestro permite ajustar el escenario y comparar resultados.
 
-**[MP4 · 12.6 s · 720 × 1440](../media/demos/versus.mp4)**
+**[Ver vídeo · 12,6 s](../media/demos/versus.mp4)**
 
 <details>
 <summary>Ver demo GIF</summary>
 
-<a href="../media/demos/versus.gif"><img src="../media/demos/versus.gif" width="280" alt="Versus: recorrido real de la aplicación"></a>
+<a href="../media/demos/versus.gif"><img src="../media/demos/versus.gif" width="280" alt="Selección de Envite Ígneo y consulta de daño en Versus"></a>
 
 </details>
 
@@ -38,14 +36,14 @@ Selección del atacante y de Envite Ígneo, cálculo y lectura de daño, KO y fa
 
 ## EV Lab
 
-Exploración del reparto defensivo y búsqueda de supervivencia. Se conserva el recorrido real y la respuesta mostrada, sin convertirlo en una prueba general del motor.
+Explora la inversión en PS y defensas y busca un reparto que permita sobrevivir al ataque configurado.
 
-**[MP4 · 16.8 s · 720 × 1440](../media/demos/ev-lab.mp4)**
+**[Ver vídeo · 16,8 s](../media/demos/ev-lab.mp4)**
 
 <details>
 <summary>Ver demo GIF</summary>
 
-<a href="../media/demos/ev-lab.gif"><img src="../media/demos/ev-lab.gif" width="280" alt="EV Lab: recorrido real de la aplicación"></a>
+<a href="../media/demos/ev-lab.gif"><img src="../media/demos/ev-lab.gif" width="280" alt="Búsqueda de un reparto defensivo en EV Lab"></a>
 
 </details>
 
@@ -58,16 +56,32 @@ Exploración del reparto defensivo y búsqueda de supervivencia. Se conserva el 
 
 </details>
 
+## 1HITKO
+
+Configura un defensor y busca candidatos capaces de lograr un KO de un impacto. Los resultados muestran movimientos y rangos de daño; la garantía de daño presupone que el movimiento acierta.
+
+**[Ver vídeo · 13 s](../media/demos/1hitko.mp4)**
+
+<details>
+<summary>Ver demo y captura</summary>
+
+<p>
+  <a href="../media/demos/1hitko.gif"><img src="../media/demos/1hitko.gif" width="260" alt="1HITKO · búsqueda de candidatos a KO de un impacto"></a>
+  <a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="260" alt="1HITKO · candidatos, movimientos y rangos de daño"></a>
+</p>
+
+</details>
+
 ## Equipos y builds
 
-Consulta de una build recomendada, elección de reparto y movimientos, aplicación a Mega-Charizard X y revisión de estadísticas. Las capturas adicionales enseñan composición del equipo y cobertura defensiva.
+Crea el equipo, consulta su cobertura defensiva y aplica builds recomendadas. El vídeo muestra la selección de reparto y movimientos para Mega-Charizard X y la revisión de sus estadísticas.
 
-**[MP4 · 21.0 s · 720 × 1440](../media/demos/team-builder.mp4)**
+**[Ver vídeo · 21 s](../media/demos/team-builder.mp4)**
 
 <details>
 <summary>Ver demo GIF</summary>
 
-<a href="../media/demos/team-builder.gif"><img src="../media/demos/team-builder.gif" width="280" alt="Equipos y builds: recorrido real de la aplicación"></a>
+<a href="../media/demos/team-builder.gif"><img src="../media/demos/team-builder.gif" width="280" alt="Selección y aplicación de una build recomendada"></a>
 
 </details>
 
@@ -84,14 +98,14 @@ Consulta de una build recomendada, elección de reparto y movimientos, aplicaci�
 
 ## Entradas
 
-Elección de la pareja inicial, revelación de la salida rival y registro manual de una práctica ganada. La captura de Registro corresponde a Entradas, no al módulo HISTÓRICO.
+Elige la pareja inicial antes de revelar la salida rival. Registra manualmente el resultado de la práctica y consulta tus sesiones en el registro de Entradas.
 
-**[MP4 · 10.0 s · 720 × 1440](../media/demos/entradas.mp4)**
+**[Ver vídeo · 10 s](../media/demos/entradas.mp4)**
 
 <details>
 <summary>Ver demo GIF</summary>
 
-<a href="../media/demos/entradas.gif"><img src="../media/demos/entradas.gif" width="280" alt="Entradas: recorrido real de la aplicación"></a>
+<a href="../media/demos/entradas.gif"><img src="../media/demos/entradas.gif" width="280" alt="Elección de la pareja inicial y registro de una práctica"></a>
 
 </details>
 
@@ -108,14 +122,14 @@ Elección de la pareja inicial, revelación de la salida rival y registro manual
 
 ## HISTÓRICO
 
-Guardado manual de una partida, consulta del resumen y apertura de la ficha del rival guardado. Las capturas de combates y análisis se tomaron antes de ese guardado: muestran tres partidas, mientras que el resumen posterior muestra cuatro.
+Guarda los resultados de tus partidas, conserva información de los rivales y consulta resúmenes por equipo. El vídeo recorre el guardado de una partida y la ficha del rival.
 
-**[MP4 · 9.2 s · 720 × 1440](../media/demos/history.mp4)**
+**[Ver vídeo · 9,2 s](../media/demos/history.mp4)**
 
 <details>
 <summary>Ver demo GIF</summary>
 
-<a href="../media/demos/history.gif"><img src="../media/demos/history.gif" width="280" alt="HISTÓRICO: recorrido real de la aplicación"></a>
+<a href="../media/demos/history.gif"><img src="../media/demos/history.gif" width="280" alt="Guardado de una partida y consulta del rival en HISTÓRICO"></a>
 
 </details>
 
@@ -132,14 +146,14 @@ Guardado manual de una partida, consulta del resumen y apertura de la ficha del 
 
 ## Idiomas y apariencia
 
-Cambio real de español a inglés y alemán, con vistas de la interfaz traducida. Esta demo está en tema oscuro; el resto de las demos nuevas usa el tema claro. La aplicación declara ocho idiomas, pero este clip no recorre los ocho.
+Elige entre ocho idiomas y los temas claro, oscuro o del sistema. La demo muestra el cambio de español a inglés y alemán.
 
-**[MP4 · 13.9 s · 720 × 1440](../media/demos/languages.mp4)**
+**[Ver vídeo · 13,9 s](../media/demos/languages.mp4)**
 
 <details>
 <summary>Ver demo GIF</summary>
 
-<a href="../media/demos/languages.gif"><img src="../media/demos/languages.gif" width="280" alt="Idiomas y apariencia: recorrido real de la aplicación"></a>
+<a href="../media/demos/languages.gif"><img src="../media/demos/languages.gif" width="280" alt="Cambio de idioma entre español, inglés y alemán"></a>
 
 </details>
 
@@ -154,30 +168,4 @@ Cambio real de español a inglés y alemán, con vistas de la interfaz traducida
 
 </details>
 
-## Material anterior conservado
-
-Estos tres archivos de 1HITKO pertenecen al paquete del **17 de septiembre de 2026**, no a las seis grabaciones de la actualización. Se conservan sin cambios por indicación del autor; el resto del material visual anterior se sustituye o retira. No acreditan el aspecto ni el funcionamiento de la última versión.
-
-### 1HITKO
-
-**[MP4 · ~13 s · 540 × 1080](../media/demos/1hitko.mp4)**
-
-<details>
-<summary>Ver demo y captura anteriores</summary>
-
-<p>
-  <a href="../media/demos/1hitko.gif"><img src="../media/demos/1hitko.gif" width="260" alt="1HITKO · demo anterior de septiembre de 2026"></a>
-  <a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="260" alt="1HITKO · resultados del material anterior"></a>
-</p>
-
-</details>
-
-## Alcance y edición
-
-Se recortan únicamente las barras de Android, se elimina el audio y se redimensiona proporcionalmente. Los clips son tramos continuos a velocidad original con una pausa final añadida: no se ocultan esperas internas ni se aceleran búsquedas. No se generan interfaces, se ensamblan pantallas ficticias ni se cambian resultados.
-
-Los resultados de prácticas y partidas son introducidos manualmente y sirven para demostrar el flujo, no para acreditar estadísticas competitivas. Batalla no ejecuta partidas completas. Este material no constituye un benchmark, una nueva campaña de QA ni una certificación de exactitud. La build exacta no se ha establecido de forma independiente.
-
-[Procedencia y edición](../media/README.md) · [SHA-256](../media/manifest.json) · [Titularidad](../NOTICE.md)
-
-[← Volver a la portada](../README.md)
+[Funcionalidades](FEATURES.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Información de los archivos multimedia](../media/README.md) · [← Portada](../README.md)

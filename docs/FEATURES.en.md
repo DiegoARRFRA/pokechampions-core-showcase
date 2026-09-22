@@ -2,56 +2,50 @@
   <a href="FEATURES.md">Español</a> · <strong>English</strong>
 </p>
 
-# Features and boundaries
+# Features
 
-[← Overview](../README.en.md) · [Documentation index](README.en.md)
+[← Overview](../README.en.md) · [Documentation](README.en.md)
 
-PokeChampions Core groups competitive preparation and analysis flows in a mobile application designed to work offline. The [technical overview](TECHNICAL_OVERVIEW.en.md) explains their connections.
+PokeChampions Core brings team preparation, matchup analysis and match records together in an application that works offline.
 
 ## Teams / Team Builder
 
-Creates and preserves six-slot teams with legal forms, abilities, natures, training, items and up to four moves. Configurations feed other analysis tools instead of remaining in an isolated editor.
+Create six-slot teams with forms, abilities, natures, training, items and up to four moves per member. Inspect recommended builds and defensive coverage, and reuse configurations in the analysis tools.
 
 ## Battle
 
-Represents a user-defined doubles situation: speed order, weather, Tailwind, Trick Room, temporary HP and verified interactions. The user controls the scenario; the app does not choose turns or play the match to completion.
+Configure a doubles situation to compare speed order, weather, Tailwind, Trick Room, temporary HP and relevant effects. The user defines the scenario; the tool analyses that situation without automatically executing the match's turns.
 
 ## Versus
 
-The 1v1 analysis surface shares a typed calculation boundary with related tools, avoiding mechanical reinterpretation in each UI. It offers normal and advanced configuration and receives snapshots transferred from other modules.
+Calculate damage in one-on-one matchups, inspect ranges and KO conditions, and compare scenarios using normal configuration and Master Mode. It accepts configurations transferred from other tools.
 
 ## EV Lab
 
-Focuses on defensive survival. It supports exploring HP, Defense and Special Defense investment and searching for the minimum investment needed to survive configured attacks within the current scenario.
+Explore HP, Defense and Special Defense investment. Search for a spread that survives the configured attacks within the calculation scenario.
 
 ## 1HITKO
 
-Searches the legal local catalogue for candidates that can guarantee a one-hit KO against the configured defender. The historical exhaustive campaign covered 361 forms and 12,987 pairs within its then-current scope, not every future catalogue.
-
-It answers a question limited to one hit and explicit conditions. A damage guarantee assumes the hit lands: it does not guarantee accuracy or winning the match.
+Search the legal catalogue for candidates that can achieve a one-hit KO against the selected defender. Results show moves and damage ranges. Guaranteed damage assumes the move lands.
 
 ## Lead Trainer
 
-An offline mode for practising opening choices with personal teams or curated competitive data. The opposing opening remains hidden until the choice is confirmed. It opens the corresponding Battle situation; the practice outcome is entered manually, not obtained by simulating turns.
+Practise opening choices with your own teams or curated competitive teams. The opposing lead stays hidden until you confirm your pair. Open the situation in Battle and enter the practice outcome manually.
 
 ## Battle History
 
-Stores wins, losses, opponent information and immutable team snapshots locally. It offers filters and summaries without turning the recorded match into an automatic replay. It is separate from Lead Trainer's practice record.
+Save wins, losses, opponent information and team snapshots. Use filters and summaries to review your matches. This is separate from Lead Trainer's practice records.
 
 ## Pokémon Notes
 
-A separate library of Pokémon-specific observations and reusable configurations, independent from saved teams.
+Keep Pokémon-specific observations and reusable configurations in a library independent of saved teams.
 
 ## Languages and appearance
 
-Eight complete locale packages: Spanish, English, German, French, Italian, Portuguese, Japanese and Korean. Appearance supports light, dark and system modes. Showcase documentation has two languages; that does not limit the application's eight.
+The interface supports Spanish, English, German, French, Italian, Portuguese, Japanese and Korean. Choose a light, dark or system theme.
 
 ## Audio
 
-Includes a persistent local playlist and remembers preferences. Audio has been investigated on host and physical devices; prolonged audible-session validation remains a separate concern rather than something covered by a generic completed label.
+Play local music and retain playback preferences and track selections.
 
-## Outside the default scope
-
-Accounts, cloud sync, social features, online battles, payments and complete autonomous battle simulation are not planned in the default scope. The focus remains preparation, analysis and review.
-
-[Gallery and demos](GALLERY.en.md) · [Validation & QA](VALIDATION.en.md)
+[Gallery and demos](GALLERY.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Tests and scope](VALIDATION.en.md)

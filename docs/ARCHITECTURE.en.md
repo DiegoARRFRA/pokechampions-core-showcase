@@ -6,11 +6,11 @@
 
 [← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Database](DATABASE.en.md) · [Documentation](README.en.md)
 
-## Architectural style
+## Organisation
 
-**A modular, feature-first application with layered separation and ports/adapters in key components.** It is one local application, not a microservice system. A “port” is an internal code contract, not a REST endpoint.
+The application is organised by feature, with presentation, coordination, domain and data-access layers. Typed contracts and constructor injection allow calculation, storage and audio services to be replaced.
 
-These boundaries allow services to be replaced at specific points. The entire project is not described as purely hexagonal: some controllers and composition depend on Flutter, and feature folders are not organised identically everywhere.
+Modules share models, rules and interface resources. Composition and some controllers depend on Flutter; isolatable domain components remain independent of screens. Each feature's internal structure follows its requirements.
 
 ## Layers and dependencies
 
@@ -28,26 +28,30 @@ flowchart TB
     ADAPTER --> AUDIO["Audio and preferences"]
 ```
 
-A responsibility view. It does not represent every import or require all data access to pass through one adapter. Implementations are connected at composition points; consumers receive the dependencies they need.
+Composition connects implementations; each consumer receives its dependencies. The diagram groups responsibilities and usage relationships.
 
-| Responsibility | Purpose | Not to be confused with |
-| --- | --- | --- |
-| Presentation | Input, navigation, results and visual state. | Deriving rules from translations. |
-| Coordination | Prepare requests, start tasks and manage their lifecycle. | All domain logic or complete independence from Flutter. |
-| Domain | Rules, models and results within product scope. | A complete turn simulator. |
-| Contracts | Typed boundaries between consumer and implementation. | A public network API. |
-| Adapters | SQL repositories, playback and resource access. | A collection of microservices. |
-| Composition | Construct/connect implementations and share ownership. | Opening new connections from each widget. |
+| Layer | Responsibility |
+| --- | --- |
+| **Presentation** | Input, navigation, loading states and result display. |
+| **Coordination** | Request preparation, operation execution and lifecycle management. |
+| **Domain** | Rules, scenario models and calculation results. |
+| **Contracts** | Typed interfaces between consumers and services. |
+| **Adapters** | SQL access, resource reads, preferences and audio playback. |
+| **Composition** | Construction of implementations and shared resource ownership. |
 
-## Two concrete examples
+## Versus
 
-**Versus.** The feature entry resolves catalogues and supplies a calculation contract to the controller. The concrete facade fulfils that contract; composition accepts an alternative implementation. Scenario and response are typed. This boundary keeps the normal screen from needing to know every evaluator implementation detail.
+The feature entry loads catalogues and supplies a calculation contract to the controller. A facade implements that contract; composition accepts an alternative for tests or other consumers.
 
-**Audio.** The controller receives its player, preference repository and session through contracts. The playback adapter encapsulates `just_audio`. Controller state still uses Flutter mechanisms: provider separation is real, but the controller is not portrayed as framework-independent.
+The screen works with typed scenarios and responses. Rules are evaluated outside widgets, so presentation changes do not require rewriting the evaluator.
 
-## Project organisation
+## Audio
 
-A responsibility map, not a public distribution of internal files:
+The controller receives a player, preference repository and session. The playback adapter encapsulates `just_audio`; the controller coordinates state through Flutter mechanisms.
+
+This separation allows coordination to be tested with silent or in-memory implementations without starting the native player.
+
+## Project structure
 
 ```text
 Application
@@ -63,7 +67,7 @@ Development tooling
   Generation, import, tests and validation
 ```
 
-This avoids claiming a folder symmetry the project does not have. Importers and audit artefacts are not a running backend.
+Generators and importers prepare resources during development. The application consumes those resources locally.
 
 ## Startup and storage exposure
 
@@ -82,16 +86,14 @@ flowchart TB
     SCOPE --> UI["Enable consumers"]
 ```
 
-A summarised startup view, not the complete state machine. While storage is preparing or blocked, the normal scope does not silently fall back to previous repositories. Retry depends on error classification; reopening does not fix every failure.
+Repositories are exposed when storage is ready. Consumers do not silently fall back to another store while it is preparing or blocked. Access errors allow a retry; integrity or compatibility errors require their cause to be resolved.
 
-## Product boundaries
+Repositories share a connection and its operation queue. The owner coordinates opening and waits for admitted actions before closing.
 
-Battle analyses a 2v2 situation; Versus evaluates damage; 1HITKO searches candidates; EV Lab explores survival; Lead Trainer practises initial choices; Battle History retains declared outcomes. Scenario transfers between tools do not make the composition an automatic match engine.
+## Feature relationships
 
-Teams and practice rounds share storage mechanisms but retain distinct contracts. Battle History stores its own records, draft and opponent versions. [Physical model and logical associations](DATABASE.en.md).
+Teams and Notes provide reusable configurations. Versus calculates damage, EV Lab searches defensive spreads and 1HITKO searches candidates. Battle compares speed and effects in a doubles situation. Lead Trainer uses those teams for opening-choice practice and records the outcome entered by the user.
 
-## What an external reader can review
+Battle History maintains matches, a draft and opponent profiles/versions. Its data is separate from Lead Trainer's practice records, although both use the shared persistence infrastructure.
 
-This documentation exposes responsibilities, data design, boundaries and trade-offs, alongside demos and selected evidence. It does not make the entire application reproducible from the showcase: source, datasets and the private test corpus remain unpublished. Diagrams summarise implementation reviewed on 22 September 2026; they are not a new whole-codebase audit.
-
-[Engineering decisions](ENGINEERING.en.md) · [Operational flows](TECHNICAL_OVERVIEW.en.md) · [Quality and limits](VALIDATION.en.md)
+[Data model](DATABASE.en.md) · [Engineering decisions](ENGINEERING.en.md) · [Operational flows](TECHNICAL_OVERVIEW.en.md) · [Tests](VALIDATION.en.md)

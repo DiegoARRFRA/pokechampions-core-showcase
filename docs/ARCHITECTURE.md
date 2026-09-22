@@ -6,11 +6,11 @@
 
 [← Portada](../README.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Base de datos](DATABASE.md) · [Documentación](README.md)
 
-## Estilo arquitectónico
+## Organización
 
-**Aplicación modular organizada por funcionalidades —feature-first—, con separación por capas y puertos/adaptadores en componentes clave.** Es una única aplicación local, no un sistema de microservicios. “Puerto” significa un contrato interno de código; no un endpoint REST.
+La aplicación se organiza por funcionalidades, con capas de presentación, coordinación, dominio y acceso a datos. Los contratos tipados y la inyección por constructor permiten sustituir servicios de cálculo, almacenamiento y audio.
 
-La separación permite sustituir servicios en puntos concretos. No se describe todo el proyecto como hexagonal puro: ciertos controladores y la composición dependen de Flutter, y la distribución de carpetas no es idéntica en todas las funcionalidades.
+Los módulos comparten modelos, reglas y recursos de interfaz. La composición y algunos controladores dependen de Flutter; los componentes de dominio aislables se mantienen independientes de las pantallas. La estructura interna se adapta a las necesidades de cada funcionalidad.
 
 ## Capas y dependencias
 
@@ -28,26 +28,30 @@ flowchart TB
     ADAPTER --> AUDIO["Audio y preferencias"]
 ```
 
-Vista por responsabilidades. No representa cada import ni exige que todo acceso a datos atraviese el mismo adaptador. Las implementaciones se conectan en composición; los consumidores reciben las dependencias que necesitan.
+La composición conecta las implementaciones; cada consumidor recibe sus dependencias. El diagrama agrupa responsabilidades y relaciones de uso.
 
-| Responsabilidad | Qué resuelve | Qué no debe confundirse con ella |
-| --- | --- | --- |
-| Presentación | Entrada, navegación, resultado y estados visuales. | Interpretar reglas desde traducciones. |
-| Coordinación | Preparar peticiones, iniciar tareas y gestionar su ciclo de vida. | Toda la lógica de dominio ni independencia total de Flutter. |
-| Dominio | Reglas, modelos y resultados dentro del alcance del producto. | Un simulador completo de turnos. |
-| Contratos | Límite tipado entre consumidor e implementación. | Una API pública de red. |
-| Adaptadores | Repositorios SQL, reproducción y acceso a recursos. | Una colección de microservicios. |
-| Composición | Crear/conectar implementaciones y compartir su propiedad. | Abrir conexiones nuevas desde cada widget. |
+| Capa | Responsabilidad |
+| --- | --- |
+| **Presentación** | Entrada de datos, navegación, estados de carga y visualización de resultados. |
+| **Coordinación** | Preparación de peticiones, ejecución de operaciones y gestión de su ciclo de vida. |
+| **Dominio** | Reglas, modelos de escenario y resultados de cálculo. |
+| **Contratos** | Interfaces tipadas entre consumidores y servicios. |
+| **Adaptadores** | Acceso SQL, lectura de recursos, preferencias y reproducción de audio. |
+| **Composición** | Creación de implementaciones y propiedad compartida de sus recursos. |
 
-## Dos ejemplos concretos
+## Versus
 
-**Versus.** La entrada de la funcionalidad resuelve catálogos y entrega al controlador un contrato de cálculo. La fachada concreta satisface ese contrato; la composición admite una implementación alternativa. El escenario y la respuesta son tipados. La separación evita que la pantalla normal tenga que conocer todos los detalles de la implementación del evaluador.
+La entrada de la funcionalidad carga los catálogos y entrega al controlador un contrato de cálculo. Una fachada implementa ese contrato; la composición admite una alternativa para pruebas u otros consumidores.
 
-**Audio.** El controlador recibe reproductor, repositorio de preferencias y sesión mediante contratos. El adaptador de reproducción encapsula `just_audio`. El estado del controlador sí usa mecanismos de Flutter: se separa el proveedor, no se finge un controlador totalmente ajeno al framework.
+La pantalla trabaja con escenarios y respuestas tipadas. Las reglas se resuelven fuera de los widgets, de modo que cambios de presentación no requieren reescribir el evaluador.
 
-## Organización del proyecto
+## Audio
 
-Mapa orientativo de responsabilidades; no es una distribución pública de archivos internos:
+El controlador recibe un reproductor, un repositorio de preferencias y una sesión. El adaptador de reproducción encapsula `just_audio`; el controlador coordina el estado mediante los mecanismos de Flutter.
+
+Esta separación permite probar la coordinación con implementaciones silenciosas o en memoria, sin iniciar el reproductor nativo.
+
+## Estructura del proyecto
 
 ```text
 Aplicacion
@@ -63,7 +67,7 @@ Herramientas de desarrollo
   Generacion, importacion, pruebas y validacion
 ```
 
-El árbol evita prometer una simetría de carpetas que el proyecto no tiene. Importadores y artefactos de auditoría no forman parte de un backend en ejecución.
+Los generadores e importadores preparan los recursos durante el desarrollo. La aplicación consume esos recursos localmente.
 
 ## Arranque y publicación del almacenamiento
 
@@ -82,16 +86,14 @@ flowchart TB
     SCOPE --> UI["Habilitar consumidores"]
 ```
 
-Es una vista resumida del arranque, no la máquina de estados completa. Mientras el almacenamiento se prepara o está bloqueado, el ámbito normal no recurre silenciosamente a los repositorios anteriores. El reintento está condicionado a la clasificación del error; no todos los fallos se resuelven repitiendo la apertura.
+Los repositorios se exponen cuando el almacenamiento está listo. Mientras se prepara o se encuentra bloqueado, los consumidores no pasan silenciosamente a otro almacén. Los errores de acceso admiten reintento; los de integridad o compatibilidad requieren resolver su causa.
 
-## Límites del producto
+Los repositorios comparten una conexión y su cola de operaciones. Su propietario coordina la apertura y espera a las acciones admitidas antes de cerrar.
 
-Batalla analiza una situación 2v2; Versus evalúa daño; 1HITKO busca candidatos; EV Lab explora supervivencia; Entradas practica elecciones iniciales; HISTÓRICO conserva resultados declarados. Las transferencias de escenarios entre herramientas no convierten esa composición en una partida automática.
+## Relación entre funcionalidades
 
-Equipos y rondas de Entradas comparten mecanismos de almacenamiento, pero mantienen contratos distintos. HISTÓRICO almacena sus propios registros, borrador y versiones de rival. [Modelo físico y asociaciones lógicas](DATABASE.md).
+Equipos y Notas proporcionan configuraciones reutilizables. Versus calcula daño; EV Lab busca repartos defensivos; 1HITKO recorre candidatos. Batalla compara Velocidad y efectos en una situación de dobles. Entradas utiliza esos equipos para practicar elecciones iniciales y registra el resultado que introduce el usuario.
 
-## Qué puede revisar un lector externo
+HISTÓRICO mantiene partidas, borrador y perfiles/versiones de rivales. Sus datos son distintos del registro de prácticas de Entradas, aunque ambos utilizan la infraestructura de persistencia compartida.
 
-Esta documentación permite examinar responsabilidades, diseño de datos, límites y compromisos, junto con demos y evidencia seleccionada. No permite reproducir toda la aplicación desde el showcase: el código, los datasets y el corpus privado de pruebas no se publican. Los diagramas son resúmenes de la implementación revisada el 22 de septiembre de 2026, no una nueva auditoría del código completo.
-
-[Decisiones de ingeniería](ENGINEERING.md) · [Flujos operativos](TECHNICAL_OVERVIEW.md) · [Calidad y límites](VALIDATION.md)
+[Modelo de datos](DATABASE.md) · [Decisiones de ingeniería](ENGINEERING.md) · [Flujos operativos](TECHNICAL_OVERVIEW.md) · [Pruebas](VALIDATION.md)

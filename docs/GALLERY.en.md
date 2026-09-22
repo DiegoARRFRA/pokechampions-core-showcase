@@ -6,22 +6,20 @@
 
 [← Overview](../README.en.md) · [Documentation](README.en.md)
 
-**Visual refresh · 22 September 2026.** Six new demos and 16 new screenshots extracted from the owner’s recordings. Only earlier 1HITKO material is retained at the end and explicitly labelled. Total: **17 screenshots and seven GIF/MP4 demos, 31 media files**.
+Explore the application's tools: team preparation, damage calculation, lead practice and match tracking. Watch the MP4 videos or expand the previews and screenshots in each section. Recordings show the Spanish interface except in the language demo.
 
-[Versus](#versus) · [EV Lab](#ev-lab) · [Teams](#teams-and-builds) · [Lead Trainer](#lead-trainer) · [History](#battle-history) · [Languages](#languages-and-appearance) · [Earlier material](#retained-earlier-material)
-
-New MP4 exports are **720 × 1440**; GIF previews are **360 × 720**. Open a screenshot to enlarge it. Demos show the Spanish interface except for the language walkthrough; changing this document’s language does not translate recorded pixels.
+[Versus](#versus) · [EV Lab](#ev-lab) · [1HITKO](#1hitko) · [Teams](#teams-and-builds) · [Lead Trainer](#lead-trainer) · [History](#battle-history) · [Languages](#languages-and-appearance)
 
 ## Versus
 
-Select the attacker and Flare Blitz, calculate, then inspect damage, KO and factors. The result still comes from the same excerpt as the new demo.
+Select combatants and a move to inspect damage ranges, KO conditions and contributing factors. Master Mode lets you adjust the scenario and compare results.
 
-**[MP4 · 12.6 s · 720 × 1440](../media/demos/versus.mp4)**
+**[Watch video · 12.6 s](../media/demos/versus.mp4)**
 
 <details>
 <summary>Show GIF demo</summary>
 
-<a href="../media/demos/versus.gif"><img src="../media/demos/versus.gif" width="280" alt="Versus: real application walkthrough"></a>
+<a href="../media/demos/versus.gif"><img src="../media/demos/versus.gif" width="280" alt="Selecting Flare Blitz and inspecting damage in Versus"></a>
 
 </details>
 
@@ -38,14 +36,14 @@ Select the attacker and Flare Blitz, calculate, then inspect damage, KO and fact
 
 ## EV Lab
 
-Explore defensive investment and run the survival search. The original interaction and displayed response are preserved; this is not a general engine test.
+Explore HP and defensive investment and search for a spread that survives the configured attack.
 
-**[MP4 · 16.8 s · 720 × 1440](../media/demos/ev-lab.mp4)**
+**[Watch video · 16.8 s](../media/demos/ev-lab.mp4)**
 
 <details>
 <summary>Show GIF demo</summary>
 
-<a href="../media/demos/ev-lab.gif"><img src="../media/demos/ev-lab.gif" width="280" alt="EV Lab: real application walkthrough"></a>
+<a href="../media/demos/ev-lab.gif"><img src="../media/demos/ev-lab.gif" width="280" alt="Searching for a defensive spread in EV Lab"></a>
 
 </details>
 
@@ -58,16 +56,32 @@ Explore defensive investment and run the survival search. The original interacti
 
 </details>
 
+## 1HITKO
+
+Configure a defender and search for candidates that can achieve a one-hit KO. Results include moves and damage ranges; guaranteed damage assumes the move lands.
+
+**[Watch video · 13 s](../media/demos/1hitko.mp4)**
+
+<details>
+<summary>Show demo and screenshot</summary>
+
+<p>
+  <a href="../media/demos/1hitko.gif"><img src="../media/demos/1hitko.gif" width="260" alt="1HITKO · searching for one-hit KO candidates"></a>
+  <a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="260" alt="1HITKO · candidates, moves and damage ranges"></a>
+</p>
+
+</details>
+
 ## Teams and builds
 
-Inspect a recommended build, choose its spread and moves, apply it to Mega Charizard X and review stats. Additional stills show team composition and defensive coverage.
+Build a team, inspect its defensive coverage and apply recommended builds. The video shows spread and move selection for Mega Charizard X and a review of its stats.
 
-**[MP4 · 21.0 s · 720 × 1440](../media/demos/team-builder.mp4)**
+**[Watch video · 21 s](../media/demos/team-builder.mp4)**
 
 <details>
 <summary>Show GIF demo</summary>
 
-<a href="../media/demos/team-builder.gif"><img src="../media/demos/team-builder.gif" width="280" alt="Teams and builds: real application walkthrough"></a>
+<a href="../media/demos/team-builder.gif"><img src="../media/demos/team-builder.gif" width="280" alt="Selecting and applying a recommended build"></a>
 
 </details>
 
@@ -84,14 +98,14 @@ Inspect a recommended build, choose its spread and moves, apply it to Mega Chari
 
 ## Lead Trainer
 
-Choose an opening pair, reveal the opposing opening and manually mark a practice win. The Records still belongs to Lead Trainer, not the Battle History module.
+Choose your opening pair before revealing the opposing lead. Enter the practice outcome manually and review your sessions in the Lead Trainer records.
 
-**[MP4 · 10.0 s · 720 × 1440](../media/demos/entradas.mp4)**
+**[Watch video · 10 s](../media/demos/entradas.mp4)**
 
 <details>
 <summary>Show GIF demo</summary>
 
-<a href="../media/demos/entradas.gif"><img src="../media/demos/entradas.gif" width="280" alt="Lead Trainer: real application walkthrough"></a>
+<a href="../media/demos/entradas.gif"><img src="../media/demos/entradas.gif" width="280" alt="Choosing an opening pair and recording a practice session"></a>
 
 </details>
 
@@ -108,14 +122,14 @@ Choose an opening pair, reveal the opposing opening and manually mark a practice
 
 ## Battle History
 
-Manually save a match, view the summary and open the saved opponent. Match-list and analysis stills were taken before that save: they show three matches, while the later summary shows four.
+Save match outcomes, keep opponent information and view summaries by team. The video follows a match save and opens the opponent's profile.
 
-**[MP4 · 9.2 s · 720 × 1440](../media/demos/history.mp4)**
+**[Watch video · 9.2 s](../media/demos/history.mp4)**
 
 <details>
 <summary>Show GIF demo</summary>
 
-<a href="../media/demos/history.gif"><img src="../media/demos/history.gif" width="280" alt="Battle History: real application walkthrough"></a>
+<a href="../media/demos/history.gif"><img src="../media/demos/history.gif" width="280" alt="Saving a match and viewing the opponent in Battle History"></a>
 
 </details>
 
@@ -132,14 +146,14 @@ Manually save a match, view the summary and open the saved opponent. Match-list 
 
 ## Languages and appearance
 
-A real switch from Spanish to English and German, including the translated interface. This demo uses the dark theme; the other new demos use the light theme. The application declares eight languages, but this clip does not demonstrate all eight.
+Choose from eight languages and light, dark or system themes. The demo switches from Spanish to English and German.
 
-**[MP4 · 13.9 s · 720 × 1440](../media/demos/languages.mp4)**
+**[Watch video · 13.9 s](../media/demos/languages.mp4)**
 
 <details>
 <summary>Show GIF demo</summary>
 
-<a href="../media/demos/languages.gif"><img src="../media/demos/languages.gif" width="280" alt="Languages and appearance: real application walkthrough"></a>
+<a href="../media/demos/languages.gif"><img src="../media/demos/languages.gif" width="280" alt="Switching between Spanish, English and German"></a>
 
 </details>
 
@@ -154,30 +168,4 @@ A real switch from Spanish to English and German, including the translated inter
 
 </details>
 
-## Retained earlier material
-
-These three 1HITKO files belong to the **17 September 2026** package, not the six refresh recordings. They are retained unchanged at the owner’s request; all other earlier media is replaced or removed. They do not establish the appearance or behaviour of the latest version.
-
-### 1HITKO
-
-**[MP4 · ~13 s · 540 × 1080](../media/demos/1hitko.mp4)**
-
-<details>
-<summary>Show earlier demo and still</summary>
-
-<p>
-  <a href="../media/demos/1hitko.gif"><img src="../media/demos/1hitko.gif" width="260" alt="1HITKO · earlier September 2026 demo"></a>
-  <a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="260" alt="1HITKO · results from earlier material"></a>
-</p>
-
-</details>
-
-## Scope and editing
-
-Only Android system bars are cropped; audio is removed and files are resized proportionally. Clips are continuous excerpts at the original speed with a final-frame hold: internal waiting time is not hidden and searches are not accelerated. No UI is generated, no fictional screens are assembled and no results are changed.
-
-Practice and match outcomes are manually entered demonstrations, not evidence of competitive statistics. Battle does not execute complete matches. This material is not a benchmark, a new QA campaign or a correctness certification. The exact build has not been independently established.
-
-[Provenance and editing](../media/README.en.md) · [SHA-256](../media/manifest.json) · [Ownership](../NOTICE.en.md)
-
-[← Back to the overview](../README.en.md)
+[Features](FEATURES.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Media file information](../media/README.en.md) · [← Overview](../README.en.md)
