@@ -46,7 +46,7 @@ Seleccionar atacante y movimiento, calcular y leer el resultado.
 
 **[Ver MP4](media/demos/versus.mp4)** · [Equipos y builds](docs/GALLERY.md#equipos-y-builds) · [Entradas](docs/GALLERY.md#entradas) · [Galería completa](docs/GALLERY.md)
 
-La galería conserva las demos ya publicadas y distingue el material anterior de 1HITKO. Son grabaciones editadas para presentación, no benchmarks ni certificaciones de la versión grabada. [Procedencia](media/README.md).
+ [Procedencia](media/README.md).
 
 ## Decisiones que merece la pena revisar
 
