@@ -59,7 +59,9 @@ The gallery preserves the published demos and identifies older 1HITKO material. 
 
 ## Evidence in context
 
-The public application-validation checkpoint of **14 September 2026** records **4,849 passed tests, 0 failures and 0 omissions**. Separate historical campaigns document **104,091 Versus scenarios** and **361 forms / 12,987 1HITKO pairs**. These sets are not additive and do not establish complete coverage of later builds.
+The host campaign accepted on **20 September 2026** recorded **5,058 passing tests, 0 failures and 0 omissions**, in an ordinary serial run without filters. The earlier checkpoint from **14 September** retains its **4,849 passes**. These are distinct validation states; this documentation review neither reruns the suite nor certifies later changes.
+
+Separate historical campaigns document **104,091 Versus scenarios** and **361 forms / 12,987 1HITKO pairs**. These sets are not additive and do not establish complete coverage of later builds. [Evidence matrix and scope](docs/VALIDATION.en.md).
 
 Documented physical QA includes selected flows on **POCO F5 / Android 15**. The published performance case used an **emulator**, not an equivalent measurement on that phone. [Validation and limits](docs/VALIDATION.en.md) · [Performance case](docs/PERFORMANCE.en.md).
 
