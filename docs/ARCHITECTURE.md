@@ -1,6 +1,6 @@
 # Architecture
 
-PokeChampions Core is a Flutter application designed around a strict separation between presentation, typed feature boundaries, domain logic, persistence and versioned local catalogues.
+PokeChampions Core uses a modular, feature-first architecture with layered separation and ports and adapters applied to key components. Presentation, application coordination, domain rules, persistence and versioned local catalogues have distinct responsibilities. This is not a claim of pure hexagonal architecture across the whole application or of a fully Flutter-independent core.
 
 ## Runtime shape
 
@@ -18,7 +18,7 @@ Validated result models
            ↘ packaged versioned catalogues
 ```
 
-The private implementation follows a feature-oriented structure with shared core layers. UI code is not expected to reconstruct mechanics from labels or free-form descriptions. Instead, screens provide typed requests to domain services and render typed responses.
+This diagram summarises the shared calculation path, not every dependency in the application. Features use shared layers where appropriate; ports and adapters support selected calculation, data-access and storage boundaries. UI code is not expected to reconstruct mechanics from labels or free-form descriptions. Instead, calculation screens provide typed requests to services and render typed responses.
 
 ## Core concerns
 
@@ -54,4 +54,4 @@ The private repository also contains importers, generators, audit harnesses and 
 
 ## Why the source remains private
 
-The goal of this repository is to make the engineering visible without publishing the production implementation, full data pipeline or internal test corpus. That protects the work while still allowing architecture, methodology and measured results to be reviewed publicly.
+The goal of this repository is to make architecture, methodology and selected measured results reviewable without publishing the production implementation, full data pipeline or internal test corpus. Public documentation and repository controls do not guarantee protection against copying.

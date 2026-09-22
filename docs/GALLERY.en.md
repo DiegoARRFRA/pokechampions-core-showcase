@@ -1,66 +1,90 @@
 <p align="right">
-  <a href="GALLERY.md">🇪🇸 Español</a> · <strong>🇬🇧 English</strong>
+  <a href="GALLERY.md">Español</a> · <strong>English</strong>
 </p>
 
 # PokeChampions Core · Gallery
 
 [← Back to the overview](../README.en.md)
 
-Real Android screenshots and screen recordings supplied by the author. The captured interface is in Spanish and uses the dark theme. Select a screenshot to inspect it at a larger size, or a demo to open its MP4 file.
+Eight real Android screenshots and three short demos. The captured interface is **in Spanish and uses the dark theme**. Select a screenshot to enlarge it; MP4 links provide higher-resolution demos.
 
-## The application in motion
+[Versus](#versus) · [1HITKO](#1hitko) · [Lead Trainer](#lead-trainer) · [Screenshots](#screenshots)
 
-<table>
-  <tr>
-    <th>Versus · ~13 s</th>
-    <th>1HITKO · ~13 s</th>
-    <th>Lead Trainer · ~15 s</th>
-  </tr>
-  <tr>
-    <td align="center"><a href="../media/demos/versus.mp4"><img src="../media/demos/versus.gif" width="240" alt="Real Versus demo: select a move, calculate, and inspect damage and KO results"></a></td>
-    <td align="center"><a href="../media/demos/1hitko.mp4"><img src="../media/demos/1hitko.gif" width="240" alt="Real 1HITKO demo: defender scenario, search progress and results"></a></td>
-    <td align="center"><a href="../media/demos/entradas.mp4"><img src="../media/demos/entradas.gif" width="240" alt="Real Lead Trainer demo: select two Pokémon, open Battle and enter a manual outcome"></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="../media/demos/versus.mp4">MP4 · 540 × 1080</a></td>
-    <td align="center"><a href="../media/demos/1hitko.mp4">MP4 · 540 × 1080</a></td>
-    <td align="center"><a href="../media/demos/entradas.mp4">MP4 · 540 × 1080</a></td>
-  </tr>
-</table>
+## Demos
 
-Demos retain the original recording speed without internal cuts. Each uses one selected excerpt followed by a short final-frame hold for readability. Audio is removed. GIFs are lower-resolution previews; the MP4 files provide more detail.
+### Versus
 
-## Selected screenshots
+Select a move, calculate and inspect damage and KO. **[MP4 · ~13 s · 540 × 1080](../media/demos/versus.mp4)**
 
-<table>
-  <tr><th>Home</th><th>Versus · damage result</th></tr>
-  <tr>
-    <td align="center"><a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="310" alt="PokeChampions Core home screen with Battle, Calculator, 1HITKO, Lead Trainer and History entries"></a></td>
-    <td align="center"><a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="310" alt="Versus result with a damage range, applied factors, KO information and an unautomated-effect warning"></a></td>
-  </tr>
-  <tr><th>1HITKO · search results</th><th>Battle · speed order</th></tr>
-  <tr>
-    <td align="center"><a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="310" alt="1HITKO search results with moves and damage ranges"></a></td>
-    <td align="center"><a href="../media/screenshots/battle-speed.png"><img src="../media/screenshots/battle-speed.png" width="310" alt="Speed order analysis including held items, abilities and a priority caveat"></a></td>
-  </tr>
-  <tr><th>EV Lab · live result</th><th>Lead Trainer · opening selection</th></tr>
-  <tr>
-    <td align="center"><a href="../media/screenshots/ev-lab.png"><img src="../media/screenshots/ev-lab.png" width="310" alt="EV Lab with defensive investment, a live result and survival controls"></a></td>
-    <td align="center"><a href="../media/screenshots/lead-selection.png"><img src="../media/screenshots/lead-selection.png" width="310" alt="Selection of two allied Pokémon, the opposing team and its hidden opening pair"></a></td>
-  </tr>
-  <tr><th>Lead Trainer · manual outcome</th><th>Lead Trainer · practice records</th></tr>
-  <tr>
-    <td align="center"><a href="../media/screenshots/lead-result.png"><img src="../media/screenshots/lead-result.png" width="310" alt="Lead Trainer battle view with its manual Won or Lost outcome control"></a></td>
-    <td align="center"><a href="../media/screenshots/lead-record.png"><img src="../media/screenshots/lead-record.png" width="310" alt="Lead Trainer practice records showing a summary and saved results by opponent"></a></td>
-  </tr>
-</table>
+<details>
+<summary>Show GIF preview · Versus</summary>
 
-## What this gallery demonstrates
+<a href="../media/demos/versus.gif"><img src="../media/demos/versus.gif" width="260" alt="Select a move, calculate and inspect damage and KO"></a>
 
-It presents navigation, configuration, results and practice records as they appear in the supplied recordings. Screenshots may show different scenarios from each other and from the demos.
+</details>
 
-**This is not a new QA campaign, performance benchmark or certification of engine correctness.** KO guarantees refer to the scenario and conditions displayed by the application. A 1HITKO guarantee must not be read as a guarantee of move accuracy. Lead Trainer outcomes are entered by the user: the recording does not show an automatically resolved battle. Practice records do not establish tournament results and are separate from the dedicated Battle History module.
+### 1HITKO
 
-The phone's status and navigation bars were cropped, files were resized and audio was removed. No UI was generated, no results were changed and no screens were reconstructed. Full original recordings are not distributed in this package.
+Configure the defender, follow search progress and inspect candidates. **[MP4 · ~13 s · 540 × 1080](../media/demos/1hitko.mp4)**
 
-[Provenance and editing notes](../media/README.md#english) · [Inventory and SHA-256](../media/manifest.json)
+<details>
+<summary>Show GIF preview · 1HITKO</summary>
+
+<a href="../media/demos/1hitko.gif"><img src="../media/demos/1hitko.gif" width="260" alt="Configure the defender, follow search progress and inspect candidates"></a>
+
+</details>
+
+### Lead Trainer
+
+Choose an opening pair, open Battle and enter the outcome manually. **[MP4 · ~15 s · 540 × 1080](../media/demos/entradas.mp4)**
+
+<details>
+<summary>Show GIF preview · Lead Trainer</summary>
+
+<a href="../media/demos/entradas.gif"><img src="../media/demos/entradas.gif" width="260" alt="Choose an opening pair, open Battle and enter the outcome manually"></a>
+
+</details>
+
+## Screenshots
+
+Images keep their original proportions and use a consistent display width. They wrap onto new lines as space becomes narrower.
+
+### Home · Versus · result
+
+<p>
+  <a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="260" alt="Home with links to the tools"></a>
+  <a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="260" alt="Damage range, factors, KO and an unautomated-effect warning"></a>
+</p>
+
+### 1HITKO · results · Battle · speed
+
+<p>
+  <a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="260" alt="Search results showing candidate moves and damage ranges"></a>
+  <a href="../media/screenshots/battle-speed.png"><img src="../media/screenshots/battle-speed.png" width="260" alt="Speed order with items, abilities and a priority caveat"></a>
+</p>
+
+### EV Lab · Lead Trainer · selection
+
+<p>
+  <a href="../media/screenshots/ev-lab.png"><img src="../media/screenshots/ev-lab.png" width="260" alt="Defensive investment and live survival result"></a>
+  <a href="../media/screenshots/lead-selection.png"><img src="../media/screenshots/lead-selection.png" width="260" alt="Selection of two allies with the opposing opening hidden"></a>
+</p>
+
+### Lead Trainer · manual outcome · Lead Trainer · records
+
+<p>
+  <a href="../media/screenshots/lead-result.png"><img src="../media/screenshots/lead-result.png" width="260" alt="Battle situation and manual Won or Lost controls"></a>
+  <a href="../media/screenshots/lead-record.png"><img src="../media/screenshots/lead-record.png" width="260" alt="Lead Trainer practice records with saved outcomes by opponent"></a>
+</p>
+
+## Scope of this material
+
+These images show navigation, configuration, results and practice records. There are no screenshots of Team Builder or the separate Battle History module. The visible practice record belongs to Lead Trainer; outcomes are entered manually. Battle represents a situation, not an autonomously resolved match.
+
+The Versus still and demo show different moves. KO results apply to the displayed scenario; a 1HITKO damage guarantee does not guarantee move accuracy. This material is **not a new QA campaign, a benchmark or certification of engine correctness**.
+
+Demos use continuous excerpts at the original recording speed, with a short final-frame hold. Android system bars were cropped, audio removed and files resized proportionally. No UI was generated and no results or warnings were altered. Full original recordings are not published.
+
+[Provenance and editing](../media/README.md#english) · [Inventory and SHA-256](../media/manifest.json) · [Ownership and fan-project notice](../NOTICE.md)
+
+[← Back to the overview](../README.en.md)

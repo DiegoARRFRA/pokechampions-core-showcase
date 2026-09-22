@@ -1,195 +1,81 @@
 <p align="right">
-  <a href="README.md">🇪🇸 Español</a> · <strong>🇬🇧 English</strong>
+  <a href="README.md">Español</a> · <strong>English</strong>
 </p>
 
 # PokeChampions Core
 
-**A competitive companion for Pokémon Champions, built with Flutter and engineered around reproducible mechanics, explicit uncertainty and offline-first reliability.**
+**Prepare teams and analyse Pokémon Champions with a Flutter application that works offline, without an account or backend.**
 
-![Status](https://img.shields.io/badge/status-active%20development-2ea44f)
-![Flutter](https://img.shields.io/badge/Flutter-mobile%20app-02569B?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.12-0175C2?logo=dart&logoColor=white)
-![Android](https://img.shields.io/badge/Android-physical%20QA-3DDC84?logo=android&logoColor=white)
-![Source](https://img.shields.io/badge/source-private-555555)
-![Repository](https://img.shields.io/badge/repository-public%20showcase-orange)
-
-> **This is a public engineering showcase, not the application source repository.**  
-> The production source code, private datasets, signing material, build internals and full audit evidence are intentionally not distributed here.
-
-PokeChampions Core is an unofficial, offline-first mobile toolkit for competitive Pokémon Champions. It is designed to help players prepare teams, inspect battle situations, calculate damage, discover one-hit KOs, practise lead choices and review their own match history without depending on a live backend.
-
-The project is also an engineering exercise in a harder problem: **how to make game-analysis tooling trustworthy when mechanics, regulations and upstream data evolve.** Instead of silently guessing, the application distinguishes verified behavior from insufficient context and keeps validation evidence scoped to the exact version that produced it.
+> A public product and engineering showcase. The application source is private; this repository is not an open-source project.
 
 ## The application, in pictures
 
-Real Android screenshots, using Spanish and the dark theme. Select an image to inspect it at a larger size.
+Home, a Versus result and a 1HITKO search. Real Android screenshots show the **Spanish interface in the dark theme**; select an image to enlarge it.
 
-<table>
-  <tr><th>Home</th><th>Versus · damage result</th><th>1HITKO · search results</th></tr>
-  <tr>
-    <td align="center"><a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="240" alt="PokeChampions Core home screen with its main modules"></a></td>
-    <td align="center"><a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="240" alt="Real Versus result showing damage, applied factors, KO information and explicit limitations"></a></td>
-    <td align="center"><a href="media/screenshots/1hitko-results.png"><img src="media/screenshots/1hitko-results.png" width="240" alt="Real 1HITKO results with moves and damage ranges"></a></td>
-  </tr>
-</table>
+<p>
+  <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Home with links to the PokeChampions Core tools"></a>
+  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: damage range, factors, KO and calculation limits"></a>
+  <a href="media/screenshots/1hitko-results.png"><img src="media/screenshots/1hitko-results.png" width="220" alt="1HITKO: candidates, moves and damage ranges"></a>
+</p>
 
-**[View the complete gallery: 8 screenshots](docs/GALLERY.en.md)** · Includes Battle, EV Lab, opening selection and practice records.
+### Versus in action · 13 seconds
 
-### Short demos
+Choose a move, calculate and inspect damage and KO results in a 1v1 scenario.
 
-<table>
-  <tr><th>Versus · ~13 s</th><th>1HITKO · ~13 s</th><th>Lead Trainer · ~15 s</th></tr>
-  <tr>
-    <td align="center"><a href="media/demos/versus.mp4"><img src="media/demos/versus.gif" width="240" alt="Select a move, calculate and inspect the Versus result"></a></td>
-    <td align="center"><a href="media/demos/1hitko.mp4"><img src="media/demos/1hitko.gif" width="240" alt="Inspect the defender scenario, follow 1HITKO search progress and view results"></a></td>
-    <td align="center"><a href="media/demos/entradas.mp4"><img src="media/demos/entradas.gif" width="240" alt="Choose an opening pair, open Battle and enter the practice outcome manually"></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="media/demos/versus.mp4">MP4 · higher resolution</a></td>
-    <td align="center"><a href="media/demos/1hitko.mp4">MP4 · higher resolution</a></td>
-    <td align="center"><a href="media/demos/entradas.mp4">MP4 · higher resolution</a></td>
-  </tr>
-</table>
+<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Versus demo: move selection and result inspection"></a>
 
-Audio-free recordings at their original speed, followed by a short final-frame hold. No results were changed and no screens were generated. In Lead Trainer, outcomes are entered manually: this is not an automatically simulated battle. This material demonstrates the product; it does not replace a QA campaign or benchmark. [Editing and provenance notes](media/README.md#english).
+**[Watch Versus in MP4](media/demos/versus.mp4)** · [1HITKO demo](docs/GALLERY.en.md#1hitko) · [Lead Trainer demo](docs/GALLERY.en.md#lead-trainer) · **[Complete gallery](docs/GALLERY.en.md)**
 
-## At a glance
+Demos are edited for presentation and are not benchmarks. The still Versus screenshot and its demo show different moves. [Provenance and editing](media/README.md#english).
 
-| Area | Current engineering snapshot |
-|---|---|
-| Stack | Flutter / Dart, Drift + SQLite, local versioned datasets |
-| Product model | Offline-first; no account or backend required |
-| Localisation | 8 complete locale packages |
-| Latest full host suite | **4,849 passed · 0 failed · 0 omitted** |
-| Historical Versus validation | **104,091** scoped comparison scenarios |
-| Historical 1HITKO campaign | **361 forms · 12,987 attacker/defender pairs** |
-| Android validation | Physical QA on **POCO F5 / Android 15** plus emulator profiling |
-| External QA build | **1.0.0+2**, validated through an update path on-device |
-| Development status | Active; current public snapshot reflects validation through **2026-09-14** |
+## What you can do
 
-Validation figures belong to different, explicitly scoped checkpoints and are **not additive certifications**. New game data or mechanics are not automatically covered by older campaigns.
-
-## What PokeChampions Core does
-
-| Module | Purpose |
-|---|---|
-| **Team Builder** | Build and persist six-slot teams with forms, abilities, nature, training values, held items and moves. |
-| **Battle** | Represent a doubles battle situation: speed order, weather, Tailwind, Trick Room, temporary HP and other verified context. It does not simulate entire turns. |
-| **Versus** | 1v1 damage analysis backed by a typed calculation boundary shared by normal analysis and advanced tools. |
-| **1HITKO** | Search the legal local catalogue for attackers capable of a guaranteed one-hit KO under an explicit scenario. |
+| Tool | Purpose |
+| --- | --- |
+| **Teams / Team Builder** | Create and save six-slot teams with forms, abilities, natures, training, items and moves. |
+| **Battle** | Compare speed and context in a doubles situation. It does not execute turns or resolve complete matches. |
+| **Versus** | Inspect damage dealt and received in a 1v1 scenario, with normal and advanced configuration. |
+| **1HITKO** | Find one-hit KO candidates under explicit conditions. Guaranteed damage does not guarantee move accuracy. |
 | **EV Lab** | Explore defensive investment and survival thresholds against configured attacks. |
-| **Lead Trainer** | Practise opening choices against curated competitive teams and review the resulting matchup. |
-| **Battle History** | Keep local match records and immutable team snapshots for later analysis. |
-| **Pokémon Notes** | Maintain a separate offline library of notes and reusable configurations. |
-| **Appearance & localisation** | Light, dark and system themes plus eight atomic language packages. |
+| **Lead Trainer** | Practise opening choices; practice outcomes are entered manually. |
+| **Battle History and Pokémon Notes** | Save declared outcomes, team snapshots, observations and configurations. |
+| **Settings** | Choose among eight languages and light, dark or system appearance. |
 
-See [Features](docs/FEATURES.md) for the product boundary and current limitations.
+[Feature scope and limits](docs/FEATURES.md). The gallery includes eight screenshots; it contains no views of the team editor or Battle History module. The displayed record belongs to Lead Trainer.
 
-## Engineering principles
+## Engineering and documentation
 
-PokeChampions Core is built around a small set of rules that shape both the architecture and the validation strategy:
+**A modular, feature-first architecture with layered separation and ports and adapters applied to key components.**
 
-- **Accuracy before convenience.** Unknown or unverified context should be exposed, blocked or documented instead of silently approximated.
-- **Pure domain logic where possible.** UI widgets consume typed requests and responses rather than reconstructing mechanics from labels or presentation state.
-- **Offline-first by design.** Runtime behavior consumes packaged, versioned data; external research and imports happen during development, not silently on the user's device.
-- **Deterministic updates.** Data-generation and import steps are versioned and checked so a regulation update can be reproduced and reviewed.
-- **Scoped evidence.** A historical green campaign stays historical. It is not reused as proof for later mechanics or newly added participants without new validation.
-- **Safe persistence.** User-owned data is treated separately from generated catalogues and preferences, with migrations designed to preserve prior state.
+Flutter and Dart power the application; Drift and SQLite hold user data; packaged, versioned catalogues support offline operation. Shared calculation components consume typed requests and results. Rules that can be isolated remain pure and deterministic: this does not imply that the whole application is independent of Flutter or follows a pure hexagonal architecture.
 
-## High-level architecture
+The following technical documentation is **in English**:
 
-```mermaid
-flowchart LR
-    UI[Flutter UI] --> PORTS[Typed feature ports]
-    PORTS --> DOMAIN[Pure domain rules & resolvers]
-    DOMAIN --> CATALOGS[Versioned local catalogues]
-    PORTS --> DB[(Drift / SQLite)]
-    UI --> PREFS[Local preferences]
-    DOMAIN --> RESULTS[Validated result models]
-    RESULTS --> UI
+| Document | Contents |
+| --- | --- |
+| [Architecture](docs/ARCHITECTURE.md) | Component organisation, boundaries and responsibilities. |
+| [Engineering](docs/ENGINEERING.md) | Decisions about state, persistence, localisation and reproducible imports. |
+| [Validation & QA](docs/VALIDATION.md) | Historical campaigns, scope and outstanding checks. |
+| [Performance](docs/PERFORMANCE.md) | An emulator startup case study and its limitations. |
+| [Data & Accuracy](docs/DATA_AND_ACCURACY.md) | Sources, uncertainty and regulation updates. |
+| [Roadmap](docs/ROADMAP.md) | Product and showcase direction. |
 
-    subgraph Runtime
-      UI
-      PORTS
-      DOMAIN
-      CATALOGS
-      DB
-      PREFS
-      RESULTS
-    end
+### Dated, scoped evidence
 
-    DEV[Offline import / generation / audit tooling] -. development only .-> CATALOGS
-```
+The public application checkpoint covers work through **14 September 2026**. It records a host suite with **4,849 passed, 0 failed and 0 omitted**. Separate historical campaigns document **104,091 Versus scenarios** and **361 forms / 12,987 1HITKO pairs**. These are separate sets: they are not additive and do not certify complete coverage or a later version.
 
-The public documentation intentionally stops at architecture and behavior. Internal implementations, full datasets and the private calculation engine are not published in this repository.
+Selected physical QA used a **POCO F5 / Android 15**, including an update to external QA build **1.0.0+2**. The performance study used an **emulator**: its engine-to-first-frame improvement is not a measurement of complete Android startup. Demos prepared on **17 September 2026** do not independently identify an exact build and are not new application tests.
 
-Read more in [Architecture](docs/ARCHITECTURE.md) and [Engineering](docs/ENGINEERING.md).
+## Status and limits
 
-## Validation philosophy
+The product remains in development. Feedback can address suggestions, issues and public documentation: [participation guide](CONTRIBUTING.md).
 
-Testing is treated as evidence, not decoration. The private project maintains focused regression suites, large comparison campaigns, deterministic data checks and physical Android acceptance runs.
+This repository contains documentation and selected presentation material; it does not distribute application source, internal datasets, private tests, credentials, APKs or music. It does not offer a public application download.
 
-A recent full host run completed with **4,849 passes, zero failures and zero omissions** after a targeted import fix. Earlier campaigns include a **104,091-scenario** Versus comparison set and an exhaustive historical 1HITKO campaign across **361 forms and 12,987 pairs**. Physical acceptance has also covered installation, app identity, persistence, update behavior, navigation, appearance and selected competitive flows on a POCO F5 running Android 15.
+Checks for this repository are described in [Showcase validation](CONTRIBUTING.md#validación-del-showcase--showcase-validation). They are separate from historical application evidence.
 
-Just as importantly, the project records what those tests **do not** prove. Device matrices, accessibility, long audio sessions and newly introduced regulation content may require separate evidence.
+## Ownership and unofficial project
 
-See [Validation & QA](docs/VALIDATION.md).
+This showcase does not grant an open-source licence. [Ownership notice](NOTICE.md).
 
-## Performance work
-
-Startup profiling identified native audio initialisation on the critical path even when playback was not required. Moving that work behind explicit user activation reduced the measured **engine-to-first-frame median from ~3.69 s to ~0.395 s** in the first comparable emulator series, while warm wait time fell from **206 ms to 50 ms**.
-
-The same audit deliberately did **not** claim total Android launch time as solved because emulator presentation remained unstable and later repeated measurements showed the platform could dominate end-to-end timing.
-
-See [Performance](docs/PERFORMANCE.md) for the measurements and caveats.
-
-## Data and mechanical authority
-
-The application does not treat a single upstream as universally authoritative. The private data pipeline separates responsibility between official Pokémon Champions information, pinned technical references, explicit declarative overrides and generated artefacts. Human-readable descriptions never become mechanical authority by themselves.
-
-When sources are insufficient to establish a Champions-specific interaction, the preferred outcome is **insufficient context or a documented block**, not an invented rule.
-
-See [Data & Accuracy](docs/DATA_AND_ACCURACY.md).
-
-## Repository map
-
-```text
-pokechampions-core-showcase/
-├── README.md              # Español (default)
-├── README.en.md           # English
-├── NOTICE.md
-├── CONTRIBUTING.md
-├── media/
-│   ├── README.md          # Provenance and editing
-│   ├── manifest.json      # Inventory and SHA-256
-│   ├── screenshots/       # 8 PNG screenshots
-│   └── demos/             # 3 demos, each in GIF and MP4
-└── docs/
-    ├── GALLERY.md         # Spanish gallery
-    ├── GALLERY.en.md      # English gallery
-    ├── ARCHITECTURE.md
-    ├── FEATURES.md
-    ├── ENGINEERING.md
-    ├── VALIDATION.md
-    ├── PERFORMANCE.md
-    ├── DATA_AND_ACCURACY.md
-    └── ROADMAP.md
-```
-
-The gallery contains selected visual material, separate from the full recordings and the development project. This repository **is not a mirror of the private application source**.
-
-## Public vs. private
-
-**Published here:** product scope, engineering decisions, selected measurements, validation methodology, sanitized architecture, roadmap information and selected visual material.
-
-**Kept private:** application source code, full internal datasets, signing keys, private audit packages, proprietary or third-party assets that should not be redistributed, and implementation details that would turn this showcase into a source mirror.
-
-Feedback and product discussion are welcome; see [Contributing](CONTRIBUTING.md).
-
-## Ownership and licensing
-
-No open-source license is granted for this showcase repository unless a specific file or future subproject explicitly says otherwise. See [NOTICE.md](NOTICE.md).
-
-## Disclaimer
-
-PokeChampions Core is an **unofficial fan-made project**. Pokémon, Pokémon Champions and related names, characters, assets and trademarks belong to their respective rights holders. This project is not affiliated with, endorsed by or sponsored by Nintendo, Creatures, GAME FREAK or The Pokémon Company.
+PokeChampions Core is an **unofficial fan project**. Pokémon, Pokémon Champions and their names, characters, assets and trademarks belong to their respective rights holders. The project is not affiliated with, endorsed or sponsored by Nintendo, Creatures, GAME FREAK or The Pokémon Company.
