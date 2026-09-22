@@ -2,13 +2,16 @@
 
 This roadmap describes product and showcase direction without exposing private implementation details.
 
+## Available showcase material
+
+The [Spanish gallery](GALLERY.md) and [English gallery](GALLERY.en.md) include eight screenshots and three demos in GIF/MP4. The 14 supplied media files were verified against the existing manifest on 22 September 2026. This verifies presentation assets, not a new application build or QA campaign.
+
 ## Near term
 
 - Expand physical Android coverage beyond the current primary test device.
 - Continue accessibility work, including TalkBack acceptance.
 - Complete prolonged audio-session validation and further investigate device-level frame pacing.
 - Keep regulation-specific data and mechanical coverage current without reusing stale validation claims.
-- Add curated screenshots and short demonstrations to this public showcase.
 - Improve public release notes so visible product changes map cleanly to validation checkpoints.
 
 ## Product quality
@@ -21,8 +24,7 @@ This roadmap describes product and showcase direction without exposing private i
 ## Public engineering showcase
 
 - Publish additional sanitized case studies where they demonstrate useful engineering lessons without exposing the private codebase.
-- Consider open-sourcing isolated, reusable tooling only when it can be separated cleanly from application IP and third-party assets.
-- Add public issue templates for bug reports, data corrections and documentation feedback.
+- Keep feedback focused on product suggestions, verifiable data corrections and public documentation; application source remains private.
 
 ## Explicitly not on the default roadmap
 

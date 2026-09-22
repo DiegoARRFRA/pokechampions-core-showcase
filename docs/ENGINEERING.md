@@ -1,6 +1,6 @@
 # Engineering
 
-PokeChampions Core is developed as a product rather than a collection of screens. The private codebase therefore places unusual emphasis on reproducibility, state ownership and explicit evidence.
+PokeChampions Core uses a modular, feature-first architecture with layered separation and ports and adapters in key components. The engineering priorities are reproducibility, explicit state ownership and evidence tied to a defined scope. These boundaries are applied where useful; they do not make the entire application a pure hexagonal system or independent of Flutter. See [Architecture](ARCHITECTURE.md).
 
 ## Typed boundaries
 
@@ -30,7 +30,7 @@ External data is not fetched live by the production app. Development tooling pin
 
 ## Failure philosophy
 
-One of the project's strongest rules is simple:
+The calculation policy is:
 
 > A visible unknown is preferable to a plausible but unverified answer.
 

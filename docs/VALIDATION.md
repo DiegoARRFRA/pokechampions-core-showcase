@@ -2,16 +2,16 @@
 
 PokeChampions Core treats testing as scoped evidence. A green test count is useful only when it is tied to a known commit, dataset and product boundary.
 
-## Current public snapshot
+## Public application snapshot through 14 September 2026
 
-The latest documented host checkpoint completed with:
+The host checkpoint recorded in that public snapshot completed with:
 
 - **4,849 passed**
 - **0 failed**
 - **0 omitted**
 - exit code **0**
 
-That checkpoint followed a focused import correction and belongs to the application state validated in mid-September 2026.
+That checkpoint followed a focused import correction and belongs to the application state validated in mid-September 2026. This showcase does not establish that a later build passed the same suite. A zero-failure result is not a measurement of complete coverage. Repository link and media checks are separate; see [showcase validation](../CONTRIBUTING.md#validación-del-showcase--showcase-validation).
 
 ## Larger historical campaigns
 
