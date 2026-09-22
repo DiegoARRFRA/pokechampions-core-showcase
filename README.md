@@ -8,6 +8,25 @@
 
 > Escaparate público de producto e ingeniería. El código de la aplicación es privado; este repositorio no es un proyecto open source.
 
+## Resumen técnico
+
+| Área | Tecnología y función |
+| --- | --- |
+| **Aplicación** | **Flutter · Dart**: interfaz móvil, componentes reutilizables y modelos tipados. |
+| **Arquitectura** | **Feature-first · capas · puertos/adaptadores** en componentes clave; dependencias conectadas por composición e inyección por constructor. |
+| **Motor de análisis** | **Lógica Dart y contratos tipados**: escenario → validación → reglas y catálogos locales → daño, KO o limitación explícita. |
+| **Datos del usuario** | **Drift · SQLite (sqlite3) · path_provider**: equipos, notas e historial mediante repositorios locales. |
+| **Estado y búsquedas** | **Controladores · ChangeNotifier · Futures/Streams**; worker con **isolate** en 1HITKO, progreso y cancelación de trabajos. |
+| **Preferencias** | **shared_preferences** para idioma, apariencia y audio, separado de los datos persistidos en SQLite. |
+| **Idiomas** | **flutter_localizations · intl · ARB** y terminología por ID: ocho idiomas en la aplicación. |
+| **Audio** | **just_audio · audio_session**: reproducción local y coordinación de sesión detrás de contratos. |
+| **Generación e integridad** | **drift_dev · build_runner · JSON versionado · crypto/SHA-256**: generación durante el desarrollo y trazabilidad de artefactos. |
+| **Calidad y entrega** | **flutter_test · test · analyzer · flutter_lints · Git**; compilación, perfilado y recorridos de QA con herramientas Flutter/Android. |
+
+**Cómo funciona:** configuras un escenario → un controlador coordina la petición → el cálculo usa reglas y datos locales → la interfaz muestra el resultado. Guardar equipos, notas o partidas recorre otra vía: repositorio → Drift/SQLite. No necesita consultar un servidor para cada análisis.
+
+**[Ficha técnica completa y flujos de funcionamiento](docs/TECHNICAL_OVERVIEW.md)** · [Arquitectura](docs/ARCHITECTURE.md) · [Toda la documentación ES/EN](docs/README.md)
+
 ## La aplicación, en imágenes
 
 Inicio, resultado de Versus y búsqueda de 1HITKO. Capturas reales de Android en español y tema oscuro; pulsa una imagen para ampliarla.
@@ -37,28 +56,27 @@ Las demos están editadas para presentación y no son benchmarks. La captura fij
 | **Versus** | Consultar daño causado y recibido en un escenario 1 contra 1, con configuración normal y avanzada. |
 | **1HITKO** | Buscar candidatos a KO de un impacto bajo condiciones explícitas. La garantía de daño no garantiza el acierto del movimiento. |
 | **EV Lab** | Explorar inversión defensiva y umbrales de supervivencia frente a ataques configurados. |
-| **Entradas** | Practicar elecciones de salida; los resultados de práctica se introducen manualmente. |
+| **Entradas** | Practicar elecciones iniciales; los resultados de práctica se introducen manualmente. |
 | **HISTÓRICO y Notas Pokémon** | Conservar resultados declarados, snapshots de equipos, anotaciones y configuraciones. |
 | **Ajustes** | Elegir entre ocho idiomas y los temas claro, oscuro y del sistema. |
 
-[Alcance funcional y límites — en inglés](docs/FEATURES.md). La galería incluye ocho capturas; no contiene vistas del editor de equipos ni del módulo HISTÓRICO. El material de Entradas muestra preparación, selección y resultado manual.
+[Alcance funcional y límites](docs/FEATURES.md). La galería incluye ocho capturas; no contiene vistas del editor de equipos ni del módulo HISTÓRICO. El material de Entradas muestra preparación, selección y resultado manual.
 
 ## Ingeniería y documentación
 
-**Arquitectura modular organizada por funcionalidades —feature-first—, con separación por capas y aplicación de puertos y adaptadores en componentes clave.**
+**Arquitectura modular organizada por funcionalidades —feature-first—, con separación por capas y aplicación de puertos y adaptadores en componentes clave.** Las reglas aislables son puras y deterministas; no se presenta toda la aplicación como independiente de Flutter ni como hexagonal pura.
 
-Flutter y Dart para la aplicación; Drift y SQLite para los datos del usuario; catálogos versionados empaquetados para el funcionamiento offline. Los componentes de cálculo compartidos consumen peticiones y resultados tipados. Las reglas que permiten aislarse se mantienen puras y deterministas: no se presenta toda la aplicación como un núcleo independiente de Flutter ni como arquitectura hexagonal pura.
-
-La documentación técnica siguiente está **en inglés**:
+Cada documento tiene su versión española e inglesa, con selector recíproco y navegación en el mismo idioma. El [índice bilingüe](docs/README.md) también reúne participación, titularidad y documentación multimedia.
 
 | Documento | Contenido |
 | --- | --- |
-| [Architecture](docs/ARCHITECTURE.md) | Organización, límites y responsabilidades de los componentes. |
-| [Engineering](docs/ENGINEERING.md) | Decisiones sobre estado, persistencia, localización e importaciones reproducibles. |
-| [Validation & QA](docs/VALIDATION.md) | Campañas históricas, alcance y comprobaciones pendientes. |
-| [Performance](docs/PERFORMANCE.md) | Caso de arranque medido en emulador y sus limitaciones. |
-| [Data & Accuracy](docs/DATA_AND_ACCURACY.md) | Fuentes, incertidumbre y actualizaciones de regulación. |
-| [Roadmap](docs/ROADMAP.md) | Dirección del producto y del showcase. |
+| [Ficha técnica](docs/TECHNICAL_OVERVIEW.md) | Inventario de tecnologías, conexión de módulos y flujos de datos. |
+| [Arquitectura](docs/ARCHITECTURE.md) | Organización, límites y responsabilidades de los componentes. |
+| [Decisiones de ingeniería](docs/ENGINEERING.md) | Estado, cancelación, persistencia, localización e importaciones reproducibles. |
+| [Validación y QA](docs/VALIDATION.md) | Campañas históricas, alcance y comprobaciones pendientes. |
+| [Rendimiento](docs/PERFORMANCE.md) | Caso de arranque en emulador y sus limitaciones. |
+| [Datos y exactitud](docs/DATA_AND_ACCURACY.md) | Fuentes, incertidumbre y actualizaciones de regulación. |
+| [Hoja de ruta](docs/ROADMAP.md) | Dirección del producto y del showcase. |
 
 ### Evidencia con fecha y alcance
 
@@ -68,14 +86,14 @@ La QA física seleccionada corresponde a **POCO F5 / Android 15**, incluida la a
 
 ## Estado y límites
 
-El producto sigue en desarrollo. El feedback puede centrarse en sugerencias, incidencias y documentación pública: [guía de participación — en inglés](CONTRIBUTING.md).
+El producto sigue en desarrollo. El feedback puede centrarse en sugerencias, incidencias y documentación pública: [guía de participación](CONTRIBUTING.md).
 
-Este repositorio reúne documentación y material de presentación seleccionado; no distribuye el código fuente de la aplicación, datasets internos, pruebas privadas, credenciales, APK ni música. No ofrece una descarga pública de la aplicación.
+Este repositorio reúne documentación y material de presentación seleccionado; no distribuye código fuente de la aplicación, datasets internos, pruebas privadas, credenciales, APK ni música. No ofrece una descarga pública de la aplicación.
 
-Las comprobaciones del propio escaparate se describen en [Validación del showcase](CONTRIBUTING.md#validación-del-showcase--showcase-validation). Son independientes de la evidencia histórica de la aplicación.
+Las comprobaciones del escaparate se describen en [Validación del showcase](CONTRIBUTING.md#validación-del-showcase). Son independientes de la evidencia histórica de la aplicación.
 
 ## Titularidad y proyecto no oficial
 
-Este showcase no concede una licencia open source. [Aviso de titularidad — en inglés](NOTICE.md).
+Este showcase no concede una licencia open source. [Aviso de titularidad](NOTICE.md).
 
 PokeChampions Core es un **proyecto fan no oficial**. Pokémon, Pokémon Champions y sus nombres, personajes, recursos y marcas pertenecen a sus respectivos titulares. El proyecto no está afiliado, respaldado ni patrocinado por Nintendo, Creatures, GAME FREAK ni The Pokémon Company.

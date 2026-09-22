@@ -4,9 +4,9 @@
 
 # PokeChampions Core · Gallery
 
-[← Back to the overview](../README.en.md)
+[← Back to the overview](../README.en.md) · [Documentation index](README.en.md)
 
-Eight real Android screenshots and three short demos. The captured interface is **in Spanish and uses the dark theme**. Select a screenshot to enlarge it; MP4 links provide higher-resolution demos.
+Eight real Android screenshots and three short demos. The captured interface is **in Spanish and uses the dark theme**. Select an image to enlarge it; MP4 links provide higher-resolution demos.
 
 [Versus](#versus) · [1HITKO](#1hitko) · [Lead Trainer](#lead-trainer) · [Screenshots](#screenshots)
 
@@ -47,7 +47,7 @@ Choose an opening pair, open Battle and enter the outcome manually. **[MP4 · ~1
 
 ## Screenshots
 
-Images keep their original proportions and use a consistent display width. They wrap onto new lines as space becomes narrower.
+Images keep their proportions and use a consistent display width. They wrap onto new lines as available space narrows.
 
 ### Home · Versus · result
 
@@ -79,12 +79,12 @@ Images keep their original proportions and use a consistent display width. They 
 
 ## Scope of this material
 
-These images show navigation, configuration and manually entered practice outcomes. There are no screenshots of Team Builder or the separate Battle History module. The file named `lead-record.png` shows Lead Trainer preparation with the training tab selected; it does not show a list of records. Battle represents a situation, not an autonomously resolved match.
+These images show navigation, configuration and manually entered practice outcomes. There are no screenshots of Team Builder or the separate Battle History module. `lead-record.png` shows Lead Trainer preparation with the training tab selected, not a records list. Battle represents a situation, not an autonomously resolved match.
 
 The Versus still and demo show different moves. KO results apply to the displayed scenario; a 1HITKO damage guarantee does not guarantee move accuracy. This material is **not a new QA campaign, a benchmark or certification of engine correctness**.
 
-Demos use continuous excerpts at the original recording speed, with a short final-frame hold. Android system bars were cropped, audio removed and files resized proportionally. No UI was generated and no results or warnings were altered. Full original recordings are not published.
+Demos use continuous excerpts at the original recording speed with a short final-frame hold. Android bars were cropped, audio removed and files resized proportionally. No UI was generated and no results or warnings were altered. Full recordings are not published.
 
-[Provenance and editing](../media/README.md#english) · [Inventory and SHA-256](../media/manifest.json) · [Ownership and fan-project notice](../NOTICE.md)
+[Provenance and editing](../media/README.en.md) · [Inventory and SHA-256](../media/manifest.json) · [Ownership and fan-project notice](../NOTICE.en.md)
 
 [← Back to the overview](../README.en.md)

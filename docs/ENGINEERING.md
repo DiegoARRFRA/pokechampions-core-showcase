@@ -1,41 +1,43 @@
-# Engineering
+<p align="right">
+  <strong>Español</strong> · <a href="ENGINEERING.en.md">English</a>
+</p>
 
-PokeChampions Core uses a modular, feature-first architecture with layered separation and ports and adapters in key components. The engineering priorities are reproducibility, explicit state ownership and evidence tied to a defined scope. These boundaries are applied where useful; they do not make the entire application a pure hexagonal system or independent of Flutter. See [Architecture](ARCHITECTURE.md).
+# Decisiones de ingeniería
 
-## Typed boundaries
+[← Portada](../README.md) · [Índice de documentación](README.md)
 
-Feature UIs pass typed requests into shared domain services and receive typed results back. This reduces the risk that multiple screens interpret the same mechanic differently.
+PokeChampions Core combina organización por funcionalidades, capas y puertos/adaptadores en componentes clave. Sus prioridades son la reproducibilidad, la responsabilidad explícita sobre el estado y la evidencia ligada a un alcance concreto. Estas fronteras no convierten toda la app en un sistema hexagonal puro ni independiente de Flutter. Consulta [Arquitectura](ARCHITECTURE.md) y [Ficha técnica](TECHNICAL_OVERVIEW.md).
 
-Normal Versus analysis, EV Lab, 1HITKO and advanced calculation flows reuse the same underlying mechanical boundary where their scopes overlap.
+## Contratos tipados
 
-## Pure and deterministic logic
+Las interfaces de las funcionalidades entregan peticiones tipadas a servicios compartidos y reciben resultados tipados. Esto reduce el riesgo de que varias pantallas interpreten una misma mecánica de manera diferente. Versus normal, EV Lab, 1HITKO y los flujos avanzados reutilizan la base mecánica donde coinciden sus alcances.
 
-Rules that can be expressed without UI or storage dependencies are kept pure and deterministic. This makes large automated comparison campaigns practical and keeps regression tests independent from rendering.
+## Reglas puras y deterministas
 
-## Storage migration
+Las reglas que pueden expresarse sin dependencias de interfaz o almacenamiento se mantienen puras y deterministas. Esto facilita campañas extensas de comparación y pruebas de regresión separadas del renderizado.
 
-The application moved user-owned state toward a shared SQLite authority while preserving legacy data. Migration work is treated as a correctness problem: original data is retained and incoherent states are blocked rather than silently rewritten.
+## Migración del almacenamiento
 
-## Runtime ownership
+El estado del usuario se trasladó hacia una autoridad SQLite compartida conservando los datos anteriores. La migración se trata como un problema de corrección: se retienen originales y se bloquean estados incoherentes en lugar de reescribirlos silenciosamente.
 
-Asynchronous work and lifecycle boundaries are explicitly audited. Recent runtime work has covered cancellation, controller disposal, workers, listeners and resource ownership so background completion cannot update already-destroyed consumers.
+## Estado, tareas y ciclo de vida
 
-## Localisation as a product feature
+Los controladores coordinan estado visible y operaciones asíncronas. Se revisan cancelación, cierre de controladores, workers, listeners y responsabilidad sobre recursos para que una tarea terminada en segundo plano no actualice un consumidor destruido. El servicio de búsqueda de 1HITKO dispone de un worker aislado y comprueba que el trabajo siga vigente antes de publicar progreso o resultados; eso no implica que cada cálculo use un isolate.
 
-The eight locale packages are treated atomically. Runtime fallback is not used as a quiet substitute for missing curated content. Translation, typography and terminology therefore have their own validation contracts.
+## Localización como funcionalidad
 
-## Reproducible imports
+Los ocho paquetes de idioma se tratan como unidades completas. Una sustitución silenciosa por otro idioma no se utiliza para ocultar contenido curado ausente. Traducción, tipografía y terminología tienen contratos propios de validación.
 
-External data is not fetched live by the production app. Development tooling pins upstream revisions, checks hashes where relevant, generates deterministic artefacts and keeps provenance separate from runtime data.
+## Importaciones reproducibles
 
-## Failure philosophy
+La aplicación no obtiene datos externos en directo para cada cálculo. Las herramientas de desarrollo fijan revisiones, comprueban huellas cuando corresponde, generan artefactos deterministas y mantienen su procedencia separada de los datos consumidos en ejecución.
 
-The calculation policy is:
+## Tratamiento de fallos
 
-> A visible unknown is preferable to a plausible but unverified answer.
+> Una limitación visible es preferible a una respuesta plausible pero no verificada.
 
-If available evidence cannot safely resolve a Champions-specific interaction, the implementation should expose insufficient context, preserve a documented block or require an explicit override backed by evidence.
+Si la evidencia no resuelve con seguridad una interacción de Champions, debe mostrarse contexto insuficiente, conservarse un bloqueo documentado o exigirse una excepción explícita respaldada por evidencia.
 
-## Scope discipline
+## Disciplina de alcance
 
-PokeChampions Core intentionally refuses to become a full turn simulator simply because upstream references contain enough information to build one. Mechanics are integrated only when they support the declared product questions.
+Que una referencia externa contenga suficientes reglas para simular turnos no amplía automáticamente el producto. Las mecánicas se incorporan para responder preguntas de preparación, análisis y revisión, no para construir un simulador autónomo completo.

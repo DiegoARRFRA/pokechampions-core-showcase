@@ -1,31 +1,31 @@
-# Public Roadmap
+<p align="right">
+  <strong>Español</strong> · <a href="ROADMAP.en.md">English</a>
+</p>
 
-This roadmap describes product and showcase direction without exposing private implementation details.
+# Hoja de ruta pública
 
-## Available showcase material
+[← Portada](../README.md) · [Índice de documentación](README.md)
 
-The [Spanish gallery](GALLERY.md) and [English gallery](GALLERY.en.md) include eight screenshots and three demos in GIF/MP4. The 14 supplied media files were verified against the existing manifest on 22 September 2026. This verifies presentation assets, not a new application build or QA campaign.
+Dirección del producto y del escaparate sin revelar detalles de implementación ni prometer fechas de entrega.
 
-## Near term
+## Material público disponible
 
-- Expand physical Android coverage beyond the current primary test device.
-- Continue accessibility work, including TalkBack acceptance.
-- Complete prolonged audio-session validation and further investigate device-level frame pacing.
-- Keep regulation-specific data and mechanical coverage current without reusing stale validation claims.
-- Improve public release notes so visible product changes map cleanly to validation checkpoints.
+La [galería](GALLERY.md) incluye ocho capturas y tres demos en GIF/MP4. Los 14 archivos se verificaron contra el manifiesto existente el 22 de septiembre de 2026. Esa comprobación corresponde al material de presentación, no a una nueva build o campaña de QA de la aplicación.
 
-## Product quality
+La [ficha técnica](TECHNICAL_OVERVIEW.md) resume tecnologías y funcionamiento. Toda la documentación Markdown del showcase dispone de versión española e inglesa con navegación recíproca; el [índice](README.md) permite encontrarlas.
 
-- Continue reducing ambiguous or unsupported mechanical states.
-- Maintain deterministic catalogue generation and provenance checks.
-- Strengthen persistence migration coverage for long-lived user data.
-- Expand regression coverage around cross-feature scenario transfer.
+## Próximos frentes
 
-## Public engineering showcase
+Ampliar cobertura física Android más allá del dispositivo principal; continuar accesibilidad y aceptación de TalkBack; completar sesiones prolongadas de audio e investigar el ritmo de presentación de frames en dispositivo; mantener datos y cobertura por regulación sin reutilizar afirmaciones de validación obsoletas; y mejorar notas de entrega que relacionen cambios visibles con checkpoints de validación.
 
-- Publish additional sanitized case studies where they demonstrate useful engineering lessons without exposing the private codebase.
-- Keep feedback focused on product suggestions, verifiable data corrections and public documentation; application source remains private.
+## Calidad del producto
 
-## Explicitly not on the default roadmap
+Reducir estados mecánicos ambiguos o no soportados, conservar generación determinista y trazabilidad, reforzar migraciones de datos de larga duración y ampliar regresiones de transferencia de escenarios entre funcionalidades.
 
-PokeChampions Core is not currently planned as a cloud service, social network, online battle client or autonomous full-turn simulator. The project remains focused on local competitive preparation, analysis and review.
+## Escaparate de ingeniería
+
+Publicar estudios de caso adicionales cuando aporten lecciones útiles sin exponer el código privado. Mantener alineadas las versiones ES/EN y el feedback centrado en sugerencias, correcciones de datos verificables y documentación pública.
+
+## Fuera de la hoja de ruta predeterminada
+
+No se plantea convertir PokeChampions Core en servicio cloud, red social, cliente de combates online ni simulador autónomo de turnos. El enfoque sigue siendo preparación, análisis y revisión local.

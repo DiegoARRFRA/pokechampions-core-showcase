@@ -1,40 +1,47 @@
-# Performance
+<p align="right">
+  <strong>Español</strong> · <a href="PERFORMANCE.en.md">English</a>
+</p>
 
-PokeChampions Core has undergone targeted profiling rather than relying on subjective “feels faster” changes.
+# Rendimiento
 
-## Android startup case study
+[← Portada](../README.md) · [Índice de documentación](README.md)
 
-A dedicated startup audit identified native audio initialisation on the critical path even when playback was not required. The runtime path was changed so the app could reach its first useful frame before initialising the native audio backend.
+PokeChampions Core utiliza perfilado focal en lugar de basarse únicamente en sensaciones de mayor fluidez. Este documento describe un **caso histórico de arranque en emulador**, no una medición actual de todas las builds o dispositivos.
 
-In the first comparable emulator series:
+## Caso de arranque Android
 
-| Metric | Before P50 | After P50 | Change |
-|---|---:|---:|---:|
-| Cold Android `TotalTime` | 5.118 s | 3.853 s | −24.7% |
-| Warm `WaitTime` | 206 ms | 50 ms | −75.7% |
-| Engine → first frame | 3.692 s | 0.395 s | −89.3% |
-| Engine → useful tree | 3.722 s | 0.442 s | −88.1% |
-| Engine → first useful raster | 4.251 s | 1.811 s | −57.4% |
-| Median skipped frames | 196 | 57 | −70.9% |
+La auditoría encontró inicialización nativa de audio en la ruta crítica aunque no se necesitara reproducir música. Se modificó ese recorrido para alcanzar el primer frame útil antes de iniciar el backend nativo de audio.
 
-## Important caveat
+Primera serie comparable en emulador; P50 representa la mediana:
 
-The project did **not** declare Android startup universally solved from those numbers.
+| Métrica | Antes P50 | Después P50 | Cambio |
+| --- | ---: | ---: | ---: |
+| Android en frío, `TotalTime` | 5,118 s | 3,853 s | −24,7 % |
+| Arranque caliente, `WaitTime` | 206 ms | 50 ms | −75,7 % |
+| Motor → primer frame | 3,692 s | 0,395 s | −89,3 % |
+| Motor → árbol útil | 3,722 s | 0,442 s | −88,1 % |
+| Motor → primer raster útil | 4,251 s | 1,811 s | −57,4 % |
+| Mediana de frames omitidos | 196 | 57 | −70,9 % |
 
-A later sensitivity run on the same AVD showed degraded platform behavior under memory and swap pressure. End-to-end launch time worsened even though the internal Flutter portion remained substantially improved. That distinction is intentional: platform presentation time and application work are not treated as the same metric.
+## Limitación importante
 
-## Method
+Estos números **no declararon resuelto universalmente el arranque Android**. Una repetición en el mismo dispositivo virtual mostró degradación de la plataforma bajo presión de memoria y swap. El arranque extremo a extremo empeoró aunque el tramo Flutter siguió mejorando sustancialmente. Presentación de plataforma y trabajo de la aplicación son métricas distintas.
 
-The private audit combined Android launch timing, logcat timestamps, Flutter timeline markers, memory/process snapshots and repeated cold/warm runs. It also checked whether expensive catalogue loading or background workers were unexpectedly present during startup.
+## Método y cambio acotado
 
-The result was a narrower architecture:
+Se combinaron tiempos de lanzamiento Android, marcas de logcat, timeline de Flutter, snapshots de memoria/procesos y repeticiones en frío/caliente. También se comprobó si cargas costosas de catálogos o workers aparecían inesperadamente al arrancar.
 
 ```text
-Android → Flutter → runApp → Home → first frame
-                           ├─ user data / preferences: async
-                           └─ native audio: deferred until explicit activation
+Recorrido simplificado del cambio histórico:
+Android → Flutter → runApp → Inicio → primer frame
+                           ├─ datos / preferencias: asíncronos
+                           └─ audio nativo: tras activación explícita
 ```
 
-## Why publish the caveat
+Este esquema explica aquel cambio; no sustituye al contrato de arranque de versiones posteriores, incluidas las migraciones de almacenamiento.
 
-Performance work is especially easy to overstate. This showcase therefore publishes both the improvement and the limitation: the app-controlled critical path improved dramatically, while total Android presentation remained sensitive to the test environment.
+## Qué demuestra
+
+El trabajo controlado por la aplicación en la ruta crítica mejoró notablemente en aquella serie. El tiempo total de presentación Android siguió siendo sensible al entorno. Se publican mejora y límite juntos; no se convierte el primer frame en una promesa de arranque completo.
+
+[Validación y QA](VALIDATION.md) · [Arquitectura](ARCHITECTURE.md)

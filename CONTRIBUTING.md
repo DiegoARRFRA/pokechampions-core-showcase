@@ -1,44 +1,45 @@
-# Contributing
+<p align="right">
+  <strong>Español</strong> · <a href="CONTRIBUTING.en.md">English</a>
+</p>
 
-PokeChampions Core is currently developed in a private production repository. This public repository exists to document the product, architecture, validation approach and selected engineering work.
+# Participación y validación del showcase
 
-You are welcome to open an issue for:
+[← Portada](README.md) · [Documentación](docs/README.md)
 
-- product feedback;
-- reproducible bug reports from a build you have been authorised to test (this repository provides no public application download);
-- documentation corrections;
-- accessibility feedback;
-- data-source corrections with verifiable references;
-- suggestions for public showcase material.
+PokeChampions Core se desarrolla en un repositorio de producción privado. Este espacio público documenta producto, arquitectura, validación y trabajo de ingeniería seleccionado.
 
-Please do **not** submit copyrighted Pokémon assets, leaked material, signing keys, private datasets or source copied from other projects without a compatible licence.
+Puedes abrir una incidencia para aportar sugerencias, fallos reproducibles en una build que estés autorizado a probar, correcciones de documentación, feedback de accesibilidad, correcciones de datos con referencias verificables o propuestas para el escaparate. Este repositorio no ofrece una descarga pública de la aplicación.
 
-## Bug reports
+No adjuntes recursos Pokémon protegidos, material filtrado, claves de firma, datasets privados ni código de otros proyectos sin una licencia compatible.
 
-A useful report should include the app version, device/OS, language/theme when relevant, exact steps, expected result, actual result and whether the issue reproduces after restarting the app.
+## Informes de fallos
 
-## Mechanical or data corrections
+Incluye versión, dispositivo/sistema operativo, idioma y tema cuando sean relevantes, pasos exactos, resultado esperado y real, y si el fallo persiste tras reiniciar.
 
-For claims about Pokémon Champions mechanics, legality or regulation, include a reproducible source whenever possible. The project intentionally prefers an explicit unknown state over silently adopting an unverified rule.
+## Correcciones de mecánicas o datos
 
-## Documentation contributions
+Aporta una fuente reproducible para afirmaciones sobre mecánicas, legalidad o regulación de Pokémon Champions. El proyecto prefiere un estado desconocido explícito a adoptar silenciosamente una regla no verificada.
 
-Public pull requests can improve this showcase's documentation, navigation and validation utility. They do not provide access to the application implementation. Do not attach private audit material or original recordings containing personal information.
+## Documentación y traducciones
 
-## Source contributions
+Las PR públicas pueden mejorar documentación, navegación y utilidades del showcase; no dan acceso a la implementación. No adjuntes auditorías privadas ni grabaciones originales con datos personales.
 
-The production application source is private and is not available for public pull requests. Suggestions and issues are welcome; they do not imply a commitment to open-source components.
+Cada documento usa `NOMBRE.md` para español y `NOMBRE.en.md` para inglés, con selector recíproco al principio y enlaces al contenido del mismo idioma. Actualiza ambos cuando cambies hechos, límites o navegación. El [índice bilingüe](docs/README.md) reúne las parejas. No traduzcas identificadores técnicos, nombres de paquetes, comandos, hashes o rutas de archivos; sí sus explicaciones y textos alternativos.
 
-## Validación del showcase / Showcase validation
+## Contribuciones al código
 
-Desde la raíz del repositorio, con PowerShell 5.1 o posterior, ejecuta [la utilidad de verificación](tools/verify-showcase.ps1). El permiso de ejecución del comando se limita a ese proceso; no cambia la configuración permanente del equipo.
+El código de producción es privado y no está disponible para PR públicas. Se aceptan sugerencias e incidencias sin que ello implique un compromiso de liberar componentes.
+
+## Validación del showcase
+
+Desde la raíz, con PowerShell 5.1 o posterior, ejecuta [la utilidad de verificación](tools/verify-showcase.ps1). El permiso de ejecución se limita a ese proceso y no cambia la configuración permanente del equipo.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/verify-showcase.ps1
 ```
 
-The default check requires all 14 media files. It checks local Markdown/HTML links (including heading anchors), reciprocal language navigation, image alt text, the expected inventory, file sizes and SHA-256 against the existing manifest. It uses locally installed `ffprobe` and `ffmpeg` to check dimensions, duration, frame counts, audio absence and full decoding. It does not install software, access the network or modify files.
+La comprobación predeterminada requiere los 14 archivos multimedia. Revisa enlaces locales Markdown/HTML y anclas de encabezados, selectores recíprocos de las portadas y galerías, textos alternativos de imágenes, inventario esperado, tamaños y SHA-256 contra el manifiesto existente. Usa `ffprobe` y `ffmpeg` instalados localmente para dimensiones, duración, número de frames, ausencia de audio y decodificación completa. No instala programas, consulta la red ni modifica archivos.
 
-For text-only work while media is unavailable, use `-DocumentsOnly`. That mode explicitly excludes links to the 14 expected binaries and does **not** validate multimedia or permit integration. Other missing targets still fail. Neither mode verifies external URLs, renders GitHub pages, proves media provenance or replaces review for private information.
+Para trabajo de texto sin multimedia, usa `-DocumentsOnly`: excluye explícitamente los enlaces a los 14 binarios esperados. Ese modo no valida multimedia ni autoriza una integración; otros destinos ausentes siguen siendo errores. Ningún modo verifica URLs externas, renderiza GitHub, demuestra procedencia o sustituye la revisión de información privada.
 
-Before integration, run the default check, inspect both READMEs and galleries on GitHub, compare any supplied package manifest before copying files, and review the publication diff. Keep incomplete media work in a draft PR. Do not change manifest hashes merely to make a mismatch pass.
+Antes de integrar, ejecuta la comprobación completa, revisa portadas y galerías en GitHub, compara el manifiesto de cualquier paquete recibido y examina el diff. Revisa también el selector y la equivalencia de cada pareja documental: el chequeo automatizado de selectores actual se centra en portadas y galerías. No cambies hashes para ocultar discrepancias y conserva en borrador el trabajo multimedia incompleto.
