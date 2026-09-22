@@ -2,49 +2,49 @@
   <strong>Español</strong> · <a href="VALIDATION.en.md">English</a>
 </p>
 
-# Validación y evidencia
+# Validación y QA
 
-[← Portada](../README.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Índice](README.md)
+[← Portada](../README.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Documentación](README.md)
 
-**Una cifra de pruebas describe una ejecución concreta, no la calidad completa del producto.** La documentación se revisó el 22/09/2026 y distingue inspección de código, pruebas host, comprobaciones físicas y material promocional.
+La validación combina pruebas en host, comparación de escenarios del motor y recorridos físicos en Android. Cada campaña registra su entorno, resultado y alcance.
 
-## Referencias de validación
+## Resultados de pruebas
 
-| Evidencia | Resultado y alcance |
+| Campaña | Resultado y alcance |
 | --- | --- |
-| **Suite host aceptada el 20/09/2026** | **5.058 pases, 0 fallos, 0 omisiones, salida 0**. Ejecución ordinaria serial sin filtros; expediente iniciado el día 19 y aceptado a las 00:44 Europe/Madrid del día 20. |
-| Reparación focal de esa campaña | 373 pases focales; trazabilidad de 79 fallos históricos. El trabajo corrigió pruebas y referencias para el comportamiento vigente; no añadió cambios de producción en ese bloque. |
-| Referencia anterior del 14/09/2026 | 4.849 pases, 0 fallos y 0 omisiones, tras la corrección de importación. Se conserva como checkpoint anterior, no como cifra actual. |
-| Campaña histórica de Versus | 104.091 escenarios acotados. No cubre automáticamente participantes o reglas incorporados después. |
-| Campaña histórica de 1HITKO | 361 formas y 12.987 pares atacante/defensor dentro del catálogo y condiciones de aquella campaña. |
-| QA física seleccionada | POCO F5/Android 15: instalación, identidad, navegación, persistencia, apariencia y actualización entre entregas externas iniciales, incluida 1.0.0+2. |
+| **Suite host — 20/09/2026** | **5.058 pases, 0 fallos, 0 omisiones, salida 0**. Ejecución ordinaria, serial y sin filtros. Iniciada el día 19 y aceptada a las 00:44 Europe/Madrid del día 20. |
+| Reparación focal de la suite | 373 pases focales y trazabilidad de los 79 fallos detectados. Se ajustaron pruebas y referencias al comportamiento de la aplicación, sin modificar producción en ese trabajo. |
+| Suite host — 14/09/2026 | 4.849 pases, 0 fallos y 0 omisiones, tras la corrección de importación. |
+| Comparación de Versus | 104.091 escenarios dentro del alcance de la campaña. |
+| Validación de 1HITKO | 361 formas y 12.987 pares atacante/defensor, con el catálogo y las condiciones de la campaña. |
+| QA física | POCO F5 con Android 15: instalación, identidad, navegación, persistencia, apariencia y actualización entre entregas externas iniciales, incluida 1.0.0+2. |
 
-Los conjuntos **no se suman**. Los 5.058 pases no prueban que todas las modificaciones posteriores o cada APK hayan ejecutado esa suite. La campaña host no certifica audio audible, fluidez móvil, publicación en tiendas ni cobertura completa.
+Los resultados pertenecen a las ejecuciones indicadas y no se suman como una única suite. Los cambios posteriores de código, catálogo o configuración requieren sus propias pruebas. La aceptación en host no sustituye las comprobaciones físicas de audio, rendimiento o accesibilidad.
 
-## Qué se revisó para esta documentación
+## Alcance de las comprobaciones
 
-El esquema SQLite, migración, apertura nativa, composición de repositorios, operaciones de equipos/rondas/historial, dependencias y contratos permiten describir arquitectura y persistencia. La revisión confirma lo que declara esa implementación; no equivale a ejecutar todos sus casos ni a inspeccionar una base real del usuario.
+| Comprobación | Qué aporta |
+| --- | --- |
+| Pruebas de lógica e interfaz | Aceptación de los casos ejecutados para una versión concreta. |
+| Campañas de comparación | Contraste de resultados del motor bajo escenarios definidos. |
+| Revisión de implementación | Comprobación de contratos, esquema, repositorios y flujos descritos en la documentación. |
+| Recorridos físicos | Verificación del comportamiento en el dispositivo y las condiciones de la prueba. |
+| Demos | Ejemplos de uso de la interfaz; no son mediciones de rendimiento ni pruebas del motor. |
 
-La ficha distingue **11 tablas de aplicación y una FK explícita**, referencias lógicas sin FK, JSON por entidad y lectura puntual mediante Futures. Ninguna capacidad genérica de una biblioteca se presenta automáticamente como una función implementada.
+Los expedientes completos se conservan en el repositorio privado. Esta página resume sus resultados; no publica el corpus de pruebas ni un porcentaje global de cobertura.
 
-## Escala de evidencia
+## Pruebas por completar
 
-**Implementación inspeccionada:** muestra estructura, reglas y decisiones visibles en el código consultado. **Prueba ejecutada en un checkpoint:** demuestra aceptación dentro de ese estado y conjunto de casos. **Recorrido físico:** aporta evidencia del dispositivo y escenario probado. **Demo:** muestra una interacción seleccionada, no un benchmark ni una garantía mecánica.
+Ampliar la matriz de dispositivos y los recorridos con TalkBack. Completar sesiones de audio prolongadas y pruebas con foco externo, llamadas y Bluetooth. Medir escrituras y comportamiento con colecciones grandes, investigar los tiempos de presentación de frames y validar las incorporaciones de cada regulación.
 
-Las evidencias internas completas permanecen privadas. Este repositorio publica resúmenes con límites, no una reproducción pública e independiente de todas las campañas. Las dependencias técnicas se contrastaron, pero no se ha recalculado un porcentaje global de cobertura.
+El [estudio de arranque](PERFORMANCE.md) detalla mediciones en emulador y distingue el tiempo hasta el primer frame del arranque completo de Android.
 
-## Pendientes separados
+## Registro de resultados
 
-Ampliar dispositivos y accesibilidad/TalkBack; validar sesiones de audio prolongadas, foco externo, llamadas y Bluetooth; investigar ritmo de frames y causalidad de picos; medir escrituras y colecciones grandes; y validar el contenido que introduzca cada nueva regulación.
+Los expedientes conservan los intentos fallidos y las ejecuciones de aceptación posteriores. Cada corrección mantiene su trazabilidad por caso, entorno y resultado. La cifra de 5.058 pases corresponde a la campaña de reparación de la suite aceptada el 20/09/2026.
 
-El caso histórico de rendimiento usa un emulador. **Motor → primer frame** no es **arranque Android completo**. [Método y límites](PERFORMANCE.md).
+## Comprobaciones del repositorio
 
-## Validación del repositorio público
+El verificador del repositorio comprueba enlaces, selectores ES/EN, inventario multimedia, tamaños y hashes. Sus modos completos también validan los formatos y la decodificación de los archivos. [Instrucciones de ejecución](../CONTRIBUTING.md#validación-del-showcase).
 
-Enlaces, selectores ES/EN, manifiesto y multimedia tienen un verificador propio. Es una comprobación del showcase y no ejecuta el motor privado. [Instrucciones y modos de validación](../CONTRIBUTING.md#validación-del-showcase).
-
-Las demos actuales y la excepción de 1HITKO están identificadas en [la galería](GALLERY.md) y [su procedencia](../media/README.md). Esta actualización documental no cambia los binarios ni sus hashes.
-
-## Conservación de fallos
-
-Los intentos fallidos se conservan en los expedientes internos. Corregir una prueba o una implementación no reescribe el resultado original: se registra una aceptación posterior con alcance definido. La evidencia de 5.058 pases se obtuvo del resumen de reparación y su estado de proyecto; no es una ejecución realizada al editar este portfolio.
+Los parámetros de edición y las fechas de preparación de las grabaciones están en [Archivos multimedia](../media/README.md). Estas comprobaciones son independientes de las pruebas de la aplicación.

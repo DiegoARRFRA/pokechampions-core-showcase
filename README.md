@@ -4,79 +4,75 @@
 
 # PokeChampions Core
 
-### Preparación competitiva. Análisis de daño. Datos locales.
+Aplicación Android para crear equipos, calcular daño y preparar enfrentamientos de Pokémon Champions. Funciona sin conexión y guarda equipos, notas y partidas en el dispositivo.
 
-Aplicación móvil para preparar equipos y analizar Pokémon Champions sin cuenta ni servidor. Un proyecto personal de **[Diego de Arriba](https://github.com/DiegoARRFRA)** que conecta desarrollo de producto, lógica de dominio, persistencia y validación en Android.
+Desarrollada por **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter y Dart · Código fuente privado.
 
-**Flutter · Dart · Drift/SQLite · Arquitectura modular · Offline-first**
+[Ficha técnica](docs/TECHNICAL_OVERVIEW.md) · [Base de datos](docs/DATABASE.md) · [Arquitectura](docs/ARCHITECTURE.md) · [Galería](docs/GALLERY.md) · [Documentación](docs/README.md)
 
-[Ficha técnica](docs/TECHNICAL_OVERVIEW.md) · [Base de datos y diagramas](docs/DATABASE.md) · [Arquitectura](docs/ARCHITECTURE.md) · [Demos](docs/GALLERY.md) · [Documentación ES/EN](docs/README.md)
+## Tecnologías y arquitectura
 
-> **Showcase de producto e ingeniería.** El código de producción es privado; aquí se publican la presentación, las decisiones técnicas y el modelo de datos documentado, no la implementación.
-
-## La ingeniería en un minuto
-
-| Área | Implementación y responsabilidad |
+| Área | Implementación |
 | --- | --- |
-| **Interfaz y producto** | Flutter/Dart; herramientas de equipos, cálculo, entrenamiento de salidas e historial; ocho idiomas y temas claro/oscuro/sistema. |
-| **Arquitectura** | Organización por funcionalidades y capas; contratos tipados, composición e inyección por constructor. Puertos/adaptadores en componentes clave. |
-| **Cálculo** | Escenario explícito → validación → reglas y catálogos locales → resultado de daño, KO o limitación documentada. |
-| **Persistencia** | Drift/SQLite, **11 tablas en el esquema v2**; columnas indexadas y contenido JSON validado. Equipos, notas, historial, rivales y recuperación. |
-| **Concurrencia** | Almacenamiento nativo en un isolate de Drift; operaciones coordinadas en cola FIFO; worker de búsqueda en 1HITKO con progreso y cancelación. |
-| **Fiabilidad** | Transacciones, identidad y revisión de borradores, conservación de datos previos y publicación del almacenamiento solo después de verificarlo. |
-| **Entrega y calidad** | Pruebas Dart/Flutter, análisis estático, generación reproducible y QA Android con alcance documentado. No se confunden demos con pruebas. |
+| **Interfaz** | Flutter y Dart; componentes reutilizables, ocho idiomas y temas claro, oscuro y del sistema. |
+| **Arquitectura** | Organización por funcionalidades y capas, contratos tipados e inyección por constructor. Puertos y adaptadores en cálculo, audio y persistencia. |
+| **Análisis** | Reglas de dominio y catálogos locales para evaluar daño, KO y supervivencia según el escenario configurado. |
+| **Persistencia** | Drift y SQLite: 11 tablas, columnas indexadas y documentos JSON para equipos, notas, historial y rivales. |
+| **Concurrencia** | Almacenamiento en un isolate de Drift, cola FIFO de operaciones y búsqueda de 1HITKO con progreso y cancelación. |
+| **Integridad** | Guardados transaccionales, control de revisiones de borradores y migraciones con conservación y verificación de datos. |
+| **Desarrollo** | Pruebas Dart/Flutter, análisis estático, generación de datos y perfilado en Android. |
 
-**Dos recorridos separados:** analizar usa reglas y catálogos empaquetados; guardar usa repositorios y SQLite. El proyecto no depende de una petición a un servidor para resolver cada cálculo.
+El cálculo consulta reglas y catálogos empaquetados. El guardado utiliza repositorios locales y SQLite; no requiere cuentas ni servicios externos.
 
-## El producto, funcionando
+## La aplicación
 
-Inicio, resultado de Versus y editor de equipos. Capturas reales de Android; pulsa para ampliar.
+Inicio, análisis de daño y editor de equipos. Pulsa una captura para ampliarla.
 
 <p>
   <a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Inicio de PokeChampions Core en tema claro"></a>
-  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: rango de daño, usos hasta KO y límites del escenario"></a>
+  <a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus: rango de daño y usos necesarios para lograr un KO"></a>
   <a href="media/screenshots/team-builder.png"><img src="media/screenshots/team-builder.png" width="220" alt="Editor de equipos con integrantes, habilidades, objetos y naturalezas"></a>
 </p>
 
-### Versus en acción
+### Calculadora Versus
 
-Seleccionar atacante y movimiento, calcular y leer el resultado.
+Configura los combatientes, elige un movimiento y consulta su rango de daño y las condiciones de KO.
 
-<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Demo real de Versus: selección de movimiento y cálculo de daño"></a>
+<a href="media/demos/versus.gif"><img src="media/demos/versus.gif" width="260" alt="Selección de movimiento y cálculo de daño en Versus"></a>
 
-**[Ver MP4](media/demos/versus.mp4)** · [Equipos y builds](docs/GALLERY.md#equipos-y-builds) · [Entradas](docs/GALLERY.md#entradas) · [Galería completa](docs/GALLERY.md)
+**[Ver vídeo](media/demos/versus.mp4)** · [Equipos y builds](docs/GALLERY.md#equipos-y-builds) · [Entradas](docs/GALLERY.md#entradas) · [HISTÓRICO](docs/GALLERY.md#histórico) · [Todas las demos](docs/GALLERY.md)
 
- [Procedencia](media/README.md).
+## Decisiones de diseño
 
-## Decisiones que merece la pena revisar
-
-| Problema de ingeniería | Solución observable | Lectura |
+| Necesidad | Solución | Detalle |
 | --- | --- | --- |
-| No perder datos al cambiar de almacenamiento | Preparación, verificación y activación separadas; originales preservados y fallos explícitos. | [Migraciones e integridad](docs/DATABASE.md#migración-e-integridad) |
-| Evitar duplicar una partida o confirmar un guardado fallido | Finalización del borrador en transacción, con identidad y revisión esperada. | [Flujo de guardado](docs/TECHNICAL_OVERVIEW.md#guardar-una-partida) |
-| Compartir cálculo sin duplicar reglas entre pantallas | Contratos tipados y composición de servicios; separación de escenario, evaluación y presentación. | [Arquitectura](docs/ARCHITECTURE.md) |
-| No bloquear la interfaz con trabajo intensivo | Ejecución nativa de almacenamiento y búsquedas aisladas, con control del ciclo de vida. | [Concurrencia](docs/TECHNICAL_OVERVIEW.md#concurrencia-y-estado) |
+| Conservar equipos y partidas al migrar el almacenamiento | Preparación de la base de datos, verificación y activación; recuperación de los originales ante errores. | [Migraciones](docs/DATABASE.md#migración-e-integridad) |
+| Evitar registros duplicados y guardados parciales | Finalización del borrador en una transacción, con identidad y revisión esperada. | [Guardado de partidas](docs/TECHNICAL_OVERVIEW.md#guardar-una-partida) |
+| Mantener coherentes los cálculos entre herramientas | Reglas compartidas, peticiones tipadas y separación entre evaluación y presentación. | [Arquitectura](docs/ARCHITECTURE.md) |
+| Gestionar búsquedas y operaciones de almacenamiento | Isolates, cancelación y control del ciclo de vida de los trabajos. | [Concurrencia](docs/TECHNICAL_OVERVIEW.md#concurrencia-y-estado) |
 
-## Evidencia, con contexto
+## Pruebas y rendimiento
 
-La campaña host aceptada el **20 de septiembre de 2026** registró **5.058 pruebas correctas, 0 fallos y 0 omisiones**, en una ejecución ordinaria, serial y sin filtros. El checkpoint anterior del **14 de septiembre** conserva sus **4.849 pases**. Son estados de validación distintos; esta revisión documental no vuelve a ejecutar la suite ni certifica cambios posteriores.
+**5.058 pruebas aprobadas, sin fallos ni omisiones**, en la suite host del **20/09/2026**. La documentación de calidad recoge los resultados, los escenarios de comparación del motor y las comprobaciones en POCO F5 con Android 15.
 
-Otras campañas históricas documentan **104.091 escenarios de Versus** y **361 formas / 12.987 pares de 1HITKO**. No se suman entre sí ni demuestran cobertura completa de versiones posteriores. [Matriz de evidencia y alcance](docs/VALIDATION.md).
+[Resultados y alcance de las pruebas](docs/VALIDATION.md) · [Estudio de arranque en emulador](docs/PERFORMANCE.md)
 
-La QA física documentada incluye recorridos seleccionados en **POCO F5 / Android 15**. El caso de rendimiento publicado corresponde a un **emulador**, no a una medición equivalente en ese teléfono. [Validación y límites](docs/VALIDATION.md) · [Caso de rendimiento](docs/PERFORMANCE.md).
+## Documentación técnica
 
-La revisión documental del esquema y de componentes de almacenamiento del **22 de septiembre de 2026** amplía la explicación técnica, no la certificación de la aplicación. La implementación y las actas completas permanecen privadas.
+| Documento | Contenido |
+| --- | --- |
+| [Ficha técnica](docs/TECHNICAL_OVERVIEW.md) | Tecnologías, conexión entre módulos y flujos de cálculo y guardado. |
+| [Arquitectura](docs/ARCHITECTURE.md) | Capas, contratos, composición y arranque. |
+| [Base de datos](docs/DATABASE.md) | Diagramas, tablas, relaciones, índices y migraciones. |
+| [Decisiones de ingeniería](docs/ENGINEERING.md) | Persistencia, concurrencia y gestión de datos. |
+| [Funcionalidades](docs/FEATURES.md) | Equipos, Versus, EV Lab, 1HITKO, Batalla, Entradas y Notas. |
 
-## Recorrido de lectura
+[Índice completo](docs/README.md) · [Hoja de ruta](docs/ROADMAP.md) · [Sugerencias e incidencias](CONTRIBUTING.md)
 
-**Producto:** [funcionalidades](docs/FEATURES.md) → [galería](docs/GALLERY.md).  
-**Revisión técnica:** [ficha completa](docs/TECHNICAL_OVERVIEW.md) → [arquitectura](docs/ARCHITECTURE.md) → [base de datos](docs/DATABASE.md) → [decisiones y compromisos](docs/ENGINEERING.md).  
-**Calidad:** [validación](docs/VALIDATION.md) → [rendimiento](docs/PERFORMANCE.md) → [datos y exactitud](docs/DATA_AND_ACCURACY.md).
+## Autor y disponibilidad
 
-## Autor, estado y alcance
+**Diego de Arriba** · [Perfil de GitHub](https://github.com/DiegoARRFRA).
 
-**Diego de Arriba** · [Perfil de GitHub](https://github.com/DiegoARRFRA). Proyecto personal en desarrollo, presentado mediante documentación bilingüe y demostraciones reales. [Participación](CONTRIBUTING.md) · [Hoja de ruta](docs/ROADMAP.md).
+Proyecto personal en desarrollo. Este repositorio reúne su documentación y demostraciones; el código fuente es privado y la aplicación todavía no dispone de una descarga pública.
 
-Batalla representa situaciones de dobles; no ejecuta partidas completas. Entradas practica elecciones iniciales y registra resultados manuales. HISTÓRICO y el registro de Entradas son funciones distintas. El repositorio no ofrece código de producción ni descarga pública de la app, y no publica datos de usuario, datasets internos, APK, claves ni música.
-
-**Proyecto fan no oficial.** Pokémon y las marcas y recursos relacionados pertenecen a sus respectivos titulares. No existe afiliación, respaldo ni patrocinio de Nintendo, Creatures, GAME FREAK o The Pokémon Company. Este showcase no concede una licencia open source. [Titularidad](NOTICE.md).
+PokeChampions Core es un proyecto fan no oficial, sin afiliación con Nintendo, Creatures, GAME FREAK ni The Pokémon Company. Pokémon y sus recursos y marcas pertenecen a sus respectivos titulares. [Aviso de titularidad](NOTICE.md).

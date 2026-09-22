@@ -2,56 +2,50 @@
   <strong>Español</strong> · <a href="FEATURES.en.md">English</a>
 </p>
 
-# Funcionalidades y límites
+# Funcionalidades
 
-[← Portada](../README.md) · [Índice de documentación](README.md)
+[← Portada](../README.md) · [Documentación](README.md)
 
-PokeChampions Core reúne flujos de preparación y análisis competitivo en una aplicación móvil diseñada para funcionar offline. La [ficha técnica](TECHNICAL_OVERVIEW.md) explica cómo se conectan.
+PokeChampions Core reúne la preparación de equipos, el análisis de enfrentamientos y el registro de partidas en una aplicación que funciona sin conexión.
 
 ## Equipos / Team Builder
 
-Permite crear y conservar equipos de seis posiciones con formas legales, habilidades, naturaleza, entrenamiento, objetos y hasta cuatro movimientos. Las configuraciones alimentan otras herramientas de análisis; no se quedan en un editor aislado.
+Crea equipos de seis posiciones con formas, habilidades, naturaleza, entrenamiento, objetos y hasta cuatro movimientos por integrante. Consulta builds recomendadas y cobertura defensiva y reutiliza las configuraciones en las herramientas de análisis.
 
 ## Batalla
 
-Representa una situación de dobles definida por el usuario: orden de Velocidad, clima, Viento Afín, Espacio Raro, PS temporales e interacciones verificadas. El usuario controla el escenario; la app no elige turnos ni juega la partida hasta su final.
+Configura una situación de dobles para comparar el orden por Velocidad, clima, Viento Afín, Espacio Raro, PS temporales y efectos relevantes. El usuario define el escenario; la herramienta analiza esa situación sin ejecutar automáticamente los turnos de la partida.
 
 ## Versus
 
-Es el espacio de análisis 1 contra 1. Comparte una frontera de cálculo tipada con herramientas relacionadas, evitando reinterpretar mecánicas en cada interfaz. Ofrece configuración normal y avanzada y recibe snapshots trasladados desde otros módulos.
+Calcula el daño en enfrentamientos de uno contra uno, consulta rangos y condiciones de KO y compara escenarios mediante la configuración normal y el Modo Maestro. Recibe configuraciones trasladadas desde otras herramientas.
 
 ## EV Lab
 
-Se centra en la supervivencia defensiva. Permite explorar inversión en PS, Defensa y Defensa Especial, y buscar la inversión mínima para sobrevivir a ataques configurados dentro del escenario actual.
+Explora la inversión en PS, Defensa y Defensa Especial. Busca un reparto que permita sobrevivir a los ataques configurados dentro del escenario de cálculo.
 
 ## 1HITKO
 
-Busca en el catálogo local legal candidatos capaces de garantizar un KO de un impacto frente al defensor configurado. La campaña exhaustiva histórica abarcó 361 formas y 12.987 pares en su alcance de entonces, no en cualquier catálogo futuro.
-
-Responde una pregunta limitada a un impacto y a condiciones explícitas. Una garantía de daño presupone que el golpe acierta: no es una garantía de precisión ni de ganar la partida.
+Busca candidatos en el catálogo legal capaces de lograr un KO de un impacto frente al defensor seleccionado. Los resultados muestran movimientos y rangos de daño. La garantía de daño presupone que el movimiento acierta.
 
 ## Entradas
 
-Modo offline para practicar elecciones iniciales con equipos propios o datos competitivos seleccionados. La salida rival permanece oculta hasta confirmar la elección. Abre la situación correspondiente en Batalla; el resultado de práctica se introduce manualmente, no se obtiene simulando turnos.
+Practica las elecciones iniciales con equipos propios o equipos competitivos seleccionados. La salida rival permanece oculta hasta confirmar tu pareja. Puedes abrir la situación en Batalla y registrar manualmente el resultado de la práctica.
 
 ## HISTÓRICO
 
-Conserva localmente victorias, derrotas, información del rival y snapshots inmutables de equipos. Ofrece filtros y resúmenes sin convertir la partida registrada en una repetición automática. Es independiente del registro de prácticas de Entradas.
+Guarda victorias, derrotas, información del rival y snapshots de los equipos. Consulta filtros y resúmenes para revisar tus partidas. Es independiente del registro de prácticas de Entradas.
 
 ## Notas Pokémon
 
-Biblioteca separada de observaciones por Pokémon y configuraciones reutilizables, independiente de los equipos guardados.
+Mantén observaciones por Pokémon y configuraciones reutilizables en una biblioteca independiente de los equipos guardados.
 
 ## Idiomas y apariencia
 
-Ocho paquetes de idioma completos: español, inglés, alemán, francés, italiano, portugués, japonés y coreano. La apariencia admite claro, oscuro y sistema. La documentación del showcase tiene dos idiomas; eso no limita los ocho de la aplicación.
+La interfaz dispone de español, inglés, alemán, francés, italiano, portugués, japonés y coreano. Elige tema claro, oscuro o del sistema.
 
 ## Audio
 
-Incluye una lista de reproducción local persistente y recuerda preferencias. Se ha investigado en host y dispositivo físico; la validación de sesiones audibles prolongadas sigue siendo un frente separado, no algo cubierto por una etiqueta genérica de finalizado.
+Reproduce música local y conserva tus preferencias de reproducción y selección de pistas.
 
-## Fuera del alcance predeterminado
-
-No se plantean cuentas, sincronización en la nube, funciones sociales, combates online, pagos ni simulación autónoma completa de batallas. El enfoque sigue siendo preparar, analizar y revisar.
-
-[Galería y demos](GALLERY.md) · [Validación y QA](VALIDATION.md)
+[Galería y demos](GALLERY.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Pruebas y alcance](VALIDATION.md)

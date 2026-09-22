@@ -8,17 +8,15 @@
 
 **SQLite · Drift · Esquema v2 · 11 tablas · 4 índices secundarios explícitos · 1 clave foránea declarada**
 
-Modelo documentado a partir del esquema y los repositorios revisados el **22 de septiembre de 2026**. Es documentación de estructura y comportamiento: no incluye SQL de creación, código del motor, registros de usuario ni un volcado de la base de datos.
+## Organización de los datos
 
-## Qué guarda y qué no guarda
+SQLite conserva los equipos, notas, partidas, borradores, rivales y prácticas del usuario, junto con el control de migración. Los catálogos de Pokémon, movimientos y habilidades son recursos empaquetados fuera de la base de datos. Idioma, apariencia y audio utilizan preferencias separadas.
 
-La BD conserva datos creados por el usuario y el control de su migración: equipos, notas, partidas, borradores, rivales y prácticas. Los catálogos de Pokémon, movimientos y habilidades se empaquetan como recursos locales; **no existen aquí tablas SQL de Pokémon o movimientos**. Idioma, apariencia y audio usan preferencias separadas.
-
-El diseño es **híbrido relacional/documental**: columnas estables permiten identificar, ordenar e indexar; el contenido compuesto se conserva como JSON y se interpreta mediante codecs/modelos. Por eso sería incorrecto dibujar un esquema totalmente normalizado con tablas ficticias de integrantes, movimientos y estadísticas.
+El modelo combina columnas relacionales para identificar, ordenar e indexar registros con documentos JSON para su contenido compuesto. Los codecs interpretan esos documentos y validan los modelos de la aplicación. Los integrantes, movimientos y estadísticas de un equipo forman parte de su contenido, en lugar de ocupar tablas independientes.
 
 ## Mapa físico completo
 
-Cada caja representa una tabla real. La única arista entre tablas representa la FK declarada; agrupar cajas no crea relaciones SQL.
+Las cajas representan tablas. La flecha indica la clave foránea declarada entre perfiles y versiones de rivales.
 
 ```mermaid
 flowchart TB
@@ -60,13 +58,13 @@ erDiagram
     }
 ```
 
-Cada versión pertenece a un perfil; un perfil puede tener cero o más versiones. La FK apunta al **`id` único del perfil**, no a su PK `position`, y declara **`ON DELETE CASCADE`**. El identificador de cada versión es independiente; la línea discontinua del ER expresa una relación no identificadora, no una FK opcional.
+Cada versión pertenece a un perfil; un perfil puede tener cero o más versiones. La FK apunta al **`id` único del perfil**, no a su PK `position`, y declara **`ON DELETE CASCADE`**. La línea discontinua del ER representa una relación no identificadora: cada versión conserva su propia identidad.
 
-**No hay FK** declarada desde `history_records.team_id`, `history_preferences.last_team_id`, `user_entities.team_id` o `stored_notes.pokemon_id`. Tampoco hay FK entre las tablas de migración. Sus asociaciones se coordinan en la aplicación; no se presentan como garantías del motor SQL.
+`history_records.team_id`, `history_preferences.last_team_id`, `user_entities.team_id` y `stored_notes.pokemon_id` son asociaciones gestionadas por la aplicación, sin FK declarada. Las tablas de migración tampoco tienen relaciones FK entre sí.
 
 ## Asociaciones lógicas del producto
 
-Este segundo mapa **no es un diagrama de claves foráneas**. Explica cómo se interpretan los IDs y los documentos.
+Este mapa muestra las referencias por ID, diferenciadas de la integridad referencial SQL.
 
 ```mermaid
 flowchart TB
@@ -84,11 +82,11 @@ flowchart TB
     NOTE -. "pokemon_id / sin FK" .-> CAT
 ```
 
-Los snapshots dentro del contenido de partidas/prácticas preservan información del momento registrado; no son nuevas tablas. El borrado de un equipo no implica una cascada SQL sobre el historial. El catálogo empaquetado no forma parte del archivo SQLite.
+Los snapshots de partidas y prácticas conservan información del momento registrado dentro del documento JSON. El borrado de un equipo no implica una cascada SQL sobre su historial. Las notas utilizan un ID del catálogo empaquetado, que está fuera del archivo SQLite.
 
 ## Diccionario de tablas
 
-`PK`: clave primaria. `UK`: unicidad. `FK`: clave foránea. `?`: admite NULL. Los tipos indicados son los declarados; el JSON se almacena como `TEXT`.
+`PK`: clave primaria. `UK`: unicidad. `FK`: clave foránea. `?`: admite NULL. El JSON se almacena como `TEXT`.
 
 <details>
 <summary>Abrir diccionario completo de las 11 tablas</summary>
@@ -107,8 +105,8 @@ Los snapshots dentro del contenido de partidas/prácticas preservan información
 | Campo | Tipo y contrato |
 | --- | --- |
 | `position` | INTEGER, PK autoincremental. |
-| `id` | TEXT, UK, obligatorio y no vacío. |
-| `team_id` | TEXT?; selección/filtrado por equipo, sin FK. |
+| `id` | TEXT, UK, obligatorio y no vacío después de trim. |
+| `team_id` | TEXT?; selección y filtrado por equipo, sin FK. |
 | `played_at` | INTEGER obligatorio; el repositorio escribe microsegundos desde época. |
 | `outcome` | TEXT obligatorio; CHECK restringido a `victory` o `defeat`. |
 | `payload` | TEXT obligatorio con `json_valid`; registro y snapshots serializados. |
@@ -117,19 +115,21 @@ Los snapshots dentro del contenido de partidas/prácticas preservan información
 
 | Campo | Tipo y contrato |
 | --- | --- |
-| `slot` | INTEGER, PK y CHECK `slot = 1`: como máximo una fila, no presencia obligatoria. |
+| `slot` | INTEGER, PK y CHECK `slot = 1`: como máximo una fila. |
 | `revision` | TEXT?; si existe no puede estar vacío después de trim. |
 | `payload` | TEXT obligatorio con `json_valid`; borrador serializado. |
 
-La revisión se usa al finalizar un borrador; el mero CHECK de columna no implementa por sí solo el control de concurrencia.
+El repositorio comprueba la revisión al finalizar un borrador. El CHECK de columna valida su formato; el control de concurrencia se realiza dentro de la operación.
 
 ### 4–5. opponent_profiles y opponent_versions
 
-Ambas tienen `position` INTEGER PK autoincremental, `id` TEXT único/no vacío y `payload` TEXT con `json_valid`. `opponent_versions` añade `profile_id` TEXT obligatorio, FK al `id` del perfil con cascada de borrado. Las versiones permiten representar configuraciones asociadas a un rival sin confundirlas con equipos propios.
+Ambas tablas tienen `position` INTEGER PK autoincremental, `id` TEXT único y no vacío después de trim, y `payload` TEXT obligatorio con `json_valid`.
+
+`opponent_versions` añade `profile_id` TEXT obligatorio, FK al `id` del perfil con cascada de borrado. Las versiones permiten conservar configuraciones asociadas a un rival por separado de los equipos propios.
 
 ### 6. history_preferences
 
-`slot` INTEGER PK con CHECK `slot = 1` y `last_team_id` TEXT obligatorio/no vacío. Conserva la última selección de equipo del historial. Es una tabla de **cero o una fila**, separada de las preferencias visuales de la app.
+`slot` INTEGER PK con CHECK `slot = 1` y `last_team_id` TEXT obligatorio y no vacío después de trim. Guarda la última selección de equipo de HISTÓRICO. La tabla admite cero o una fila y es independiente de las preferencias visuales.
 
 ### 7. user_entities
 
@@ -137,13 +137,13 @@ Ambas tienen `position` INTEGER PK autoincremental, `id` TEXT único/no vacío y
 | --- | --- |
 | `position` | INTEGER, PK autoincremental; conserva orden explícito. |
 | `scope` | TEXT obligatorio; clasifica el tipo de entidad. |
-| `id` | TEXT obligatorio; la unicidad es conjunta **`(scope, id)`**, no global. |
+| `id` | TEXT obligatorio; unicidad conjunta **`(scope, id)`**. |
 | `team_id` | TEXT?; asociación opcional sin FK. |
 | `payload` | TEXT obligatorio con `json_valid`; documento compuesto. |
 
-El esquema no impone un enum SQL a `scope`. Los repositorios revisados usan estos ocho ámbitos:
+Los repositorios utilizan ocho ámbitos. `scope` es un campo de texto, sin enum impuesto por SQL.
 
-| Ámbito | Significado |
+| Ámbito | Contenido |
 | --- | --- |
 | `teams` | Equipos guardados. |
 | `names` | Nombres personalizados de equipos. |
@@ -152,13 +152,13 @@ El esquema no impone un enum SQL a `scope`. Los repositorios revisados usan esto
 | `disabled` | Equipos oficiales deshabilitados en esa biblioteca. |
 | `library_names` | Nombres alternativos de la biblioteca. |
 | `pairs` | Configuraciones de parejas iniciales. |
-| `library_meta` | Metadatos de versiones de biblioteca/reglas. |
+| `library_meta` | Metadatos de versiones de biblioteca y reglas. |
 
-El contenedor de estas entidades distingue `schemaVersion` y `value`; el lector examinado admite versión 1 y rechaza versiones futuras no soportadas. **Versión del documento, versión SQL y versión de la app son tres cosas diferentes.** La biblioteca completa usa su propio codec; no se asume un único formato de payload para todas las tablas.
+El contenedor de entidades distingue `schemaVersion` y `value`. Su lector admite versión 1 y rechaza versiones futuras no soportadas. La versión del documento, el esquema SQL y la aplicación se gestionan por separado. La biblioteca completa utiliza su propio codec; cada tabla conserva el formato de contenido que le corresponde.
 
 ### 8. team_damage
 
-`source_index` INTEGER PK y `original`, `diagnostic`, `source` TEXT obligatorios. **No contiene cálculos de daño de combate:** conserva información de equipos dañados detectados durante la recuperación/importación. Esa distinción evita interpretar mal el nombre.
+`source_index` INTEGER PK y `original`, `diagnostic`, `source` TEXT obligatorios. Conserva información de equipos dañados durante la recuperación o importación, no cálculos de daño de combate.
 
 ### 9. legacy_import
 
@@ -170,51 +170,55 @@ El contenedor de estas entidades distingue `schemaVersion` y `value`; el lector 
 | `revision`, `sealed_revision` | INTEGER obligatorios, valor inicial 0. |
 | `seal` | TEXT obligatorio; verificación de la preparación. |
 
-El esquema declara `manifest` como TEXT; no añade aquí un CHECK `json_valid`. Validar la estructura y procedencia de ese contenido corresponde al flujo de almacenamiento.
+`manifest` es TEXT sin CHECK `json_valid`. La estructura y procedencia de su contenido se validan en el flujo de almacenamiento.
 
 ### 10–11. legacy_sources y legacy_units
 
-`legacy_sources` conserva `source_key` TEXT PK, `representation` y `disposition` TEXT obligatorios. `legacy_units` conserva `name` TEXT PK, `record_count` INTEGER y `digest` TEXT obligatorios. Son registros de origen y verificación, **no tablas vinculadas por FK** ni un historial completo de eventos de la app.
+`legacy_sources` contiene `source_key` TEXT PK, `representation` y `disposition` TEXT obligatorios.
+
+`legacy_units` contiene `name` TEXT PK, `record_count` INTEGER y `digest` TEXT obligatorios.
+
+Estas tablas registran el origen de los datos y los resultados de verificación. Se coordinan desde la aplicación, sin FK entre ellas.
 
 </details>
 
 ## Índices y acceso
 
-Además de los índices implícitos de PK/unicidad, se declaran cuatro índices secundarios:
+Además de los índices implícitos de PK y unicidad, el esquema declara cuatro índices secundarios:
 
 | Índice | Columnas, en orden | Acceso que apoya |
 | --- | --- | --- |
 | `notes_pokemon` | `pokemon_id`, `position` | Notas de un Pokémon en orden. |
-| `history_team_date` | `team_id`, `played_at DESC`, `id DESC` | Selección por equipo y orden temporal cuando la consulta lo solicita. |
+| `history_team_date` | `team_id`, `played_at DESC`, `id DESC` | Selección por equipo y orden temporal. |
 | `versions_profile` | `profile_id`, `position` | Versiones de un perfil en orden. |
-| `entities_team` | `scope`, `team_id`, `position` | Entidades por ámbito/equipo. |
+| `entities_team` | `scope`, `team_id`, `position` | Entidades por ámbito y equipo. |
 
-**Índice existente no equivale a consulta plenamente optimizada.** El repositorio de historial revisado reduce por equipo en SQL, pero aplica otros filtros mediante la lógica canónica de dominio. El registro de Entradas leído carga sus rondas y filtra por equipo en la aplicación. No se atribuye al SQL una paginación o agregación que no se ha observado.
+HISTÓRICO reduce por equipo en SQL y aplica otros filtros mediante la lógica de dominio. El registro de Entradas carga sus rondas y filtra por equipo en la aplicación. El aprovechamiento de cada índice depende de la consulta; su existencia por sí sola no determina el rendimiento.
 
 ## Transacciones y propiedad de la conexión
 
-Los repositorios comparten un propietario de almacenamiento; no abren una conexión por widget. La apertura nativa configura **WAL**, **synchronous=FULL**, **foreign_keys=ON** y un `busy_timeout` de **5.000 ms por defecto**. Se comprueban identidad, versión y `quick_check` antes de exponer una conexión utilizable; al reabrir una generación activa también se revisan las FK.
+Los repositorios comparten un propietario de almacenamiento. La apertura nativa configura **WAL**, **synchronous=FULL**, **foreign_keys=ON** y un **`busy_timeout` de 5.000 ms por defecto**. Se comprueban identidad, versión y `quick_check` antes de exponer la conexión; al reabrir una generación activa también se revisan las FK.
 
-Las acciones admitidas pasan por una cola FIFO; el cierre espera su finalización. Es coordinación de la conexión de la aplicación, no una afirmación de serialización global frente a cualquier escritor externo.
+Las operaciones admitidas pasan por una cola FIFO. El cierre espera a que finalicen y rechaza las nuevas. Esta coordinación pertenece a la conexión de la aplicación, mientras que SQLite gestiona sus bloqueos frente a otras conexiones.
 
-Los guardados compuestos usan transacciones. En el historial, finalizar un borrador reúne identidad, registro y sucesor; las comprobaciones de revisión evitan tratar un estado cambiado como si fuera el original. Las consultas observadas usan Futures; el uso de Drift no convierte automáticamente todo el acceso en `watch()`.
+Los guardados compuestos utilizan transacciones. Finalizar un borrador de HISTÓRICO reúne identidad, registro y sucesor, con comprobación de la revisión esperada. Los repositorios documentados devuelven Futures; la interfaz se actualiza desde sus controladores.
 
 ## Migración e integridad
 
-Hay dos procesos diferentes:
+La **migración de esquema SQL** admite la transición de versión 1 a 2. Añade las tablas de entidades, recuperación y control de importación e instala los mecanismos de verificación. Se rechazan transiciones fuera de ese contrato.
 
-**Migración de esquema SQL.** La implementación revisada declara versión 2 y admite la transición de versión 1 a 2. Añade entidades, recuperación y control de importación e instala los mecanismos de verificación. Transiciones fuera de ese contrato se rechazan.
+La **activación del almacenamiento** conserva los originales, prepara una generación SQLite, verifica su contenido y publica los repositorios cuando está lista. Un estado incompleto, incompatible o de procedencia inconsistente bloquea la activación en lugar de iniciar una biblioteca vacía.
 
-**Activación desde almacenamiento anterior.** El coordinador conserva originales, prepara una generación SQLite, verifica su contenido y solo entonces publica los repositorios. Datos incompletos, incompatibles o de procedencia inconsistente producen un estado bloqueado, no la creación silenciosa de una biblioteca vacía.
+Los estados persistidos son `preparing`, `verified`, `dirty` y `active`. **Treinta triggers de verificación** cubren INSERT, UPDATE y DELETE en diez tablas: incrementan la revisión de `legacy_import` y cambian una generación `verified` a `dirty` si se modifica. Las escrituras normales de una generación `active` conservan ese estado.
 
-Los estados persistidos son `preparing`, `verified`, `dirty` y `active`. Hay **30 triggers de verificación**: INSERT/UPDATE/DELETE sobre diez tablas incrementan la revisión de `legacy_import`; una generación `verified` pasa a `dirty` si cambia. Las escrituras normales sobre una generación `active` no la convierten automáticamente en `dirty`. Esto protege la vigencia de una preparación verificada; **no es un event log, un sistema de cifrado ni una garantía contra manipulación maliciosa**.
+Estos controles comprueban la vigencia de la preparación. Son distintos de un registro completo de eventos o de un mecanismo de cifrado.
 
 ## Compromisos del diseño
 
-El JSON versionado permite conservar agregados y snapshots sin una tabla por cada atributo de juego. A cambio, parte de la validación semántica y de las asociaciones recae en codecs/repositorios; `json_valid` solo prueba sintaxis JSON, no legalidad competitiva ni coherencia de IDs. El componente relacional proporciona transacciones, unicidad e índices seleccionados, no normalización exhaustiva.
+El JSON versionado permite conservar equipos y snapshots con estructuras compuestas. Los codecs y repositorios validan su significado y coordinan las asociaciones sin FK. `json_valid` comprueba sintaxis JSON, no legalidad competitiva ni coherencia entre IDs.
 
-No se afirma cifrado en reposo, sincronización cloud, recuperación remota, cobertura de fallos completa ni rendimiento cuantificado de cada índice. La descripción del esquema no es una promesa de estabilidad de una API pública.
+Las columnas relacionales aportan transacciones, unicidad e índices para los accesos seleccionados. Los filtros que permanecen en la aplicación mantienen la lógica canónica de fechas, nombres y orden.
 
-[Decisiones de ingeniería](ENGINEERING.md) · [Flujos de cálculo y guardado](TECHNICAL_OVERVIEW.md) · [Validación histórica](VALIDATION.md)
+[Decisiones de ingeniería](ENGINEERING.md) · [Flujos de cálculo y guardado](TECHNICAL_OVERVIEW.md) · [Validación](VALIDATION.md)
 
-Los diagramas usan [Mermaid ER](https://mermaid.js.org/syntax/entityRelationshipDiagram) y el [formato de diagramas de GitHub](https://docs.github.com/es/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams). La fuente del modelo es la implementación revisada del proyecto; esas referencias explican la notación, no certifican su esquema.
+Referencia del esquema: 22/09/2026. Notación: [Mermaid ER](https://mermaid.js.org/syntax/entityRelationshipDiagram) · [Diagramas en GitHub](https://docs.github.com/es/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams).
