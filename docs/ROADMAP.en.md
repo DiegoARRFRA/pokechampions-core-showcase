@@ -10,7 +10,7 @@ Product and showcase direction without revealing implementation details or promi
 
 ## Available public material
 
-The [gallery](GALLERY.en.md) includes eight screenshots and three GIF/MP4 demos. The 14 files were verified against the existing manifest on 22 September 2026. That check concerns presentation assets, not a new application build or QA campaign.
+The [gallery](GALLERY.en.md) includes the visual refresh prepared on 22 September 2026: **16 new screenshots and six new demos**, plus the earlier 1HITKO still and demo, clearly labelled. The manifest contains 31 files (17 PNGs and seven GIF/MP4 demos). Media validation is not a new application build or QA campaign.
 
 The [technical overview](TECHNICAL_OVERVIEW.en.md) summarises technologies and execution flow. All showcase Markdown documentation has Spanish and English versions with reciprocal navigation; the [index](README.en.md) lists them.
 
@@ -24,7 +24,7 @@ Reduce ambiguous or unsupported mechanical states, preserve deterministic genera
 
 ## Engineering showcase
 
-Publish additional case studies when they provide useful lessons without exposing private source. Keep ES/EN versions aligned and feedback focused on suggestions, verifiable data corrections and public documentation.
+Refresh the earlier 1HITKO material when new recordings are available. Publish additional case studies when they provide useful lessons without exposing private source. Keep ES/EN versions aligned and feedback focused on suggestions, verifiable data corrections and public documentation.
 
 ## Outside the default roadmap
 

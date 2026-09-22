@@ -1,17 +1,42 @@
-#requires -Version 5.1
+﻿#requires -Version 5.1
 # Read-only showcase checks. No network or application code.
-param([switch]$DocumentsOnly)
+param([switch]$DocumentsOnly, [switch]$IntegrityOnly)
+if ($DocumentsOnly -and $IntegrityOnly) { throw "Choose only one validation scope." }
 $ErrorActionPreference = 'Stop'
 $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $errors = New-Object 'System.Collections.Generic.HashSet[string]'
 $expected = @(
-    'media/demos/versus.gif', 'media/demos/versus.mp4',
-    'media/demos/1hitko.gif', 'media/demos/1hitko.mp4',
-    'media/demos/entradas.gif', 'media/demos/entradas.mp4',
-    'media/screenshots/home.png', 'media/screenshots/versus-result.png',
-    'media/screenshots/1hitko-results.png', 'media/screenshots/battle-speed.png',
-    'media/screenshots/ev-lab.png', 'media/screenshots/lead-selection.png',
-    'media/screenshots/lead-result.png', 'media/screenshots/lead-record.png'
+    'media/demos/1hitko.gif',
+    'media/demos/1hitko.mp4',
+    'media/demos/entradas.gif',
+    'media/demos/entradas.mp4',
+    'media/demos/ev-lab.gif',
+    'media/demos/ev-lab.mp4',
+    'media/demos/history.gif',
+    'media/demos/history.mp4',
+    'media/demos/languages.gif',
+    'media/demos/languages.mp4',
+    'media/demos/team-builder.gif',
+    'media/demos/team-builder.mp4',
+    'media/demos/versus.gif',
+    'media/demos/versus.mp4',
+    'media/screenshots/1hitko-results.png',
+    'media/screenshots/ev-lab.png',
+    'media/screenshots/history-analysis.png',
+    'media/screenshots/history-matches.png',
+    'media/screenshots/history-summary.png',
+    'media/screenshots/home-dark.png',
+    'media/screenshots/home.png',
+    'media/screenshots/languages.png',
+    'media/screenshots/lead-record.png',
+    'media/screenshots/lead-result.png',
+    'media/screenshots/lead-selection.png',
+    'media/screenshots/master-mode.png',
+    'media/screenshots/recommended-builds.png',
+    'media/screenshots/team-builder.png',
+    'media/screenshots/team-coverage.png',
+    'media/screenshots/versus-matchup.png',
+    'media/screenshots/versus-result.png'
 )
 function Fail([string]$message) { [void]$errors.Add($message) }
 function ReadText([string]$path) { [IO.File]::ReadAllText($path, [Text.Encoding]::UTF8) }
@@ -44,7 +69,6 @@ function CheckLink([string]$source, [string]$link) {
     $relative = Relative $target
     if ($DocumentsOnly -and $expected -ccontains $relative) { return }
     if (-not (Test-Path -LiteralPath $target)) { Fail "Missing target: $relative"; return }
-    # Windows accepts incorrect case; GitHub paths do not.
     if (-not $inventory.Contains($relative)) {
         Fail "$(Relative $source): target case or spelling mismatch: $relative"; return
     }
@@ -57,14 +81,15 @@ function CheckLink([string]$source, [string]$link) {
 }
 $inventory = New-Object 'System.Collections.Generic.HashSet[string]' ([StringComparer]::Ordinal)
 $files = @(Get-ChildItem -LiteralPath $root -Recurse -File | Where-Object {
-    $_.FullName -notlike "$root\.git\*"
+    -not (Relative $_.FullName).StartsWith(".git/", [StringComparison]::OrdinalIgnoreCase)
 })
 foreach ($file in $files) { [void]$inventory.Add((Relative $file.FullName)) }
 $manifest = ReadText (Join-Path $root 'media/manifest.json') | ConvertFrom-Json
 $manifestPaths = @($manifest.files | ForEach-Object { $_.path })
-if ($manifestPaths.Count -ne 14 -or @($manifestPaths | Select-Object -Unique).Count -ne 14 -or
+if ($manifestPaths.Count -ne $expected.Count -or
+    @($manifestPaths | Select-Object -Unique).Count -ne $expected.Count -or
     @(Compare-Object $expected $manifestPaths -CaseSensitive).Count) {
-    Fail 'Manifest must contain exactly the 14 expected paths, without duplicates.'
+    Fail 'Manifest must contain exactly the expected paths, without duplicates.'
 }
 foreach ($file in $files | Where-Object { $_.Extension -in '.png', '.gif', '.mp4' }) {
     if ($expected -cnotcontains (Relative $file.FullName)) { Fail "Unexpected media: $(Relative $file.FullName)" }
@@ -100,14 +125,31 @@ foreach ($pair in @(
     $gifCount = [regex]::Matches($body, 'src="[^"]+\.gif"').Count
     if ($pair[0].StartsWith('README')) {
         if ($pngCount -ne 3 -or $gifCount -ne 1) { Fail "$($pair[0]): expected three stills and one GIF" }
-    } elseif ($pngCount -ne 8 -or $gifCount -ne 3) { Fail "$($pair[0]): incomplete gallery" }
+    } elseif ($pngCount -ne 17 -or $gifCount -ne 7) { Fail "$($pair[0]): incomplete gallery" }
+}
+# Every public Markdown document has a same-directory ES/EN counterpart.
+foreach ($document in $documents) {
+    $name = $document.Name
+    $other = if ($name.EndsWith('.en.md', [StringComparison]::Ordinal)) {
+        $name.Substring(0, $name.Length - 6) + '.md'
+    } else { $name.Substring(0, $name.Length - 3) + '.en.md' }
+    $partner = Join-Path $document.DirectoryName $other
+    if (-not (Test-Path -LiteralPath $partner -PathType Leaf)) {
+        Fail "$(Relative $document.FullName): missing language counterpart $other"
+        continue
+    }
+    $body = ReadText $document.FullName
+    $prefix = $body.Substring(0, [Math]::Min(250, $body.Length))
+    if ($prefix -notmatch [regex]::Escape('href="' + $other + '"')) {
+        Fail "$(Relative $document.FullName): missing top-level language selector"
+    }
 }
 $total = 0L
 $verified = 0
 if (-not $DocumentsOnly) {
     $probe = Get-Command ffprobe -ErrorAction SilentlyContinue
     $decoder = Get-Command ffmpeg -ErrorAction SilentlyContinue
-    if (-not $probe -or -not $decoder) { Fail 'Full validation requires ffprobe and ffmpeg on PATH.' }
+    if (-not $IntegrityOnly -and (-not $probe -or -not $decoder)) { Fail 'Full validation requires ffprobe and ffmpeg on PATH.' }
     foreach ($entry in $manifest.files) {
         if ($expected -cnotcontains $entry.path) { continue }
         $path = Join-Path $root $entry.path
@@ -118,7 +160,7 @@ if (-not $DocumentsOnly) {
         if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -cne $entry.sha256) {
             Fail "$($entry.path): SHA-256 mismatch"
         }
-        if (-not $probe -or -not $decoder) { continue }
+        if ($IntegrityOnly -or -not $probe -or -not $decoder) { continue }
         $json = & $probe.Source -v error -count_frames -show_streams -show_format -of json $path
         if ($LASTEXITCODE -ne 0) { Fail "$($entry.path): ffprobe failed"; continue }
         $info = ($json -join [Environment]::NewLine) | ConvertFrom-Json
@@ -143,7 +185,9 @@ if (-not $DocumentsOnly) {
 Write-Output "$($documents.Count) Markdown files; $linkCount links inspected."
 if ($DocumentsOnly) {
     Write-Output 'DOCUMENTS ONLY: expected binary targets excluded; media NOT validated; NOT merge approval.'
-} else { Write-Output "$verified/14 media decoded; $total actual bytes." }
+} elseif ($IntegrityOnly) {
+    Write-Output "INTEGRITY ONLY: all $($expected.Count) media hashes and sizes checked; $total actual bytes. No decoding performed."
+} else { Write-Output "$verified/$($expected.Count) media decoded; $total actual bytes." }
 if ($errors.Count) {
     $errors | Sort-Object | ForEach-Object { Write-Output "FAIL: $_" }
     exit 1

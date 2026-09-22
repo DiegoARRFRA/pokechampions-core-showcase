@@ -4,30 +4,35 @@
 
 # PokeChampions Core · Visual material
 
-[← Overview](../README.en.md) · [Documentation](../docs/README.en.md) · [Gallery](../docs/GALLERY.en.md)
+[Gallery](../docs/GALLERY.en.md) · [Overview](../README.en.md)
 
-Prepared on **17 September 2026** from screenshots and three screen recordings supplied by the author. The interface is in Spanish with the dark theme. The exact application build has not been independently established from the recordings.
+## Refresh of 22 September 2026
 
-## Demo editing
+Six recordings supplied by the owner as a newer application version. They produce **six new demos and 16 new screenshots**; the exact build number has not been independently established. The new interface is primarily Spanish and light-themed. The language walkthrough shows Spanish, English and German in the dark theme.
 
-| Demo | Original excerpt | Final hold | Approximate duration |
-| --- | --- | --- | --- |
-| Versus | Recording 1: 39.8–51.0 s | 1.8 s | 13 s |
-| 1HITKO | Recording 2: 11.2–21.6 s | 2.6 s | 13 s |
-| Lead Trainer | Recording 3: 17.5–31.5 s | 1.0 s | 15 s |
+| Demo | Recording | Original excerpt (s) | Final hold (s) |
+| --- | --- | ---: | ---: |
+| Versus · move and result | `update-recording-02` | 14.2–24.8 | 2.0 |
+| EV Lab · survivability | `update-recording-02` | 28.0–42.8 | 2.0 |
+| Lead Trainer · choice and manual outcome | `update-recording-03` | 8.0–16.5 | 1.5 |
+| Team Builder · recommended build and stats | `update-recording-06` | 32.0–51.3 | 1.7 |
+| Battle History · save a match and inspect an opponent | `update-recording-05` | 31.8–39.8 | 1.2 |
+| Languages · Spanish, English and German | `update-recording-01` | 7.1–19.1 | 1.9 |
 
-These are continuous excerpts: **searches are not sped up and waiting time within each excerpt is not removed**. Only a final-frame hold is added. Lower preview frame rates do not accelerate the recording.
+## Transformations
 
-Android status/navigation bars are cropped, audio removed and files resized proportionally. No interfaces are generated, views combined into fictional screens, or data and warnings altered.
+Shared crop `[0, 110, 1080, 2160]` from the 1080 × 2400 recordings removes status/navigation bars without changing content. Exports: H.264 MP4, 720 × 1440, 24 fps, silent; GIF, 360 × 720, 10 fps and up to 192 palette colours; PNG, 720 × 1440. Frame-rate conversion does not accelerate the recording. GIF quantisation and video compression change encoding, not the displayed information.
 
-## Formats and inventory
+Each demo is a continuous excerpt with a final-frame hold. There are no internal cuts, generative interpolation, invented interfaces or retouched values/warnings. Exact export times and hashes are in [manifest.json](manifest.json).
 
-**300 × 600** GIF previews; **540 × 1080** H.264 MP4 files with more detail. The eight PNG screenshots come from selected frames and two original screenshots. Dimensions, provenance, times and hashes are recorded in [manifest.json](manifest.json). There are 14 media files: eight PNGs, three GIFs and three MP4s.
+## Earlier material and replacements
 
-## Scope and limits
+The `versus` and `entradas` demos and six existing screenshot paths are replaced. `lead-record.png` now actually shows Lead Trainer records; previously it showed preparation. Lead Trainer records remain separate from Battle History matches.
 
-Presentation material, **not a benchmark, a new QA run or correctness certification**. The Versus still and demo show different moves. `lead-record.png` retains the supplied package name but shows Lead Trainer preparation with the training tab selected, not a records list or Battle History.
+`1hitko.gif`, `1hitko.mp4` and `1hitko-results.png` are preserved unchanged from the 17 September package. They are marked `previous-2026-09-17` and not presented as the latest version. Manifest total: **31 files: 28 new or replaced and three earlier files**.
 
-Practice outcomes are entered manually and do not establish tournament results or automatic simulation. Screenshots of modules absent from the recordings are not invented. English documentation uses the same Spanish images, not a retranslated interface.
+## Limits
 
-Only selected visual material is distributed. Full recordings, audio, application source, datasets, font files, keys and private files are excluded. Existing ownership notices remain applicable: [NOTICE.en.md](../NOTICE.en.md).
+Presentation material, not a new test run or benchmark. Battle History and Lead Trainer numbers are manually saved examples; different stills may represent different points in a session. The new Versus still comes from the same excerpt as its demo; EV Lab and Master Mode retain their own context. Full recordings, music, font files, private code, internal datasets and credentials are excluded.
+
+[Ownership and unofficial fan project](../NOTICE.en.md).
