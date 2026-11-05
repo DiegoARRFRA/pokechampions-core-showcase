@@ -1,29 +1,27 @@
-<p align="right">
-  <strong>Español</strong> · <a href="ROADMAP.en.md">English</a>
-</p>
+<p align="right"><strong>Español</strong> · <a href="ROADMAP.en.md">English</a></p>
 
-# Hoja de ruta
+# Estado y próximos pasos
 
-[← Portada](../README.md) · [Documentación](README.md)
+[← Portada](../README.md) · [Funciones disponibles](FEATURES.md) · [Validación](VALIDATION.md)
 
-## Android y accesibilidad
+Corte: **5 de noviembre de 2026, 1.0.1**. Esta página separa lo implementado de las comprobaciones pendientes; no fija fechas de lanzamiento ni anuncia distribución pública.
 
-Ampliar las pruebas físicas a más dispositivos y completar los recorridos con TalkBack, tamaños de texto ampliados y distintas configuraciones de pantalla.
+## Ya implementado
 
-## Audio y rendimiento
+Batalla con carga de configuraciones y ajustes temporales; Versus, Modo Maestro y EV Lab; 1HITKO con progreso y cancelación; equipos y cobertura; catálogo de torneos con regulación histórica; notas agrupadas y habilidad conservada; Biblioteca con STATS, learnsets y filtros combinados de categoría; Entradas, Histórico, ocho idiomas, temas y audio opcional. [Detalle y límites](FEATURES.md).
 
-Completar las pruebas de reproducción prolongada y de interacción con llamadas, Bluetooth y cambios de foco. Profundizar en el análisis de tiempos de presentación de frames, escrituras y comportamiento con colecciones grandes.
+Estas funciones no se presentan como trabajo futuro. Su existencia tampoco elimina las limitaciones de exactitud, datos incompletos y plataformas indicadas en la validación.
 
-## Persistencia
+## Por comprobar o resolver
 
-Ampliar las regresiones de migración con datos de uso prolongado y reforzar las pruebas de transferencia de escenarios entre herramientas. Mantener la conservación de datos como requisito de las actualizaciones.
+| Área | Siguiente comprobación concreta |
+| --- | --- |
+| Android físico | Recorridos de la entrega actual, persistencia/reapertura y audio prolongado con foco externo, llamadas y Bluetooth. |
+| Memoria de página | Ejecutar en Android con páginas de 16 KiB; la alineación estática ya fue revisada. |
+| Datos históricos | Investigar el almacén anterior incompatible conservado; la actualización de una fixture nueva no resuelve ese caso. |
+| Rendimiento | Medir arranque y escrituras en la versión actual con entorno reproducible; no reutilizar el benchmark de agosto como cifra actual. |
+| Distribución | Contrastar en Play Console el canal efectivo, acceso y requisitos de la entrega. Mantener diferenciadas pruebas internas y disponibilidad pública. |
+| Privacidad pública | Actualizar la referencia externa a 1.0.0; la URL ya es pública y accesible. |
+| Catálogos y reglas | Validar cada nueva instantánea y resolver lagunas con evidencia de Champions, conservando procedencia y estados desconocidos. |
 
-## Mecánicas y regulación
-
-Actualizar catálogos y pruebas para cada regulación. Reducir los casos ambiguos o no soportados y mantener la generación reproducible y la trazabilidad de las fuentes.
-
-## Entregas y documentación
-
-Relacionar las notas de cada entrega con sus cambios y pruebas. Mantener alineada la documentación en español e inglés y documentar las decisiones técnicas que afecten al uso de la aplicación.
-
-[Funcionalidades](FEATURES.md) · [Validación](VALIDATION.md) · [Sugerencias e incidencias](../CONTRIBUTING.md)
+[Resultados por plataforma](VALIDATION.md) · [Rendimiento histórico](PERFORMANCE.md)

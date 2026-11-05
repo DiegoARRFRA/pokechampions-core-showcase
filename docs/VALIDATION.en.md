@@ -1,50 +1,51 @@
-<p align="right">
-  <a href="VALIDATION.md">Español</a> · <strong>English</strong>
-</p>
+<p align="right"><a href="VALIDATION.md">Español</a> · <strong>English</strong></p>
 
 # Validation and QA
 
 [← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Documentation](README.en.md)
 
-Validation combines host tests, engine scenario comparisons and physical Android flows. Each campaign records its environment, result and scope.
+Documentation cutoff: **5 November 2026**. Each result belongs to its version, platform and execution mode; focused campaigns are not added to a global suite, and HOST results are not extrapolated to physical Android. Full records remain private.
 
-## Test results
+## Recent 1.0.1 evidence
 
-| Campaign | Result and scope |
+| Check | Environment and result | Limit |
+| --- | --- | --- |
+| Final global suite, 2026-11-05 | Windows HOST, copy of release 1.0.1/46, serial unfiltered execution: **13,706 passes, 0 failures, 17 omissions, exit 0; 92 min 48 s**. | Omissions are optional captures; the count is not a coverage percentage. |
+| Analysis and localisation, 2026-11-05 | Static analysis and i18n checks passed during final preparation. | Does not prove behaviour on physical hardware. |
+| Focused checks, 2026-11-05 | 21 initial passes and 13 final passes on the delivery copy. | Separate runs; not added to 13,706. |
+| Update 1.0.0/31 → 1.0.1/46 | Android API 36 emulator, x86_64, 4 KiB pages, release installation. Retained the fixture's team, ability/SP note, match and preferences. | Synthetic data in a dedicated store. Does not certify every historical store. |
+| Native flows in 1.0.1/46 | Same emulator: notes in Battle/Versus, missing-ability selection, 1HITKO, Lead Trainer, Library filters and audio play/pause/resume. | Not a physical test, Bluetooth test or benchmark. |
+| 16 KiB compatibility | Static ELF alignment and ZIP packaging checks on the artifact. | Actual execution with 16 KiB pages remains outstanding. |
+
+Updating a fresh fixture does not resolve an older incompatible store: that case remains open and its data was preserved. Universal recovery or compatibility with every previous state is not claimed.
+
+The [gallery's](GALLERY.en.md) HOST captures render real widgets with fictional data; they check presentation, not Android backend execution. Their capture tests are not added to the earlier global total.
+
+## Historical evidence
+
+| Campaign | Retained result and scope |
 | --- | --- |
-| **Host suite — 20 September 2026** | **5,058 passes, 0 failures, 0 omissions, exit code 0**. Ordinary serial execution without filters. Started on the 19th and accepted at 00:44 Europe/Madrid on the 20th. |
-| Focused suite repair | 373 focused passes and traceability for 79 detected failures. Tests and references were aligned with application behaviour, without changing production code in that work. |
-| Host suite — 14 September 2026 | 4,849 passes, 0 failures and 0 omissions, following an import correction. |
-| Versus comparison | 104,091 scenarios within the campaign's scope. |
-| 1HITKO validation | 361 forms and 12,987 attacker/defender pairs using the campaign's catalogue and conditions. |
-| Physical QA | POCO F5 with Android 15: installation, identity, navigation, persistence, appearance and updates between initial external builds, including 1.0.0+2. |
+| HOST suite, 2026-09-20 | **5,058 passes, 0 failures, 0 omissions, exit 0**. Serial and unfiltered; started on the 19th and accepted at 00:44 Europe/Madrid on the 20th. No longer the current total. |
+| September focused repairs | 373 focused passes with traceability for 79 earlier failures. Not another global suite. |
+| HOST suite, 2026-09-14 | 4,849 passes, 0 failures and 0 omissions after an import correction. |
+| Historical Versus comparison | 104,091 scenarios within that campaign's catalogue and scope. |
+| Historical 1HITKO validation | 361 forms and 12,987 attacker/defender pairs from that campaign. |
+| Historical physical QA | POCO F5, Android 15: installation, identity, navigation, persistence, appearance and updates of early releases, including 1.0.0+2. Does not certify 1.0.1/46. |
 
-Results belong to the specified executions and are not added together as one suite. Later code, catalogue or configuration changes require their own tests. Host acceptance does not replace physical audio, performance or accessibility checks.
+The last three campaigns already appeared in the September showcase. Their exact dates and full revisions are not identified in the public summary: they remain background evidence, not recent measurements or guarantees for the current catalogue. Failed attempts and later revalidation remain in private records.
 
-## Scope of checks
+## Outstanding checks
 
-| Check | Contribution |
-| --- | --- |
-| Logic and interface tests | Acceptance of executed cases for a particular version. |
-| Comparison campaigns | Engine result comparisons under defined scenarios. |
-| Implementation review | Examination of the contracts, schema, repositories and flows described in the documentation. |
-| Physical flows | Behaviour verification on a particular device under the test conditions. |
-| Demos | Interface usage examples, not performance measurements or engine tests. |
+Physical testing of the current release, prolonged audio with focus changes/calls/Bluetooth, execution with 16 KiB pages and investigation of the incompatible historical store. No recent startup or write benchmark exists here for 1.0.1; the [performance study](PERFORMANCE.en.md) is historical and emulator-based.
 
-Complete records are retained in the private repository. This page summarises their results; it does not publish the test corpus or a global coverage percentage.
+Play Console has not been inspected: the effective track, tester access, used codes and registered upload certificate need evidence there. The author reports internal testing; local preparation does not establish publication in Alpha or public availability.
 
-## Outstanding tests
+## Public links
 
-Expand the device matrix and TalkBack flows. Complete prolonged audio sessions and tests involving external focus, calls and Bluetooth. Measure writes and large-collection behaviour, investigate frame presentation times and validate additions for each regulation.
+On 2026-11-05, anonymous HTTP requests returned **200** for the [privacy policy](https://pokechampions-core-privacidad.pages.dev/) and [contact profile](https://github.com/DiegoARRFRA). The public policy still identifies version **1.0.0**: it is accessible, but an external editorial update remains outstanding. Its displayed email address has not been tested by sending a message.
 
-The [startup study](PERFORMANCE.en.md) details emulator measurements and distinguishes time to first frame from complete Android startup.
+The anonymous Google Play listing request returned HTTP **404** from this environment. No download button is therefore provided; this does not rule out access by authorised test accounts. Invitation links and tester details are not published.
 
-## Result records
+## Showcase checks
 
-Campaign records retain failed attempts and subsequent acceptance runs. Each correction remains traceable by case, environment and result. The 5,058-pass figure belongs to the suite-repair campaign accepted on 20 September 2026.
-
-## Repository checks
-
-The repository verifier checks links, ES/EN selectors, media inventory, file sizes and hashes. Its full modes also validate formats and file decoding. [Execution instructions](../CONTRIBUTING.en.md#showcase-validation).
-
-Recording edit parameters and preparation dates are documented in [Media files](../media/README.en.md). These checks are separate from application tests.
+The [validator](../CONTRIBUTING.en.md#showcase-validation) checks links, anchors, path case, ES/EN pairs, inventory, hashes and media decoding. Visual and private-information review are separate. [Media documentation](../media/README.en.md) distinguishes provenance and transformations. These checks do not rebuild or certify the application.

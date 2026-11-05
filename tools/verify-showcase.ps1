@@ -6,37 +6,29 @@ $ErrorActionPreference = 'Stop'
 $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $errors = New-Object 'System.Collections.Generic.HashSet[string]'
 $expected = @(
-    'media/demos/1hitko.gif',
+    'media/brand/logo.png',
     'media/demos/1hitko.mp4',
-    'media/demos/entradas.gif',
     'media/demos/entradas.mp4',
-    'media/demos/ev-lab.gif',
     'media/demos/ev-lab.mp4',
-    'media/demos/history.gif',
     'media/demos/history.mp4',
-    'media/demos/languages.gif',
     'media/demos/languages.mp4',
-    'media/demos/team-builder.gif',
     'media/demos/team-builder.mp4',
-    'media/demos/versus.gif',
     'media/demos/versus.mp4',
     'media/screenshots/1hitko-results.png',
-    'media/screenshots/ev-lab.png',
-    'media/screenshots/history-analysis.png',
-    'media/screenshots/history-matches.png',
-    'media/screenshots/history-summary.png',
-    'media/screenshots/home-dark.png',
+    'media/screenshots/battle.png',
     'media/screenshots/home.png',
-    'media/screenshots/languages.png',
-    'media/screenshots/lead-record.png',
-    'media/screenshots/lead-result.png',
-    'media/screenshots/lead-selection.png',
-    'media/screenshots/master-mode.png',
-    'media/screenshots/recommended-builds.png',
-    'media/screenshots/team-builder.png',
+    'media/screenshots/library.png',
+    'media/screenshots/notes.png',
     'media/screenshots/team-coverage.png',
-    'media/screenshots/versus-matchup.png',
-    'media/screenshots/versus-result.png'
+    'media/screenshots/tournaments.png',
+    'media/screenshots/versus-result.png',
+    'media/thumbnails/1hitko.png',
+    'media/thumbnails/entradas.png',
+    'media/thumbnails/ev-lab.png',
+    'media/thumbnails/history.png',
+    'media/thumbnails/languages.png',
+    'media/thumbnails/team-builder.png',
+    'media/thumbnails/versus.png'
 )
 function Fail([string]$message) { [void]$errors.Add($message) }
 function ReadText([string]$path) { [IO.File]::ReadAllText($path, [Text.Encoding]::UTF8) }
@@ -86,6 +78,19 @@ $files = @(Get-ChildItem -LiteralPath $root -Recurse -File | Where-Object {
 foreach ($file in $files) { [void]$inventory.Add((Relative $file.FullName)) }
 $manifest = ReadText (Join-Path $root 'media/manifest.json') | ConvertFrom-Json
 $manifestPaths = @($manifest.files | ForEach-Object { $_.path })
+if ($manifest.schema_version -ne 3) { Fail 'Expected manifest schema 3.' }
+foreach ($roleCount in @(@('screenshot', 8), @('brand', 1), @('video-thumbnail', 7), @('historical-video', 7))) {
+    if (@($manifest.files | Where-Object { $_.role -ceq $roleCount[0] }).Count -ne $roleCount[1]) {
+        Fail "Unexpected count for media role $($roleCount[0])."
+    }
+}
+# Public showcase only: private application artifacts are never valid additions.
+foreach ($file in $files) {
+    if ($file.Extension -in '.apk', '.aab', '.jks', '.keystore', '.p12', '.pem', '.key', '.sqlite', '.sqlite3', '.db', '.dart' -or
+        $file.Name -match '^\.env(?:\.|$)|^key\.properties$|^google-services\.json$') {
+        Fail "Forbidden private application artifact: $(Relative $file.FullName)"
+    }
+}
 if ($manifestPaths.Count -ne $expected.Count -or
     @($manifestPaths | Select-Object -Unique).Count -ne $expected.Count -or
     @(Compare-Object $expected $manifestPaths -CaseSensitive).Count) {
@@ -123,9 +128,12 @@ foreach ($pair in @(
     }
     $pngCount = [regex]::Matches($body, 'src="[^"]+\.png"').Count
     $gifCount = [regex]::Matches($body, 'src="[^"]+\.gif"').Count
+    $shotCount = [regex]::Matches($body, 'src="[^"]*media/screenshots/[^"]+\.png"').Count
+    $thumbCount = [regex]::Matches($body, 'src="[^"]*media/thumbnails/[^"]+\.png"').Count
+    $brandCount = [regex]::Matches($body, 'src="[^"]*media/brand/logo\.png"').Count
     if ($pair[0].StartsWith('README')) {
-        if ($pngCount -ne 3 -or $gifCount -ne 1) { Fail "$($pair[0]): expected three stills and one GIF" }
-    } elseif ($pngCount -ne 17 -or $gifCount -ne 7) { Fail "$($pair[0]): incomplete gallery" }
+        if ($pngCount -ne 4 -or $shotCount -ne 3 -or $brandCount -ne 1 -or $thumbCount -ne 0 -or $gifCount -ne 0) { Fail "$($pair[0]): expected three screenshots, one logo and no GIF" }
+    } elseif ($pngCount -ne 15 -or $shotCount -ne 8 -or $thumbCount -ne 7 -or $brandCount -ne 0 -or $gifCount -ne 0) { Fail "$($pair[0]): expected eight screenshots, seven thumbnails and no GIF" }
 }
 # Every public Markdown document has a same-directory ES/EN counterpart.
 foreach ($document in $documents) {

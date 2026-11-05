@@ -1,92 +1,56 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "project": "PokeChampions Core",
-  "prepared_on": "2026-09-22",
-  "base_showcase_commit": "84f07e0999706cf5145a64d295240685f645d831",
-  "origin": "Six Android recordings supplied by the owner for this refresh. Three earlier 1HITKO media assets retained byte-for-byte and labelled separately.",
-  "source_note": "Owner-described newer application version. The exact build number has not been independently established from the recordings.",
-  "ui_languages_in_refresh": [
-    "es",
-    "en",
-    "de"
-  ],
-  "themes_in_refresh": [
-    "light",
-    "dark"
-  ],
+  "prepared_on": "2026-11-05",
+  "base_showcase_commit": "e9736e7823970c3c175117f04a97a7a805f5e69f",
+  "scope": "Eight authentic current screenshots, transparent app logo, seven historical silent MP4 demos and lightweight linked thumbnails. No AI-generated screens or edited result values.",
+  "current_screenshots_note": "Spanish UI. Five release captures from Android emulator; three actual-widget HOST renders with fictional data. Not physical-device QA or benchmarks.",
   "editing": {
+    "upscaling": false,
     "generated_ui": false,
     "result_values_changed": false,
-    "recorded_motion_speed": 1.0,
-    "internal_cuts": false,
     "audio_in_exports": false,
-    "video_crop_xywh": [
-      0,
-      110,
-      1080,
-      2160
-    ],
-    "phone_chrome_removed": true,
-    "new_mp4_size": [
-      720,
-      1440
-    ],
-    "new_mp4_fps": 24,
-    "new_gif_size": [
-      360,
-      720
-    ],
-    "new_gif_fps": 10,
-    "new_gif_palette_colors": 192,
-    "screenshot_size": [
-      720,
-      1440
-    ]
+    "still_format": "PNG lossless compression; deterministic crop/downscale only"
   },
-  "scope_note": "Edited presentation only, not a benchmark or a new application test campaign. Lead Trainer outcomes and Battle History matches are manually entered examples, not independently verified tournament statistics. Master Mode and EV Lab may show different scenarios. Retained 1HITKO media are from the previous batch.",
-  "retained_previous_paths": [
-    "media/demos/1hitko.gif",
-    "media/demos/1hitko.mp4",
-    "media/screenshots/1hitko-results.png"
-  ],
-  "demo_edits": [
+  "historical_origin": "Seven silent MP4 exports retained byte for byte from the September 2026 showcase; six from owner-supplied Android recordings prepared September 22, plus the earlier September 17 1HITKO export. Exact app builds unverified.",
+  "historical_demo_edits": [
     {
       "name": "versus",
       "source_label": "update-recording-02",
       "source_start_seconds": 14.2,
       "source_end_seconds": 24.8,
-      "final_hold_seconds": 2.0,
-      "recorded_motion_speed": 1.0,
+      "final_hold_seconds": 2,
+      "recorded_motion_speed": 1,
       "internal_cuts": false,
       "batch": "refresh-2026-09-22"
     },
     {
       "name": "ev-lab",
       "source_label": "update-recording-02",
-      "source_start_seconds": 28.0,
+      "source_start_seconds": 28,
       "source_end_seconds": 42.8,
-      "final_hold_seconds": 2.0,
-      "recorded_motion_speed": 1.0,
+      "final_hold_seconds": 2,
+      "recorded_motion_speed": 1,
       "internal_cuts": false,
       "batch": "refresh-2026-09-22"
     },
     {
       "name": "entradas",
       "source_label": "update-recording-03",
-      "source_start_seconds": 8.0,
+      "source_start_seconds": 8,
       "source_end_seconds": 16.5,
       "final_hold_seconds": 1.5,
-      "recorded_motion_speed": 1.0,
+      "recorded_motion_speed": 1,
       "internal_cuts": false,
       "batch": "refresh-2026-09-22"
     },
     {
       "name": "team-builder",
       "source_label": "update-recording-06",
-      "source_start_seconds": 32.0,
+      "source_start_seconds": 32,
       "source_end_seconds": 51.3,
       "final_hold_seconds": 1.7,
-      "recorded_motion_speed": 1.0,
+      "recorded_motion_speed": 1,
       "internal_cuts": false,
       "batch": "refresh-2026-09-22"
     },
@@ -96,7 +60,7 @@
       "source_start_seconds": 31.8,
       "source_end_seconds": 39.8,
       "final_hold_seconds": 1.2,
-      "recorded_motion_speed": 1.0,
+      "recorded_motion_speed": 1,
       "internal_cuts": false,
       "batch": "refresh-2026-09-22"
     },
@@ -106,7 +70,7 @@
       "source_start_seconds": 7.1,
       "source_end_seconds": 19.1,
       "final_hold_seconds": 1.9,
-      "recorded_motion_speed": 1.0,
+      "recorded_motion_speed": 1,
       "internal_cuts": false,
       "batch": "refresh-2026-09-22"
     },
@@ -119,255 +83,22 @@
       "batch": "previous-2026-09-17"
     }
   ],
-  "screenshot_sources": [
-    {
-      "path": "media/screenshots/home.png",
-      "source": "update-recording-02",
-      "source_time_seconds": 4.35,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Inicio · tema claro",
-      "title_en": "Home · light theme"
-    },
-    {
-      "path": "media/screenshots/home-dark.png",
-      "source": "update-recording-01",
-      "source_time_seconds": 0.55,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Inicio · tema oscuro",
-      "title_en": "Home · dark theme"
-    },
-    {
-      "path": "media/screenshots/versus-result.png",
-      "source": "update-recording-02",
-      "source_time_seconds": 23.65,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Versus · daño y KO",
-      "title_en": "Versus · damage and KO"
-    },
-    {
-      "path": "media/screenshots/versus-matchup.png",
-      "source": "update-recording-02",
-      "source_time_seconds": 21.65,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Versus · escenario y participantes",
-      "title_en": "Versus · scenario and participants"
-    },
-    {
-      "path": "media/screenshots/ev-lab.png",
-      "source": "update-recording-02",
-      "source_time_seconds": 42.25,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "EV Lab · reparto para sobrevivir",
-      "title_en": "EV Lab · survival investment"
-    },
-    {
-      "path": "media/screenshots/master-mode.png",
-      "source": "update-recording-02",
-      "source_time_seconds": 45.9,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Modo Maestro · comparación de escenarios",
-      "title_en": "Master Mode · scenario comparison"
-    },
-    {
-      "path": "media/screenshots/lead-selection.png",
-      "source": "update-recording-03",
-      "source_time_seconds": 10.2,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Entradas · pareja elegida y rival oculto",
-      "title_en": "Lead Trainer · selected pair and hidden opponent"
-    },
-    {
-      "path": "media/screenshots/lead-result.png",
-      "source": "update-recording-03",
-      "source_time_seconds": 16.15,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Entradas · resultado manual",
-      "title_en": "Lead Trainer · manual outcome"
-    },
-    {
-      "path": "media/screenshots/lead-record.png",
-      "source": "update-recording-03",
-      "source_time_seconds": 30.65,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Entradas · registro de prácticas",
-      "title_en": "Lead Trainer · practice records"
-    },
-    {
-      "path": "media/screenshots/team-builder.png",
-      "source": "update-recording-06",
-      "source_time_seconds": 17.95,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Equipos · composición y edición",
-      "title_en": "Team Builder · composition and editing"
-    },
-    {
-      "path": "media/screenshots/team-coverage.png",
-      "source": "update-recording-06",
-      "source_time_seconds": 21.0,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Equipos · cobertura defensiva",
-      "title_en": "Team Builder · defensive coverage"
-    },
-    {
-      "path": "media/screenshots/recommended-builds.png",
-      "source": "update-recording-06",
-      "source_time_seconds": 32.6,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Builds recomendadas · movimientos y repartos",
-      "title_en": "Recommended builds · moves and spreads"
-    },
-    {
-      "path": "media/screenshots/history-summary.png",
-      "source": "update-recording-05",
-      "source_time_seconds": 34.25,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "HISTÓRICO · resumen del equipo",
-      "title_en": "Battle History · team summary"
-    },
-    {
-      "path": "media/screenshots/history-matches.png",
-      "source": "update-recording-04",
-      "source_time_seconds": 13.65,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "HISTÓRICO · listado de combates",
-      "title_en": "Battle History · match list"
-    },
-    {
-      "path": "media/screenshots/history-analysis.png",
-      "source": "update-recording-04",
-      "source_time_seconds": 25.5,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "HISTÓRICO · análisis por rival",
-      "title_en": "Battle History · opponent analysis"
-    },
-    {
-      "path": "media/screenshots/languages.png",
-      "source": "update-recording-01",
-      "source_time_seconds": 12.1,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "refresh-2026-09-22",
-      "title_es": "Ajustes · interfaz en inglés",
-      "title_en": "Settings · English interface"
-    },
-    {
-      "path": "media/screenshots/1hitko-results.png",
-      "source": "recording-2",
-      "source_time_seconds": 21.3,
-      "crop_xywh": [
-        0,
-        110,
-        1080,
-        2160
-      ],
-      "batch": "previous-2026-09-17"
-    }
+  "historical_video_crop_xywh": [
+    0,
+    110,
+    1080,
+    2160
   ],
   "files": [
     {
-      "path": "media/demos/1hitko.gif",
-      "bytes": 2476557,
-      "sha256": "921936f0ff247d31d7b7892c9befcae16a3a258bf142a699b0f4f49d16b72542",
-      "width": 300,
-      "height": 600,
-      "batch": "previous-2026-09-17",
-      "duration_seconds": 13.13,
-      "frames": 105,
-      "audio": false
+      "path": "media/brand/logo.png",
+      "role": "brand",
+      "bytes": 46969,
+      "sha256": "60a4c7c693beb2cbd12f9e08ca2bbd16713dd79d6e05a433ea1f8116dc358d90",
+      "width": 256,
+      "height": 256,
+      "source_sha256": "d16d7f15417e2e281462e0050a40185b481353c6f16c45688d87882dc524b74c",
+      "origin": "Current transparent in-app logo, reviewed 2026-11-05; launcher background not used."
     },
     {
       "path": "media/demos/1hitko.mp4",
@@ -376,20 +107,12 @@
       "width": 540,
       "height": 1080,
       "batch": "previous-2026-09-17",
-      "duration_seconds": 13.0,
+      "duration_seconds": 13,
       "frames": 312,
-      "audio": false
-    },
-    {
-      "path": "media/demos/entradas.gif",
-      "bytes": 2434797,
-      "sha256": "f9e36180b2e8f075b3a4938de0fa8cbb4f4dd83099797bccfa36f6ea0ceea8b4",
-      "width": 360,
-      "height": 720,
-      "batch": "refresh-2026-09-22",
-      "duration_seconds": 10.0,
-      "frames": 100,
-      "audio": false
+      "audio": false,
+      "role": "historical-video",
+      "version": "unverified; historical September 2026 media",
+      "retained_byte_for_byte": true
     },
     {
       "path": "media/demos/entradas.mp4",
@@ -398,20 +121,12 @@
       "width": 720,
       "height": 1440,
       "batch": "refresh-2026-09-22",
-      "duration_seconds": 10.0,
+      "duration_seconds": 10,
       "frames": 240,
-      "audio": false
-    },
-    {
-      "path": "media/demos/ev-lab.gif",
-      "bytes": 5042437,
-      "sha256": "06bb1d250bf4c9a81c7c4d908da52c9a96df499de0cb1e392c776868732f7742",
-      "width": 360,
-      "height": 720,
-      "batch": "refresh-2026-09-22",
-      "duration_seconds": 16.8,
-      "frames": 168,
-      "audio": false
+      "audio": false,
+      "role": "historical-video",
+      "version": "unverified; historical September 2026 media",
+      "retained_byte_for_byte": true
     },
     {
       "path": "media/demos/ev-lab.mp4",
@@ -422,18 +137,10 @@
       "batch": "refresh-2026-09-22",
       "duration_seconds": 16.791667,
       "frames": 403,
-      "audio": false
-    },
-    {
-      "path": "media/demos/history.gif",
-      "bytes": 1564538,
-      "sha256": "853f2876c4bbfbcb08f34912bcf11b5f4ad565494394a840405302e576fd2c30",
-      "width": 360,
-      "height": 720,
-      "batch": "refresh-2026-09-22",
-      "duration_seconds": 9.2,
-      "frames": 92,
-      "audio": false
+      "audio": false,
+      "role": "historical-video",
+      "version": "unverified; historical September 2026 media",
+      "retained_byte_for_byte": true
     },
     {
       "path": "media/demos/history.mp4",
@@ -444,18 +151,10 @@
       "batch": "refresh-2026-09-22",
       "duration_seconds": 9.208333,
       "frames": 221,
-      "audio": false
-    },
-    {
-      "path": "media/demos/languages.gif",
-      "bytes": 2150397,
-      "sha256": "4bb98cbf8e4af97a1ec1cca274c07705d61aee0f1f84db573ab399991d831678",
-      "width": 360,
-      "height": 720,
-      "batch": "refresh-2026-09-22",
-      "duration_seconds": 13.9,
-      "frames": 139,
-      "audio": false
+      "audio": false,
+      "role": "historical-video",
+      "version": "unverified; historical September 2026 media",
+      "retained_byte_for_byte": true
     },
     {
       "path": "media/demos/languages.mp4",
@@ -466,18 +165,10 @@
       "batch": "refresh-2026-09-22",
       "duration_seconds": 13.916667,
       "frames": 334,
-      "audio": false
-    },
-    {
-      "path": "media/demos/team-builder.gif",
-      "bytes": 6395987,
-      "sha256": "39b7e181af517bcf15255497ecdeb2d8b5aee51467612ddcd21c24bdf5aecb5f",
-      "width": 360,
-      "height": 720,
-      "batch": "refresh-2026-09-22",
-      "duration_seconds": 21.0,
-      "frames": 210,
-      "audio": false
+      "audio": false,
+      "role": "historical-video",
+      "version": "unverified; historical September 2026 media",
+      "retained_byte_for_byte": true
     },
     {
       "path": "media/demos/team-builder.mp4",
@@ -486,20 +177,12 @@
       "width": 720,
       "height": 1440,
       "batch": "refresh-2026-09-22",
-      "duration_seconds": 21.0,
+      "duration_seconds": 21,
       "frames": 504,
-      "audio": false
-    },
-    {
-      "path": "media/demos/versus.gif",
-      "bytes": 2380894,
-      "sha256": "1b5a92e33d943b382ce2fc019447f610972f65558b76f17698a51d39cf1d7ca3",
-      "width": 360,
-      "height": 720,
-      "batch": "refresh-2026-09-22",
-      "duration_seconds": 12.6,
-      "frames": 126,
-      "audio": false
+      "audio": false,
+      "role": "historical-video",
+      "version": "unverified; historical September 2026 media",
+      "retained_byte_for_byte": true
     },
     {
       "path": "media/demos/versus.mp4",
@@ -510,143 +193,222 @@
       "batch": "refresh-2026-09-22",
       "duration_seconds": 12.583333,
       "frames": 302,
-      "audio": false
+      "audio": false,
+      "role": "historical-video",
+      "version": "unverified; historical September 2026 media",
+      "retained_byte_for_byte": true
     },
     {
       "path": "media/screenshots/1hitko-results.png",
-      "bytes": 306936,
-      "sha256": "c49048e6dbd1c4bf42c20b1bf845f5c9db2a266db7e203d999666dbb1888b23a",
+      "role": "screenshot",
+      "bytes": 292869,
+      "sha256": "5089fd8e9789563409b961a467f8399772b79fa6fc90d0519c070481f7587d0f",
       "width": 720,
-      "height": 1440,
-      "batch": "previous-2026-09-17"
+      "height": 1467,
+      "source_sha256": "0077cf3857acbe664597ecf92f34aefd18a2c54c3e17e6b563f0c76d7bc28a91",
+      "name": "1hitko-results",
+      "platform": "Android emulator API 36 x86_64",
+      "crop": [
+        0,
+        136,
+        1080,
+        2201
+      ],
+      "version": "1.0.1",
+      "version_code": 46,
+      "date": "2026-11-05"
     },
     {
-      "path": "media/screenshots/ev-lab.png",
-      "bytes": 401476,
-      "sha256": "ed1e8578a95338617937d778f1c7ed5615702e899bcd38695b8c1049c41fbeb1",
+      "path": "media/screenshots/battle.png",
+      "role": "screenshot",
+      "bytes": 362415,
+      "sha256": "bb9fa76267f0f96c50655ac1b607e180035987fa1157f8ab2140d2933cf8a52f",
       "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/history-analysis.png",
-      "bytes": 295041,
-      "sha256": "85650f46958b85520021dc278d519d3b457d28896747e2ba8ccbbb11e0e6c735",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/history-matches.png",
-      "bytes": 276431,
-      "sha256": "4f9234fa0ad153f8be6ebfd9eafc59fdf4371d0b41157b3049bc58a665c58312",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/history-summary.png",
-      "bytes": 297285,
-      "sha256": "3746be8a314a42017169408a8674506e22aa4e08e16398e8f6b92cc95ff9270e",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/home-dark.png",
-      "bytes": 576831,
-      "sha256": "08f30010420526de4b9fedb58f60c98c7c16b9411eccf732acacbaac9a30ac02",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
+      "height": 1557,
+      "source_sha256": "fdf953e7df40ec4511bdfe63d2f3367082661a517cafac06e69d2e8a1df18cbb",
+      "name": "battle",
+      "platform": "HOST Windows Flutter widget render",
+      "version": "1.0.1 source snapshot for code 46",
+      "date": "2026-11-05",
+      "render_pixel_ratio": 2
     },
     {
       "path": "media/screenshots/home.png",
-      "bytes": 527116,
-      "sha256": "fa378b507e5acdcfd16bb0a981ad1fee7c44b575689f74510f5ec463771ee2c4",
+      "role": "screenshot",
+      "bytes": 324764,
+      "sha256": "5d1f8325c84205a2a88e52e186cb62ada8b28dd5280b4dc56f0b980be6c505ce",
       "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
+      "height": 1467,
+      "source_sha256": "715278d5061dc7fe03425949763e00ed0c4f4e91b2e45de6e97dd40964e6e356",
+      "name": "home",
+      "platform": "Android emulator API 36 x86_64",
+      "crop": [
+        0,
+        136,
+        1080,
+        2201
+      ],
+      "version": "1.0.1",
+      "version_code": 46,
+      "date": "2026-11-05"
     },
     {
-      "path": "media/screenshots/languages.png",
-      "bytes": 225463,
-      "sha256": "af04670c8a4594b38a5e4e2167984658aef76919cc51c02435a275a5ed657ea2",
+      "path": "media/screenshots/library.png",
+      "role": "screenshot",
+      "bytes": 208637,
+      "sha256": "559d3dc023dbb27283e216a5323cef135fb301f6c8281867ba72301f4ef8c8fa",
       "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
+      "height": 1467,
+      "source_sha256": "ddaabd45b8781231a3d6fd7437ecdaf33786e771e6fc01bbe305b98b86cda5b5",
+      "name": "library",
+      "platform": "Android emulator API 36 x86_64",
+      "crop": [
+        0,
+        136,
+        1080,
+        2201
+      ],
+      "version": "1.0.1",
+      "version_code": 46,
+      "date": "2026-11-05"
     },
     {
-      "path": "media/screenshots/lead-record.png",
-      "bytes": 284039,
-      "sha256": "7a71d5c5a47d869d3b9fb03205bccafd823b11659814f8cd7c267467017ddd84",
+      "path": "media/screenshots/notes.png",
+      "role": "screenshot",
+      "bytes": 260973,
+      "sha256": "346c35187469e3e805b0964d910a7a1cc1dfd350126d68c91de75d649cdb1923",
       "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/lead-result.png",
-      "bytes": 378974,
-      "sha256": "1e60b9da2800f3213cef1b190f9253ecc8cffc3eb9e5b8b99c1d66df4358fe60",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/lead-selection.png",
-      "bytes": 345143,
-      "sha256": "cadabdbb85b36ea7e041d570dedbcea178bfd4a7202a567919f02fbae4e0d30e",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/master-mode.png",
-      "bytes": 315407,
-      "sha256": "a6cf29de0198302e527a55c791e070ada06e1c9ff763f1f4eba9f349cd8c5f66",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/recommended-builds.png",
-      "bytes": 384442,
-      "sha256": "9a0420aa209e401cc199042e9452b32dc603d6ebf9e77cb5679fe0dcaf67f1e8",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
-    },
-    {
-      "path": "media/screenshots/team-builder.png",
-      "bytes": 614867,
-      "sha256": "5d6135edd399b6abd701d480c705be74bcdd7edee5bf3d315cfceda92d8fd3da",
-      "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
+      "height": 1557,
+      "source_sha256": "4d8d4b11ffce09c13f668749ef3c73a294bae3afe319df387a019c4b101c382d",
+      "name": "notes",
+      "platform": "HOST Windows Flutter widget render",
+      "version": "1.0.1 source snapshot for code 46",
+      "date": "2026-11-05",
+      "render_pixel_ratio": 2
     },
     {
       "path": "media/screenshots/team-coverage.png",
-      "bytes": 286430,
-      "sha256": "3e62d7fd6207d3816bcb2d76559b4b175b185b9afa53f7266a0311eceffd03fc",
+      "role": "screenshot",
+      "bytes": 225270,
+      "sha256": "ae08957f780e730ed97d4f63725dc27024281d053f1699371edc9345ba45550d",
       "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
+      "height": 1558,
+      "source_sha256": "a78c8135e07edd45fd34c1726af427b9565ea0ea77b7c6431b0ccf4c8c856da2",
+      "name": "team-coverage",
+      "platform": "HOST Windows Flutter widget render",
+      "version": "1.0.1 source snapshot for code 46",
+      "date": "2026-11-05",
+      "render_pixel_ratio": 2
     },
     {
-      "path": "media/screenshots/versus-matchup.png",
-      "bytes": 401590,
-      "sha256": "66267dedf4ba3385ace48fa85e379d9ea35830b3e8280f416e4e68c6485cb03a",
+      "path": "media/screenshots/tournaments.png",
+      "role": "screenshot",
+      "bytes": 264829,
+      "sha256": "7022cfbbe4f01842c6dcb2fc757f8e429d0d1f204d5705fd87c8f428c7d8be63",
       "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
+      "height": 1467,
+      "source_sha256": "f4060af5bd5ba93f914f54ed0d30483bebcc50c4afafdd7e776833bdc5f4e766",
+      "name": "tournaments",
+      "platform": "Android emulator API 36 x86_64",
+      "crop": [
+        0,
+        136,
+        1080,
+        2201
+      ],
+      "version": "1.0.1",
+      "version_code": 46,
+      "date": "2026-11-05"
     },
     {
       "path": "media/screenshots/versus-result.png",
-      "bytes": 275392,
-      "sha256": "39e2db0abec1a3c7470aa76a535e53501b9f31b8c4aeab0447f2281ce163167c",
+      "role": "screenshot",
+      "bytes": 293279,
+      "sha256": "4db6011136d7a2616cc66406ff5f7170bb442ef384f1e3c2f8cb0d8625473725",
       "width": 720,
-      "height": 1440,
-      "batch": "refresh-2026-09-22"
+      "height": 1467,
+      "source_sha256": "52888ccd7951fb8d14eec297a8691472679ac324c899791af907152407ce79e3",
+      "name": "versus-result",
+      "platform": "Android emulator API 36 x86_64",
+      "crop": [
+        0,
+        136,
+        1080,
+        2201
+      ],
+      "version": "1.0.1",
+      "version_code": 46,
+      "date": "2026-11-05"
+    },
+    {
+      "path": "media/thumbnails/1hitko.png",
+      "role": "video-thumbnail",
+      "bytes": 35503,
+      "sha256": "eb0122830a51224db632d1939fbc6aa62649d78187b0bc4815f6ee491818e7c9",
+      "width": 180,
+      "height": 360,
+      "source_video": "media/demos/1hitko.mp4",
+      "source_time_seconds": 4
+    },
+    {
+      "path": "media/thumbnails/entradas.png",
+      "role": "video-thumbnail",
+      "bytes": 46205,
+      "sha256": "d5147cc72e31029f7f663d2e2702884136d13242875194c622bcae468d7e9c89",
+      "width": 180,
+      "height": 360,
+      "source_video": "media/demos/entradas.mp4",
+      "source_time_seconds": 4
+    },
+    {
+      "path": "media/thumbnails/ev-lab.png",
+      "role": "video-thumbnail",
+      "bytes": 39243,
+      "sha256": "ceaa48ffaabf6caeeef0382e71abff26e458bd98088f9104dcf30b258d58376f",
+      "width": 180,
+      "height": 360,
+      "source_video": "media/demos/ev-lab.mp4",
+      "source_time_seconds": 4
+    },
+    {
+      "path": "media/thumbnails/history.png",
+      "role": "video-thumbnail",
+      "bytes": 21722,
+      "sha256": "86b08ac32c51bf729b6b9f535bba06b8e9e88ff9ca875088f9967a85289930ea",
+      "width": 180,
+      "height": 360,
+      "source_video": "media/demos/history.mp4",
+      "source_time_seconds": 4
+    },
+    {
+      "path": "media/thumbnails/languages.png",
+      "role": "video-thumbnail",
+      "bytes": 29569,
+      "sha256": "adf13c4ea086d4e3850a292ffd017849f95033ac881afc1f87ca850d3fac2201",
+      "width": 180,
+      "height": 360,
+      "source_video": "media/demos/languages.mp4",
+      "source_time_seconds": 4
+    },
+    {
+      "path": "media/thumbnails/team-builder.png",
+      "role": "video-thumbnail",
+      "bytes": 40419,
+      "sha256": "57a28072889ebeb31f8e1a99337db46ca5e81ff335fc6254265741dab6e2feda",
+      "width": 180,
+      "height": 360,
+      "source_video": "media/demos/team-builder.mp4",
+      "source_time_seconds": 4
+    },
+    {
+      "path": "media/thumbnails/versus.png",
+      "role": "video-thumbnail",
+      "bytes": 31202,
+      "sha256": "493ae68de414358debb7860eb016cc6867503ebafcd54522ca80adb349f1d8b8",
+      "width": 180,
+      "height": 360,
+      "source_video": "media/demos/versus.mp4",
+      "source_time_seconds": 4
     }
   ]
 }

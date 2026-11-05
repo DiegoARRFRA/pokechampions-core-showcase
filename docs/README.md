@@ -6,6 +6,8 @@
 
 [← Portada](../README.md)
 
+Revisado el 5 de noviembre de 2026 para 1.0.1. Funciones explica el alcance del producto; Galería distingue capturas actuales de emulador/HOST y vídeos históricos; Validación recoge evidencia fechada y límites.
+
 ## Producto
 
 | Documento | Español | English | Contenido |

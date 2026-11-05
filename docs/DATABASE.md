@@ -221,4 +221,4 @@ Las columnas relacionales aportan transacciones, unicidad e índices para los ac
 
 [Decisiones de ingeniería](ENGINEERING.md) · [Flujos de cálculo y guardado](TECHNICAL_OVERVIEW.md) · [Validación](VALIDATION.md)
 
-Referencia del esquema: 22/09/2026. Notación: [Mermaid ER](https://mermaid.js.org/syntax/entityRelationshipDiagram) · [Diagramas en GitHub](https://docs.github.com/es/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams).
+Esquema contrastado el 05/11/2026 contra 1.0.1/46: v2, 11 tablas, cuatro índices secundarios explícitos y una clave foránea declarada. Notación: [Mermaid ER](https://mermaid.js.org/syntax/entityRelationshipDiagram) · [Diagramas en GitHub](https://docs.github.com/es/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams).

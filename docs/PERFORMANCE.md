@@ -10,6 +10,10 @@ PokeChampions Core utiliza perfilado focal en lugar de basarse únicamente en se
 
 ## Caso de arranque Android
 
+**Fecha del estudio: 24 de agosto de 2026**, anterior a 1.0.1. Revisión base: a9930d4c5406642ff5557f8a044155e0d2f6507d. APK profile en emulador Android 16/API 36 x86_64, 1080 × 2400 a 420 dpi/60 Hz, Impeller/OpenGLES; Flutter 3.44.6 y Dart 3.12.2. Renderizado acelerado del emulador con NVIDIA GTX 1070. No es una medición exclusivamente HOST ni evidencia de Android físico.
+
+Las series anterior y primera posterior usaron 10 arranques fríos, 10 calientes y 5 tras force-stop; se excluyó una muestra force-stop inválida de la primera serie posterior. La repetición posterior obtuvo las 25 muestras válidas. Su mediana fría empeoró a **6,121 s** bajo presión de memoria/swap. No se atribuye este benchmark a 1.0.1.
+
 La auditoría encontró inicialización nativa de audio en la ruta crítica aunque no se necesitara reproducir música. Se modificó ese recorrido para alcanzar el primer frame útil antes de iniciar el backend nativo de audio.
 
 Primera serie comparable en emulador; P50 representa la mediana:

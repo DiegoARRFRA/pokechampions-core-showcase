@@ -221,4 +221,4 @@ Relational columns provide transactions, uniqueness and indexes for selected acc
 
 [Engineering decisions](ENGINEERING.en.md) · [Calculation and save flows](TECHNICAL_OVERVIEW.en.md) · [Validation](VALIDATION.en.md)
 
-Schema reference: 22 September 2026. Notation: [Mermaid ER](https://mermaid.js.org/syntax/entityRelationshipDiagram) · [GitHub diagrams](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams).
+Schema rechecked on 5 November 2026 against 1.0.1/46: v2, 11 tables, four explicit secondary indexes and one declared foreign key. Notation: [Mermaid ER](https://mermaid.js.org/syntax/entityRelationshipDiagram) · [GitHub diagrams](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams).

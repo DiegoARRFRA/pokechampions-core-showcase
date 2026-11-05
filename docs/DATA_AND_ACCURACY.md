@@ -35,3 +35,9 @@ Una nueva regulación es un cambio de datos que requiere aceptación propia. Los
 Una campaña anterior correcta no es una prueba de un estado que todavía no existía cuando se ejecutó.
 
 [Funcionamiento de los datos](TECHNICAL_OVERVIEW.md) · [Validación](VALIDATION.md)
+
+## Instantánea revisada para 1.0.1
+
+El catálogo de torneos empaquetado del 4 de noviembre de 2026 contiene **730 equipos de 19 torneos**, contrastados con la entrega 1.0.1/46. Se seleccionan puestos 1–32 por evento y categoría oficial, conservando los puestos de origen y admitiendo rangos solo cuando su extremo superior no supera 32. La regulación corresponde al evento histórico; lo no confirmado permanece desconocido.
+
+Smogon Strategies aporta referencias de builds con procedencia; las fuentes de torneos pueden publicar solo especies o repartos incompletos. Esas entradas no acreditan objeto, habilidad ni SP ausentes. Las notas conservan los SP desconocidos y avisan antes de usar ceros editables. Las instantáneas se actualizan durante el desarrollo, sin sincronización de red al ejecutar la app. [Detalle de uso](FEATURES.md).

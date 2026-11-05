@@ -35,3 +35,9 @@ A new regulation is a data change requiring its own acceptance. Participants, me
 An earlier passing campaign is not proof of a state that did not yet exist when it ran.
 
 [How the data is used](TECHNICAL_OVERVIEW.en.md) · [Validation](VALIDATION.en.md)
+
+## Snapshot reviewed for 1.0.1
+
+The 4 November 2026 packaged tournament snapshot contains **730 teams from 19 tournaments**, verified against release 1.0.1/46. Selection uses places 1–32 per event and official category, retaining source ranks and accepting rank ranges only when their upper bound is at most 32. Regulation follows the historical event; unconfirmed values remain unknown.
+
+Smogon Strategies supplies attributed build references; tournament sources may publish only species or incomplete spreads. Such entries are not evidence of an item, ability or SP value. Notes preserve unknown SP and warn before using editable zero defaults. These snapshots are updated during development, not synchronised from the network at runtime. [User-facing details](FEATURES.en.md).

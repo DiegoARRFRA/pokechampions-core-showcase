@@ -1,41 +1,43 @@
-<p align="right">
-  <a href="README.md">Español</a> · <strong>English</strong>
-</p>
+<p align="right"><a href="README.md">Español</a> · <strong>English</strong></p>
 
 # Media files
 
 [Gallery](../docs/GALLERY.en.md) · [Overview](../README.en.md)
 
-The inventory contains **17 PNG screenshots and seven demos in MP4 and GIF**. Recordings come from the author's Android application. Origins, preparation dates and file hashes are recorded in [manifest.json](manifest.json).
+Inventory dated **2026-11-05**: **8 current PNG screenshots, 1 transparent PNG logo, 7 PNG thumbnails and 7 historical MP4 videos**. All 23 files, sizes, dimensions, SHA-256 hashes and provenance appear in [manifest.json](manifest.json). No audio tracks, installers or private original recordings are included.
 
-## Exports
+## Current screenshots
 
-| Files | MP4 video | GIF preview |
+| Files | Source | Processing |
 | --- | --- | --- |
-| Versus, EV Lab, Lead Trainer, Teams, Battle History and Languages | H.264, 720 × 1440, 24 fps | 360 × 720, 10 fps, up to 192 colours |
-| 1HITKO | H.264, 540 × 1080, 24 fps | 300 × 600, 8 fps, up to 128 colours |
+| Home, Versus, 1HITKO, tournaments, Library | Release 1.0.1/46, Android API 36 x86_64 emulator; 2026-11-05. | Original 1080 × 2400; crop x=0, y=136, width=1080, height=2201, removing only system bars. Downscale to 720 × 1467. |
+| Battle and Notes | Actual Flutter widgets, Windows HOST, source copy of 1.0.1/46; 2026-11-05. | Logical viewport 393 × 850, rendered at density 2 (786 × 1700); downscale to 720 × 1557. |
+| Coverage | Actual Flutter widgets, Windows HOST, same source copy and date. | Logical viewport 390 × 844, rendered at density 2 (780 × 1688); downscale to 720 × 1558. |
+| Logo | Transparent asset used inside the current application. | Proportional downscale to 256 px wide; alpha retained. Android launcher background is not used. |
 
-Screenshots are 720 × 1440 PNGs. Demos have no audio. Android system bars are cropped out while preserving the screen's proportions.
+Examples are fictional. HOST renders use actual application components and fonts; they are neither reconstructed screens nor physical Android captures. Selected viewports are preserved, including the scrolled 1HITKO view after search completion. Text, colours and results are not retouched.
 
-## Selected excerpts
+Deterministic FFmpeg processing: crop, Lanczos downscale and PNG compression without additional loss. No image is enlarged. Source hashes support checking provenance against the private evidence archive without publishing its paths.
 
-| Demo | Recording | Original segment (s) | Final hold (s) |
-| --- | --- | ---: | ---: |
-| Versus | `update-recording-02` | 14.2–24.8 | 2.0 |
-| EV Lab | `update-recording-02` | 28.0–42.8 | 2.0 |
-| Lead Trainer | `update-recording-03` | 8.0–16.5 | 1.5 |
-| Teams | `update-recording-06` | 32.0–51.3 | 1.7 |
-| Battle History | `update-recording-05` | 31.8–39.8 | 1.2 |
-| Languages | `update-recording-01` | 7.1–19.1 | 1.9 |
+## Historical videos
 
-These segments are extracted from 1080 × 2400 recordings using crop `[0, 110, 1080, 2160]`. Each demo retains its recorded speed and adds a hold on the last frame. The manifest also includes the 1HITKO parameters, prepared on 17 September 2026; the other clips were prepared on 22 September 2026.
+The seven MP4s remain **byte-for-byte identical** to the previous showcase. Versus, EV Lab, Lead Trainer, Teams, History and Languages were prepared on **2026-09-22** from Android recordings supplied by the author; 1HITKO dates to **2026-09-17**. Their exact builds are unknown. They do not prove 1.0.1 additions.
 
-## Interpreting the demos
+| Group | Retained format | New thumbnail |
+| --- | --- | --- |
+| Six September 22 demos | H.264, 720 × 1440, 24 fps, silent | 180 × 360 PNG, frame at 4 s |
+| September 17 1HITKO | H.264, 540 × 1080, 24 fps, silent | 180 × 360 PNG, frame at 4 s |
 
-Recordings show usage flows and are not used to measure performance. The interface is Spanish, except in the language demo, which also shows English and German.
+Recorded speed, excerpts and final holds from the historical exports are retained. The manifest preserves each clip's original parameters; thumbnails link to MP4s without autoplay. Complete music tracks are not distributed.
 
-Lead Trainer outcomes and Battle History matches are entered manually. Screenshots can represent different points in a session: History match-list and analysis views precede the save shown in the summary. The Versus result screenshot comes from the same excerpt as its video.
+## Size and preservation
 
-Dates identify media preparation; the exact build number has not been verified for the recordings. Files retain their original metadata and hashes in the manifest.
+| Binary media inventory | Bytes | Decimal MB |
+| --- | ---: | ---: |
+| Before: 17 PNG + 7 GIF + 7 MP4 | 37,916,500 | 37.92 |
+| After: 16 PNG + 7 MP4 | 11,801,898 | 11.80 |
+| Reduction | 26,114,602 | **68.9%** |
 
-[File verification](../CONTRIBUTING.en.md#showcase-validation) · [Ownership](../NOTICE.en.md)
+Duplicate GIFs and superseded screenshots are removed from the current tree. **Git history is not rewritten**: previous revisions retain those files, so tree reduction is not the same as savings in a historical clone. All seven MP4s retain their previous SHA-256 hashes.
+
+[How to validate](../CONTRIBUTING.en.md#showcase-validation) · [Notices and rights](../NOTICE.en.md)

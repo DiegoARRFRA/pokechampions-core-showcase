@@ -49,3 +49,9 @@ El análisis separa el trabajo de Flutter del tiempo de presentación de Android
 El estudio recoge las mediciones, el entorno de emulador y la variación observada al repetir la prueba. [Rendimiento](PERFORMANCE.md).
 
 [Validación y QA](VALIDATION.md) · [Base de datos](DATABASE.md) · [Galería](GALLERY.md)
+
+## Procedencia de configuraciones y controles reutilizables
+
+Revisado para 1.0.1/46 el 5 de noviembre de 2026. Las notas conservan la identidad de la habilidad y distinguen un reparto publicado incompleto de un cero explícito. Cada destino recibe los campos compatibles sin reescribir silenciosamente la fuente. La selección por grupos conserva la elección de la configuración concreta.
+
+Los learnsets y listas de movimientos comparten controles de categoría/tipo/potencia. Aplicar o cancelar separa la selección provisional del filtro activo; las categorías combinadas son alternativas dentro de ese filtro. [Comportamiento funcional](FEATURES.md).

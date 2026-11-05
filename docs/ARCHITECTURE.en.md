@@ -6,6 +6,8 @@
 
 [← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Database](DATABASE.en.md) · [Documentation](README.en.md)
 
+Verified against 1.0.1/46 on 5 November 2026. The documentation describes existing responsibilities; this showcase refresh changes no application architecture.
+
 ## Organisation
 
 The application is organised by feature, with presentation, coordination, domain and data-access layers. Typed contracts and constructor injection allow calculation, storage and audio services to be replaced.
@@ -59,7 +61,7 @@ Application
 Shared core
   Models, rules, catalogues, storage, themes and languages
 Features
-  Teams, Versus, 1HITKO, Lead Trainer, History, Notes, Audio
+  Teams, Battle, Versus, 1HITKO, Library, Lead Trainer, History, Notes, Audio
   Presentation / coordination / data or infrastructure as appropriate
 Shared components
   Reusable interface elements
@@ -97,3 +99,5 @@ Teams and Notes provide reusable configurations. Versus calculates damage, EV La
 Battle History maintains matches, a draft and opponent profiles/versions. Its data is separate from Lead Trainer's practice records, although both use the shared persistence infrastructure.
 
 [Data model](DATABASE.en.md) · [Engineering decisions](ENGINEERING.en.md) · [Operational flows](TECHNICAL_OVERVIEW.en.md) · [Tests](VALIDATION.en.md)
+
+Library reads packaged STATS, learnsets and move-user data. Shared filter controls combine type, power and categories. Configuration selection reuses saved notes through typed models and preserves unknown fields rather than filling them with inferred published values.
