@@ -10,6 +10,10 @@ PokeChampions Core uses targeted profiling rather than relying only on subjectiv
 
 ## Android startup case
 
+**Study date: 24 August 2026**, before 1.0.1. Base revision: a9930d4c5406642ff5557f8a044155e0d2f6507d. Profile APK on an Android 16/API 36 x86_64 emulator, 1080 × 2400 at 420 dpi/60 Hz, Impeller/OpenGLES; Flutter 3.44.6 and Dart 3.12.2. Hardware-backed emulator rendering used an NVIDIA GTX 1070. This is neither a HOST-only benchmark nor physical Android evidence.
+
+Before and first after series used 10 cold, 10 warm and 5 force-stop launches; one invalid force-stop sample in the first after series was excluded. The later repeat obtained all 25 valid samples. The repeated cold median worsened to **6.121 s** under memory/swap pressure. No recent 1.0.1 benchmark is claimed.
+
 The audit identified native audio initialisation on the critical path even when playback was unnecessary. That path was changed to reach the first useful frame before starting the native audio backend.
 
 First comparable emulator series; P50 is the median:

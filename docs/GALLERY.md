@@ -1,171 +1,77 @@
-<p align="right">
-  <strong>Español</strong> · <a href="GALLERY.en.md">English</a>
-</p>
+<p align="right"><strong>Español</strong> · <a href="GALLERY.en.md">English</a></p>
 
 # PokeChampions Core · Galería
 
-[← Portada](../README.md) · [Documentación](README.md)
+[← Portada](../README.md) · [Funciones](FEATURES.md) · [Documentación](README.md)
 
-Recorre las herramientas de la aplicación: preparación de equipos, cálculo de daño, práctica de salidas y seguimiento de partidas. Abre los vídeos en MP4 o despliega las vistas previas y capturas de cada sección.
+Ocho capturas auténticas del **5 de noviembre de 2026**, con interfaz española. **Emulador Android** identifica la release 1.0.1/46 en API 36 x86_64; **HOST** identifica widgets Flutter reales renderizados en Windows desde la copia de código de esa entrega, con datos ficticios. No se utilizó un móvil físico para esta actualización. Pulsa una imagen para verla a resolución completa.
 
-[Versus](#versus) · [EV Lab](#ev-lab) · [1HITKO](#1hitko) · [Equipos](#equipos-y-builds) · [Entradas](#entradas) · [HISTÓRICO](#histórico) · [Idiomas](#idiomas-y-apariencia)
+Solo se recortaron las barras del sistema en las imágenes del emulador. Las HOST no contienen barras de Android. Se redujeron, nunca se ampliaron; no se reconstruyó ninguna interfaz ni resultado. [Procedencia y tratamiento](../media/README.md).
 
-## Versus
-
-Selecciona los combatientes y un movimiento para consultar el rango de daño, las condiciones de KO y los factores que intervienen. Modo Maestro permite ajustar el escenario y comparar resultados.
-
-**[Ver vídeo · 12,6 s](../media/demos/versus.mp4)**
-
-<details>
-<summary>Ver demo GIF</summary>
-
-<a href="../media/demos/versus.gif"><img src="../media/demos/versus.gif" width="280" alt="Selección de Envite Ígneo y consulta de daño en Versus"></a>
-
-</details>
-
-<details>
-<summary>Ver capturas</summary>
+## Inicio y daño
 
 <p>
-  <a href="../media/screenshots/versus-matchup.png"><img src="../media/screenshots/versus-matchup.png" width="260" alt="Versus · escenario y participantes"></a>
-  <a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="260" alt="Versus · daño y KO"></a>
-  <a href="../media/screenshots/master-mode.png"><img src="../media/screenshots/master-mode.png" width="260" alt="Modo Maestro · comparación de escenarios"></a>
+<a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="280" alt="Inicio · Logo actual y acceso a las herramientas en tema oscuro."></a>
+<a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="280" alt="Versus · Doble Filo: 45–54 PS de daño, con usos para KO posible y garantizado."></a>
 </p>
 
-</details>
+- **Inicio · Emulador Android.** Logo actual y acceso a las herramientas en tema oscuro.
+- **Versus · Emulador Android.** Doble Filo: 45–54 PS de daño, con usos para KO posible y garantizado.
 
-## EV Lab
-
-Explora la inversión en PS y defensas y busca un reparto que permita sobrevivir al ataque configurado.
-
-**[Ver vídeo · 16,8 s](../media/demos/ev-lab.mp4)**
-
-<details>
-<summary>Ver demo GIF</summary>
-
-<a href="../media/demos/ev-lab.gif"><img src="../media/demos/ev-lab.gif" width="280" alt="Búsqueda de un reparto defensivo en EV Lab"></a>
-
-</details>
-
-<details>
-<summary>Ver capturas</summary>
+## Escenarios y búsqueda
 
 <p>
-  <a href="../media/screenshots/ev-lab.png"><img src="../media/screenshots/ev-lab.png" width="260" alt="EV Lab · reparto para sobrevivir"></a>
+<a href="../media/screenshots/battle.png"><img src="../media/screenshots/battle.png" width="280" alt="Batalla · Análisis real de lluvia de entrada y velocidad; los SP desconocidos producen rangos y un empate estimado."></a>
+<a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="280" alt="1HITKO · Vista desplazada tras completar la búsqueda: 206 candidatos en este escenario y acceso a ordenación/filtros. La cifra no es un total universal."></a>
 </p>
 
-</details>
+- **Batalla · HOST.** Análisis real de lluvia de entrada y velocidad; los SP desconocidos producen rangos y un empate estimado.
+- **1HITKO · Emulador Android.** Vista desplazada tras completar la búsqueda: 206 candidatos en este escenario y acceso a ordenación/filtros. La cifra no es un total universal.
 
-## 1HITKO
-
-Configura un defensor y busca candidatos capaces de lograr un KO de un impacto. Los resultados muestran movimientos y rangos de daño; la garantía de daño presupone que el movimiento acierta.
-
-**[Ver vídeo · 13 s](../media/demos/1hitko.mp4)**
-
-<details>
-<summary>Ver demo y captura</summary>
+## Equipos y procedencia
 
 <p>
-  <a href="../media/demos/1hitko.gif"><img src="../media/demos/1hitko.gif" width="260" alt="1HITKO · búsqueda de candidatos a KO de un impacto"></a>
-  <a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="260" alt="1HITKO · candidatos, movimientos y rangos de daño"></a>
+<a href="../media/screenshots/team-coverage.png"><img src="../media/screenshots/team-coverage.png" width="280" alt="Cobertura defensiva · Matriz de un equipo de ejemplo con seis integrantes: debilidades, resistencias y respuestas por tipo."></a>
+<a href="../media/screenshots/tournaments.png"><img src="../media/screenshots/tournaments.png" width="280" alt="Torneos · Selector de torneos con fecha, regulación histórica y selección múltiple. Los años 2027 pertenecen a los nombres oficiales de la temporada."></a>
 </p>
 
-</details>
+- **Cobertura defensiva · HOST.** Matriz de un equipo de ejemplo con seis integrantes: debilidades, resistencias y respuestas por tipo.
+- **Torneos · Emulador Android.** Selector de torneos con fecha, regulación histórica y selección múltiple. Los años 2027 pertenecen a los nombres oficiales de la temporada.
 
-## Equipos y builds
-
-Crea el equipo, consulta su cobertura defensiva y aplica builds recomendadas. El vídeo muestra la selección de reparto y movimientos para Mega-Charizard X y la revisión de sus estadísticas.
-
-**[Ver vídeo · 21 s](../media/demos/team-builder.mp4)**
-
-<details>
-<summary>Ver demo GIF</summary>
-
-<a href="../media/demos/team-builder.gif"><img src="../media/demos/team-builder.gif" width="280" alt="Selección y aplicación de una build recomendada"></a>
-
-</details>
-
-<details>
-<summary>Ver capturas</summary>
+## Configuraciones y consulta
 
 <p>
-  <a href="../media/screenshots/team-builder.png"><img src="../media/screenshots/team-builder.png" width="260" alt="Equipos · composición y edición"></a>
-  <a href="../media/screenshots/team-coverage.png"><img src="../media/screenshots/team-coverage.png" width="260" alt="Equipos · cobertura defensiva"></a>
-  <a href="../media/screenshots/recommended-builds.png"><img src="../media/screenshots/recommended-builds.png" width="260" alt="Builds recomendadas · movimientos y repartos"></a>
+<a href="../media/screenshots/notes.png"><img src="../media/screenshots/notes.png" width="280" alt="Notas · Dos configuraciones ficticias de Venusaur en su grupo, con naturaleza y reparto SP. No son recomendaciones competitivas."></a>
+<a href="../media/screenshots/library.png"><img src="../media/screenshots/library.png" width="280" alt="Biblioteca · Movimientos y usuarios con dos categorías aplicadas: 334 resultados en esta selección."></a>
 </p>
 
-</details>
+- **Notas · HOST.** Dos configuraciones ficticias de Venusaur en su grupo, con naturaleza y reparto SP. No son recomendaciones competitivas.
+- **Biblioteca · Emulador Android.** Movimientos y usuarios con dos categorías aplicadas: 334 resultados en esta selección.
 
-## Entradas
+## Demostraciones históricas en vídeo
 
-Elige la pareja inicial antes de revelar la salida rival. Registra manualmente el resultado de la práctica y consulta tus sesiones en el registro de Entradas.
-
-**[Ver vídeo · 10 s](../media/demos/entradas.mp4)**
-
-<details>
-<summary>Ver demo GIF</summary>
-
-<a href="../media/demos/entradas.gif"><img src="../media/demos/entradas.gif" width="280" alt="Elección de la pareja inicial y registro de una práctica"></a>
-
-</details>
-
-<details>
-<summary>Ver capturas</summary>
+Estos siete MP4 sin audio se prepararon en **septiembre de 2026**, antes de esta revisión. Se conservan byte a byte y no se ha verificado la compilación exacta de la app. Muestran recorridos anteriores, no acreditan novedades de 1.0.1 ni su rendimiento actual. Pulsa una miniatura o enlace de vídeo; no hay reproducción automática.
 
 <p>
-  <a href="../media/screenshots/lead-selection.png"><img src="../media/screenshots/lead-selection.png" width="260" alt="Entradas · pareja elegida y rival oculto"></a>
-  <a href="../media/screenshots/lead-result.png"><img src="../media/screenshots/lead-result.png" width="260" alt="Entradas · resultado manual"></a>
-  <a href="../media/screenshots/lead-record.png"><img src="../media/screenshots/lead-record.png" width="260" alt="Entradas · registro de prácticas"></a>
+<a href="../media/demos/versus.mp4"><img src="../media/thumbnails/versus.png" width="110" alt="Vídeo histórico: Versus"></a>
+<a href="../media/demos/ev-lab.mp4"><img src="../media/thumbnails/ev-lab.png" width="110" alt="Vídeo histórico: EV Lab"></a>
+<a href="../media/demos/1hitko.mp4"><img src="../media/thumbnails/1hitko.png" width="110" alt="Vídeo histórico: 1HITKO"></a>
+<a href="../media/demos/team-builder.mp4"><img src="../media/thumbnails/team-builder.png" width="110" alt="Vídeo histórico: Equipos y builds"></a>
+<a href="../media/demos/entradas.mp4"><img src="../media/thumbnails/entradas.png" width="110" alt="Vídeo histórico: Entradas"></a>
+<a href="../media/demos/history.mp4"><img src="../media/thumbnails/history.png" width="110" alt="Vídeo histórico: Histórico"></a>
+<a href="../media/demos/languages.mp4"><img src="../media/thumbnails/languages.png" width="110" alt="Vídeo histórico: Idiomas"></a>
 </p>
 
-</details>
+| Demo | Duración | Contexto |
+| --- | ---: | --- |
+| [Versus](../media/demos/versus.mp4) | 12,6 s | 22/09/2026 · compilación no verificada |
+| [EV Lab](../media/demos/ev-lab.mp4) | 16,8 s | 22/09/2026 · compilación no verificada |
+| [1HITKO](../media/demos/1hitko.mp4) | 13 s | 17/09/2026 · compilación no verificada |
+| [Equipos y builds](../media/demos/team-builder.mp4) | 21 s | 22/09/2026 · compilación no verificada |
+| [Entradas](../media/demos/entradas.mp4) | 10 s | 22/09/2026 · compilación no verificada |
+| [Histórico](../media/demos/history.mp4) | 9,2 s | 22/09/2026 · compilación no verificada |
+| [Idiomas](../media/demos/languages.mp4) | 13,9 s | 22/09/2026 · compilación no verificada |
 
-## HISTÓRICO
+Los resultados de Entradas e Histórico de las demos se introducen manualmente. El material histórico puede mostrar iconos y controles antiguos. Las funciones actuales se describen en [Funciones](FEATURES.md); el manifiesto multimedia no certifica la exactitud de cálculo.
 
-Guarda los resultados de tus partidas, conserva información de los rivales y consulta resúmenes por equipo. El vídeo recorre el guardado de una partida y la ficha del rival.
-
-**[Ver vídeo · 9,2 s](../media/demos/history.mp4)**
-
-<details>
-<summary>Ver demo GIF</summary>
-
-<a href="../media/demos/history.gif"><img src="../media/demos/history.gif" width="280" alt="Guardado de una partida y consulta del rival en HISTÓRICO"></a>
-
-</details>
-
-<details>
-<summary>Ver capturas</summary>
-
-<p>
-  <a href="../media/screenshots/history-summary.png"><img src="../media/screenshots/history-summary.png" width="260" alt="HISTÓRICO · resumen del equipo"></a>
-  <a href="../media/screenshots/history-matches.png"><img src="../media/screenshots/history-matches.png" width="260" alt="HISTÓRICO · listado de combates"></a>
-  <a href="../media/screenshots/history-analysis.png"><img src="../media/screenshots/history-analysis.png" width="260" alt="HISTÓRICO · análisis por rival"></a>
-</p>
-
-</details>
-
-## Idiomas y apariencia
-
-Elige entre ocho idiomas y los temas claro, oscuro o del sistema. La demo muestra el cambio de español a inglés y alemán.
-
-**[Ver vídeo · 13,9 s](../media/demos/languages.mp4)**
-
-<details>
-<summary>Ver demo GIF</summary>
-
-<a href="../media/demos/languages.gif"><img src="../media/demos/languages.gif" width="280" alt="Cambio de idioma entre español, inglés y alemán"></a>
-
-</details>
-
-<details>
-<summary>Ver capturas</summary>
-
-<p>
-  <a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="260" alt="Inicio · tema claro"></a>
-  <a href="../media/screenshots/home-dark.png"><img src="../media/screenshots/home-dark.png" width="260" alt="Inicio · tema oscuro"></a>
-  <a href="../media/screenshots/languages.png"><img src="../media/screenshots/languages.png" width="260" alt="Ajustes · interfaz en inglés"></a>
-</p>
-
-</details>
-
-[Funcionalidades](FEATURES.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Información de los archivos multimedia](../media/README.md) · [← Portada](../README.md)
+[Validación](VALIDATION.md) · [Inventario multimedia](../media/README.md) · [Derechos](../NOTICE.md)

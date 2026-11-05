@@ -6,6 +6,8 @@
 
 [← Portada](../README.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Base de datos](DATABASE.md) · [Documentación](README.md)
 
+Contrastado con 1.0.1/46 el 5 de noviembre de 2026. Se describen responsabilidades existentes; esta actualización del escaparate no cambia la arquitectura de la app.
+
 ## Organización
 
 La aplicación se organiza por funcionalidades, con capas de presentación, coordinación, dominio y acceso a datos. Los contratos tipados y la inyección por constructor permiten sustituir servicios de cálculo, almacenamiento y audio.
@@ -59,7 +61,7 @@ Aplicacion
 Nucleo compartido
   Modelos, reglas, catalogos, almacenamiento, temas e idiomas
 Funcionalidades
-  Equipos, Versus, 1HITKO, Entradas, Historico, Notas, Audio
+  Equipos, Batalla, Versus, 1HITKO, Biblioteca, Entradas, Histórico, Notas, Audio
   Presentacion / coordinacion / datos o infraestructura segun el modulo
 Componentes compartidos
   Elementos reutilizables de interfaz
@@ -97,3 +99,5 @@ Equipos y Notas proporcionan configuraciones reutilizables. Versus calcula daño
 HISTÓRICO mantiene partidas, borrador y perfiles/versiones de rivales. Sus datos son distintos del registro de prácticas de Entradas, aunque ambos utilizan la infraestructura de persistencia compartida.
 
 [Modelo de datos](DATABASE.md) · [Decisiones de ingeniería](ENGINEERING.md) · [Flujos operativos](TECHNICAL_OVERVIEW.md) · [Pruebas](VALIDATION.md)
+
+Biblioteca consulta STATS, learnsets y usuarios de movimientos empaquetados. Sus controles compartidos combinan tipo, potencia y categorías. La selección de configuraciones reutiliza notas mediante modelos tipados y conserva los campos desconocidos, sin inventar valores publicados.

@@ -49,3 +49,9 @@ Analysis separates Flutter work from Android presentation time. This helps locat
 The study records measurements, the emulator environment and variation across repeated runs. [Performance](PERFORMANCE.en.md).
 
 [Validation & QA](VALIDATION.en.md) · [Database](DATABASE.en.md) · [Gallery](GALLERY.en.md)
+
+## Configuration provenance and reusable controls
+
+Reviewed for 1.0.1/46 on 5 November 2026. Notes retain ability identity and distinguish an incomplete published spread from an explicit zero. Tool-specific destinations receive compatible fields without silently rewriting the source. Grouped selection keeps the user in control of the exact configuration.
+
+Library learnsets and move lists share category/type/power controls. Applying or cancelling filters separates draft selection from the active query; combined categories are alternatives within the category filter. [Functional behaviour](FEATURES.en.md).

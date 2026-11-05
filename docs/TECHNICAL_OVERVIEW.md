@@ -26,7 +26,9 @@ PokeChampions Core es una aplicación Flutter de preparación y análisis compet
 | Calidad | `flutter_test`, `test ^1.31.0`, `analyzer ^12.1.0`, `flutter_lints ^6.0.0` | Pruebas de lógica e interfaz y análisis estático. |
 | Entrega | Git y herramientas Flutter/Android | Versionado, compilación, perfilado y QA en dispositivo. |
 
-Versiones declaradas en el manifiesto de dependencias del 22/09/2026. `^` indica un rango compatible; las versiones resueltas y los parámetros de compilación corresponden a cada entrega.
+Declaraciones de dependencias contrastadas el 05/11/2026 para 1.0.1/46. `^` indica un rango compatible; las versiones resueltas y los parámetros de compilación corresponden a cada entrega.
+
+La entrega revisada utilizó Flutter **3.47.2**, Dart **3.13.2**, Android mínimo API **24** y target/compile API **36**. Son valores de esa entrega, no requisitos para consultar este escaparate.
 
 ## Mapa de responsabilidades
 
@@ -115,6 +117,7 @@ La base de datos combina columnas consultables con documentos JSON: **11 tablas,
 | Entradas | Elección inicial, práctica y resultado manual. | Biblioteca rival y registro de rondas. |
 | HISTÓRICO | Resultado declarado, resúmenes y revisión. | Partidas, snapshots, borrador y perfiles/versiones de rivales. |
 | Notas Pokémon | Observaciones y configuraciones reutilizables. | Biblioteca de notas identificadas por Pokémon. |
+| Biblioteca | STATS, learnsets, movimientos y usuarios; filtros combinados. | Catálogos locales y controles de filtro compartidos. |
 
 Batalla analiza una situación de dobles; la aplicación no ejecuta automáticamente los turnos de una partida. Los registros de Entradas y de HISTÓRICO se mantienen separados.
 

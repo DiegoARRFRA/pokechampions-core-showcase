@@ -6,6 +6,8 @@
 
 [← Overview](../README.en.md)
 
+Reviewed on 5 November 2026 for 1.0.1. Start with Features for product scope, Gallery for current emulator/HOST captures and historical videos, and Validation for dated evidence and limits.
+
 ## Product
 
 | Document | Español | English | Contents |
