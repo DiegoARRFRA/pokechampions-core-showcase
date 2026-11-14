@@ -4,7 +4,7 @@
 
 [← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Documentation](README.en.md)
 
-Documentation cutoff: **5 November 2026**. Each result belongs to its version, platform and execution mode; focused campaigns are not added to a global suite, and HOST results are not extrapolated to physical Android. Full records remain private.
+Documentation reviewed **14 November 2026**; each campaign retains its original date. Each result belongs to its version, platform and execution mode; focused campaigns are not added to a global suite, and HOST results are not extrapolated to physical Android. Full records remain private.
 
 ## Multilingual review, 14 November
 
