@@ -24,7 +24,9 @@ Provide a reproducible source for claims about Pokémon Champions mechanics, leg
 
 Public PRs can improve showcase documentation, navigation and utilities; they do not grant implementation access. Do not attach private audits or original recordings containing personal data.
 
-Each document uses `NAME.md` for Spanish and `NAME.en.md` for English, with a reciprocal selector at the top and links to content in the same language. Update both when changing facts, boundaries or navigation. The [bilingual index](docs/README.en.md) lists the pairs. Do not translate technical identifiers, package names, commands, hashes or file paths; translate their explanations and alt text.
+The overview is available in eight languages: `README.md` (Spanish) and `README.<language>.md` with the suffixes `en`, `fr`, `de`, `it`, `pt`, `ja` and `ko`. Every overview includes a reciprocal selector for all eight versions. Detailed documentation retains its Spanish (`NAME.md`) and English (`NAME.en.md`) versions; links from the other overviews identify English destinations. The [documentation index](docs/README.en.md) lists the overviews and technical pairs.
+
+When changing overview facts, boundaries or navigation, update all eight versions; for other documents, update the Spanish/English pair and any additional existing translations. Keep the selector at the top and link to the same language when available; otherwise, identify the destination language. Do not translate technical identifiers, package names, commands, hashes or file paths; translate their explanations and alt text.
 
 ## Source contributions
 

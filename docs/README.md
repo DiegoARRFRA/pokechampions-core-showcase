@@ -8,6 +8,21 @@
 
 Revisado el 5 de noviembre de 2026 para 1.0.1. Funciones explica el alcance del producto; Galería distingue capturas actuales de emulador/HOST y vídeos históricos; Validación recoge evidencia fechada y límites.
 
+## Idiomas del portfolio
+
+La presentación está traducida a los ocho idiomas de la aplicación. La documentación detallada de las tablas siguientes está disponible en español e inglés; las demás portadas señalan el idioma de sus enlaces técnicos.
+
+| Idioma | Presentación |
+| --- | --- |
+| Español | [ES](../README.md) |
+| English | [EN](../README.en.md) |
+| Français | [FR](../README.fr.md) |
+| Deutsch | [DE](../README.de.md) |
+| Italiano | [IT](../README.it.md) |
+| Português | [PT](../README.pt.md) |
+| 日本語 | [JA](../README.ja.md) |
+| 한국어 | [KO](../README.ko.md) |
+
 ## Producto
 
 | Documento | Español | English | Contenido |

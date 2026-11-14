@@ -1,4 +1,4 @@
-<p align="right"><a href="README.md">Español</a> · <strong>English</strong></p>
+<p align="right"><a href="README.md">Español</a> · <strong>English</strong> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
 
 # PokeChampions Core
 
