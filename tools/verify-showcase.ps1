@@ -115,41 +115,50 @@ foreach ($file in $documents) {
         if ($img.Value -notmatch '\balt="[^"]+"') { Fail "$(Relative $file.FullName): image needs useful alt text" }
     }
 }
-foreach ($pair in @(
-    @('README.md', 'README.en.md'), @('README.en.md', 'README.md'),
-    @('docs/GALLERY.md', 'GALLERY.en.md'), @('docs/GALLERY.en.md', 'GALLERY.md')
-)) {
-    $body = ReadText (Join-Path $root $pair[0])
-    if ($body.Substring(0, [Math]::Min(200, $body.Length)) -notmatch [regex]::Escape('href="' + $pair[1] + '"')) {
-        Fail "$($pair[0]): missing reciprocal language selector at the top"
+# The product overview has all eight app languages; detailed docs retain ES/EN.
+$languageSuffixes = @('en', 'fr', 'de', 'it', 'pt', 'ja', 'ko')
+$overviewPaths = @('README.md') + @($languageSuffixes | ForEach-Object { "README.$_.md" })
+$presentations = $overviewPaths + @('docs/GALLERY.md', 'docs/GALLERY.en.md')
+foreach ($presentation in $presentations) {
+    $path = Join-Path $root $presentation
+    if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+        Fail "Missing presentation: $presentation"
+        continue
     }
+    $body = ReadText $path
     if ($body -match '(?i)\b(TODO|TBD|placeholder|coming soon|pendiente de adjuntar)\b') {
-        Fail "$($pair[0]): unfinished presentation marker"
+        Fail "$($presentation): unfinished presentation marker"
     }
     $pngCount = [regex]::Matches($body, 'src="[^"]+\.png"').Count
     $gifCount = [regex]::Matches($body, 'src="[^"]+\.gif"').Count
     $shotCount = [regex]::Matches($body, 'src="[^"]*media/screenshots/[^"]+\.png"').Count
     $thumbCount = [regex]::Matches($body, 'src="[^"]*media/thumbnails/[^"]+\.png"').Count
     $brandCount = [regex]::Matches($body, 'src="[^"]*media/brand/logo\.png"').Count
-    if ($pair[0].StartsWith('README')) {
-        if ($pngCount -ne 4 -or $shotCount -ne 3 -or $brandCount -ne 1 -or $thumbCount -ne 0 -or $gifCount -ne 0) { Fail "$($pair[0]): expected three screenshots, one logo and no GIF" }
-    } elseif ($pngCount -ne 15 -or $shotCount -ne 8 -or $thumbCount -ne 7 -or $brandCount -ne 0 -or $gifCount -ne 0) { Fail "$($pair[0]): expected eight screenshots, seven thumbnails and no GIF" }
+    if ($overviewPaths -ccontains $presentation) {
+        if ($pngCount -ne 4 -or $shotCount -ne 3 -or $brandCount -ne 1 -or $thumbCount -ne 0 -or $gifCount -ne 0) { Fail "$($presentation): expected three screenshots, one logo and no GIF" }
+    } elseif ($pngCount -ne 15 -or $shotCount -ne 8 -or $thumbCount -ne 7 -or $brandCount -ne 0 -or $gifCount -ne 0) { Fail "$($presentation): expected eight screenshots, seven thumbnails and no GIF" }
 }
-# Every public Markdown document has a same-directory ES/EN counterpart.
+# Every document keeps its ES/EN pair; all existing translations link to each other.
 foreach ($document in $documents) {
-    $name = $document.Name
-    $other = if ($name.EndsWith('.en.md', [StringComparison]::Ordinal)) {
-        $name.Substring(0, $name.Length - 6) + '.md'
-    } else { $name.Substring(0, $name.Length - 3) + '.en.md' }
-    $partner = Join-Path $document.DirectoryName $other
-    if (-not (Test-Path -LiteralPath $partner -PathType Leaf)) {
-        Fail "$(Relative $document.FullName): missing language counterpart $other"
-        continue
+    $baseName = $document.BaseName -creplace '\.(en|fr|de|it|pt|ja|ko)$', ''
+    $variantNames = @("$baseName.md") + @($languageSuffixes | ForEach-Object { "$baseName.$_.md" })
+    $requiredNames = @("$baseName.md", "$baseName.en.md")
+    if ($overviewPaths -ccontains (Relative $document.FullName)) { $requiredNames = $variantNames }
+    foreach ($requiredName in $requiredNames) {
+        if (-not (Test-Path -LiteralPath (Join-Path $document.DirectoryName $requiredName) -PathType Leaf)) {
+            Fail "$(Relative $document.FullName): missing language counterpart $requiredName"
+        }
     }
     $body = ReadText $document.FullName
-    $prefix = $body.Substring(0, [Math]::Min(250, $body.Length))
-    if ($prefix -notmatch [regex]::Escape('href="' + $other + '"')) {
-        Fail "$(Relative $document.FullName): missing top-level language selector"
+    $prefix = [regex]::Match($body, '(?s)\A\s*<p\b[^>]*>.*?</p>').Value
+    if (-not $prefix) { Fail "$(Relative $document.FullName): missing top-level language selector" }
+    foreach ($other in $variantNames) {
+        if ($other -ceq $document.Name) { continue }
+        $partner = Join-Path $document.DirectoryName $other
+        if (-not (Test-Path -LiteralPath $partner -PathType Leaf)) { continue }
+        if ($prefix -notmatch [regex]::Escape('href="' + $other + '"')) {
+            Fail "$(Relative $document.FullName): missing top-level language link to $other"
+        }
     }
 }
 $total = 0L

@@ -24,7 +24,9 @@ Aporta una fuente reproducible para afirmaciones sobre mecánicas, legalidad o r
 
 Las PR públicas pueden mejorar documentación, navegación y utilidades del showcase; no dan acceso a la implementación. No adjuntes auditorías privadas ni grabaciones originales con datos personales.
 
-Cada documento usa `NOMBRE.md` para español y `NOMBRE.en.md` para inglés, con selector recíproco al principio y enlaces al contenido del mismo idioma. Actualiza ambos cuando cambies hechos, límites o navegación. El [índice bilingüe](docs/README.md) reúne las parejas. No traduzcas identificadores técnicos, nombres de paquetes, comandos, hashes o rutas de archivos; sí sus explicaciones y textos alternativos.
+La portada está disponible en ocho idiomas: `README.md` (español) y `README.<idioma>.md` con los sufijos `en`, `fr`, `de`, `it`, `pt`, `ja` y `ko`. Todas las portadas incluyen un selector recíproco con las ocho versiones. La documentación detallada conserva sus versiones en español (`NOMBRE.md`) e inglés (`NOMBRE.en.md`); los enlaces desde las otras portadas indican que abren contenido en inglés. El [índice de documentación](docs/README.md) reúne las portadas y las parejas técnicas.
+
+Cuando cambies hechos, límites o navegación de la portada, actualiza las ocho versiones; para el resto de documentos, actualiza su pareja español/inglés y cualquier traducción adicional existente. Mantén el selector al principio y enlaza contenido del mismo idioma cuando esté disponible; en caso contrario, indica el idioma de destino. No traduzcas identificadores técnicos, nombres de paquetes, comandos, hashes o rutas de archivos; sí sus explicaciones y textos alternativos.
 
 ## Contribuciones al código
 
