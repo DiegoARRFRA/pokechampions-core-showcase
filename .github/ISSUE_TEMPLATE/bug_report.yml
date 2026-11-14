@@ -1,0 +1,54 @@
+name: "Bug report / Informar de un fallo"
+description: "Report a reproducible problem or calculation discrepancy. Puedes responder en tu idioma."
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve PokeChampions Core. You can answer in any of the app's eight languages.
+        Gracias por ayudar. Puedes responder en cualquiera de los ocho idiomas de la app.
+        This report is public. Remove personal information from screenshots and text.
+        Este informe es público. Elimina datos personales de las capturas y del texto.
+  - type: input
+    id: version
+    attributes:
+      label: "App version / Versión de la app"
+      description: "Include the build number if available / Incluye el número de compilación si aparece."
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: "Device and Android version / Dispositivo y versión de Android"
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: "Tool and language / Herramienta e idioma"
+      placeholder: "Versus, Español"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce / Pasos para reproducirlo"
+      description: "Describe your selections and actions in order / Describe en orden tus selecciones y acciones."
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: "Expected and actual result / Resultado esperado y real"
+    validations:
+      required: true
+  - type: textarea
+    id: calculation
+    attributes:
+      label: "Calculation details, if relevant / Detalles del cálculo, si procede"
+      description: "Pokémon and form, move, ability, item, level, nature, SP, HP and field effects. Add a source or reference if you have one."
+  - type: textarea
+    id: extra
+    attributes:
+      label: "Screenshots and extra context / Capturas y contexto adicional"
+      description: "Does restarting change the result? / ¿Cambia el resultado al reiniciar?"

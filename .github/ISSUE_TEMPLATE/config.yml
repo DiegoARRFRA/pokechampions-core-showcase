@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "Google Play"
+    url: https://play.google.com/store/apps/details?id=com.pokechampionscore.external
+    about: "Download or update the Android app / Descargar o actualizar la app Android."
+  - name: "Privacy / Privacidad"
+    url: https://pokechampions-core-privacidad.pages.dev/
+    about: "Local storage, privacy and support contact / Almacenamiento local, privacidad y contacto."

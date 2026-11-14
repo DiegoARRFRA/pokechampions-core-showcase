@@ -1,10 +1,14 @@
-<p align="right"><a href="README.md">Español</a> · <strong>English</strong> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
+<p align="center"><a href="README.md">Español</a> · <strong>English</strong> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
 
 # PokeChampions Core
 
 <img src="media/brand/logo.png" width="104" alt="Current PokeChampions Core logo on a transparent background">
 
 **Prepare your team. Understand the matchup. Learn from your matches.**
+
+Android · Free · No ads · No account · 8 languages
+
+**[Get it on Google Play](https://play.google.com/store/apps/details?id=com.pokechampionscore.external&hl=en)** · [View screenshots](docs/GALLERY.en.md) · [Share feedback](https://github.com/DiegoARRFRA/pokechampions-core-showcase/issues/new/choose)
 
 An Android application for Pokémon Champions players who want to compare damage and speed, explore builds and keep their teams, notes and results together. Its tools and packaged catalogues work **offline**, without an account or automatic Internet synchronisation.
 
@@ -24,6 +28,12 @@ Home, a Versus calculation and move filters. Authentic **1.0.1** screenshots fro
 
 [View all eight screenshots and historical demos](docs/GALLERY.en.md). The gallery distinguishes emulator captures, HOST rendering and earlier videos.
 
+## Get started in three steps
+
+1. **Build a team or save a set in Notes.** Review coverage and keep its ability, nature and SP.
+2. **Check a matchup in Versus.** Adjust the attack and conditions; use EV Lab to explore survival or 1HITKO to search for candidates.
+3. **Practise and learn.** Rehearse your leads in Lead Trainer and manually save the outcome and observations in History.
+
 ## Tools for preparation and comparison
 
 | Tool | What it does |
@@ -41,9 +51,41 @@ This review highlights notes grouped by Pokémon, configuration loading across t
 
 ## Availability and privacy
 
-**Version 1.0.1 is in internal testing**, according to the author's update on 5 November 2026. A public download has not been verified, and no closed-testing publication is announced here. This repository contains documentation and selected media, not installers or application source.
+**Available on Google Play for Android.** The public listing, checked on **14 November 2026**, describes the app as free, with no ads, in-app purchases or registration. Check the store for the version and compatibility available for your device.
+
+Screenshots and technical figures in this portfolio refer to the **1.0.1 review of 5 November 2026**; they do not verify every later update.
 
 [Public privacy policy](https://pokechampions-core-privacidad.pages.dev/) · [Author and contact](https://github.com/DiegoARRFRA) · [Feedback and issues](CONTRIBUTING.en.md).
+
+## Frequently asked questions
+
+<details>
+<summary>Does it work offline?</summary>
+
+Yes. Calculations, teams, notes and packaged catalogues run locally. Downloading the app, updating it and opening external links require connectivity. New tournament data arrives through app updates.
+
+</details>
+
+<details>
+<summary>Where are my teams stored?</summary>
+
+On your device. The app does not offer account-based sync or recovery. Read the privacy policy before clearing app data or uninstalling.
+
+</details>
+
+<details>
+<summary>Is there an iPhone, web or PC version?</summary>
+
+The public download linked here is for Android. Other platforms have no published download in this repository or announced launch date.
+
+</details>
+
+<details>
+<summary>How can I help or report a bug?</summary>
+
+Open an issue with the app version, device, steps and expected result. For a calculation, include Pokémon, move, ability, item, stats and effects. Feature suggestions and translation corrections are welcome too.
+
+</details>
 
 ## Under the hood
 

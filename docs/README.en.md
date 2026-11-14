@@ -6,22 +6,22 @@
 
 [← Overview](../README.en.md)
 
-Reviewed on 5 November 2026 for 1.0.1. Start with Features for product scope, Gallery for current emulator/HOST captures and historical videos, and Validation for dated evidence and limits.
+Portfolio updated on 14 November 2026. Technical documentation and screenshots retain their 5 November 2026 review for 1.0.1. Start with Features for product scope, Gallery for current emulator/HOST captures and historical videos, and Validation for dated evidence and limits.
 
 ## Portfolio languages
 
-The overview is translated into the application's eight languages. Detailed documentation in the tables below is available in Spanish and English; the other overviews identify the language of their technical links.
+The overview and gallery are translated into the application's eight languages. Detailed documentation in the tables below is available in Spanish and English; the other overviews identify the language of their technical links.
 
-| Language | Overview |
-| --- | --- |
-| Español | [ES](../README.md) |
-| English | [EN](../README.en.md) |
-| Français | [FR](../README.fr.md) |
-| Deutsch | [DE](../README.de.md) |
-| Italiano | [IT](../README.it.md) |
-| Português | [PT](../README.pt.md) |
-| 日本語 | [JA](../README.ja.md) |
-| 한국어 | [KO](../README.ko.md) |
+| Language | Overview | Gallery |
+| --- | --- | --- |
+| Español | [ES](../README.md) | [ES](GALLERY.md) |
+| English | [EN](../README.en.md) | [EN](GALLERY.en.md) |
+| Français | [FR](../README.fr.md) | [FR](GALLERY.fr.md) |
+| Deutsch | [DE](../README.de.md) | [DE](GALLERY.de.md) |
+| Italiano | [IT](../README.it.md) | [IT](GALLERY.it.md) |
+| Português | [PT](../README.pt.md) | [PT](GALLERY.pt.md) |
+| 日本語 | [JA](../README.ja.md) | [JA](GALLERY.ja.md) |
+| 한국어 | [KO](../README.ko.md) | [KO](GALLERY.ko.md) |
 
 ## Product
 

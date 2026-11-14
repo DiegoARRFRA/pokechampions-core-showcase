@@ -8,11 +8,13 @@
 
 PokeChampions Core se desarrolla en un repositorio de producción privado. Este espacio público documenta producto, arquitectura, validación y trabajo de ingeniería seleccionado.
 
-Puedes abrir una incidencia para aportar sugerencias, fallos reproducibles en una build que estés autorizado a probar, correcciones de documentación, feedback de accesibilidad, correcciones de datos con referencias verificables o propuestas para el escaparate. Este repositorio no ofrece una descarga pública de la aplicación.
+Puedes abrir una incidencia para aportar sugerencias, fallos reproducibles de la aplicación, correcciones de documentación, feedback de accesibilidad, correcciones de datos con referencias verificables o propuestas para el escaparate. La aplicación se descarga desde [Google Play](https://play.google.com/store/apps/details?id=com.pokechampionscore.external); este repositorio aloja su presentación y documentación.
 
 No adjuntes recursos Pokémon protegidos, material filtrado, claves de firma, datasets privados ni código de otros proyectos sin una licencia compatible.
 
 ## Informes de fallos
+
+Usa el [formulario de fallo](https://github.com/DiegoARRFRA/pokechampions-core-showcase/issues/new?template=bug_report.yml) o el [formulario de sugerencia](https://github.com/DiegoARRFRA/pokechampions-core-showcase/issues/new?template=feature_request.yml). Los campos están en español e inglés y puedes responder en tu idioma. Las incidencias son públicas; evita datos personales en textos y capturas.
 
 Incluye versión, dispositivo/sistema operativo, idioma y tema cuando sean relevantes, pasos exactos, resultado esperado y real, y si el fallo persiste tras reiniciar.
 
@@ -24,7 +26,7 @@ Aporta una fuente reproducible para afirmaciones sobre mecánicas, legalidad o r
 
 Las PR públicas pueden mejorar documentación, navegación y utilidades del showcase; no dan acceso a la implementación. No adjuntes auditorías privadas ni grabaciones originales con datos personales.
 
-La portada está disponible en ocho idiomas: `README.md` (español) y `README.<idioma>.md` con los sufijos `en`, `fr`, `de`, `it`, `pt`, `ja` y `ko`. Todas las portadas incluyen un selector recíproco con las ocho versiones. La documentación detallada conserva sus versiones en español (`NOMBRE.md`) e inglés (`NOMBRE.en.md`); los enlaces desde las otras portadas indican que abren contenido en inglés. El [índice de documentación](docs/README.md) reúne las portadas y las parejas técnicas.
+La portada está disponible en ocho idiomas: `README.md` (español) y `README.<idioma>.md` con los sufijos `en`, `fr`, `de`, `it`, `pt`, `ja` y `ko`. Todas las portadas incluyen un selector recíproco con las ocho versiones. La galería también tiene ocho versiones: usa el mismo esquema de sufijos en `docs/GALLERY`, con selector recíproco y textos alternativos traducidos. Actualiza las ocho galerías cuando cambies sus hechos, navegación o descripciones. La documentación técnica detallada conserva sus versiones en español (`NOMBRE.md`) e inglés (`NOMBRE.en.md`); los enlaces técnicos desde las otras portadas y galerías indican que abren contenido en inglés. El [índice de documentación](docs/README.md) reúne las portadas y las parejas técnicas.
 
 Cuando cambies hechos, límites o navegación de la portada, actualiza las ocho versiones; para el resto de documentos, actualiza su pareja español/inglés y cualquier traducción adicional existente. Mantén el selector al principio y enlaza contenido del mismo idioma cuando esté disponible; en caso contrario, indica el idioma de destino. No traduzcas identificadores técnicos, nombres de paquetes, comandos, hashes o rutas de archivos; sí sus explicaciones y textos alternativos.
 
@@ -53,3 +55,7 @@ Una actualización visual puede cambiar legítimamente los hashes al sustituir v
 `-IntegrityOnly` comprueba enlaces locales, parejas de idiomas y todos los archivos multimedia contra el manifiesto fijado (tamaño y SHA-256), sin requerir FFmpeg. No decodifica multimedia ni certifica el renderizado. Utiliza este modo solo con un paquete cuyos bytes exactos ya hayan superado las comprobaciones de decodificación. El modo predeterminado sigue decodificando con `ffmpeg` y `ffprobe` locales. No debe confundirse con `-DocumentsOnly`, que excluye los destinos binarios esperados.
 
 La estructura actual limita la galería a ocho capturas principales, usa tres en portada más el logo y enlaza miniaturas ligeras a vídeos históricos. El verificador también rechaza binarios de app, bases de datos, fuentes y material de firma habituales. Esta lista no sustituye la revisión manual de secretos, datos personales o afirmaciones engañosas.
+
+## Comprobación automática
+
+GitHub Actions ejecuta el verificador completo en cada pull request y actualización de la rama principal: documentos, navegación entre los ocho idiomas y los 23 archivos multimedia. Usa permisos de lectura, sin credenciales persistentes ni secretos. La revisión del contenido y las traducciones sigue siendo manual.

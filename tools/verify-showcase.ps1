@@ -115,10 +115,11 @@ foreach ($file in $documents) {
         if ($img.Value -notmatch '\balt="[^"]+"') { Fail "$(Relative $file.FullName): image needs useful alt text" }
     }
 }
-# The product overview has all eight app languages; detailed docs retain ES/EN.
+# Product overviews and galleries have all eight app languages; technical docs retain ES/EN.
 $languageSuffixes = @('en', 'fr', 'de', 'it', 'pt', 'ja', 'ko')
 $overviewPaths = @('README.md') + @($languageSuffixes | ForEach-Object { "README.$_.md" })
-$presentations = $overviewPaths + @('docs/GALLERY.md', 'docs/GALLERY.en.md')
+$galleryPaths = @('docs/GALLERY.md') + @($languageSuffixes | ForEach-Object { "docs/GALLERY.$_.md" })
+$presentations = $overviewPaths + $galleryPaths
 foreach ($presentation in $presentations) {
     $path = Join-Path $root $presentation
     if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
@@ -128,6 +129,11 @@ foreach ($presentation in $presentations) {
     $body = ReadText $path
     if ($body -match '(?i)\b(TODO|TBD|placeholder|coming soon|pendiente de adjuntar)\b') {
         Fail "$($presentation): unfinished presentation marker"
+    }
+    if ($overviewPaths -ccontains $presentation) {
+        if ($body -notmatch [regex]::Escape('https://play.google.com/store/apps/details?id=com.pokechampionscore.external')) {
+            Fail "$($presentation): missing Google Play download link"
+        }
     }
     $pngCount = [regex]::Matches($body, 'src="[^"]+\.png"').Count
     $gifCount = [regex]::Matches($body, 'src="[^"]+\.gif"').Count
@@ -143,7 +149,7 @@ foreach ($document in $documents) {
     $baseName = $document.BaseName -creplace '\.(en|fr|de|it|pt|ja|ko)$', ''
     $variantNames = @("$baseName.md") + @($languageSuffixes | ForEach-Object { "$baseName.$_.md" })
     $requiredNames = @("$baseName.md", "$baseName.en.md")
-    if ($overviewPaths -ccontains (Relative $document.FullName)) { $requiredNames = $variantNames }
+    if ($presentations -ccontains (Relative $document.FullName)) { $requiredNames = $variantNames }
     foreach ($requiredName in $requiredNames) {
         if (-not (Test-Path -LiteralPath (Join-Path $document.DirectoryName $requiredName) -PathType Leaf)) {
             Fail "$(Relative $document.FullName): missing language counterpart $requiredName"

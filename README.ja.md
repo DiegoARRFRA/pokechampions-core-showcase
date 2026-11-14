@@ -1,4 +1,4 @@
-<p align="right"><a href="README.md">Español</a> · <a href="README.en.md">English</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt.md">Português</a> · <strong>日本語</strong> · <a href="README.ko.md">한국어</a></p>
+<p align="center"><a href="README.md">Español</a> · <a href="README.en.md">English</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt.md">Português</a> · <strong>日本語</strong> · <a href="README.ko.md">한국어</a></p>
 
 # PokeChampions Core
 
@@ -6,13 +6,17 @@
 
 **チームを準備する。対面を理解する。対戦から学ぶ。**
 
+Android · 無料 · 広告なし · アカウント不要 · 8言語対応
+
+**[Google Play でダウンロード](https://play.google.com/store/apps/details?id=com.pokechampionscore.external&hl=ja)** · [スクリーンショットを見る](docs/GALLERY.ja.md) · [フィードバックを送る](https://github.com/DiegoARRFRA/pokechampions-core-showcase/issues/new/choose)
+
 Pokémon Champions のプレイヤー向け Android アプリです。ダメージや素早さを比較し、構成を検討しながら、チーム・メモ・対戦記録をまとめて管理できます。各ツールと同梱カタログは **オフライン** で動作し、アカウント登録やインターネットとの自動同期は必要ありません。
 
 開発者：**[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter / Dart · ソースコード非公開。
 
-[機能](docs/FEATURES.en.md) · [ギャラリー](docs/GALLERY.en.md) · [技術概要](docs/TECHNICAL_OVERVIEW.en.md) · [ドキュメント](docs/README.en.md)
+[機能](docs/FEATURES.en.md) · [ギャラリー](docs/GALLERY.ja.md) · [技術概要](docs/TECHNICAL_OVERVIEW.en.md) · [ドキュメント](docs/README.en.md)
 
-> この紹介ページは日本語です。詳細なドキュメントはスペイン語と英語で公開しており、上のリンクは英語版に移動します。
+> ギャラリーも日本語で読めます。詳細な技術ドキュメントはスペイン語と英語で公開しており、このページのその他のドキュメントリンクは英語版に移動します。
 
 ## アプリの画面
 
@@ -24,7 +28,13 @@ Pokémon Champions のプレイヤー向け Android アプリです。ダメー�
 <a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="複数のフィルターと2種類の技分類を選択したライブラリー"></a>
 </p>
 
-[8枚すべてのスクリーンショットと過去のデモを見る](docs/GALLERY.en.md)。ギャラリーでは、エミュレーターの画像、HOST レンダリング、過去の動画を区別して掲載しています。
+[8枚すべてのスクリーンショットと過去のデモを見る](docs/GALLERY.ja.md)。ギャラリーでは、エミュレーターの画像、HOST レンダリング、過去の動画を区別して掲載しています。
+
+## 3ステップで始める
+
+1. **チームを作成するか、メモに構成を保存します。** タイプ相性を確認し、特性・性格・SPを記録しましょう。
+2. **Versus で対面を確認します。** 攻撃と条件を調整し、EV Lab で耐久配分を検討したり、1HITKO で候補を探したりできます。
+3. **練習して振り返ります。** 先発の選択を練習し、結果と気づいたことを対戦履歴に手動で保存しましょう。
 
 ## 準備と比較のためのツール
 
@@ -43,9 +53,41 @@ Pokémon Champions のプレイヤー向け Android アプリです。ダメー�
 
 ## 公開状況とプライバシー
 
-**バージョン1.0.1は内部テスト中**です。これは開発者が2026年11月5日に伝えた時点の情報です。この紹介の作成時には一般公開ダウンロードを確認しておらず、クローズドテストでの公開も告知していません。このリポジトリにはドキュメントと紹介用メディアを掲載しており、インストーラーやアプリのソースコードは含まれていません。
+**Android 向けに Google Play で公開中です。** **2026年11月14日**に確認した公開ストアページでは、無料・広告なし・アプリ内課金なし・登録不要と案内されています。お使いの端末で利用できるバージョンと対応状況は、ストアで確認してください。
+
+このポートフォリオのスクリーンショットと技術的な数値は、**2026年11月5日のバージョン1.0.1の検証**に基づきます。その後のすべての更新を検証したものではありません。
 
 [公開プライバシーポリシー](https://pokechampions-core-privacidad.pages.dev/) · [開発者と連絡先](https://github.com/DiegoARRFRA) · [フィードバックと不具合報告 — 英語](CONTRIBUTING.en.md)。
+
+## よくある質問
+
+<details>
+<summary>オフラインで使えますか？</summary>
+
+はい。計算、チーム、メモ、同梱カタログは端末内で利用できます。アプリのダウンロード、更新、外部リンクの表示には通信が必要です。新しい大会データはアプリの更新で追加されます。
+
+</details>
+
+<details>
+<summary>チームはどこに保存されますか？</summary>
+
+端末内に保存されます。アカウントによる同期や復元機能はありません。アプリのデータを削除したりアンインストールしたりする前に、プライバシーポリシーをご確認ください。
+
+</details>
+
+<details>
+<summary>iPhone・Web・PC版はありますか？</summary>
+
+ここで案内している一般公開ダウンロードは Android 版です。このリポジトリでは、他のプラットフォーム向けのダウンロードや公開予定日は案内していません。
+
+</details>
+
+<details>
+<summary>不具合の報告や開発への協力はできますか？</summary>
+
+Issue にアプリのバージョン、端末、再現手順、期待した結果を記載してください。計算については、ポケモン、技、特性、持ち物、ステータス、各種効果も必要です。機能の提案や翻訳の修正も歓迎します。
+
+</details>
 
 ## 内部の仕組み
 

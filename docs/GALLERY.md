@@ -1,4 +1,4 @@
-<p align="right"><strong>Español</strong> · <a href="GALLERY.en.md">English</a></p>
+<p align="center"><strong>Español</strong> · <a href="GALLERY.en.md">English</a> · <a href="GALLERY.fr.md">Français</a> · <a href="GALLERY.de.md">Deutsch</a> · <a href="GALLERY.it.md">Italiano</a> · <a href="GALLERY.pt.md">Português</a> · <a href="GALLERY.ja.md">日本語</a> · <a href="GALLERY.ko.md">한국어</a></p>
 
 # PokeChampions Core · Galería
 
