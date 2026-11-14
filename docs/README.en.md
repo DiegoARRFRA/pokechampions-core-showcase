@@ -6,7 +6,7 @@
 
 [← Overview](../README.en.md)
 
-Portfolio updated on 14 November 2026. Technical documentation and screenshots retain their 5 November 2026 review for 1.0.1. Start with Features for product scope, Gallery for current emulator/HOST captures and historical videos, and Validation for dated evidence and limits.
+Portfolio updated on 14 November 2026. Screenshots and multilingual cases were renewed on 14 November for 1.0.1/46; historical technical results retain their original dates. Start with Features for product scope, Gallery for current emulator/HOST captures and historical videos, and Validation for dated evidence and limits.
 
 ## Portfolio languages
 
@@ -42,6 +42,9 @@ The overview and gallery are translated into the application's eight languages. 
 | Engineering decisions | [ES](ENGINEERING.md) | [EN](ENGINEERING.en.md) | Persistence, lifecycle and shared rules. |
 
 ## Quality
+
+[Multilingual review and reproducible matrix](SCENARIOS.en.md): 64 new images, evidence modalities, defects and limits.
+
 
 | Document | Español | English | Contents |
 | --- | --- | --- | --- |

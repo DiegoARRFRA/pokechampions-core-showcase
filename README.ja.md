@@ -12,7 +12,7 @@ Android · 無料 · 広告なし · アカウント不要 · 8言語対応
 
 Pokémon Champions のプレイヤー向け Android アプリです。ダメージや素早さを比較し、構成を検討しながら、チーム・メモ・対戦記録をまとめて管理できます。各ツールと同梱カタログは **オフライン** で動作し、アカウント登録やインターネットとの自動同期は必要ありません。
 
-開発者：**[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter / Dart · ソースコード非公開。
+開発者：**[Diego de Arriba](https://github.com/DiegoARRFRA)** · **RakullDev** · Flutter / Dart · ソースコード非公開。
 
 [機能](docs/FEATURES.en.md) · [ギャラリー](docs/GALLERY.ja.md) · [技術概要](docs/TECHNICAL_OVERVIEW.en.md) · [ドキュメント](docs/README.en.md)
 
@@ -20,15 +20,18 @@ Pokémon Champions のプレイヤー向け Android アプリです。ダメー�
 
 ## アプリの画面
 
-ホーム画面、Versus の計算結果、技フィルターの例です。**2026年11月5日**に Android エミュレーターで撮影した **1.0.1** の実際のスクリーンショットで、画面の表示言語はスペイン語です。画像を選択すると原寸で表示できます。
+ホーム、Versusの実際の計算結果、技の絞り込みを紹介します。**2026年11月14日**に撮影したバージョン**1.0.1**の新しい画像で、画面は**日本語**です。各画像の実行環境はギャラリーに記載しています。画像を選択すると拡大できます。
 
 <p>
-<a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="現在のロゴと各ツールへのショートカットがあるダークテーマのホーム画面"></a>
-<a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus のすてみタックルの計算結果：45〜54 HP のダメージと KO の条件"></a>
-<a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="複数のフィルターと2種類の技分類を選択したライブラリー"></a>
+<a href="media/screenshots/ja/home.webp"><img src="media/screenshots/ja/home.webp" width="220" alt="ホーム · Android emulator · ダークテーマの現在のロゴとツール一覧。"></a>
+<a href="media/screenshots/ja/versus-result.webp"><img src="media/screenshots/ja/versus-result.webp" width="220" alt="Versus · HOST · フシギバナのギガドレインをカメックスに使用：84〜98 HPのダメージ。計算上は2回の使用でKO可能・確定となります。"></a>
+<a href="media/screenshots/ja/library.webp"><img src="media/screenshots/ja/library.webp" width="220" alt="ライブラリー · Android emulator · 技と習得ポケモンの検索。物理と特殊を選択したこのカタログでは334件を表示します。"></a>
 </p>
 
 [8枚すべてのスクリーンショットと過去のデモを見る](docs/GALLERY.ja.md)。ギャラリーでは、エミュレーターの画像、HOST レンダリング、過去の動画を区別して掲載しています。
+
+
+[多言語の検証と再現可能なケース — 英語](docs/SCENARIOS.en.md)
 
 ## 3ステップで始める
 
@@ -55,7 +58,7 @@ Pokémon Champions のプレイヤー向け Android アプリです。ダメー�
 
 **Android 向けに Google Play で公開中です。** **2026年11月14日**に確認した公開ストアページでは、無料・広告なし・アプリ内課金なし・登録不要と案内されています。お使いの端末で利用できるバージョンと対応状況は、ストアで確認してください。
 
-このポートフォリオのスクリーンショットと技術的な数値は、**2026年11月5日のバージョン1.0.1の検証**に基づきます。その後のすべての更新を検証したものではありません。
+画像は公開版**1.0.1**の画面です。過去のテスト結果の数値は、それぞれの実施日と実行環境に基づくものです。
 
 [公開プライバシーポリシー](https://pokechampions-core-privacidad.pages.dev/) · [開発者と連絡先](https://github.com/DiegoARRFRA) · [フィードバックと不具合報告 — 英語](CONTRIBUTING.en.md)。
 

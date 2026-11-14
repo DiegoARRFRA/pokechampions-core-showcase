@@ -4,7 +4,13 @@
 
 [← Overview](../README.en.md) · [Technical overview](TECHNICAL_OVERVIEW.en.md) · [Documentation](README.en.md)
 
-Documentation cutoff: **5 November 2026**. Each result belongs to its version, platform and execution mode; focused campaigns are not added to a global suite, and HOST results are not extrapolated to physical Android. Full records remain private.
+Documentation reviewed **14 November 2026**; each campaign retains its original date. Each result belongs to its version, platform and execution mode; focused campaigns are not added to a global suite, and HOST results are not extrapolated to physical Android. Full records remain private.
+
+## Multilingual review, 14 November
+
+[Cases and full matrix](SCENARIOS.en.md). Eight languages including pt-PT, 64 current screenshots (24 Android and 40 HOST), 16 extra visual variants, 88 interaction/storage passes across eight separate runs and 10 focused text-fix regressions. App fixes remain proposed for review, without a new app release. Analysis of lib/test passed after completing the review checkout dependencies; earlier attempts remain archived. These figures are not added to the 5 November global suite.
+
+Focused shared regression run on the published revision: **207 passes, 0 failures, exit 0; 8 min 36 s**, 12 files. Covers independent Versus audits, 1HITKO minimum/lifecycle contracts, Battle destinations/selectors, notes, filters, turn entry, Openings, History SQLite and EV Lab/Master clarity. Not a global suite or an eight-language repetition of every case. Proposed wording fixes do not change formulas.
 
 ## 1.0.1 evidence from 5 November
 

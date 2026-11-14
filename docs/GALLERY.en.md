@@ -4,49 +4,49 @@
 
 [← Overview](../README.en.md) · [Features](FEATURES.en.md) · [Documentation](README.en.md)
 
-Eight authentic screenshots from **5 November 2026**, Spanish UI. **Android emulator** identifies release 1.0.1/46 on API 36 x86_64; **HOST** identifies real Flutter widgets rendered on Windows from that release's source snapshot, with fictional data. No physical phone was used for this refresh. Select an image to view full resolution.
+Eight new screenshots from **14 November 2026**, with the interface in **English**, from **1.0.1**. **HOST** means real Flutter widgets rendered on Windows with that release's catalogs and engine and isolated synthetic data. **Android emulator** means release 1.0.1/46 on API 36 x86_64. Each caption and the manifest identify its origin; none is a physical-phone screenshot.
 
-Only system bars were cropped from emulator images. HOST images contain no Android system chrome. All were downscaled, never enlarged; no interface or result was reconstructed. [Provenance and processing](../media/README.en.md).
+The same Pokémon and configurations are used across all eight languages. Processing is limited to system-bar cropping where applicable, proportional downscaling and WebP compression. No generated interfaces or translated pixels. [Cases and limits](SCENARIOS.en.md) · [Provenance](../media/README.en.md).
 
 ## Home and damage
 
 <p>
-<a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="280" alt="Home · Current logo and tool shortcuts in the dark theme."></a>
-<a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="280" alt="Versus · Double-Edge: 45–54 HP damage, with uses for possible and guaranteed KO."></a>
+<a href="../media/screenshots/en/home.webp"><img src="../media/screenshots/en/home.webp" width="280" alt="Home · Android emulator · Current logo and tools in the dark theme."></a>
+<a href="../media/screenshots/en/versus-result.webp"><img src="../media/screenshots/en/versus-result.webp" width="280" alt="Versus · HOST · Venusaur uses Giga Drain against Blastoise: 84–98 HP and possible and guaranteed KO in two calculated uses."></a>
 </p>
 
-- **Home · Android emulator.** Current logo and tool shortcuts in the dark theme.
-- **Versus · Android emulator.** Double-Edge: 45–54 HP damage, with uses for possible and guaranteed KO.
+- **Home · Android emulator.** Current logo and tools in the dark theme.
+- **Versus · HOST.** Venusaur uses Giga Drain against Blastoise: 84–98 HP and possible and guaranteed KO in two calculated uses.
 
 ## Scenarios and search
 
 <p>
-<a href="../media/screenshots/battle.png"><img src="../media/screenshots/battle.png" width="280" alt="Battle · Actual entry-weather and speed analysis; unknown SP produce ranges and an estimated tie."></a>
-<a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="280" alt="1HITKO · Scrolled view after search completion: 206 candidates in this scenario and sorting/filter controls. This is not a universal count."></a>
+<a href="../media/screenshots/en/battle.webp"><img src="../media/screenshots/en/battle.webp" width="280" alt="Battle · HOST · Known Speed and manually selected sun in a doubles scenario. No turns are executed."></a>
+<a href="../media/screenshots/en/1hitko-results.webp"><img src="../media/screenshots/en/1hitko-results.webp" width="280" alt="1HITKO · HOST · Completed search against Archaludon: 206 candidates in this scenario, with filters and sorting. Not a universal total."></a>
 </p>
 
-- **Battle · HOST.** Actual entry-weather and speed analysis; unknown SP produce ranges and an estimated tie.
-- **1HITKO · Android emulator.** Scrolled view after search completion: 206 candidates in this scenario and sorting/filter controls. This is not a universal count.
+- **Battle · HOST.** Known Speed and manually selected sun in a doubles scenario. No turns are executed.
+- **1HITKO · HOST.** Completed search against Archaludon: 206 candidates in this scenario, with filters and sorting. Not a universal total.
 
 ## Teams and provenance
 
 <p>
-<a href="../media/screenshots/team-coverage.png"><img src="../media/screenshots/team-coverage.png" width="280" alt="Defensive coverage · Matrix for a six-member example team: weaknesses, resistances and responses by type."></a>
-<a href="../media/screenshots/tournaments.png"><img src="../media/screenshots/tournaments.png" width="280" alt="Tournaments · Tournament selector with dates, historical regulation and multiple selection. The 2027 labels belong to official season event names."></a>
+<a href="../media/screenshots/en/team-coverage.webp"><img src="../media/screenshots/en/team-coverage.webp" width="280" alt="Defensive coverage · HOST · Defensive matrix for a synthetic six-member team: weaknesses, resistances and immunities."></a>
+<a href="../media/screenshots/en/tournaments.webp"><img src="../media/screenshots/en/tournaments.webp" width="280" alt="Tournaments · Android emulator · Packaged tournament catalog with event dates and historical regulations. Season names may include 2027."></a>
 </p>
 
-- **Defensive coverage · HOST.** Matrix for a six-member example team: weaknesses, resistances and responses by type.
-- **Tournaments · Android emulator.** Tournament selector with dates, historical regulation and multiple selection. The 2027 labels belong to official season event names.
+- **Defensive coverage · HOST.** Defensive matrix for a synthetic six-member team: weaknesses, resistances and immunities.
+- **Tournaments · Android emulator.** Packaged tournament catalog with event dates and historical regulations. Season names may include 2027.
 
 ## Configurations and reference
 
 <p>
-<a href="../media/screenshots/notes.png"><img src="../media/screenshots/notes.png" width="280" alt="Notes · Two fictional Venusaur configurations in their group, with nature and SP spread. They are not competitive recommendations."></a>
-<a href="../media/screenshots/library.png"><img src="../media/screenshots/library.png" width="280" alt="Library · Moves and users with two applied categories: 334 results in this selection."></a>
+<a href="../media/screenshots/en/notes.webp"><img src="../media/screenshots/en/notes.webp" width="280" alt="Notes · HOST · Two synthetic Venusaur configurations with nature and SP. These are not competitive recommendations."></a>
+<a href="../media/screenshots/en/library.webp"><img src="../media/screenshots/en/library.webp" width="280" alt="Library · Android emulator · Moves and users with Physical and Special selected: 334 results in this catalog."></a>
 </p>
 
-- **Notes · HOST.** Two fictional Venusaur configurations in their group, with nature and SP spread. They are not competitive recommendations.
-- **Library · Android emulator.** Moves and users with two applied categories: 334 results in this selection.
+- **Notes · HOST.** Two synthetic Venusaur configurations with nature and SP. These are not competitive recommendations.
+- **Library · Android emulator.** Moves and users with Physical and Special selected: 334 results in this catalog.
 
 ## Historical video demos
 

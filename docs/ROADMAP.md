@@ -12,6 +12,10 @@ Batalla con carga de configuraciones y ajustes temporales; Versus, Modo Maestro 
 
 Estas funciones no se presentan como trabajo futuro. Su existencia tampoco elimina las limitaciones de exactitud, datos incompletos y plataformas indicadas en la validación.
 
+## Correcciones propuestas el 14 de noviembre
+
+Mensaje neutral para SP desconocidos en ocho idiomas y orden de tres interpolaciones japonesas en Versus. Reproducidos y corregidos en una rama privada de revisión; no integrados ni distribuidos como nueva app. Las capturas actuales conservan la release publicada. [Evidencia y límites](SCENARIOS.md).
+
 ## Por comprobar o resolver
 
 | Área | Siguiente comprobación concreta |

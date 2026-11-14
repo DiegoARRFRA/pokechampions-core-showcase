@@ -12,7 +12,7 @@ Android · Grátis · Sem anúncios · Sem conta · 8 idiomas
 
 Uma aplicação Android para jogadores de Pokémon Champions que querem comparar dano e Velocidade, explorar configurações e ter sempre consigo as suas equipas, notas e resultados. As ferramentas e os catálogos incluídos funcionam **offline**, sem conta nem sincronização automática com a Internet.
 
-Desenvolvida por **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter e Dart · Código-fonte privado.
+Desenvolvida por **[Diego de Arriba](https://github.com/DiegoARRFRA)** · **RakullDev** · Flutter e Dart · Código-fonte privado.
 
 [Funcionalidades](docs/FEATURES.en.md) · [Galeria](docs/GALLERY.pt.md) · [Visão técnica](docs/TECHNICAL_OVERVIEW.en.md) · [Documentação](docs/README.en.md)
 
@@ -20,15 +20,18 @@ Desenvolvida por **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutte
 
 ## Um olhar sobre a aplicação
 
-Ecrã inicial, um cálculo Versus e filtros de movimentos. Capturas autênticas da versão **1.0.1**, feitas num emulador Android em **5 de novembro de 2026**, com a interface em espanhol. Seleciona uma imagem para a veres em tamanho completo.
+Início, um cálculo real no Versus e filtros de movimentos. Novas capturas de **14 de novembro de 2026**, versão **1.0.1**, com interface em **português de Portugal**. A galeria identifica o ambiente de cada imagem. Seleciona uma imagem para a ampliar.
 
 <p>
-<a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Ecrã inicial escuro com o logótipo atual e atalhos para as ferramentas"></a>
-<a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Resultado Versus de Double-Edge: 45–54 HP de dano e condições de KO"></a>
-<a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="Biblioteca com filtros combinados e duas categorias de movimentos selecionadas"></a>
+<a href="media/screenshots/pt/home.webp"><img src="media/screenshots/pt/home.webp" width="220" alt="Início · Android emulator · Logótipo atual e ferramentas no tema escuro."></a>
+<a href="media/screenshots/pt/versus-result.webp"><img src="media/screenshots/pt/versus-result.webp" width="220" alt="Versus · HOST · Venusaur usa Giga Drain contra Blastoise: 84–98 HP e KO possível e garantido em duas utilizações calculadas."></a>
+<a href="media/screenshots/pt/library.webp"><img src="media/screenshots/pt/library.webp" width="220" alt="Biblioteca · Android emulator · Movimentos e utilizadores com Physical e Special selecionados: 334 resultados neste catálogo. Os termos oficiais retidos mantêm-se em inglês."></a>
 </p>
 
 [Ver as oito capturas e as demonstrações históricas](docs/GALLERY.pt.md). A galeria distingue as capturas do emulador, as renderizações HOST e os vídeos anteriores.
+
+
+[Revisão multilingue e casos reproduzíveis — inglês](docs/SCENARIOS.en.md)
 
 ## Começa em três passos
 
@@ -55,7 +58,7 @@ Esta revisão destaca as notas agrupadas por Pokémon, o carregamento de configu
 
 **Disponível no Google Play para Android.** A ficha pública, consultada em **14 de novembro de 2026**, apresenta a aplicação como gratuita, sem anúncios, compras integradas ou registo. Consulta a loja para saberes a versão e a compatibilidade disponíveis para o teu dispositivo.
 
-As capturas e os dados técnicos deste portfolio correspondem à revisão **1.0.1 de 5 de novembro de 2026**; não verificam cada atualização posterior.
+As capturas mostram a versão pública **1.0.1**. Os números históricos dos testes mantêm as respetivas datas e ambientes.
 
 [Política de privacidade pública](https://pokechampions-core-privacidad.pages.dev/) · [Autor e contacto](https://github.com/DiegoARRFRA) · [Sugestões e problemas — inglês](CONTRIBUTING.en.md).
 

@@ -4,7 +4,13 @@
 
 [← Portada](../README.md) · [Ficha técnica](TECHNICAL_OVERVIEW.md) · [Documentación](README.md)
 
-Corte documental: **5 de noviembre de 2026**. Cada resultado pertenece a su versión, plataforma y modalidad; no se suman campañas focales a una suite global ni se extrapola HOST a Android físico. Los registros completos permanecen privados.
+Revisión documental: **14 de noviembre de 2026**; cada campaña conserva su fecha. Cada resultado pertenece a su versión, plataforma y modalidad; no se suman campañas focales a una suite global ni se extrapola HOST a Android físico. Los registros completos permanecen privados.
+
+## Revisión multilingüe del 14 de noviembre
+
+[Casos y matriz completa](SCENARIOS.md). Ocho idiomas, variante pt-PT, 64 capturas actuales (24 Android y 40 HOST), 16 variantes visuales adicionales, 88 pruebas de interacción/almacenamiento en ocho ejecuciones separadas y 10 regresiones focales para las dos correcciones de texto. Estas correcciones están propuestas para revisión y no publicadas en la app. Análisis de lib/test sin incidencias tras completar las dependencias del checkout de revisión. Los intentos previos se conservan. Ninguna cifra se añade a la suite global del 05/11.
+
+Batería compartida focal sobre la revisión publicada: **207 pases, 0 fallos, salida 0; 8 min 36 s**, 12 archivos. Incluye auditorías independientes de Versus, contrato mínimo y ciclo de vida de 1HITKO, selectores/destinos de Batalla, notas, filtros, inicio de turno, Entradas, SQLite de Histórico y EV Lab/Modo Maestro. No es una suite global ni repite cada caso en ocho idiomas. Las fórmulas no cambiaron en la propuesta de textos.
 
 ## Evidencia de 1.0.1 del 5 de noviembre
 

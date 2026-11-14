@@ -6,7 +6,7 @@
 
 [← Portada](../README.md)
 
-Portfolio actualizado el 14 de noviembre de 2026. La documentación técnica y las capturas conservan su revisión del 5 de noviembre de 2026 para 1.0.1. Funciones explica el alcance del producto; Galería distingue capturas actuales de emulador/HOST y vídeos históricos; Validación recoge evidencia fechada y límites.
+Portfolio actualizado el 14 de noviembre de 2026. Las capturas y los casos multilingües se renovaron el 14 de noviembre para 1.0.1/46; los resultados técnicos históricos conservan sus fechas. Funciones explica el alcance del producto; Galería distingue capturas actuales de emulador/HOST y vídeos históricos; Validación recoge evidencia fechada y límites.
 
 ## Idiomas del portfolio
 
@@ -42,6 +42,9 @@ La presentación y la galería están traducidas a los ocho idiomas de la aplica
 | Decisiones de ingeniería | [ES](ENGINEERING.md) | [EN](ENGINEERING.en.md) | Persistencia, ciclo de vida y reglas compartidas. |
 
 ## Calidad
+
+[Revisión multilingüe y matriz reproducible](SCENARIOS.md): 64 imágenes nuevas, modalidad de cada evidencia, incidencias y límites.
+
 
 | Documento | Español | English | Contenido |
 | --- | --- | --- | --- |

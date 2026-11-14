@@ -12,21 +12,24 @@ Android · Free · No ads · No account · 8 languages
 
 An Android application for Pokémon Champions players who want to compare damage and speed, explore builds and keep their teams, notes and results together. Its tools and packaged catalogues work **offline**, without an account or automatic Internet synchronisation.
 
-Developed by **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter and Dart · Private source code.
+Developed by **[Diego de Arriba](https://github.com/DiegoARRFRA)** · **RakullDev** · Flutter and Dart · Private source code.
 
 [Features](docs/FEATURES.en.md) · [Gallery](docs/GALLERY.en.md) · [How it is built](docs/TECHNICAL_OVERVIEW.en.md) · [Documentation](docs/README.en.md)
 
 ## A look at the application
 
-Home, a Versus calculation and move filters. Authentic **1.0.1** screenshots from an Android emulator on **5 November 2026**, showing the Spanish interface. Select an image to view it at full size.
+Home, a real Versus calculation and move filters. New screenshots from **14 November 2026**, version **1.0.1**, with the interface in **English**. The gallery identifies the environment for each image. Select one to enlarge it.
 
 <p>
-<a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Dark home screen with the current logo and tool shortcuts"></a>
-<a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus Double-Edge result: 45–54 HP damage and KO conditions"></a>
-<a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="Library with combined filters and two selected attack categories"></a>
+<a href="media/screenshots/en/home.webp"><img src="media/screenshots/en/home.webp" width="220" alt="Home · Android emulator · Current logo and tools in the dark theme."></a>
+<a href="media/screenshots/en/versus-result.webp"><img src="media/screenshots/en/versus-result.webp" width="220" alt="Versus · HOST · Venusaur uses Giga Drain against Blastoise: 84–98 HP and possible and guaranteed KO in two calculated uses."></a>
+<a href="media/screenshots/en/library.webp"><img src="media/screenshots/en/library.webp" width="220" alt="Library · Android emulator · Moves and users with Physical and Special selected: 334 results in this catalog."></a>
 </p>
 
 [View all eight screenshots and historical demos](docs/GALLERY.en.md). The gallery distinguishes emulator captures, HOST rendering and earlier videos.
+
+
+[Multilingual review and reproducible cases](docs/SCENARIOS.en.md)
 
 ## Get started in three steps
 
@@ -53,7 +56,7 @@ This review highlights notes grouped by Pokémon, configuration loading across t
 
 **Available on Google Play for Android.** The public listing, checked on **14 November 2026**, describes the app as free, with no ads, in-app purchases or registration. Check the store for the version and compatibility available for your device.
 
-Screenshots and technical figures in this portfolio refer to the **1.0.1 review of 5 November 2026**; they do not verify every later update.
+The screenshots show the published **1.0.1** release. Historical test figures retain their own dates and environments.
 
 [Public privacy policy](https://pokechampions-core-privacidad.pages.dev/) · [Author and contact](https://github.com/DiegoARRFRA) · [Feedback and issues](CONTRIBUTING.en.md).
 
