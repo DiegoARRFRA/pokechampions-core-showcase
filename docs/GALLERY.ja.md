@@ -4,49 +4,49 @@
 
 [← 紹介ページ](../README.ja.md) · [機能 — 英語](FEATURES.en.md) · [ドキュメント — 英語](README.en.md)
 
-**2026年11月5日**に作成した8枚の実際のスクリーンショットです。画面はスペイン語です。**Android エミュレーター**は API 36 x86_64 上のバージョン1.0.1/46を示します。**HOST**は同バージョンのソースから、架空のデータを使い Windows 上で描画した実際の Flutter ウィジェットを示します。この画像更新では実機のスマートフォンを使用していません。画像を選択すると元の解像度で開けます。
+バージョン**1.0.1**の**日本語**画面を、**2026年11月14日**に新しく撮影した8枚の画像です。**HOST**は、このバージョンのカタログと計算処理、独立した架空のデータを使用し、Windows上で描画した実際のFlutterウィジェットを示します。**Android エミュレーター**はAPI 36 x86_64上のrelease 1.0.1/46を示します。各説明とマニフェストに出典を記載しています。実機スマートフォンの画像ではありません。
 
-エミュレーター画像ではシステムバーのみを切り取っています。HOST画像には Android のシステム表示は含まれません。すべて縮小のみで、拡大はしていません。画面や結果を作り直した画像ではありません。 [出典と加工方法 — 英語](../media/README.en.md).
+8言語で同じポケモンと設定を使用しています。加工は必要な場合のシステムバーの切り取り、縦横比を保った縮小、WebP圧縮のみです。生成した画面や画像内の文字の置き換えはありません。[テストケースと制限 — 英語](SCENARIOS.en.md) · [出典 — 英語](../media/README.en.md)。
 
 ## ホームとダメージ
 
 <p>
-<a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="280" alt="ホーム · ダークテーマで表示した現在のロゴと各ツールへのショートカット。"></a>
-<a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="280" alt="Versus · すてみタックル：45〜54 HPのダメージと、KOの可能性がある回数・確定する回数。"></a>
+<a href="../media/screenshots/ja/home.webp"><img src="../media/screenshots/ja/home.webp" width="280" alt="ホーム · Android emulator · ダークテーマの現在のロゴとツール一覧。"></a>
+<a href="../media/screenshots/ja/versus-result.webp"><img src="../media/screenshots/ja/versus-result.webp" width="280" alt="Versus · HOST · フシギバナのギガドレインをカメックスに使用：84〜98 HPのダメージ。計算上は2回の使用でKO可能・確定となります。"></a>
 </p>
 
-- **ホーム · Android エミュレーター.** ダークテーマで表示した現在のロゴと各ツールへのショートカット。
-- **Versus · Android エミュレーター.** すてみタックル：45〜54 HPのダメージと、KOの可能性がある回数・確定する回数。
+- **ホーム · Android emulator.** ダークテーマの現在のロゴとツール一覧。
+- **Versus · HOST.** フシギバナのギガドレインをカメックスに使用：84〜98 HPのダメージ。計算上は2回の使用でKO可能・確定となります。
 
 ## 状況分析と検索
 
 <p>
-<a href="../media/screenshots/battle.png"><img src="../media/screenshots/battle.png" width="280" alt="バトル · 場に出た際の天候と素早さの実際の分析。SPが不明な場合は範囲と推定の同速を表示します。"></a>
-<a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="280" alt="1HITKO · 検索完了後にスクロールした画面。この条件では206件の候補があり、並べ替えと絞り込みを利用できます。常に206件になるわけではありません。"></a>
+<a href="../media/screenshots/ja/battle.webp"><img src="../media/screenshots/ja/battle.webp" width="280" alt="バトル · HOST · 素早さが既知で、晴れを手動選択したダブルバトルの状況。ターンを実行する機能ではありません。"></a>
+<a href="../media/screenshots/ja/1hitko-results.webp"><img src="../media/screenshots/ja/1hitko-results.webp" width="280" alt="1HITKO · HOST · ブリジュラスに対する検索完了画面。この条件では206件の候補があり、絞り込みと並べ替えを利用できます。常に同じ件数になるわけではありません。"></a>
 </p>
 
-- **バトル · HOST.** 場に出た際の天候と素早さの実際の分析。SPが不明な場合は範囲と推定の同速を表示します。
-- **1HITKO · Android エミュレーター.** 検索完了後にスクロールした画面。この条件では206件の候補があり、並べ替えと絞り込みを利用できます。常に206件になるわけではありません。
+- **バトル · HOST.** 素早さが既知で、晴れを手動選択したダブルバトルの状況。ターンを実行する機能ではありません。
+- **1HITKO · HOST.** ブリジュラスに対する検索完了画面。この条件では206件の候補があり、絞り込みと並べ替えを利用できます。常に同じ件数になるわけではありません。
 
 ## チームとデータの出典
 
 <p>
-<a href="../media/screenshots/team-coverage.png"><img src="../media/screenshots/team-coverage.png" width="280" alt="防御面のタイプ相性 · 6匹のサンプルチームの表。弱点、耐性、タイプ別の対応を示します。"></a>
-<a href="../media/screenshots/tournaments.png"><img src="../media/screenshots/tournaments.png" width="280" alt="大会 · 日付、当時のレギュレーション、複数選択に対応した大会選択画面。2027の表記はシーズンの公式大会名に含まれるものです。"></a>
+<a href="../media/screenshots/ja/team-coverage.webp"><img src="../media/screenshots/ja/team-coverage.webp" width="280" alt="防御面のタイプ相性 · HOST · 架空の6匹のチームの防御面の表。弱点、耐性、無効を表示します。"></a>
+<a href="../media/screenshots/ja/tournaments.webp"><img src="../media/screenshots/ja/tournaments.webp" width="280" alt="大会 · Android emulator · 収録された大会カタログの日付と当時のレギュレーション。シーズン名に2027が含まれる場合があります。"></a>
 </p>
 
-- **防御面のタイプ相性 · HOST.** 6匹のサンプルチームの表。弱点、耐性、タイプ別の対応を示します。
-- **大会 · Android エミュレーター.** 日付、当時のレギュレーション、複数選択に対応した大会選択画面。2027の表記はシーズンの公式大会名に含まれるものです。
+- **防御面のタイプ相性 · HOST.** 架空の6匹のチームの防御面の表。弱点、耐性、無効を表示します。
+- **大会 · Android emulator.** 収録された大会カタログの日付と当時のレギュレーション。シーズン名に2027が含まれる場合があります。
 
 ## 構成と資料
 
 <p>
-<a href="../media/screenshots/notes.png"><img src="../media/screenshots/notes.png" width="280" alt="メモ · フシギバナの架空の構成2件を、性格・SP配分とともにグループ表示。対戦向けの推奨構成ではありません。"></a>
-<a href="../media/screenshots/library.png"><img src="../media/screenshots/library.png" width="280" alt="ライブラリー · 技と習得ポケモンの検索。2種類の分類を適用したこの選択では334件を表示しています。"></a>
+<a href="../media/screenshots/ja/notes.webp"><img src="../media/screenshots/ja/notes.webp" width="280" alt="メモ · HOST · 性格とSP配分を持つフシギバナの架空の構成2件。対戦向けの推奨構成ではありません。"></a>
+<a href="../media/screenshots/ja/library.webp"><img src="../media/screenshots/ja/library.webp" width="280" alt="ライブラリー · Android emulator · 技と習得ポケモンの検索。物理と特殊を選択したこのカタログでは334件を表示します。"></a>
 </p>
 
-- **メモ · HOST.** フシギバナの架空の構成2件を、性格・SP配分とともにグループ表示。対戦向けの推奨構成ではありません。
-- **ライブラリー · Android エミュレーター.** 技と習得ポケモンの検索。2種類の分類を適用したこの選択では334件を表示しています。
+- **メモ · HOST.** 性格とSP配分を持つフシギバナの架空の構成2件。対戦向けの推奨構成ではありません。
+- **ライブラリー · Android emulator.** 技と習得ポケモンの検索。物理と特殊を選択したこのカタログでは334件を表示します。
 
 ## 過去の動画デモ
 

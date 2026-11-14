@@ -4,49 +4,49 @@
 
 [← 소개](../README.ko.md) · [기능 — 영어](FEATURES.en.md) · [문서 — 영어](README.en.md)
 
-**2026년 11월 5일**의 실제 스크린샷 8장입니다. 화면 언어는 스페인어입니다. **Android 에뮬레이터**는 API 36 x86_64의 버전 1.0.1/46을 뜻합니다. **HOST**는 해당 버전 소스의 실제 Flutter 위젯을 가상 데이터와 함께 Windows에서 렌더링한 화면입니다. 이번 이미지 제작에는 실제 스마트폰을 사용하지 않았습니다. 이미지를 선택하면 전체 해상도로 열립니다.
+버전 **1.0.1**의 **한국어** 화면을 **2026년 11월 14일**에 새로 촬영한 이미지 8장입니다. **HOST**는 해당 버전의 카탈로그와 계산 엔진, 분리된 가상 데이터를 사용해 Windows에서 렌더링한 실제 Flutter 위젯입니다. **Android 에뮬레이터**는 API 36 x86_64의 release 1.0.1/46을 뜻합니다. 각 설명과 매니페스트에 출처를 표시합니다. 실제 스마트폰에서 촬영한 이미지는 아닙니다.
 
-에뮬레이터 이미지에서는 시스템 표시줄만 잘랐습니다. HOST 이미지에는 Android 시스템 UI가 없습니다. 모든 이미지는 축소만 했으며 확대하지 않았습니다. 인터페이스나 결과를 재구성하지 않았습니다. [출처와 처리 방법 — 영어](../media/README.en.md).
+8개 언어에서 같은 포켓몬과 설정을 사용합니다. 필요한 경우 시스템 표시줄 자르기, 비율을 유지한 축소, WebP 압축만 적용합니다. 생성된 인터페이스나 이미지 속 텍스트 번역은 없습니다. [테스트 사례 및 한계 — 영어](SCENARIOS.en.md) · [출처 — 영어](../media/README.en.md).
 
 ## 홈과 데미지
 
 <p>
-<a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="280" alt="홈 · 다크 테마의 현재 로고와 도구 바로가기."></a>
-<a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="280" alt="Versus · 이판사판태클: 45~54 HP 데미지와 KO 가능·확정에 필요한 횟수."></a>
+<a href="../media/screenshots/ko/home.webp"><img src="../media/screenshots/ko/home.webp" width="280" alt="홈 · Android emulator · 다크 테마의 현재 로고와 도구 목록."></a>
+<a href="../media/screenshots/ko/versus-result.webp"><img src="../media/screenshots/ko/versus-result.webp" width="280" alt="Versus · HOST · 이상해꽃이 거북왕에게 기가드레인을 사용합니다. 데미지 84~98 HP, 계산상 2회 사용으로 KO 가능·확정입니다."></a>
 </p>
 
-- **홈 · Android 에뮬레이터.** 다크 테마의 현재 로고와 도구 바로가기.
-- **Versus · Android 에뮬레이터.** 이판사판태클: 45~54 HP 데미지와 KO 가능·확정에 필요한 횟수.
+- **홈 · Android emulator.** 다크 테마의 현재 로고와 도구 목록.
+- **Versus · HOST.** 이상해꽃이 거북왕에게 기가드레인을 사용합니다. 데미지 84~98 HP, 계산상 2회 사용으로 KO 가능·확정입니다.
 
 ## 상황 분석과 검색
 
 <p>
-<a href="../media/screenshots/battle.png"><img src="../media/screenshots/battle.png" width="280" alt="배틀 · 등장 시 날씨와 스피드의 실제 분석. 알 수 없는 SP는 범위와 추정 동속으로 표시합니다."></a>
-<a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="280" alt="1HITKO · 검색 완료 후 스크롤한 화면: 이 조건의 후보 206개와 정렬·필터 기능. 모든 조건에서 같은 개수가 나오는 것은 아닙니다."></a>
+<a href="../media/screenshots/ko/battle.webp"><img src="../media/screenshots/ko/battle.webp" width="280" alt="배틀 · HOST · 스피드가 알려져 있고 쾌청을 수동 선택한 더블 배틀 상황입니다. 턴을 실행하지 않습니다."></a>
+<a href="../media/screenshots/ko/1hitko-results.webp"><img src="../media/screenshots/ko/1hitko-results.webp" width="280" alt="1HITKO · HOST · 브리두라스에 대한 검색 완료 화면입니다. 이 상황에서 후보 206개와 필터·정렬을 표시하며, 항상 같은 수가 나오는 것은 아닙니다."></a>
 </p>
 
-- **배틀 · HOST.** 등장 시 날씨와 스피드의 실제 분석. 알 수 없는 SP는 범위와 추정 동속으로 표시합니다.
-- **1HITKO · Android 에뮬레이터.** 검색 완료 후 스크롤한 화면: 이 조건의 후보 206개와 정렬·필터 기능. 모든 조건에서 같은 개수가 나오는 것은 아닙니다.
+- **배틀 · HOST.** 스피드가 알려져 있고 쾌청을 수동 선택한 더블 배틀 상황입니다. 턴을 실행하지 않습니다.
+- **1HITKO · HOST.** 브리두라스에 대한 검색 완료 화면입니다. 이 상황에서 후보 206개와 필터·정렬을 표시하며, 항상 같은 수가 나오는 것은 아닙니다.
 
 ## 팀과 데이터 출처
 
 <p>
-<a href="../media/screenshots/team-coverage.png"><img src="../media/screenshots/team-coverage.png" width="280" alt="방어 타입 상성 · 포켓몬 6마리로 구성한 예시 팀의 약점, 내성, 타입별 대응 표."></a>
-<a href="../media/screenshots/tournaments.png"><img src="../media/screenshots/tournaments.png" width="280" alt="대회 · 날짜, 당시 레귤레이션, 다중 선택을 지원하는 대회 선택 화면. 2027 표기는 해당 시즌의 공식 대회 이름에 포함됩니다."></a>
+<a href="../media/screenshots/ko/team-coverage.webp"><img src="../media/screenshots/ko/team-coverage.webp" width="280" alt="방어 타입 상성 · HOST · 가상의 포켓몬 6마리 팀의 방어 상성표입니다. 약점, 내성, 무효를 표시합니다."></a>
+<a href="../media/screenshots/ko/tournaments.webp"><img src="../media/screenshots/ko/tournaments.webp" width="280" alt="대회 · Android emulator · 포함된 대회 카탈로그의 날짜와 당시 레귤레이션입니다. 시즌 이름에 2027이 포함될 수 있습니다."></a>
 </p>
 
-- **방어 타입 상성 · HOST.** 포켓몬 6마리로 구성한 예시 팀의 약점, 내성, 타입별 대응 표.
-- **대회 · Android 에뮬레이터.** 날짜, 당시 레귤레이션, 다중 선택을 지원하는 대회 선택 화면. 2027 표기는 해당 시즌의 공식 대회 이름에 포함됩니다.
+- **방어 타입 상성 · HOST.** 가상의 포켓몬 6마리 팀의 방어 상성표입니다. 약점, 내성, 무효를 표시합니다.
+- **대회 · Android emulator.** 포함된 대회 카탈로그의 날짜와 당시 레귤레이션입니다. 시즌 이름에 2027이 포함될 수 있습니다.
 
 ## 세팅과 자료
 
 <p>
-<a href="../media/screenshots/notes.png"><img src="../media/screenshots/notes.png" width="280" alt="메모 · 성격과 SP 배분이 있는 가상의 이상해꽃 세팅 2개를 그룹으로 표시. 실전 추천 세팅이 아닙니다."></a>
-<a href="../media/screenshots/library.png"><img src="../media/screenshots/library.png" width="280" alt="라이브러리 · 기술과 습득 포켓몬 화면에서 두 분류를 적용한 결과: 이 선택에서는 334개가 표시됩니다."></a>
+<a href="../media/screenshots/ko/notes.webp"><img src="../media/screenshots/ko/notes.webp" width="280" alt="메모 · HOST · 성격과 SP를 포함한 이상해꽃의 가상 설정 2개입니다. 대전용 추천 설정은 아닙니다."></a>
+<a href="../media/screenshots/ko/library.webp"><img src="../media/screenshots/ko/library.webp" width="280" alt="라이브러리 · Android emulator · 기술과 사용자 검색에서 물리와 특수를 선택한 결과입니다. 이 카탈로그에서는 334개를 표시합니다."></a>
 </p>
 
-- **메모 · HOST.** 성격과 SP 배분이 있는 가상의 이상해꽃 세팅 2개를 그룹으로 표시. 실전 추천 세팅이 아닙니다.
-- **라이브러리 · Android 에뮬레이터.** 기술과 습득 포켓몬 화면에서 두 분류를 적용한 결과: 이 선택에서는 334개가 표시됩니다.
+- **메모 · HOST.** 성격과 SP를 포함한 이상해꽃의 가상 설정 2개입니다. 대전용 추천 설정은 아닙니다.
+- **라이브러리 · Android emulator.** 기술과 사용자 검색에서 물리와 특수를 선택한 결과입니다. 이 카탈로그에서는 334개를 표시합니다.
 
 ## 과거 영상 데모
 

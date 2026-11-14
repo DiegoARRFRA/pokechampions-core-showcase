@@ -12,7 +12,7 @@ Android · Gratuit · Sans publicité · Sans compte · 8 langues
 
 Une application Android pour les joueurs de Pokémon Champions qui souhaitent comparer les dégâts et la Vitesse, explorer des configurations et garder leurs équipes, notes et résultats à portée de main. Ses outils et ses catalogues intégrés fonctionnent **hors ligne**, sans compte ni synchronisation automatique avec Internet.
 
-Développée par **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter et Dart · Code source privé.
+Développée par **[Diego de Arriba](https://github.com/DiegoARRFRA)** · **RakullDev** · Flutter et Dart · Code source privé.
 
 [Fonctionnalités](docs/FEATURES.en.md) · [Galerie](docs/GALLERY.fr.md) · [Présentation technique](docs/TECHNICAL_OVERVIEW.en.md) · [Documentation](docs/README.en.md)
 
@@ -20,15 +20,18 @@ Développée par **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutte
 
 ## Un aperçu de l’application
 
-Écran d’accueil, calcul Versus et filtres de capacités. Captures authentiques de la version **1.0.1**, prises dans un émulateur Android le **5 novembre 2026**, avec l’interface en espagnol. Cliquez sur une image pour l’afficher en taille réelle.
+Accueil, calcul réel dans Versus et filtres de capacités. Nouvelles captures du **14 novembre 2026**, version **1.0.1**, avec l’interface en **français**. La galerie précise l’environnement de chaque image. Sélectionnez une image pour l’agrandir.
 
 <p>
-<a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Accueil sombre avec le logo actuel et les raccourcis vers les outils"></a>
-<a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Résultat Versus pour Damoclès : 45–54 PV de dégâts et conditions de K.O."></a>
-<a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="Bibliothèque avec des filtres combinés et deux catégories de capacités sélectionnées"></a>
+<a href="media/screenshots/fr/home.webp"><img src="media/screenshots/fr/home.webp" width="220" alt="Accueil · Android emulator · Logo actuel et outils dans le thème sombre."></a>
+<a href="media/screenshots/fr/versus-result.webp"><img src="media/screenshots/fr/versus-result.webp" width="220" alt="Versus · HOST · Florizarre utilise Giga-Sangsue contre Tortank : 84–98 PV et K.O. possible et garanti en deux utilisations calculées."></a>
+<a href="media/screenshots/fr/library.webp"><img src="media/screenshots/fr/library.webp" width="220" alt="Bibliothèque · Android emulator · Capacités et utilisateurs avec Physique et Spécial sélectionnés : 334 résultats dans ce catalogue."></a>
 </p>
 
 [Voir les huit captures et les démonstrations historiques](docs/GALLERY.fr.md). La galerie distingue les captures de l’émulateur, les rendus HOST et les vidéos antérieures.
+
+
+[Revue multilingue et cas reproductibles — anglais](docs/SCENARIOS.en.md)
 
 ## Commencer en trois étapes
 
@@ -55,7 +58,7 @@ Cette révision met en avant les notes regroupées par Pokémon, le chargement d
 
 **Disponible sur Google Play pour Android.** La fiche publique, consultée le **14 novembre 2026**, présente l’application comme gratuite, sans publicité, achats intégrés ni inscription. Consultez la boutique pour connaître la version et la compatibilité disponibles pour votre appareil.
 
-Les captures et les chiffres techniques de ce portfolio correspondent à la révision **1.0.1 du 5 novembre 2026** ; ils ne constituent pas une vérification de chaque mise à jour ultérieure.
+Les captures montrent la version publique **1.0.1**. Les chiffres historiques de tests conservent leurs dates et environnements propres.
 
 [Politique de confidentialité publique](https://pokechampions-core-privacidad.pages.dev/) · [Auteur et contact](https://github.com/DiegoARRFRA) · [Retours et problèmes — anglais](CONTRIBUTING.en.md).
 

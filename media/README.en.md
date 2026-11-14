@@ -2,42 +2,38 @@
 
 # Media files
 
-[Gallery](../docs/GALLERY.en.md) · [Overview](../README.en.md)
+[Gallery](../docs/GALLERY.en.md) · [Reproducible cases](../docs/SCENARIOS.en.md) · [Overview](../README.en.md)
 
-Inventory dated **2026-11-05**: **8 current PNG screenshots, 1 transparent PNG logo, 7 PNG thumbnails and 7 historical MP4 videos**. All 23 files, sizes, dimensions, SHA-256 hashes and provenance appear in [manifest.json](manifest.json). No audio tracks, installers or private original recordings are included.
+Inventory dated **14 November 2026**: **64 current WebP screenshots** (eight per language), **eight historical PNG screenshots**, one transparent logo, seven PNG thumbnails and seven historical MP4 videos. All **87 files** have dimensions, byte counts, SHA-256 and provenance in [manifest.json](manifest.json). No installers, audio tracks, fonts, usage data or private originals are included.
 
-## Current screenshots
+## Current captures
 
-| Files | Source | Processing |
+| Group | Origin | Processing |
 | --- | --- | --- |
-| Home, Versus, 1HITKO, tournaments, Library | Release 1.0.1/46, Android API 36 x86_64 emulator; 2026-11-05. | Original 1080 × 2400; crop x=0, y=136, width=1080, height=2201, removing only system bars. Downscale to 720 × 1467. |
-| Battle and Notes | Actual Flutter widgets, Windows HOST, source copy of 1.0.1/46; 2026-11-05. | Logical viewport 393 × 850, rendered at density 2 (786 × 1700); downscale to 720 × 1557. |
-| Coverage | Actual Flutter widgets, Windows HOST, same source copy and date. | Logical viewport 390 × 844, rendered at density 2 (780 × 1688); downscale to 720 × 1558. |
-| Logo | Transparent asset used inside the current application. | Proportional downscale to 256 px wide; alpha retained. Android launcher background is not used. |
+| Home, library and tournaments: 24 images | Android release **1.0.1/46**, API 36 x86_64, isolated emulator. Original 1080×2674, density 440. | Only OS bars removed: 1080×2475 crop at x0/y136; proportional Lanczos reduction to 786 px wide; lossless WebP. |
+| Versus, Battle, 1HITKO, coverage and notes: 40 images | Real Flutter widgets on Windows with the published revision's engine/catalogs and fictional isolated data. Logical 393×900, PNG 786×1800, text scale 1. | Lossless WebP preserving original dimensions and pixels. |
+| Logo | Existing transparent in-app asset, retained from the previous delivery. | PNG 256 px wide, alpha unchanged; no white Android launcher background. |
 
-Examples are fictional. HOST renders use actual application components and fonts; they are neither reconstructed screens nor physical Android captures. Selected viewports are preserved, including the scrolled 1HITKO view after search completion. Text, colours and results are not retouched.
+Languages: es, en, fr, de, it, **pt-PT**, ja and ko. Main theme dark. App revision: `76e783aa1876e812bc971e5eafeeffd2aa38821f`. No production patches in current images. Each caption identifies Android or HOST; HOST is not physical-phone evidence. CJK HOST renders were repeated using the emulator font to avoid a Windows fallback limitation; the font is not distributed here.
 
-Deterministic FFmpeg processing: crop, Lanczos downscale and PNG compression without additional loss. No image is enlarged. Source hashes support checking provenance against the private evidence archive without publishing its paths.
+FFmpeg verified identical decoded RGBA pixels between **all 64 WebP files** and their PNG references. Native references are cropped/resized PNGs; HOST references are complete originals. No generated UI, translated pixels or edited results. Lossless compression follows the declared geometric transformations.
 
-## Historical videos
+## Weight and preservation
 
-The seven MP4s remain **byte-for-byte identical** to the previous showcase. Versus, EV Lab, Lead Trainer, Teams, History and Languages were prepared on **2026-09-22** from Android recordings supplied by the author; 1HITKO dates to **2026-09-17**. Their exact builds are unknown. They do not prove 1.0.1 additions.
+| Measurement scope | Bytes |
+| --- | ---: |
+| Selected 64 source screenshots | 16,351,161 |
+| Selected 64 public copies | 7,181,262 |
+| Copy savings against their sources | **9,169,899 (56.1%)** |
+| Previous media tree: 23 files | 11,801,898 |
+| Current media tree: 87 files | **18,983,160** |
 
-| Group | Retained format | New thumbnail |
-| --- | --- | --- |
-| Six September 22 demos | H.264, 720 × 1440, 24 fps, silent | 180 × 360 PNG, frame at 4 s |
-| September 17 1HITKO | H.264, 540 × 1080, 24 fps, silent | 180 × 360 PNG, frame at 4 s |
+The tree grows by 7.18 MB because it adds eight localized galleries and retains all previous media. Compression savings and historical Git clone size are different measurements. A PNG downscale trial increased size; it remains private. WebP was selected after verifying actual savings and pixel equality.
 
-Recorded speed, excerpts and final holds from the historical exports are retained. The manifest preserves each clip's original parameters; thumbnails link to MP4s without autoplay. Complete music tracks are not distributed.
+## Historical media
 
-## Size and preservation
+The eight **5November 2026** screenshots remain at their original paths as `historical-screenshot` entries. Current pages use their own language folders exclusively.
 
-| Binary media inventory | Bytes | Decimal MB |
-| --- | ---: | ---: |
-| Before: 17 PNG + 7 GIF + 7 MP4 | 37,916,500 | 37.92 |
-| After: 16 PNG + 7 MP4 | 11,801,898 | 11.80 |
-| Reduction | 26,114,602 | **68.9%** |
+All seven MP4 videos and seven thumbnails remain **byte-for-byte unchanged**. Six demos were prepared22 September 2026 from the author's Android recordings; 1HITKO retains its17 September export. Exact app builds are unverified. These are historical examples, not 1.0.1 updates. Silent H.264: six videos at 720×1440, one at 540×1080, 24 fps; thumbnails 180×360. Original segment and final-hold metadata remains in the manifest. No homepage GIFs or autoplay.
 
-Duplicate GIFs and superseded screenshots are removed from the current tree. **Git history is not rewritten**: previous revisions retain those files, so tree reduction is not the same as savings in a historical clone. All seven MP4s retain their previous SHA-256 hashes.
-
-[How to validate](../CONTRIBUTING.en.md#showcase-validation) · [Notices and rights](../NOTICE.en.md)
+[Validation instructions](../CONTRIBUTING.en.md#showcase-validation) · [Rights and notices](../NOTICE.en.md)

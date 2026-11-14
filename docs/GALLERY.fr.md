@@ -4,49 +4,49 @@
 
 [← Présentation](../README.fr.md) · [Fonctionnalités — anglais](FEATURES.en.md) · [Documentation — anglais](README.en.md)
 
-Huit captures authentiques du **5 novembre 2026**, avec l’interface en espagnol. **Émulateur Android** désigne la version 1.0.1/46 sur API 36 x86_64. **HOST** désigne de vrais widgets Flutter rendus sous Windows à partir du code de cette version, avec des données fictives. Aucun téléphone physique n’a été utilisé pour cette série. Sélectionnez une image pour l’afficher en pleine résolution.
+Huit nouvelles captures du **14 novembre 2026**, avec l’interface en **français**, de la version **1.0.1**. **HOST** désigne de vrais widgets Flutter rendus sous Windows avec les catalogues et le moteur de cette version, et des données fictives isolées. **Émulateur Android** désigne la release 1.0.1/46 sur API 36 x86_64. Chaque légende et le manifeste précisent la provenance ; aucune image ne provient d’un téléphone physique.
 
-Seules les barres système ont été retirées des captures de l’émulateur. Les images HOST ne contiennent pas d’interface système Android. Toutes les images ont été réduites, jamais agrandies ; aucune interface ni aucun résultat n’a été reconstitué. [Provenance et traitement — anglais](../media/README.en.md).
+Les mêmes Pokémon et configurations sont utilisés dans les huit langues. Seuls le retrait éventuel des barres système, la réduction proportionnelle et la compression WebP sont appliqués. Aucune interface générée ni traduction des pixels. [Cas et limites — anglais](SCENARIOS.en.md) · [Provenance — anglais](../media/README.en.md).
 
 ## Accueil et dégâts
 
 <p>
-<a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="280" alt="Accueil · Logo actuel et raccourcis des outils dans le thème sombre."></a>
-<a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="280" alt="Versus · Damoclès : 45–54 PV de dégâts et nombre d’utilisations pour un K.O. possible ou garanti."></a>
+<a href="../media/screenshots/fr/home.webp"><img src="../media/screenshots/fr/home.webp" width="280" alt="Accueil · Android emulator · Logo actuel et outils dans le thème sombre."></a>
+<a href="../media/screenshots/fr/versus-result.webp"><img src="../media/screenshots/fr/versus-result.webp" width="280" alt="Versus · HOST · Florizarre utilise Giga-Sangsue contre Tortank : 84–98 PV et K.O. possible et garanti en deux utilisations calculées."></a>
 </p>
 
-- **Accueil · Émulateur Android.** Logo actuel et raccourcis des outils dans le thème sombre.
-- **Versus · Émulateur Android.** Damoclès : 45–54 PV de dégâts et nombre d’utilisations pour un K.O. possible ou garanti.
+- **Accueil · Android emulator.** Logo actuel et outils dans le thème sombre.
+- **Versus · HOST.** Florizarre utilise Giga-Sangsue contre Tortank : 84–98 PV et K.O. possible et garanti en deux utilisations calculées.
 
 ## Scénarios et recherche
 
 <p>
-<a href="../media/screenshots/battle.png"><img src="../media/screenshots/battle.png" width="280" alt="Combat · Analyse réelle de la météo à l’entrée et de la Vitesse ; les SP inconnus produisent des plages et une égalité estimée."></a>
-<a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="280" alt="1HITKO · Vue défilée après la recherche : 206 candidats pour ce scénario, avec tri et filtres. Ce nombre n’est pas universel."></a>
+<a href="../media/screenshots/fr/battle.webp"><img src="../media/screenshots/fr/battle.webp" width="280" alt="Combat · HOST · Vitesse connue et soleil sélectionné manuellement dans une situation de combat Duo. Aucun tour n’est exécuté."></a>
+<a href="../media/screenshots/fr/1hitko-results.webp"><img src="../media/screenshots/fr/1hitko-results.webp" width="280" alt="1HITKO · HOST · Recherche terminée contre Pondralugon : 206 candidats dans ce scénario, avec filtres et tri. Ce n’est pas un total universel."></a>
 </p>
 
-- **Combat · HOST.** Analyse réelle de la météo à l’entrée et de la Vitesse ; les SP inconnus produisent des plages et une égalité estimée.
-- **1HITKO · Émulateur Android.** Vue défilée après la recherche : 206 candidats pour ce scénario, avec tri et filtres. Ce nombre n’est pas universel.
+- **Combat · HOST.** Vitesse connue et soleil sélectionné manuellement dans une situation de combat Duo. Aucun tour n’est exécuté.
+- **1HITKO · HOST.** Recherche terminée contre Pondralugon : 206 candidats dans ce scénario, avec filtres et tri. Ce n’est pas un total universel.
 
 ## Équipes et provenance
 
 <p>
-<a href="../media/screenshots/team-coverage.png"><img src="../media/screenshots/team-coverage.png" width="280" alt="Couverture défensive · Matrice d’une équipe fictive de six membres : faiblesses, résistances et réponses par type."></a>
-<a href="../media/screenshots/tournaments.png"><img src="../media/screenshots/tournaments.png" width="280" alt="Tournois · Sélecteur de tournois avec dates, règlement historique et sélection multiple. Les mentions 2027 font partie des noms officiels des événements de la saison."></a>
+<a href="../media/screenshots/fr/team-coverage.webp"><img src="../media/screenshots/fr/team-coverage.webp" width="280" alt="Couverture défensive · HOST · Matrice défensive d’une équipe fictive de six membres : faiblesses, résistances et immunités."></a>
+<a href="../media/screenshots/fr/tournaments.webp"><img src="../media/screenshots/fr/tournaments.webp" width="280" alt="Tournois · Android emulator · Catalogue de tournois inclus, avec dates et règlements historiques. Les noms de saison peuvent comporter 2027."></a>
 </p>
 
-- **Couverture défensive · HOST.** Matrice d’une équipe fictive de six membres : faiblesses, résistances et réponses par type.
-- **Tournois · Émulateur Android.** Sélecteur de tournois avec dates, règlement historique et sélection multiple. Les mentions 2027 font partie des noms officiels des événements de la saison.
+- **Couverture défensive · HOST.** Matrice défensive d’une équipe fictive de six membres : faiblesses, résistances et immunités.
+- **Tournois · Android emulator.** Catalogue de tournois inclus, avec dates et règlements historiques. Les noms de saison peuvent comporter 2027.
 
 ## Configurations et références
 
 <p>
-<a href="../media/screenshots/notes.png"><img src="../media/screenshots/notes.png" width="280" alt="Notes · Deux configurations fictives de Florizarre, regroupées avec leur nature et leurs SP. Ce ne sont pas des recommandations compétitives."></a>
-<a href="../media/screenshots/library.png"><img src="../media/screenshots/library.png" width="280" alt="Bibliothèque · Capacités et Pokémon pouvant les apprendre, avec deux catégories appliquées : 334 résultats pour cette sélection."></a>
+<a href="../media/screenshots/fr/notes.webp"><img src="../media/screenshots/fr/notes.webp" width="280" alt="Notes · HOST · Deux configurations fictives de Florizarre, avec nature et SP. Ce ne sont pas des recommandations compétitives."></a>
+<a href="../media/screenshots/fr/library.webp"><img src="../media/screenshots/fr/library.webp" width="280" alt="Bibliothèque · Android emulator · Capacités et utilisateurs avec Physique et Spécial sélectionnés : 334 résultats dans ce catalogue."></a>
 </p>
 
-- **Notes · HOST.** Deux configurations fictives de Florizarre, regroupées avec leur nature et leurs SP. Ce ne sont pas des recommandations compétitives.
-- **Bibliothèque · Émulateur Android.** Capacités et Pokémon pouvant les apprendre, avec deux catégories appliquées : 334 résultats pour cette sélection.
+- **Notes · HOST.** Deux configurations fictives de Florizarre, avec nature et SP. Ce ne sont pas des recommandations compétitives.
+- **Bibliothèque · Android emulator.** Capacités et utilisateurs avec Physique et Spécial sélectionnés : 334 résultats dans ce catalogue.
 
 ## Démonstrations vidéo historiques
 

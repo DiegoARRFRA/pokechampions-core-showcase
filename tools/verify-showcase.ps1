@@ -30,6 +30,11 @@ $expected = @(
     'media/thumbnails/team-builder.png',
     'media/thumbnails/versus.png'
 )
+$captureLanguages = @('es','en','fr','de','it','pt','ja','ko')
+$captureScreens = @('home','versus-result','battle','1hitko-results','team-coverage','tournaments','notes','library')
+foreach ($language in $captureLanguages) {
+    foreach ($screen in $captureScreens) { $expected += "media/screenshots/$language/$screen.webp" }
+}
 function Fail([string]$message) { [void]$errors.Add($message) }
 function ReadText([string]$path) { [IO.File]::ReadAllText($path, [Text.Encoding]::UTF8) }
 function Relative([string]$path) { $path.Substring($root.Length + 1).Replace('\', '/') }
@@ -78,12 +83,41 @@ $files = @(Get-ChildItem -LiteralPath $root -Recurse -File | Where-Object {
 foreach ($file in $files) { [void]$inventory.Add((Relative $file.FullName)) }
 $manifest = ReadText (Join-Path $root 'media/manifest.json') | ConvertFrom-Json
 $manifestPaths = @($manifest.files | ForEach-Object { $_.path })
-if ($manifest.schema_version -ne 3) { Fail 'Expected manifest schema 3.' }
-foreach ($roleCount in @(@('screenshot', 8), @('brand', 1), @('video-thumbnail', 7), @('historical-video', 7))) {
-    if (@($manifest.files | Where-Object { $_.role -ceq $roleCount[0] }).Count -ne $roleCount[1]) {
-        Fail "Unexpected count for media role $($roleCount[0])."
+if ($manifest.schema_version -ne 4) { Fail 'Expected manifest schema 4.' }
+foreach ($roleCount in @(@('screenshot',64),@('historical-screenshot',8),@('brand',1),@('video-thumbnail',7),@('historical-video',7))) {
+    if (@($manifest.files | Where-Object { $_.role -ceq $roleCount[0] }).Count -ne $roleCount[1]) { Fail "Unexpected count for role $($roleCount[0])." }
+}
+$currentShots = @($manifest.files | Where-Object { $_.role -ceq 'screenshot' })
+foreach ($language in $captureLanguages) {
+    $localized = @($currentShots | Where-Object { $_.language -ceq $language })
+    if ($localized.Count -ne 8) { Fail "Expected eight screenshots in $language." }
+    foreach ($screen in $captureScreens) {
+        $entry = @($localized | Where-Object { $_.path -ceq "media/screenshots/$language/$screen.webp" })
+        if ($entry.Count -ne 1) { Fail "Missing unique screenshot $language/$screen."; continue }
+        foreach ($field in @('scenario','app_version','android_version_code','app_revision','captured_on','environment','theme','logical_resolution','device_pixel_ratio','text_scale','source_sha256','source_bytes')) {
+            if (-not $entry[0].PSObject.Properties[$field] -or $null -eq $entry[0].$field -or [string]$entry[0].$field -eq '') { Fail "$language/$screen missing provenance $field." }
+        }
+        if ($entry[0].app_version -cne $manifest.capture_release.version -or $entry[0].android_version_code -ne $manifest.capture_release.android_version_code -or $entry[0].app_revision -cne $manifest.capture_release.revision) { Fail "$language/$screen mixed release identity." }
+        if ($entry[0].environment -cnotin @('HOST widget render','Android emulator')) { Fail "$language/$screen unknown environment." }
+        if ($entry[0].app_revision -cnotmatch '^[0-9a-f]{40}$' -or $entry[0].source_sha256 -cnotmatch '^[0-9a-f]{64}$') { Fail "$language/$screen invalid source identity." }
+        if ($language -ceq 'pt' -and $entry[0].locale -cne 'pt-PT') { Fail 'Portuguese must identify pt-PT.' }
     }
 }
+$matrix = ReadText (Join-Path $root 'docs/review/scenarios.json') | ConvertFrom-Json
+if ($matrix.schema_version -ne 1) { Fail 'Expected scenario matrix schema 1.' }
+foreach ($row in $matrix.cases) {
+    if ($row.language -cnotin $captureLanguages -or $row.status -cnotin @('aprobado','fallido','bloqueado','no ejecutado')) { Fail 'Invalid matrix language or status.' }
+    foreach ($field in @('case','module','objective','initial_conditions','steps','expected','theme','environment','observed')) {
+        if (-not $row.PSObject.Properties[$field] -or [string]$row.$field -eq '') { Fail "Matrix row missing $field." }
+    }
+    if ($row.status -ceq 'aprobado' -and -not $row.evidence) { Fail 'Approved matrix observation requires evidence.' }
+    if ($row.language -ceq 'pt' -and $row.locale -cne 'pt-PT') { Fail 'Matrix Portuguese locale mismatch.' }
+}
+foreach ($language in $captureLanguages) {
+    if (@($matrix.cases | Where-Object { $_.language -ceq $language }).Count -lt 20) { Fail "Incomplete matrix for $language." }
+}
+if (@($currentShots | Where-Object { $_.environment -ceq 'Android emulator' }).Count -ne 24 -or @($currentShots | Where-Object { $_.environment -ceq 'HOST widget render' }).Count -ne 40) { Fail 'Expected 24 native and 40 HOST screenshots.' }
+if (@($currentShots.sha256 | Select-Object -Unique).Count -ne 64) { Fail 'Current language screenshots must have distinct hashes.' }
 # Public showcase only: private application artifacts are never valid additions.
 foreach ($file in $files) {
     if ($file.Extension -in '.apk', '.aab', '.jks', '.keystore', '.p12', '.pem', '.key', '.sqlite', '.sqlite3', '.db', '.dart' -or
@@ -96,7 +130,7 @@ if ($manifestPaths.Count -ne $expected.Count -or
     @(Compare-Object $expected $manifestPaths -CaseSensitive).Count) {
     Fail 'Manifest must contain exactly the expected paths, without duplicates.'
 }
-foreach ($file in $files | Where-Object { $_.Extension -in '.png', '.gif', '.mp4' }) {
+foreach ($file in $files | Where-Object { $_.Extension -in '.png', '.webp', '.gif', '.mp4' }) {
     if ($expected -cnotcontains (Relative $file.FullName)) { Fail "Unexpected media: $(Relative $file.FullName)" }
 }
 $documents = @($files | Where-Object { $_.Extension -eq '.md' })
@@ -135,9 +169,13 @@ foreach ($presentation in $presentations) {
             Fail "$($presentation): missing Google Play download link"
         }
     }
-    $pngCount = [regex]::Matches($body, 'src="[^"]+\.png"').Count
+    $pageLanguage = if ($presentation -cmatch '\.(en|fr|de|it|pt|ja|ko)\.md$') { $Matches[1] } else { 'es' }
+    foreach ($shot in [regex]::Matches($body, 'src="([^" ]*media/screenshots/[^" ]+)"')) {
+        if ($shot.Groups[1].Value -cnotmatch ("media/screenshots/" + $pageLanguage + '/[^/]+\.webp$')) { Fail "$presentation screenshot language mismatch." }
+    }
+    $pngCount = [regex]::Matches($body, 'src="[^"]+\.(?:png|webp)"').Count
     $gifCount = [regex]::Matches($body, 'src="[^"]+\.gif"').Count
-    $shotCount = [regex]::Matches($body, 'src="[^"]*media/screenshots/[^"]+\.png"').Count
+    $shotCount = [regex]::Matches($body, 'src="[^"]*media/screenshots/[^"]+\.webp"').Count
     $thumbCount = [regex]::Matches($body, 'src="[^"]*media/thumbnails/[^"]+\.png"').Count
     $brandCount = [regex]::Matches($body, 'src="[^"]*media/brand/logo\.png"').Count
     if ($overviewPaths -ccontains $presentation) {

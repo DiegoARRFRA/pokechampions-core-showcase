@@ -12,21 +12,24 @@ Android · Gratis · Sin anuncios · Sin cuenta · 8 idiomas
 
 Una aplicación Android para jugadores de Pokémon Champions que quieren comparar daño y velocidades, explorar configuraciones y llevar sus equipos, notas y resultados consigo. Sus herramientas y catálogos funcionan **offline**, sin cuenta ni sincronización automática con Internet.
 
-Desarrollada por **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter y Dart · Código privado.
+Desarrollada por **[Diego de Arriba](https://github.com/DiegoARRFRA)** · **RakullDev** · Flutter y Dart · Código privado.
 
 [Funciones](docs/FEATURES.md) · [Galería](docs/GALLERY.md) · [Cómo está construida](docs/TECHNICAL_OVERVIEW.md) · [Documentación](docs/README.md)
 
 ## Una mirada a la aplicación
 
-Inicio, un cálculo de Versus y filtros de movimientos. Capturas auténticas de **1.0.1**, en emulador Android, del **5 de noviembre de 2026**; interfaz en español. Pulsa para verlas a tamaño completo.
+Inicio, un cálculo real de Versus y filtros de movimientos. Capturas nuevas del **14 de noviembre de 2026**, versión **1.0.1**, con la interfaz en **español**. La galería identifica el entorno de cada imagen. Pulsa para ampliarlas.
 
 <p>
-<a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Inicio oscuro con el logo actual y acceso a las herramientas"></a>
-<a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus con Doble Filo: 45–54 PS de daño y condiciones de KO"></a>
-<a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="Biblioteca con filtros combinados y dos categorías de ataque seleccionadas"></a>
+<a href="media/screenshots/es/home.webp"><img src="media/screenshots/es/home.webp" width="220" alt="Inicio · Android emulator · Logo actual y herramientas en tema oscuro."></a>
+<a href="media/screenshots/es/versus-result.webp"><img src="media/screenshots/es/versus-result.webp" width="220" alt="Versus · HOST · Venusaur usa Gigadrenado contra Blastoise: 84–98 PS y KO posible y garantizado en dos usos calculados."></a>
+<a href="media/screenshots/es/library.webp"><img src="media/screenshots/es/library.webp" width="220" alt="Biblioteca · Android emulator · Movimientos y usuarios con Físico y Especial seleccionados: 334 resultados en este catálogo."></a>
 </p>
 
 [Ver las ocho capturas y las demos históricas](docs/GALLERY.md). La galería identifica por separado emulador, renderizado HOST y vídeos anteriores.
+
+
+[Revisión multilingüe y casos reproducibles](docs/SCENARIOS.md)
 
 ## Empieza en tres pasos
 
@@ -53,7 +56,7 @@ En esta revisión destacan las notas agrupadas por Pokémon, la carga de configu
 
 **Disponible en Google Play para Android.** La ficha pública, comprobada el **14 de noviembre de 2026**, presenta la app como gratuita, sin anuncios, sin compras integradas y sin registro. Consulta la tienda para conocer la versión y la compatibilidad disponibles para tu dispositivo.
 
-Las capturas y las cifras técnicas de este portfolio corresponden a la revisión **1.0.1 del 5 de noviembre de 2026**; no son una comprobación de cada actualización posterior.
+Las capturas muestran la entrega pública **1.0.1**. Las cifras históricas de pruebas conservan sus fechas y entornos propios.
 
 [Política de privacidad pública](https://pokechampions-core-privacidad.pages.dev/) · [Contacto y autor](https://github.com/DiegoARRFRA) · [Comentarios e incidencias](CONTRIBUTING.md).
 

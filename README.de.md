@@ -12,7 +12,7 @@ Android · Kostenlos · Ohne Werbung · Ohne Konto · 8 Sprachen
 
 Eine Android-App für Pokémon-Champions-Spieler, die Schaden und Initiative vergleichen, Sets ausprobieren und ihre Teams, Notizen und Ergebnisse immer dabeihaben möchten. Die Werkzeuge und mitgelieferten Kataloge funktionieren **offline**, ohne Konto und ohne automatische Synchronisierung mit dem Internet.
 
-Entwickelt von **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter und Dart · Privater Quellcode.
+Entwickelt von **[Diego de Arriba](https://github.com/DiegoARRFRA)** · **RakullDev** · Flutter und Dart · Privater Quellcode.
 
 [Funktionen](docs/FEATURES.en.md) · [Galerie](docs/GALLERY.de.md) · [Technischer Überblick](docs/TECHNICAL_OVERVIEW.en.md) · [Dokumentation](docs/README.en.md)
 
@@ -20,15 +20,18 @@ Entwickelt von **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter 
 
 ## Ein Blick in die App
 
-Startseite, eine Versus-Berechnung und Attackenfilter. Echte Screenshots von **1.0.1**, aufgenommen am **5. November 2026** in einem Android-Emulator mit spanischer Benutzeroberfläche. Klicke auf ein Bild, um es in voller Größe zu öffnen.
+Startseite, eine echte Versus-Berechnung und Attackenfilter. Neue Aufnahmen vom **14. November 2026**, Version **1.0.1**, mit **deutscher** Oberfläche. Die Galerie nennt die Umgebung jedes Bildes. Ein Klick vergrößert die Aufnahme.
 
 <p>
-<a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Dunkle Startseite mit aktuellem Logo und Verknüpfungen zu den Werkzeugen"></a>
-<a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus-Ergebnis für Risikotackle: 45–54 KP Schaden und K.O.-Bedingungen"></a>
-<a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="Bibliothek mit kombinierten Filtern und zwei ausgewählten Attackenkategorien"></a>
+<a href="media/screenshots/de/home.webp"><img src="media/screenshots/de/home.webp" width="220" alt="Startseite · Android emulator · Aktuelles Logo und Werkzeuge im dunklen Design."></a>
+<a href="media/screenshots/de/versus-result.webp"><img src="media/screenshots/de/versus-result.webp" width="220" alt="Versus · HOST · Bisaflor setzt Gigasauger gegen Turtok ein: 84–98 KP Schaden und möglicher sowie garantierter K.O. bei zwei berechneten Einsätzen."></a>
+<a href="media/screenshots/de/library.webp"><img src="media/screenshots/de/library.webp" width="220" alt="Bibliothek · Android emulator · Attacken und Anwender mit Physisch und Spezial ausgewählt: 334 Ergebnisse in diesem Katalog."></a>
 </p>
 
 [Alle acht Screenshots und historischen Demos ansehen](docs/GALLERY.de.md). Die Galerie unterscheidet zwischen Emulator-Aufnahmen, HOST-Renderings und älteren Videos.
+
+
+[Mehrsprachige Prüfung und reproduzierbare Fälle — Englisch](docs/SCENARIOS.en.md)
 
 ## In drei Schritten loslegen
 
@@ -55,7 +58,7 @@ Diese Überarbeitung zeigt nach Pokémon gruppierte Notizen, das Laden von Sets 
 
 **Für Android bei Google Play verfügbar.** Der am **14. November 2026** geprüfte öffentliche Eintrag beschreibt die App als kostenlos, ohne Werbung, In-App-Käufe oder Registrierung. Im Store findest du die für dein Gerät verfügbare Version und Kompatibilität.
 
-Screenshots und technische Kennzahlen dieses Portfolios beziehen sich auf die Prüfung von **1.0.1 vom 5. November 2026**; sie bestätigen nicht jede spätere Aktualisierung.
+Die Aufnahmen zeigen die veröffentlichte Version **1.0.1**. Historische Testzahlen behalten ihre jeweiligen Daten und Umgebungen.
 
 [Öffentliche Datenschutzerklärung](https://pokechampions-core-privacidad.pages.dev/) · [Autor und Kontakt](https://github.com/DiegoARRFRA) · [Feedback und Fehlerberichte — Englisch](CONTRIBUTING.en.md).
 

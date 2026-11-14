@@ -12,7 +12,7 @@ Android · Gratis · Senza pubblicità · Senza account · 8 lingue
 
 Un’app Android per i giocatori di Pokémon Champions che vogliono confrontare danni e Velocità, esplorare configurazioni e avere sempre con sé squadre, note e risultati. Gli strumenti e i cataloghi inclusi funzionano **offline**, senza account né sincronizzazione automatica con Internet.
 
-Sviluppata da **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter e Dart · Codice sorgente privato.
+Sviluppata da **[Diego de Arriba](https://github.com/DiegoARRFRA)** · **RakullDev** · Flutter e Dart · Codice sorgente privato.
 
 [Funzionalità](docs/FEATURES.en.md) · [Galleria](docs/GALLERY.it.md) · [Panoramica tecnica](docs/TECHNICAL_OVERVIEW.en.md) · [Documentazione](docs/README.en.md)
 
@@ -20,15 +20,18 @@ Sviluppata da **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter e
 
 ## Uno sguardo all’app
 
-Schermata iniziale, calcolo Versus e filtri delle mosse. Screenshot autentici della versione **1.0.1**, acquisiti in un emulatore Android il **5 novembre 2026**, con interfaccia in spagnolo. Seleziona un’immagine per visualizzarla a grandezza naturale.
+Home, un calcolo reale in Versus e filtri delle mosse. Nuove immagini del **14 novembre 2026**, versione **1.0.1**, con interfaccia in **italiano**. La galleria indica l’ambiente di ogni immagine. Seleziona un’immagine per ingrandirla.
 
 <p>
-<a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="Schermata iniziale scura con il logo attuale e le scorciatoie agli strumenti"></a>
-<a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Risultato Versus per Sdoppiatore: 45–54 PS di danno e condizioni di K.O."></a>
-<a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="Biblioteca con filtri combinati e due categorie di mosse selezionate"></a>
+<a href="media/screenshots/it/home.webp"><img src="media/screenshots/it/home.webp" width="220" alt="Schermata iniziale · Android emulator · Logo attuale e strumenti nel tema scuro."></a>
+<a href="media/screenshots/it/versus-result.webp"><img src="media/screenshots/it/versus-result.webp" width="220" alt="Versus · HOST · Venusaur usa Gigassorbimento contro Blastoise: 84–98 PS di danno e KO possibile e garantito in due utilizzi calcolati."></a>
+<a href="media/screenshots/it/library.webp"><img src="media/screenshots/it/library.webp" width="220" alt="Biblioteca · Android emulator · Mosse e utilizzatori con Fisico e Speciale selezionati: 334 risultati in questo catalogo."></a>
 </p>
 
 [Visualizza tutti gli otto screenshot e le demo storiche](docs/GALLERY.it.md). La galleria distingue le acquisizioni dall’emulatore, i rendering HOST e i video precedenti.
+
+
+[Verifica multilingue e casi riproducibili — inglese](docs/SCENARIOS.en.md)
 
 ## Inizia in tre passaggi
 
@@ -55,7 +58,7 @@ Questa revisione mette in evidenza le note raggruppate per Pokémon, il caricame
 
 **Disponibile su Google Play per Android.** La scheda pubblica, verificata il **14 novembre 2026**, presenta l’app come gratuita, senza pubblicità, acquisti in-app o registrazione. Consulta lo store per la versione e la compatibilità disponibili per il tuo dispositivo.
 
-Gli screenshot e i dati tecnici di questo portfolio si riferiscono alla revisione **1.0.1 del 5 novembre 2026**; non verificano ogni aggiornamento successivo.
+Le immagini mostrano la versione pubblica **1.0.1**. I dati storici dei test conservano le proprie date e i propri ambienti.
 
 [Informativa sulla privacy pubblica](https://pokechampions-core-privacidad.pages.dev/) · [Autore e contatti](https://github.com/DiegoARRFRA) · [Feedback e segnalazioni — inglese](CONTRIBUTING.en.md).
 

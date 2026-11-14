@@ -12,7 +12,7 @@ Android · 무료 · 광고 없음 · 계정 불필요 · 8개 언어
 
 Pokémon Champions 플레이어를 위한 Android 앱입니다. 데미지와 스피드를 비교하고 다양한 세팅을 검토하며, 팀과 메모, 대전 기록을 한곳에서 관리할 수 있습니다. 도구와 앱에 포함된 카탈로그는 **오프라인**으로 작동하며, 계정이나 인터넷 자동 동기화가 필요하지 않습니다.
 
-개발자: **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter 및 Dart · 소스 코드 비공개.
+개발자: **[Diego de Arriba](https://github.com/DiegoARRFRA)** · **RakullDev** · Flutter 및 Dart · 소스 코드 비공개.
 
 [기능](docs/FEATURES.en.md) · [갤러리](docs/GALLERY.ko.md) · [기술 개요](docs/TECHNICAL_OVERVIEW.en.md) · [문서](docs/README.en.md)
 
@@ -20,15 +20,18 @@ Pokémon Champions 플레이어를 위한 Android 앱입니다. 데미지와 스
 
 ## 앱 살펴보기
 
-홈 화면, Versus 계산 결과, 기술 필터 화면입니다. **2026년 11월 5일** Android 에뮬레이터에서 촬영한 **1.0.1**의 실제 스크린샷이며, 화면 언어는 스페인어입니다. 이미지를 선택하면 원본 크기로 볼 수 있습니다.
+홈, Versus의 실제 계산 결과, 기술 필터를 소개합니다. **2026년 11월 14일**에 촬영한 버전 **1.0.1**의 새 이미지이며 화면 언어는 **한국어**입니다. 각 이미지의 실행 환경은 갤러리에 표시되어 있습니다. 이미지를 선택하면 확대됩니다.
 
 <p>
-<a href="media/screenshots/home.png"><img src="media/screenshots/home.png" width="220" alt="현재 로고와 도구 바로가기가 표시된 다크 테마 홈 화면"></a>
-<a href="media/screenshots/versus-result.png"><img src="media/screenshots/versus-result.png" width="220" alt="Versus의 이판사판태클 계산 결과: 45~54 HP 데미지와 KO 조건"></a>
-<a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="여러 필터와 두 가지 기술 분류를 선택한 라이브러리"></a>
+<a href="media/screenshots/ko/home.webp"><img src="media/screenshots/ko/home.webp" width="220" alt="홈 · Android emulator · 다크 테마의 현재 로고와 도구 목록."></a>
+<a href="media/screenshots/ko/versus-result.webp"><img src="media/screenshots/ko/versus-result.webp" width="220" alt="Versus · HOST · 이상해꽃이 거북왕에게 기가드레인을 사용합니다. 데미지 84~98 HP, 계산상 2회 사용으로 KO 가능·확정입니다."></a>
+<a href="media/screenshots/ko/library.webp"><img src="media/screenshots/ko/library.webp" width="220" alt="라이브러리 · Android emulator · 기술과 사용자 검색에서 물리와 특수를 선택한 결과입니다. 이 카탈로그에서는 334개를 표시합니다."></a>
 </p>
 
 [스크린샷 8장과 과거 데모 모두 보기](docs/GALLERY.ko.md). 갤러리에서는 에뮬레이터 캡처, HOST 렌더링, 이전 영상을 구분해 표시합니다.
+
+
+[다국어 검증 및 재현 가능한 사례 — 영어](docs/SCENARIOS.en.md)
 
 ## 세 단계로 시작하기
 
@@ -55,7 +58,7 @@ Pokémon Champions 플레이어를 위한 Android 앱입니다. 데미지와 스
 
 **Android용 앱이 Google Play에 공개되어 있습니다.** **2026년 11월 14일**에 확인한 공개 스토어 페이지는 무료, 광고 없음, 인앱 구매 없음, 가입 불필요로 안내합니다. 기기에서 이용할 수 있는 버전과 호환성은 스토어에서 확인하세요.
 
-이 포트폴리오의 스크린샷과 기술 수치는 **2026년 11월 5일에 검토한 버전 1.0.1**을 기준으로 합니다. 이후의 모든 업데이트를 검증한 것은 아닙니다.
+이미지는 공개 버전 **1.0.1**의 화면입니다. 과거 테스트 수치는 각각의 실행 날짜와 환경을 유지합니다.
 
 [공개 개인정보 처리방침](https://pokechampions-core-privacidad.pages.dev/) · [개발자 및 연락처](https://github.com/DiegoARRFRA) · [의견 및 오류 제보 — 영어](CONTRIBUTING.en.md).
 

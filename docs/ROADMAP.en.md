@@ -12,6 +12,10 @@ Battle with configuration loading and temporary adjustments; Versus, Master Mode
 
 These features are no longer presented as future work. Their existence does not remove the accuracy, incomplete-data and platform limitations documented in validation.
 
+## Proposed fixes on 14 November
+
+Neutral unknown-SP wording in eight languages and three Japanese Versus interpolations. Reproduced and corrected on a private review branch, without integration or a new app release. Current screenshots retain the published release. [Evidence and limits](SCENARIOS.en.md).
+
 ## To verify or resolve
 
 | Area | Next specific check |

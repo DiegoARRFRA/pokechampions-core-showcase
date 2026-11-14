@@ -4,49 +4,49 @@
 
 [← Presentazione](../README.it.md) · [Funzionalità — inglese](FEATURES.en.md) · [Documentazione — inglese](README.en.md)
 
-Otto screenshot autentici del **5 novembre 2026**, con interfaccia in spagnolo. **Emulatore Android** indica la versione 1.0.1/46 su API 36 x86_64; **HOST** indica veri widget Flutter renderizzati su Windows dal codice di quella versione, con dati fittizi. Per questa serie non è stato usato un telefono fisico. Seleziona un’immagine per aprirla a piena risoluzione.
+Otto nuove immagini del **14 novembre 2026**, versione **1.0.1**, con interfaccia in **italiano**. **HOST** indica veri widget Flutter renderizzati su Windows con i cataloghi e il motore di questa versione e dati sintetici isolati. **Emulatore Android** indica la release 1.0.1/46 su API 36 x86_64. Ogni didascalia e il manifesto precisano l’origine; nessuna immagine proviene da un telefono fisico.
 
-Dalle immagini dell’emulatore sono state ritagliate soltanto le barre di sistema. Le immagini HOST non contengono elementi di sistema Android. Tutte le immagini sono state ridotte, mai ingrandite; nessuna interfaccia o risultato è stato ricostruito. [Provenienza ed elaborazione — inglese](../media/README.en.md).
+Gli stessi Pokémon e configurazioni sono usati nelle otto lingue. Sono applicati solo il ritaglio delle barre di sistema quando necessario, la riduzione proporzionale e la compressione WebP. Nessuna interfaccia generata o traduzione dei pixel. [Casi e limiti — inglese](SCENARIOS.en.md) · [Provenienza — inglese](../media/README.en.md).
 
 ## Schermata iniziale e danni
 
 <p>
-<a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="280" alt="Schermata iniziale · Logo attuale e scorciatoie agli strumenti nel tema scuro."></a>
-<a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="280" alt="Versus · Sdoppiatore: 45–54 PS di danno, con utilizzi necessari per un K.O. possibile o garantito."></a>
+<a href="../media/screenshots/it/home.webp"><img src="../media/screenshots/it/home.webp" width="280" alt="Schermata iniziale · Android emulator · Logo attuale e strumenti nel tema scuro."></a>
+<a href="../media/screenshots/it/versus-result.webp"><img src="../media/screenshots/it/versus-result.webp" width="280" alt="Versus · HOST · Venusaur usa Gigassorbimento contro Blastoise: 84–98 PS di danno e KO possibile e garantito in due utilizzi calcolati."></a>
 </p>
 
-- **Schermata iniziale · Emulatore Android.** Logo attuale e scorciatoie agli strumenti nel tema scuro.
-- **Versus · Emulatore Android.** Sdoppiatore: 45–54 PS di danno, con utilizzi necessari per un K.O. possibile o garantito.
+- **Schermata iniziale · Android emulator.** Logo attuale e strumenti nel tema scuro.
+- **Versus · HOST.** Venusaur usa Gigassorbimento contro Blastoise: 84–98 PS di danno e KO possibile e garantito in due utilizzi calcolati.
 
 ## Scenari e ricerca
 
 <p>
-<a href="../media/screenshots/battle.png"><img src="../media/screenshots/battle.png" width="280" alt="Lotta · Analisi reale del meteo all’ingresso e della Velocità; gli SP sconosciuti producono intervalli e una parità stimata."></a>
-<a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="280" alt="1HITKO · Vista scorsa dopo la ricerca: 206 candidati in questo scenario, con ordinamento e filtri. Non è un numero universale."></a>
+<a href="../media/screenshots/it/battle.webp"><img src="../media/screenshots/it/battle.webp" width="280" alt="Lotta · HOST · Velocità nota e sole selezionato manualmente in uno scenario di lotta in doppio. Non vengono eseguiti turni."></a>
+<a href="../media/screenshots/it/1hitko-results.webp"><img src="../media/screenshots/it/1hitko-results.webp" width="280" alt="1HITKO · HOST · Ricerca completata contro Archaludon: 206 candidati in questo scenario, con filtri e ordinamento. Non è un totale universale."></a>
 </p>
 
-- **Lotta · HOST.** Analisi reale del meteo all’ingresso e della Velocità; gli SP sconosciuti producono intervalli e una parità stimata.
-- **1HITKO · Emulatore Android.** Vista scorsa dopo la ricerca: 206 candidati in questo scenario, con ordinamento e filtri. Non è un numero universale.
+- **Lotta · HOST.** Velocità nota e sole selezionato manualmente in uno scenario di lotta in doppio. Non vengono eseguiti turni.
+- **1HITKO · HOST.** Ricerca completata contro Archaludon: 206 candidati in questo scenario, con filtri e ordinamento. Non è un totale universale.
 
 ## Squadre e provenienza
 
 <p>
-<a href="../media/screenshots/team-coverage.png"><img src="../media/screenshots/team-coverage.png" width="280" alt="Copertura difensiva · Matrice di una squadra di esempio di sei membri: debolezze, resistenze e risposte per tipo."></a>
-<a href="../media/screenshots/tournaments.png"><img src="../media/screenshots/tournaments.png" width="280" alt="Tornei · Selettore dei tornei con date, regolamento storico e selezione multipla. Le diciture 2027 appartengono ai nomi ufficiali degli eventi della stagione."></a>
+<a href="../media/screenshots/it/team-coverage.webp"><img src="../media/screenshots/it/team-coverage.webp" width="280" alt="Copertura difensiva · HOST · Matrice difensiva di una squadra fittizia di sei membri: debolezze, resistenze e immunità."></a>
+<a href="../media/screenshots/it/tournaments.webp"><img src="../media/screenshots/it/tournaments.webp" width="280" alt="Tornei · Android emulator · Catalogo tornei incluso, con date e regolamenti storici. I nomi delle stagioni possono includere 2027."></a>
 </p>
 
-- **Copertura difensiva · HOST.** Matrice di una squadra di esempio di sei membri: debolezze, resistenze e risposte per tipo.
-- **Tornei · Emulatore Android.** Selettore dei tornei con date, regolamento storico e selezione multipla. Le diciture 2027 appartengono ai nomi ufficiali degli eventi della stagione.
+- **Copertura difensiva · HOST.** Matrice difensiva di una squadra fittizia di sei membri: debolezze, resistenze e immunità.
+- **Tornei · Android emulator.** Catalogo tornei incluso, con date e regolamenti storici. I nomi delle stagioni possono includere 2027.
 
 ## Configurazioni e consultazione
 
 <p>
-<a href="../media/screenshots/notes.png"><img src="../media/screenshots/notes.png" width="280" alt="Note · Due configurazioni fittizie di Venusaur nel loro gruppo, con natura e SP. Non sono consigli competitivi."></a>
-<a href="../media/screenshots/library.png"><img src="../media/screenshots/library.png" width="280" alt="Biblioteca · Mosse e Pokémon che le apprendono, con due categorie applicate: 334 risultati per questa selezione."></a>
+<a href="../media/screenshots/it/notes.webp"><img src="../media/screenshots/it/notes.webp" width="280" alt="Note · HOST · Due configurazioni fittizie di Venusaur, con natura e SP. Non sono consigli competitivi."></a>
+<a href="../media/screenshots/it/library.webp"><img src="../media/screenshots/it/library.webp" width="280" alt="Biblioteca · Android emulator · Mosse e utilizzatori con Fisico e Speciale selezionati: 334 risultati in questo catalogo."></a>
 </p>
 
-- **Note · HOST.** Due configurazioni fittizie di Venusaur nel loro gruppo, con natura e SP. Non sono consigli competitivi.
-- **Biblioteca · Emulatore Android.** Mosse e Pokémon che le apprendono, con due categorie applicate: 334 risultati per questa selezione.
+- **Note · HOST.** Due configurazioni fittizie di Venusaur, con natura e SP. Non sono consigli competitivi.
+- **Biblioteca · Android emulator.** Mosse e utilizzatori con Fisico e Speciale selezionati: 334 risultati in questo catalogo.
 
 ## Demo video storiche
 

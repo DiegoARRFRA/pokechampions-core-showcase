@@ -4,49 +4,49 @@
 
 [← Übersicht](../README.de.md) · [Funktionen — Englisch](FEATURES.en.md) · [Dokumentation — Englisch](README.en.md)
 
-Acht echte Screenshots vom **5. November 2026** mit spanischer Oberfläche. **Android-Emulator** bezeichnet Version 1.0.1/46 auf API 36 x86_64. **HOST** bezeichnet echte Flutter-Widgets, die unter Windows aus dem Quellstand dieser Version mit fiktiven Daten gerendert wurden. Für diese Bildserie wurde kein physisches Smartphone verwendet. Ein Klick öffnet die volle Auflösung.
+Acht neue Aufnahmen vom **14. November 2026** aus Version **1.0.1**, mit **deutscher** Oberfläche. **HOST** bezeichnet echte Flutter-Widgets unter Windows mit den Katalogen und der Berechnungslogik dieser Version sowie isolierten Beispieldaten. **Android-Emulator** bezeichnet Release 1.0.1/46 auf API 36 x86_64. Bildunterschriften und Manifest nennen die Herkunft; kein Bild stammt von einem physischen Smartphone.
 
-Bei Emulator-Aufnahmen wurden nur Systemleisten entfernt. HOST-Bilder enthalten keine Android-Systemoberfläche. Alle Bilder wurden verkleinert, nie vergrößert; weder Oberfläche noch Ergebnisse wurden nachgebaut. [Herkunft und Verarbeitung — Englisch](../media/README.en.md).
+Alle acht Sprachen verwenden dieselben Pokémon und Einstellungen. Die Bearbeitung beschränkt sich auf das gegebenenfalls nötige Entfernen der Systemleisten, proportionale Verkleinerung und WebP-Kompression. Keine generierten Oberflächen oder übersetzten Pixel. [Fälle und Grenzen — Englisch](SCENARIOS.en.md) · [Herkunft — Englisch](../media/README.en.md).
 
 ## Startseite und Schaden
 
 <p>
-<a href="../media/screenshots/home.png"><img src="../media/screenshots/home.png" width="280" alt="Startseite · Aktuelles Logo und Werkzeugverknüpfungen im dunklen Design."></a>
-<a href="../media/screenshots/versus-result.png"><img src="../media/screenshots/versus-result.png" width="280" alt="Versus · Risikotackle: 45–54 KP Schaden sowie Einsätze für einen möglichen und garantierten K.O."></a>
+<a href="../media/screenshots/de/home.webp"><img src="../media/screenshots/de/home.webp" width="280" alt="Startseite · Android emulator · Aktuelles Logo und Werkzeuge im dunklen Design."></a>
+<a href="../media/screenshots/de/versus-result.webp"><img src="../media/screenshots/de/versus-result.webp" width="280" alt="Versus · HOST · Bisaflor setzt Gigasauger gegen Turtok ein: 84–98 KP Schaden und möglicher sowie garantierter K.O. bei zwei berechneten Einsätzen."></a>
 </p>
 
-- **Startseite · Android-Emulator.** Aktuelles Logo und Werkzeugverknüpfungen im dunklen Design.
-- **Versus · Android-Emulator.** Risikotackle: 45–54 KP Schaden sowie Einsätze für einen möglichen und garantierten K.O.
+- **Startseite · Android emulator.** Aktuelles Logo und Werkzeuge im dunklen Design.
+- **Versus · HOST.** Bisaflor setzt Gigasauger gegen Turtok ein: 84–98 KP Schaden und möglicher sowie garantierter K.O. bei zwei berechneten Einsätzen.
 
 ## Szenarien und Suche
 
 <p>
-<a href="../media/screenshots/battle.png"><img src="../media/screenshots/battle.png" width="280" alt="Kampf · Tatsächliche Analyse von Einwechselwetter und Initiative; unbekannte SP ergeben Bereiche und einen geschätzten Gleichstand."></a>
-<a href="../media/screenshots/1hitko-results.png"><img src="../media/screenshots/1hitko-results.png" width="280" alt="1HITKO · Gescrollte Ansicht nach abgeschlossener Suche: 206 Kandidaten in diesem Szenario sowie Sortier- und Filteroptionen. Keine allgemeingültige Anzahl."></a>
+<a href="../media/screenshots/de/battle.webp"><img src="../media/screenshots/de/battle.webp" width="280" alt="Kampf · HOST · Bekannte Initiative und manuell gewähltes Sonnenlicht in einer Doppelkampf-Situation. Es werden keine Runden ausgeführt."></a>
+<a href="../media/screenshots/de/1hitko-results.webp"><img src="../media/screenshots/de/1hitko-results.webp" width="280" alt="1HITKO · HOST · Abgeschlossene Suche gegen Briduradon: 206 Kandidaten in diesem Szenario, mit Filtern und Sortierung. Keine allgemeingültige Gesamtzahl."></a>
 </p>
 
-- **Kampf · HOST.** Tatsächliche Analyse von Einwechselwetter und Initiative; unbekannte SP ergeben Bereiche und einen geschätzten Gleichstand.
-- **1HITKO · Android-Emulator.** Gescrollte Ansicht nach abgeschlossener Suche: 206 Kandidaten in diesem Szenario sowie Sortier- und Filteroptionen. Keine allgemeingültige Anzahl.
+- **Kampf · HOST.** Bekannte Initiative und manuell gewähltes Sonnenlicht in einer Doppelkampf-Situation. Es werden keine Runden ausgeführt.
+- **1HITKO · HOST.** Abgeschlossene Suche gegen Briduradon: 206 Kandidaten in diesem Szenario, mit Filtern und Sortierung. Keine allgemeingültige Gesamtzahl.
 
 ## Teams und Herkunft
 
 <p>
-<a href="../media/screenshots/team-coverage.png"><img src="../media/screenshots/team-coverage.png" width="280" alt="Defensive Abdeckung · Matrix eines beispielhaften Teams aus sechs Mitgliedern: Schwächen, Resistenzen und Antworten nach Typ."></a>
-<a href="../media/screenshots/tournaments.png"><img src="../media/screenshots/tournaments.png" width="280" alt="Turniere · Turnierauswahl mit Datum, historischem Regelwerk und Mehrfachauswahl. Die Angaben 2027 gehören zu offiziellen Veranstaltungsnamen der Saison."></a>
+<a href="../media/screenshots/de/team-coverage.webp"><img src="../media/screenshots/de/team-coverage.webp" width="280" alt="Defensive Abdeckung · HOST · Defensive Matrix eines fiktiven Teams mit sechs Mitgliedern: Schwächen, Resistenzen und Immunitäten."></a>
+<a href="../media/screenshots/de/tournaments.webp"><img src="../media/screenshots/de/tournaments.webp" width="280" alt="Turniere · Android emulator · Enthaltener Turnierkatalog mit Datum und historischem Regelwerk. Saisonbezeichnungen können 2027 enthalten."></a>
 </p>
 
-- **Defensive Abdeckung · HOST.** Matrix eines beispielhaften Teams aus sechs Mitgliedern: Schwächen, Resistenzen und Antworten nach Typ.
-- **Turniere · Android-Emulator.** Turnierauswahl mit Datum, historischem Regelwerk und Mehrfachauswahl. Die Angaben 2027 gehören zu offiziellen Veranstaltungsnamen der Saison.
+- **Defensive Abdeckung · HOST.** Defensive Matrix eines fiktiven Teams mit sechs Mitgliedern: Schwächen, Resistenzen und Immunitäten.
+- **Turniere · Android emulator.** Enthaltener Turnierkatalog mit Datum und historischem Regelwerk. Saisonbezeichnungen können 2027 enthalten.
 
 ## Sets und Nachschlagen
 
 <p>
-<a href="../media/screenshots/notes.png"><img src="../media/screenshots/notes.png" width="280" alt="Notizen · Zwei fiktive Bisaflor-Sets in ihrer Gruppe mit Wesen und SP-Verteilung. Keine Empfehlungen für den Wettkampf."></a>
-<a href="../media/screenshots/library.png"><img src="../media/screenshots/library.png" width="280" alt="Bibliothek · Attacken und ihre Nutzer mit zwei aktiven Kategorien: 334 Ergebnisse in dieser Auswahl."></a>
+<a href="../media/screenshots/de/notes.webp"><img src="../media/screenshots/de/notes.webp" width="280" alt="Notizen · HOST · Zwei fiktive Bisaflor-Konfigurationen mit Wesen und SP. Keine Wettbewerbsempfehlungen."></a>
+<a href="../media/screenshots/de/library.webp"><img src="../media/screenshots/de/library.webp" width="280" alt="Bibliothek · Android emulator · Attacken und Anwender mit Physisch und Spezial ausgewählt: 334 Ergebnisse in diesem Katalog."></a>
 </p>
 
-- **Notizen · HOST.** Zwei fiktive Bisaflor-Sets in ihrer Gruppe mit Wesen und SP-Verteilung. Keine Empfehlungen für den Wettkampf.
-- **Bibliothek · Android-Emulator.** Attacken und ihre Nutzer mit zwei aktiven Kategorien: 334 Ergebnisse in dieser Auswahl.
+- **Notizen · HOST.** Zwei fiktive Bisaflor-Konfigurationen mit Wesen und SP. Keine Wettbewerbsempfehlungen.
+- **Bibliothek · Android emulator.** Attacken und Anwender mit Physisch und Spezial ausgewählt: 334 Ergebnisse in diesem Katalog.
 
 ## Historische Videodemos
 
