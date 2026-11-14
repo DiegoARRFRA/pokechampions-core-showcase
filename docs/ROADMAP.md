@@ -4,7 +4,7 @@
 
 [← Portada](../README.md) · [Funciones disponibles](FEATURES.md) · [Validación](VALIDATION.md)
 
-Corte: **5 de noviembre de 2026, 1.0.1**. Esta página separa lo implementado de las comprobaciones pendientes; no fija fechas de lanzamiento ni anuncia distribución pública.
+Disponibilidad actualizada el **14 de noviembre de 2026**: la aplicación está publicada en [Google Play](https://play.google.com/store/apps/details?id=com.pokechampionscore.external). El alcance técnico y las comprobaciones pendientes siguientes conservan el corte del **5 de noviembre de 2026, 1.0.1**.
 
 ## Ya implementado
 
@@ -20,7 +20,7 @@ Estas funciones no se presentan como trabajo futuro. Su existencia tampoco elimi
 | Memoria de página | Ejecutar en Android con páginas de 16 KiB; la alineación estática ya fue revisada. |
 | Datos históricos | Investigar el almacén anterior incompatible conservado; la actualización de una fixture nueva no resuelve ese caso. |
 | Rendimiento | Medir arranque y escrituras en la versión actual con entorno reproducible; no reutilizar el benchmark de agosto como cifra actual. |
-| Distribución | Contrastar en Play Console el canal efectivo, acceso y requisitos de la entrega. Mantener diferenciadas pruebas internas y disponibilidad pública. |
+| Distribución | Ficha pública confirmada el 14/11/2026. Comprobar en Play Console los detalles de futuras entregas y su disponibilidad por dispositivo. |
 | Privacidad pública | Actualizar la referencia externa a 1.0.0; la URL ya es pública y accesible. |
 | Catálogos y reglas | Validar cada nueva instantánea y resolver lagunas con evidencia de Champions, conservando procedencia y estados desconocidos. |
 

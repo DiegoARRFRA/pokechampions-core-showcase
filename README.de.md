@@ -1,4 +1,4 @@
-<p align="right"><a href="README.md">Español</a> · <a href="README.en.md">English</a> · <a href="README.fr.md">Français</a> · <strong>Deutsch</strong> · <a href="README.it.md">Italiano</a> · <a href="README.pt.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
+<p align="center"><a href="README.md">Español</a> · <a href="README.en.md">English</a> · <a href="README.fr.md">Français</a> · <strong>Deutsch</strong> · <a href="README.it.md">Italiano</a> · <a href="README.pt.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
 
 # PokeChampions Core
 
@@ -6,13 +6,17 @@
 
 **Bereite dein Team vor. Verstehe das Matchup. Lerne aus deinen Spielen.**
 
+Android · Kostenlos · Ohne Werbung · Ohne Konto · 8 Sprachen
+
+**[Bei Google Play herunterladen](https://play.google.com/store/apps/details?id=com.pokechampionscore.external&hl=de)** · [Screenshots ansehen](docs/GALLERY.de.md) · [Feedback geben](https://github.com/DiegoARRFRA/pokechampions-core-showcase/issues/new/choose)
+
 Eine Android-App für Pokémon-Champions-Spieler, die Schaden und Initiative vergleichen, Sets ausprobieren und ihre Teams, Notizen und Ergebnisse immer dabeihaben möchten. Die Werkzeuge und mitgelieferten Kataloge funktionieren **offline**, ohne Konto und ohne automatische Synchronisierung mit dem Internet.
 
 Entwickelt von **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter und Dart · Privater Quellcode.
 
-[Funktionen](docs/FEATURES.en.md) · [Galerie](docs/GALLERY.en.md) · [Technischer Überblick](docs/TECHNICAL_OVERVIEW.en.md) · [Dokumentation](docs/README.en.md)
+[Funktionen](docs/FEATURES.en.md) · [Galerie](docs/GALLERY.de.md) · [Technischer Überblick](docs/TECHNICAL_OVERVIEW.en.md) · [Dokumentation](docs/README.en.md)
 
-> Diese Projektvorstellung ist auf Deutsch. Die ausführliche Dokumentation ist auf Spanisch und Englisch verfügbar; die obigen Links führen zur englischen Version.
+> Auch die Galerie ist auf Deutsch verfügbar. Die ausführlichen technischen Dokumente sind auf Spanisch und Englisch verfügbar; die übrigen Dokumentationslinks auf dieser Seite führen zur englischen Version.
 
 ## Ein Blick in die App
 
@@ -24,7 +28,13 @@ Startseite, eine Versus-Berechnung und Attackenfilter. Echte Screenshots von **1
 <a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="Bibliothek mit kombinierten Filtern und zwei ausgewählten Attackenkategorien"></a>
 </p>
 
-[Alle acht Screenshots und historischen Demos ansehen](docs/GALLERY.en.md). Die Galerie unterscheidet zwischen Emulator-Aufnahmen, HOST-Renderings und älteren Videos.
+[Alle acht Screenshots und historischen Demos ansehen](docs/GALLERY.de.md). Die Galerie unterscheidet zwischen Emulator-Aufnahmen, HOST-Renderings und älteren Videos.
+
+## In drei Schritten loslegen
+
+1. **Erstelle ein Team oder speichere ein Set in den Notizen.** Prüfe die Abdeckung und halte Fähigkeit, Wesen und SP fest.
+2. **Prüfe ein Matchup in Versus.** Passe Attacke und Bedingungen an; untersuche mit EV Lab das Überleben oder suche mit 1HITKO nach Kandidaten.
+3. **Übe und lerne.** Trainiere deine Leads und speichere Ergebnis und Beobachtungen manuell im Verlauf.
 
 ## Werkzeuge zum Vorbereiten und Vergleichen
 
@@ -43,9 +53,41 @@ Diese Überarbeitung zeigt nach Pokémon gruppierte Notizen, das Laden von Sets 
 
 ## Verfügbarkeit und Datenschutz
 
-**Version 1.0.1 im internen Test**, gemäß der Mitteilung des Autors vom 5. November 2026. Ein öffentlicher Download wurde für diese Übersicht nicht verifiziert; eine Veröffentlichung in einem geschlossenen Test wird hier nicht angekündigt. Dieses Repository enthält Dokumentation und ausgewählte Medien, keine Installationsdateien und keinen App-Quellcode.
+**Für Android bei Google Play verfügbar.** Der am **14. November 2026** geprüfte öffentliche Eintrag beschreibt die App als kostenlos, ohne Werbung, In-App-Käufe oder Registrierung. Im Store findest du die für dein Gerät verfügbare Version und Kompatibilität.
+
+Screenshots und technische Kennzahlen dieses Portfolios beziehen sich auf die Prüfung von **1.0.1 vom 5. November 2026**; sie bestätigen nicht jede spätere Aktualisierung.
 
 [Öffentliche Datenschutzerklärung](https://pokechampions-core-privacidad.pages.dev/) · [Autor und Kontakt](https://github.com/DiegoARRFRA) · [Feedback und Fehlerberichte — Englisch](CONTRIBUTING.en.md).
+
+## Häufige Fragen
+
+<details>
+<summary>Funktioniert die App offline?</summary>
+
+Ja. Berechnungen, Teams, Notizen und mitgelieferte Kataloge laufen lokal. Downloads, Updates und externe Links benötigen Internet. Neue Turnierdaten werden mit App-Updates ausgeliefert.
+
+</details>
+
+<details>
+<summary>Wo werden meine Teams gespeichert?</summary>
+
+Auf deinem Gerät. Die App bietet keine kontobasierte Synchronisierung oder Wiederherstellung. Lies die Datenschutzerklärung, bevor du App-Daten löschst oder die App deinstallierst.
+
+</details>
+
+<details>
+<summary>Gibt es eine iPhone-, Web- oder PC-Version?</summary>
+
+Der hier verlinkte öffentliche Download ist für Android. Für andere Plattformen gibt es in diesem Repository weder einen veröffentlichten Download noch ein angekündigtes Erscheinungsdatum.
+
+</details>
+
+<details>
+<summary>Wie kann ich helfen oder einen Fehler melden?</summary>
+
+Erstelle ein Issue mit App-Version, Gerät, Schritten und erwartetem Ergebnis. Gib bei Berechnungen Pokémon, Attacke, Fähigkeit, Item, Werte und Effekte an. Auch Funktionswünsche und Übersetzungskorrekturen sind willkommen.
+
+</details>
 
 ## Unter der Haube
 

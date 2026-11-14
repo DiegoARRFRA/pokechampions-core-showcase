@@ -6,22 +6,22 @@
 
 [← Portada](../README.md)
 
-Revisado el 5 de noviembre de 2026 para 1.0.1. Funciones explica el alcance del producto; Galería distingue capturas actuales de emulador/HOST y vídeos históricos; Validación recoge evidencia fechada y límites.
+Portfolio actualizado el 14 de noviembre de 2026. La documentación técnica y las capturas conservan su revisión del 5 de noviembre de 2026 para 1.0.1. Funciones explica el alcance del producto; Galería distingue capturas actuales de emulador/HOST y vídeos históricos; Validación recoge evidencia fechada y límites.
 
 ## Idiomas del portfolio
 
-La presentación está traducida a los ocho idiomas de la aplicación. La documentación detallada de las tablas siguientes está disponible en español e inglés; las demás portadas señalan el idioma de sus enlaces técnicos.
+La presentación y la galería están traducidas a los ocho idiomas de la aplicación. La documentación detallada de las tablas siguientes está disponible en español e inglés; las demás portadas señalan el idioma de sus enlaces técnicos.
 
-| Idioma | Presentación |
-| --- | --- |
-| Español | [ES](../README.md) |
-| English | [EN](../README.en.md) |
-| Français | [FR](../README.fr.md) |
-| Deutsch | [DE](../README.de.md) |
-| Italiano | [IT](../README.it.md) |
-| Português | [PT](../README.pt.md) |
-| 日本語 | [JA](../README.ja.md) |
-| 한국어 | [KO](../README.ko.md) |
+| Idioma | Presentación | Galería |
+| --- | --- | --- |
+| Español | [ES](../README.md) | [ES](GALLERY.md) |
+| English | [EN](../README.en.md) | [EN](GALLERY.en.md) |
+| Français | [FR](../README.fr.md) | [FR](GALLERY.fr.md) |
+| Deutsch | [DE](../README.de.md) | [DE](GALLERY.de.md) |
+| Italiano | [IT](../README.it.md) | [IT](GALLERY.it.md) |
+| Português | [PT](../README.pt.md) | [PT](GALLERY.pt.md) |
+| 日本語 | [JA](../README.ja.md) | [JA](GALLERY.ja.md) |
+| 한국어 | [KO](../README.ko.md) | [KO](GALLERY.ko.md) |
 
 ## Producto
 

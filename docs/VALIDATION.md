@@ -6,7 +6,7 @@
 
 Corte documental: **5 de noviembre de 2026**. Cada resultado pertenece a su versión, plataforma y modalidad; no se suman campañas focales a una suite global ni se extrapola HOST a Android físico. Los registros completos permanecen privados.
 
-## Evidencia reciente de 1.0.1
+## Evidencia de 1.0.1 del 5 de noviembre
 
 | Comprobación | Entorno y resultado | Límite |
 | --- | --- | --- |
@@ -38,14 +38,18 @@ Las últimas tres campañas ya constaban en el escaparate de septiembre. El resu
 
 Prueba física de la entrega actual, audio prolongado con cambios de foco/llamadas/Bluetooth, ejecución con páginas de 16 KiB y seguimiento del almacén histórico incompatible. No hay un benchmark reciente de arranque o escritura para 1.0.1; el [estudio de rendimiento](PERFORMANCE.md) es histórico y de emulador.
 
-Play Console no se ha inspeccionado: canal efectivo, acceso de testers, códigos usados y certificado de subida registrado necesitan evidencia allí. El autor comunica pruebas internas; no se infiere de la preparación local que esté publicado en Alpha o disponible para todos.
+Play Console no se ha inspeccionado: canal efectivo, acceso de testers, códigos usados y certificado de subida registrado necesitan evidencia allí. Esto se refiere a los detalles de entrega; la ficha pública se comprobó de forma independiente el 14/11/2026, como se recoge a continuación.
 
 ## Enlaces públicos
 
 El 05/11/2026, una petición HTTP anónima obtuvo **200** de la [política de privacidad](https://pokechampions-core-privacidad.pages.dev/) y del [perfil de contacto](https://github.com/DiegoARRFRA). La política pública todavía identifica la versión **1.0.0**: está accesible, pero su actualización editorial externa queda pendiente. El correo mostrado por la política no ha sido probado mediante envío.
 
-La consulta anónima de la ficha de Google Play devolvió HTTP **404** desde este entorno. Por ello no se ofrece un botón de descarga; esto no descarta acceso mediante cuentas autorizadas para pruebas. No se publican enlaces de invitación ni datos de testers.
+En la revisión del **05/11/2026**, la consulta anónima de Google Play había devuelto HTTP **404**. Ese resultado histórico ya no describe la disponibilidad actual.
+
+El **14/11/2026** se obtuvo la [ficha pública de Google Play](https://play.google.com/store/apps/details?id=com.pokechampionscore.external) mediante una petición sin iniciar sesión. Mostraba **POKECHAMPIONS CORE**, desarrollador **Rakull Dev**, una acción de descarga y la descripción de la primera versión pública: gratis, sin anuncios, sin compras integradas y sin registro. La portada enlaza ahora a esa ficha. Esta comprobación verifica la publicación de la ficha, no instala la app ni certifica cada dispositivo, territorio o versión posterior.
+
+La política de privacidad también se volvió a consultar el 14/11/2026: sigue indicando versión 1.0.0. Su actualización editorial externa permanece pendiente.
 
 ## Comprobaciones del escaparate
 
-El [verificador](../CONTRIBUTING.md#validación-del-showcase) revisa enlaces, anclas, mayúsculas, pares ES/EN, inventario, hashes y decodificación multimedia. La revisión visual y de información privada es independiente. La [documentación multimedia](../media/README.md) distingue procedencias y transformaciones. Estas comprobaciones no recompilan ni certifican la aplicación.
+El [verificador](../CONTRIBUTING.md#validación-del-showcase) revisa enlaces, anclas, mayúsculas, pares técnicos ES/EN, portadas y galerías en ocho idiomas, inventario, hashes y decodificación multimedia. La revisión visual y de información privada es independiente. La [documentación multimedia](../media/README.md) distingue procedencias y transformaciones. Estas comprobaciones no recompilan ni certifican la aplicación.

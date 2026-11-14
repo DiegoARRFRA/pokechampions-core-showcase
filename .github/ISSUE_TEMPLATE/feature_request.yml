@@ -1,0 +1,38 @@
+name: "Suggestion / Sugerencia"
+description: "Suggest a feature, usability improvement or translation correction. Puedes responder en tu idioma."
+title: "[Suggestion]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us what you want to do and what would help. You may answer in your own language.
+        Cuéntanos qué quieres hacer y qué te ayudaría. Puedes responder en tu idioma.
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category / Categoría"
+      options:
+        - "Feature / Funcionalidad"
+        - "Usability or accessibility / Usabilidad o accesibilidad"
+        - "Translation / Traducción"
+        - "Catalogue or data / Catálogo o datos"
+        - "Portfolio or documentation / Portfolio o documentación"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What would you improve? / ¿Qué mejorarías?"
+      description: "For translation corrections, include language, current wording and suggested wording."
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: "Proposed outcome / Resultado propuesto"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "Examples or references / Ejemplos o referencias"

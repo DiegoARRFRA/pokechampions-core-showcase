@@ -1,4 +1,4 @@
-<p align="right"><a href="README.md">Español</a> · <a href="README.en.md">English</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <strong>Português</strong> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
+<p align="center"><a href="README.md">Español</a> · <a href="README.en.md">English</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <strong>Português</strong> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
 
 # PokeChampions Core
 
@@ -6,13 +6,17 @@
 
 **Prepara a tua equipa. Compreende o confronto. Aprende com as tuas partidas.**
 
+Android · Grátis · Sem anúncios · Sem conta · 8 idiomas
+
+**[Descarregar no Google Play](https://play.google.com/store/apps/details?id=com.pokechampionscore.external&hl=pt)** · [Ver capturas](docs/GALLERY.pt.md) · [Enviar uma sugestão](https://github.com/DiegoARRFRA/pokechampions-core-showcase/issues/new/choose)
+
 Uma aplicação Android para jogadores de Pokémon Champions que querem comparar dano e Velocidade, explorar configurações e ter sempre consigo as suas equipas, notas e resultados. As ferramentas e os catálogos incluídos funcionam **offline**, sem conta nem sincronização automática com a Internet.
 
 Desenvolvida por **[Diego de Arriba](https://github.com/DiegoARRFRA)** · Flutter e Dart · Código-fonte privado.
 
-[Funcionalidades](docs/FEATURES.en.md) · [Galeria](docs/GALLERY.en.md) · [Visão técnica](docs/TECHNICAL_OVERVIEW.en.md) · [Documentação](docs/README.en.md)
+[Funcionalidades](docs/FEATURES.en.md) · [Galeria](docs/GALLERY.pt.md) · [Visão técnica](docs/TECHNICAL_OVERVIEW.en.md) · [Documentação](docs/README.en.md)
 
-> Esta apresentação está em português. A documentação detalhada está disponível em espanhol e inglês; as ligações acima abrem a versão inglesa.
+> A galeria também está disponível em português. Os documentos técnicos detalhados estão em espanhol e inglês; as restantes ligações à documentação nesta página abrem a versão inglesa.
 
 ## Um olhar sobre a aplicação
 
@@ -24,7 +28,13 @@ Ecrã inicial, um cálculo Versus e filtros de movimentos. Capturas autênticas 
 <a href="media/screenshots/library.png"><img src="media/screenshots/library.png" width="220" alt="Biblioteca com filtros combinados e duas categorias de movimentos selecionadas"></a>
 </p>
 
-[Ver as oito capturas e as demonstrações históricas](docs/GALLERY.en.md). A galeria distingue as capturas do emulador, as renderizações HOST e os vídeos anteriores.
+[Ver as oito capturas e as demonstrações históricas](docs/GALLERY.pt.md). A galeria distingue as capturas do emulador, as renderizações HOST e os vídeos anteriores.
+
+## Começa em três passos
+
+1. **Cria uma equipa ou guarda uma configuração nas notas.** Revê a cobertura e conserva habilidade, natureza e SP.
+2. **Analisa um confronto no Versus.** Ajusta o ataque e as condições; usa o EV Lab para explorar a sobrevivência ou o 1HITKO para procurar candidatos.
+3. **Pratica e aprende.** Treina os teus leads e guarda manualmente o resultado e as observações no histórico.
 
 ## Ferramentas para preparar e comparar
 
@@ -43,9 +53,41 @@ Esta revisão destaca as notas agrupadas por Pokémon, o carregamento de configu
 
 ## Disponibilidade e privacidade
 
-**Versão 1.0.1 em testes internos**, segundo o estado comunicado pelo autor em 5 de novembro de 2026. Não foi verificada uma transferência pública nesta revisão, nem é anunciada uma publicação em testes fechados. Este repositório contém documentação e materiais de apresentação, não instaladores nem código-fonte da aplicação.
+**Disponível no Google Play para Android.** A ficha pública, consultada em **14 de novembro de 2026**, apresenta a aplicação como gratuita, sem anúncios, compras integradas ou registo. Consulta a loja para saberes a versão e a compatibilidade disponíveis para o teu dispositivo.
+
+As capturas e os dados técnicos deste portfolio correspondem à revisão **1.0.1 de 5 de novembro de 2026**; não verificam cada atualização posterior.
 
 [Política de privacidade pública](https://pokechampions-core-privacidad.pages.dev/) · [Autor e contacto](https://github.com/DiegoARRFRA) · [Sugestões e problemas — inglês](CONTRIBUTING.en.md).
+
+## Perguntas frequentes
+
+<details>
+<summary>Funciona sem Internet?</summary>
+
+Sim. Cálculos, equipas, notas e catálogos incluídos funcionam localmente. As transferências, atualizações e ligações externas precisam de Internet. Os novos dados de torneios chegam com as atualizações da aplicação.
+
+</details>
+
+<details>
+<summary>Onde ficam guardadas as minhas equipas?</summary>
+
+No dispositivo. A aplicação não oferece sincronização nem recuperação através de uma conta. Consulta a política de privacidade antes de apagar os dados ou desinstalar a aplicação.
+
+</details>
+
+<details>
+<summary>Existe uma versão para iPhone, web ou PC?</summary>
+
+A transferência pública indicada aqui é para Android. Este repositório não disponibiliza transferências para outras plataformas nem anuncia uma data de lançamento.
+
+</details>
+
+<details>
+<summary>Como posso ajudar ou comunicar um erro?</summary>
+
+Abre uma issue com a versão, o dispositivo, os passos e o resultado esperado. Para um cálculo, inclui Pokémon, movimento, habilidade, item, estatísticas e efeitos. Também podes sugerir melhorias ou corrigir traduções.
+
+</details>
 
 ## Por dentro
 
